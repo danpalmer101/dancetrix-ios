@@ -9,16 +9,6 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // MARK: - Navigation
     
@@ -28,7 +18,7 @@ class HomeViewController: UIViewController {
         if (segue.identifier == "Bookings") {
             let destination: ClassesViewController = segue.destination as! ClassesViewController
             // TODO : Load ClassMenu
-            destination.classMenu = ClassMenu(serviceName: "Hello", childrenServiceNames: ["World|1", "World|2", "Test"])
+            destination.classMenu = ClassMenuParser.parse(serviceNames: ["Hello|World|1","Hello|World|2","Hello|Earth"])
         } else if (segue.identifier == "Calendar") {
             // TODO
         }

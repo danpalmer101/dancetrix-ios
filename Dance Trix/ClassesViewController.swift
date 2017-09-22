@@ -16,16 +16,11 @@ class ClassesViewController: UITableViewController {
         super.viewDidLoad()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
-    }
+    };
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let rows = self.classMenu?.children?.count
@@ -34,12 +29,16 @@ class ClassesViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassNode", for: indexPath)
+        let child = classMenu?.children![indexPath.row]
+        
+        let identifier = child?.classDetails != nil ? "ClassLeaf" : "ClassNode"
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         Theme.applyTableViewCell(tableCell: cell)
         
-        // TODO: Configure the cell...
         cell.textLabel?.text = classMenu?.children![indexPath.row].name
         cell.textLabel?.font = UIFont.systemFont(ofSize: 25)
+        cell.tag = indexPath.row
 
         return cell
     }
@@ -49,9 +48,12 @@ class ClassesViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
+        let cell = sender as! UITableViewCell
+        
         if (segue.identifier == "ViewChildren") {
             let destination: ClassesViewController = segue.destination as! ClassesViewController
-            destination.classMenu = classMenu?.children![0] // TODO: Set based on selected child from 'sender'
+            destination.classMenu = classMenu?.children![cell.tag]
+            destination.title = classMenu?.children![0].name
         } else if (segue.identifier == "ViewClass") {
             // TODO
         }

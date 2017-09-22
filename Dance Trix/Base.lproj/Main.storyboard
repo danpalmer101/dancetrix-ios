@@ -22,7 +22,7 @@
                                 <rect key="frame" x="16" y="111" width="343" height="55"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Bookings"/>
+                                <state key="normal" title="Book a Class"/>
                                 <connections>
                                     <segue destination="BuF-jW-Oad" kind="show" identifier="Bookings" id="9Io-RD-CBk"/>
                                 </connections>
@@ -52,7 +52,7 @@
             </objects>
             <point key="canvasLocation" x="653.60000000000002" y="-556.4039408866995"/>
         </scene>
-        <!--Classes-->
+        <!--Book a Class-->
         <scene sceneID="Cxa-S2-ibL">
             <objects>
                 <tableViewController id="BuF-jW-Oad" customClass="ClassesViewController" customModule="Dance_Trix" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,13 +89,13 @@
                             <outlet property="delegate" destination="BuF-jW-Oad" id="nuu-p5-LlS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Classes" id="wgP-8I-UfF"/>
+                    <navigationItem key="navigationItem" title="Book a Class" id="wgP-8I-UfF"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylz-bJ-Oxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1409" y="-556"/>
         </scene>
-        <!--Dates-->
+        <!--Class Dates-->
         <scene sceneID="7ku-KT-JiY">
             <objects>
                 <tableViewController id="Rjl-pY-HsX" sceneMemberID="viewController">
@@ -118,7 +118,7 @@
                             <outlet property="delegate" destination="Rjl-pY-HsX" id="FdE-so-u6A"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Dates" id="rhx-kj-mXK"/>
+                    <navigationItem key="navigationItem" title="Class Dates" id="rhx-kj-mXK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUU-4a-oaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

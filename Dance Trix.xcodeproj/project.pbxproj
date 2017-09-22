@@ -12,6 +12,8 @@
 		A688280F1F75626300D82322 /* ClassMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */; };
 		A68828101F75627F00D82322 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F721F74FEB800FAF47E /* Class.swift */; };
 		A68828121F756F0600D82322 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828111F756F0600D82322 /* Theme.swift */; };
+		A68828141F75AB6200D82322 /* ClassMenuParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828131F75AB6200D82322 /* ClassMenuParser.swift */; };
+		A68828151F75ADD100D82322 /* ClassMenuParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828131F75AB6200D82322 /* ClassMenuParser.swift */; };
 		A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */; };
 		A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */; };
 		A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */; };
@@ -37,6 +39,7 @@
 		A68828071F7560C600D82322 /* Dance_Trix_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dance_Trix_Tests.swift; sourceTree = "<group>"; };
 		A68828091F7560C600D82322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A68828111F756F0600D82322 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A68828131F75AB6200D82322 /* ClassMenuParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMenuParser.swift; sourceTree = "<group>"; };
 		A6BA0F581F74E20C00FAF47E /* Dance Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Trix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +117,7 @@
 			children = (
 				A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */,
 				A6BA0F721F74FEB800FAF47E /* Class.swift */,
+				A68828131F75AB6200D82322 /* ClassMenuParser.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -221,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A68828151F75ADD100D82322 /* ClassMenuParser.swift in Sources */,
 				A68828101F75627F00D82322 /* Class.swift in Sources */,
 				A688280F1F75626300D82322 /* ClassMenu.swift in Sources */,
 				A68828081F7560C600D82322 /* Dance_Trix_Tests.swift in Sources */,
@@ -234,6 +239,7 @@
 				A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */,
 				A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */,
 				A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */,
+				A68828141F75AB6200D82322 /* ClassMenuParser.swift in Sources */,
 				A68828121F756F0600D82322 /* Theme.swift in Sources */,
 				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,
 				A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */,
