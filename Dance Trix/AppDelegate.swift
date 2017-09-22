@@ -22,16 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applyBranding() {
-        // Global
-        window?.tintColor = UIColor.white
-        window?.backgroundColor = UIColor.black
-        
-        // All Views
-        UIView.appearance().backgroundColor = UIColor.clear
-        
-        // Nav Bar
-        UINavigationBar.appearance().barTintColor = UIColor.black
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        Theme.applyGlobal(window: window)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

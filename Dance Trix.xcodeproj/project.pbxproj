@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632F7891F7505E100F9FD8A /* ClassesViewController.swift */; };
+		A68828081F7560C600D82322 /* Dance_Trix_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828071F7560C600D82322 /* Dance_Trix_Tests.swift */; };
+		A688280F1F75626300D82322 /* ClassMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */; };
+		A68828101F75627F00D82322 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F721F74FEB800FAF47E /* Class.swift */; };
+		A68828121F756F0600D82322 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828111F756F0600D82322 /* Theme.swift */; };
 		A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */; };
 		A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */; };
 		A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */; };
@@ -17,8 +21,22 @@
 		A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F721F74FEB800FAF47E /* Class.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A688280A1F7560C600D82322 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6BA0F501F74E20C00FAF47E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6BA0F571F74E20C00FAF47E;
+			remoteInfo = "Dance Trix";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		A632F7891F7505E100F9FD8A /* ClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesViewController.swift; sourceTree = "<group>"; };
+		A68828051F7560C600D82322 /* Dance Trix Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dance Trix Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A68828071F7560C600D82322 /* Dance_Trix_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dance_Trix_Tests.swift; sourceTree = "<group>"; };
+		A68828091F7560C600D82322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A68828111F756F0600D82322 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A6BA0F581F74E20C00FAF47E /* Dance Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Trix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +49,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A68828021F7560C600D82322 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6BA0F551F74E20C00FAF47E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -41,10 +66,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A68828061F7560C600D82322 /* Dance Trix Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A68828071F7560C600D82322 /* Dance_Trix_Tests.swift */,
+				A68828091F7560C600D82322 /* Info.plist */,
+			);
+			path = "Dance Trix Tests";
+			sourceTree = "<group>";
+		};
 		A6BA0F4F1F74E20C00FAF47E = {
 			isa = PBXGroup;
 			children = (
 				A6BA0F5A1F74E20C00FAF47E /* Dance Trix */,
+				A68828061F7560C600D82322 /* Dance Trix Tests */,
 				A6BA0F591F74E20C00FAF47E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				A6BA0F581F74E20C00FAF47E /* Dance Trix.app */,
+				A68828051F7560C600D82322 /* Dance Trix Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +100,7 @@
 				A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */,
 				A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */,
 				A632F7891F7505E100F9FD8A /* ClassesViewController.swift */,
+				A68828111F756F0600D82322 /* Theme.swift */,
 				A6BA0F621F74E20C00FAF47E /* Assets.xcassets */,
 				A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */,
 				A6BA0F641F74E20C00FAF47E /* LaunchScreen.storyboard */,
@@ -84,6 +121,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A68828041F7560C600D82322 /* Dance Trix Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A688280E1F7560C600D82322 /* Build configuration list for PBXNativeTarget "Dance Trix Tests" */;
+			buildPhases = (
+				A68828011F7560C600D82322 /* Sources */,
+				A68828021F7560C600D82322 /* Frameworks */,
+				A68828031F7560C600D82322 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A688280B1F7560C600D82322 /* PBXTargetDependency */,
+			);
+			name = "Dance Trix Tests";
+			productName = "Dance Trix Tests";
+			productReference = A68828051F7560C600D82322 /* Dance Trix Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A6BA0F571F74E20C00FAF47E /* Dance Trix */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6BA0F6A1F74E20C00FAF47E /* Build configuration list for PBXNativeTarget "Dance Trix" */;
@@ -111,6 +166,11 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Dance Trix";
 				TargetAttributes = {
+					A68828041F7560C600D82322 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A6BA0F571F74E20C00FAF47E;
+					};
 					A6BA0F571F74E20C00FAF47E = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -131,11 +191,19 @@
 			projectRoot = "";
 			targets = (
 				A6BA0F571F74E20C00FAF47E /* Dance Trix */,
+				A68828041F7560C600D82322 /* Dance Trix Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A68828031F7560C600D82322 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6BA0F561F74E20C00FAF47E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -149,6 +217,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A68828011F7560C600D82322 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A68828101F75627F00D82322 /* Class.swift in Sources */,
+				A688280F1F75626300D82322 /* ClassMenu.swift in Sources */,
+				A68828081F7560C600D82322 /* Dance_Trix_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6BA0F541F74E20C00FAF47E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,12 +234,21 @@
 				A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */,
 				A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */,
 				A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */,
+				A68828121F756F0600D82322 /* Theme.swift in Sources */,
 				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,
 				A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A688280B1F7560C600D82322 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6BA0F571F74E20C00FAF47E /* Dance Trix */;
+			targetProxy = A688280A1F7560C600D82322 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */ = {
@@ -183,6 +270,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A688280C1F7560C600D82322 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Dance Trix Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.dancetrix.Dance-Trix-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dance Trix.app/Dance Trix";
+			};
+			name = Debug;
+		};
+		A688280D1F7560C600D82322 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Dance Trix Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.dancetrix.Dance-Trix-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dance Trix.app/Dance Trix";
+			};
+			name = Release;
+		};
 		A6BA0F681F74E20C00FAF47E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -323,6 +440,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A688280E1F7560C600D82322 /* Build configuration list for PBXNativeTarget "Dance Trix Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A688280C1F7560C600D82322 /* Debug */,
+				A688280D1F7560C600D82322 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A6BA0F531F74E20C00FAF47E /* Build configuration list for PBXProject "Dance Trix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -27,8 +27,18 @@ class HomeViewController: UIViewController {
         
         if (segue.identifier == "Bookings") {
             let destination: ClassesViewController = segue.destination as! ClassesViewController
-            destination.classMenu = ClassMenu(name: "test", children: [ClassMenu]())
+            // TODO : Load ClassMenu
+            destination.classMenu = ClassMenu(serviceName: "Hello", childrenServiceNames: ["World|1", "World|2", "Test"])
+        } else if (segue.identifier == "Calendar") {
+            // TODO
         }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction
+    func visitWebsite() {
+        UIApplication.shared.open(URL(string: "http://www.dancetrix.co.uk")!)
     }
 
 }

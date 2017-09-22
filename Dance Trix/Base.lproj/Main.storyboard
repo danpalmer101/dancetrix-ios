@@ -24,7 +24,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Bookings"/>
                                 <connections>
-                                    <segue destination="BuF-jW-Oad" kind="show" id="9Io-RD-CBk"/>
+                                    <segue destination="BuF-jW-Oad" kind="show" identifier="Bookings" id="9Io-RD-CBk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TiO-tZ-ojp">
@@ -38,6 +38,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Visit dancetrix.co.uk"/>
+                                <connections>
+                                    <action selector="visitWebsite" destination="SCD-zr-XIn" eventType="touchUpInside" id="Vsk-wc-cTX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,7 +69,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="BuF-jW-Oad" kind="show" identifier="ViewChildren" trigger="accessoryAction" id="UNv-g7-AMt"/>
+                                    <segue destination="BuF-jW-Oad" kind="show" identifier="ViewChildren" id="ONP-Dd-Yq8"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ClassLeaf" id="N78-Ce-cj7">
@@ -77,7 +80,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Rjl-pY-HsX" kind="show" identifier="ViewClass" trigger="accessoryAction" id="vPp-CE-2f6"/>
+                                    <segue destination="Rjl-pY-HsX" kind="show" identifier="ViewClass" id="gcW-eq-QkP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -33,16 +33,14 @@ class ClassesViewController: UITableViewController {
         return rows != nil ? rows! : 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassNode", for: indexPath)
 
-        // Configure the cell...
+        // TODO: Configure the cell...
+        cell.textLabel?.text = classMenu?.children![indexPath.row].name
 
         return cell
     }
-    */
-
     
     // MARK: - Navigation
 
@@ -51,7 +49,7 @@ class ClassesViewController: UITableViewController {
         
         if (segue.identifier == "ViewChildren") {
             let destination: ClassesViewController = segue.destination as! ClassesViewController
-            destination.classMenu = ClassMenu(name: "test", children: [ClassMenu]()) // Set based on selected child from 'sender'
+            destination.classMenu = classMenu?.children![0] // TODO: Set based on selected child from 'sender'
         } else if (segue.identifier == "ViewClass") {
             // TODO
         }
