@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632F7891F7505E100F9FD8A /* ClassesViewController.swift */; };
 		A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */; };
-		A6BA0F5E1F74E20C00FAF47E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5D1F74E20C00FAF47E /* ViewController.swift */; };
+		A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */; };
 		A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */; };
 		A6BA0F631F74E20C00FAF47E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F621F74E20C00FAF47E /* Assets.xcassets */; };
 		A6BA0F661F74E20C00FAF47E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F641F74E20C00FAF47E /* LaunchScreen.storyboard */; };
+		A6BA0F711F74FE4C00FAF47E /* ClassMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F701F74FE4C00FAF47E /* ClassMenuItem.swift */; };
+		A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F721F74FEB800FAF47E /* Class.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A632F7891F7505E100F9FD8A /* ClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesViewController.swift; sourceTree = "<group>"; };
 		A6BA0F581F74E20C00FAF47E /* Dance Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Trix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6BA0F5D1F74E20C00FAF47E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A6BA0F601F74E20C00FAF47E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6BA0F621F74E20C00FAF47E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6BA0F651F74E20C00FAF47E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6BA0F671F74E20C00FAF47E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6BA0F701F74FE4C00FAF47E /* ClassMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMenuItem.swift; sourceTree = "<group>"; };
+		A6BA0F721F74FEB800FAF47E /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,25 @@
 		A6BA0F5A1F74E20C00FAF47E /* Dance Trix */ = {
 			isa = PBXGroup;
 			children = (
+				A6BA0F6D1F74F24600FAF47E /* Domain */,
 				A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */,
-				A6BA0F5D1F74E20C00FAF47E /* ViewController.swift */,
-				A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */,
+				A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */,
+				A632F7891F7505E100F9FD8A /* ClassesViewController.swift */,
 				A6BA0F621F74E20C00FAF47E /* Assets.xcassets */,
+				A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */,
 				A6BA0F641F74E20C00FAF47E /* LaunchScreen.storyboard */,
 				A6BA0F671F74E20C00FAF47E /* Info.plist */,
 			);
 			path = "Dance Trix";
+			sourceTree = "<group>";
+		};
+		A6BA0F6D1F74F24600FAF47E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A6BA0F701F74FE4C00FAF47E /* ClassMenuItem.swift */,
+				A6BA0F721F74FEB800FAF47E /* Class.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +153,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6BA0F5E1F74E20C00FAF47E /* ViewController.swift in Sources */,
+				A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */,
+				A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */,
+				A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */,
+				A6BA0F711F74FE4C00FAF47E /* ClassMenuItem.swift in Sources */,
 				A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
