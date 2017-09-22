@@ -13,10 +13,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        applyBranding()
+        
         return true
+    }
+    
+    func applyBranding() {
+        // Global
+        window?.tintColor = UIColor.white
+        window?.backgroundColor = UIColor.black
+        
+        // All Views
+        UIView.appearance().backgroundColor = UIColor.clear
+        
+        // Nav Bar
+        UINavigationBar.appearance().barTintColor = UIColor.black
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
