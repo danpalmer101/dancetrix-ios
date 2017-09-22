@@ -29,4 +29,8 @@ class Theme {
         UILabel.appearance(whenContainedInInstancesOf: [UITableViewCell.self]).textColor = UIColor.white
     }
     
+    static func applyTableViewCell(tableCell: UITableViewCell?) {
+        tableCell?.textLabel?.textColor = UIColor.white
+    }
+    
 }

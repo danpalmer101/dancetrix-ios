@@ -35,7 +35,8 @@ class ClassesViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClassNode", for: indexPath)
-
+        Theme.applyTableViewCell(tableCell: cell)
+        
         // TODO: Configure the cell...
         cell.textLabel?.text = classMenu?.children![indexPath.row].name
 
