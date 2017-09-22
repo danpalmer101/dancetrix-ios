@@ -39,6 +39,7 @@ class ClassesViewController: UITableViewController {
         
         // TODO: Configure the cell...
         cell.textLabel?.text = classMenu?.children![indexPath.row].name
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 25)
 
         return cell
     }
