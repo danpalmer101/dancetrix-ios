@@ -1,5 +1,5 @@
 //
-//  ClassMenuItem.swift
+//  ClassMenu.swift
 //  Dance Trix
 //
 //  Created by Daniel Palmer on 22/09/2017.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ClassMenuItem {
+class ClassMenu {
     
     //MARK: Properties
     
     var name: String
-    var children: [ClassMenuItem]?
+    var children: [ClassMenu]?
     var classDetails: Class?
     
     //MARK: Initialization
@@ -23,7 +23,7 @@ class ClassMenuItem {
         self.classDetails = classDetails
     }
     
-    init?(name: String, children: [ClassMenuItem]) {
+    init?(name: String, children: [ClassMenu]) {
         self.name = name
         self.children = children
     }

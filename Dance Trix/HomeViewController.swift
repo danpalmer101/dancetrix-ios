@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
         
         if (segue.identifier == "Bookings") {
             let destination: ClassesViewController = segue.destination as! ClassesViewController
-            destination.classMenuItems = [ClassMenuItem]()
+            destination.classMenu = ClassMenu(name: "test", children: [ClassMenu]())
         }
     }
 

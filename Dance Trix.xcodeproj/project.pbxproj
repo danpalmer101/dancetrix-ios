@@ -13,7 +13,7 @@
 		A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */; };
 		A6BA0F631F74E20C00FAF47E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F621F74E20C00FAF47E /* Assets.xcassets */; };
 		A6BA0F661F74E20C00FAF47E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F641F74E20C00FAF47E /* LaunchScreen.storyboard */; };
-		A6BA0F711F74FE4C00FAF47E /* ClassMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F701F74FE4C00FAF47E /* ClassMenuItem.swift */; };
+		A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */; };
 		A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F721F74FEB800FAF47E /* Class.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,7 @@
 		A6BA0F621F74E20C00FAF47E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6BA0F651F74E20C00FAF47E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6BA0F671F74E20C00FAF47E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6BA0F701F74FE4C00FAF47E /* ClassMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMenuItem.swift; sourceTree = "<group>"; };
+		A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMenu.swift; sourceTree = "<group>"; };
 		A6BA0F721F74FEB800FAF47E /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +75,7 @@
 		A6BA0F6D1F74F24600FAF47E /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				A6BA0F701F74FE4C00FAF47E /* ClassMenuItem.swift */,
+				A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */,
 				A6BA0F721F74FEB800FAF47E /* Class.swift */,
 			);
 			path = Domain;
@@ -156,7 +156,7 @@
 				A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */,
 				A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */,
 				A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */,
-				A6BA0F711F74FE4C00FAF47E /* ClassMenuItem.swift in Sources */,
+				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,
 				A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

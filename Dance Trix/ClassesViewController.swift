@@ -10,7 +10,7 @@ import UIKit
 
 class ClassesViewController: UITableViewController {
     
-    var classMenuItems = [ClassMenuItem]()
+    var classMenu: ClassMenu?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,9 @@ class ClassesViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.classMenuItems.count
+        let rows = self.classMenu?.children?.count
+        
+        return rows != nil ? rows! : 0
     }
 
     /*
@@ -49,7 +51,7 @@ class ClassesViewController: UITableViewController {
         
         if (segue.identifier == "ViewChildren") {
             let destination: ClassesViewController = segue.destination as! ClassesViewController
-            destination.classMenuItems = [ClassMenuItem]()
+            destination.classMenu = ClassMenu(name: "test", children: [ClassMenu]()) // Set based on selected child from 'sender'
         } else if (segue.identifier == "ViewClass") {
             // TODO
         }
