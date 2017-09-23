@@ -10,27 +10,39 @@ import UIKit
 
 class Theme {
     
+    static let colorBackground = UIColor.black
+    static let colorTint = UIColor(displayP3Red: 28.0/256.0, green:146.0/256.0, blue: 128.0/256.0, alpha: 1)
+    static let colorTintDark = UIColor(displayP3Red: 14.0/256.0, green:73.0/256.0, blue: 64.0/256.0, alpha: 1)
+    static let colorForeground = UIColor.white
+    
     static func applyGlobal(window: UIWindow?) {
         // Global
-        window?.tintColor = UIColor.white
-        window?.backgroundColor = UIColor.black
+        window?.tintColor = Theme.colorForeground
+        window?.backgroundColor = Theme.colorBackground
         
         // All Views
         UIView.appearance().backgroundColor = UIColor.clear
         
-        // Nav Bar
-        UINavigationBar.appearance().barTintColor = UIColor.black
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        // Nav Bars
+        UINavigationBar.appearance().barTintColor = Theme.colorBackground
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor:Theme.colorForeground]
         
-        // Table
+        // Tables
         let cellBackgroundView = UIView()
-        cellBackgroundView.backgroundColor = UIColor.white;
-        UITableViewCell.appearance().selectedBackgroundView = cellBackgroundView;
-        UILabel.appearance(whenContainedInInstancesOf: [UITableViewCell.self]).textColor = UIColor.white
+        cellBackgroundView.backgroundColor = Theme.colorForeground
+        UITableViewCell.appearance().selectedBackgroundView = cellBackgroundView
+        UILabel.appearance(whenContainedInInstancesOf: [UITableViewCell.self]).textColor = Theme.colorForeground
+        UITableView.appearance().backgroundColor = Theme.colorBackground
+        
+        // Buttons
+        LinkButton.appearance().tintColor = Theme.colorTint
+        
+        // Images
+        TintImageView.appearance().tintColor = Theme.colorTint
     }
     
     static func applyTableViewCell(tableCell: UITableViewCell?) {
-        tableCell?.textLabel?.textColor = UIColor.white
+        tableCell?.textLabel?.textColor = Theme.colorForeground
     }
     
 }

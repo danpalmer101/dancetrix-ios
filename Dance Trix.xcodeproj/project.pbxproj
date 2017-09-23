@@ -14,6 +14,9 @@
 		A68828121F756F0600D82322 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828111F756F0600D82322 /* Theme.swift */; };
 		A68828141F75AB6200D82322 /* ClassMenuParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828131F75AB6200D82322 /* ClassMenuParser.swift */; };
 		A68828151F75ADD100D82322 /* ClassMenuParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828131F75AB6200D82322 /* ClassMenuParser.swift */; };
+		A68828181F76FC7000D82322 /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828171F76FC7000D82322 /* LinkButton.swift */; };
+		A688281A1F7706D200D82322 /* TintImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828191F7706D200D82322 /* TintImageView.swift */; };
+		A688281C1F77094600D82322 /* TitleNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688281B1F77094600D82322 /* TitleNavigationItem.swift */; };
 		A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */; };
 		A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */; };
 		A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */; };
@@ -40,6 +43,9 @@
 		A68828091F7560C600D82322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A68828111F756F0600D82322 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A68828131F75AB6200D82322 /* ClassMenuParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMenuParser.swift; sourceTree = "<group>"; };
+		A68828171F76FC7000D82322 /* LinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
+		A68828191F7706D200D82322 /* TintImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintImageView.swift; sourceTree = "<group>"; };
+		A688281B1F77094600D82322 /* TitleNavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleNavigationItem.swift; sourceTree = "<group>"; };
 		A6BA0F581F74E20C00FAF47E /* Dance Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Trix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +84,16 @@
 			path = "Dance Trix Tests";
 			sourceTree = "<group>";
 		};
+		A68828161F76FC5500D82322 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A68828171F76FC7000D82322 /* LinkButton.swift */,
+				A68828191F7706D200D82322 /* TintImageView.swift */,
+				A688281B1F77094600D82322 /* TitleNavigationItem.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		A6BA0F4F1F74E20C00FAF47E = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +115,7 @@
 		A6BA0F5A1F74E20C00FAF47E /* Dance Trix */ = {
 			isa = PBXGroup;
 			children = (
+				A68828161F76FC5500D82322 /* UI */,
 				A6BA0F6D1F74F24600FAF47E /* Domain */,
 				A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */,
 				A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */,
@@ -238,11 +255,14 @@
 			files = (
 				A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */,
 				A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */,
+				A688281A1F7706D200D82322 /* TintImageView.swift in Sources */,
 				A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */,
 				A68828141F75AB6200D82322 /* ClassMenuParser.swift in Sources */,
 				A68828121F756F0600D82322 /* Theme.swift in Sources */,
 				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,
+				A688281C1F77094600D82322 /* TitleNavigationItem.swift in Sources */,
 				A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */,
+				A68828181F76FC7000D82322 /* LinkButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
