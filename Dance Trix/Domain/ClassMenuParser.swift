@@ -18,7 +18,13 @@ class ClassMenuParser {
             var split = serviceName.split(separator: "|", maxSplits: Int.max, omittingEmptySubsequences: true)
             
             let name = String(split.popLast()!)
-            let classDetails = Class(id: serviceName, name: name)
+            let classDetails = Class(id: serviceName, name: name, dates: [
+                DateRange(startDate: Date().addingTimeInterval(0), endDate: Date().addingTimeInterval(3600))!,
+                DateRange(startDate: Date().addingTimeInterval(10000), endDate: Date().addingTimeInterval(13600))!,
+                DateRange(startDate: Date().addingTimeInterval(20000), endDate: Date().addingTimeInterval(23600))!,
+                DateRange(startDate: Date().addingTimeInterval(30000), endDate: Date().addingTimeInterval(33600))!,
+                DateRange(startDate: Date().addingTimeInterval(40000), endDate: Date().addingTimeInterval(43600))!
+            ])
             var classMenu = ClassMenu(name: name, classDetails: classDetails!)
             
             // Keep embedding class level in a parent

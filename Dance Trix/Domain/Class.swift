@@ -14,12 +14,14 @@ class Class {
     
     var id: String
     var name: String
+    var dates: [DateRange]
     
     //MARK: Initialization
     
-    init?(id: String, name: String) {
+    init?(id: String, name: String, dates: [DateRange]) {
         self.id = id
         self.name = name
+        self.dates = dates
     }
     
 }

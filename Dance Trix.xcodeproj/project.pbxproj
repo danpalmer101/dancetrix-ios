@@ -17,6 +17,18 @@
 		A68828181F76FC7000D82322 /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828171F76FC7000D82322 /* LinkButton.swift */; };
 		A688281A1F7706D200D82322 /* TintImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828191F7706D200D82322 /* TintImageView.swift */; };
 		A688281C1F77094600D82322 /* TitleNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688281B1F77094600D82322 /* TitleNavigationItem.swift */; };
+		A68828271F770F0700D82322 /* Cabin-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A68828231F770EEA00D82322 /* Cabin-Bold.ttf */; };
+		A68828281F770F0700D82322 /* Cabin-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A68828221F770EE900D82322 /* Cabin-BoldItalic.ttf */; };
+		A68828291F770F0700D82322 /* Cabin-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A68828241F770EEB00D82322 /* Cabin-Italic.ttf */; };
+		A688282A1F770F0700D82322 /* Cabin-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A68828211F770EE900D82322 /* Cabin-Medium.ttf */; };
+		A688282B1F770F0700D82322 /* Cabin-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A68828251F770EEC00D82322 /* Cabin-MediumItalic.ttf */; };
+		A688282C1F770F0700D82322 /* Cabin-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A688281F1F770EE700D82322 /* Cabin-Regular.ttf */; };
+		A688282D1F770F0700D82322 /* Cabin-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A68828201F770EE800D82322 /* Cabin-SemiBold.ttf */; };
+		A688282E1F770F0700D82322 /* Cabin-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A68828261F770EEC00D82322 /* Cabin-SemiBoldItalic.ttf */; };
+		A68828321F783DC300D82322 /* ClassDatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828311F783DC300D82322 /* ClassDatesViewController.swift */; };
+		A68828341F78410B00D82322 /* DateRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828331F78410B00D82322 /* DateRange.swift */; };
+		A68828361F78445200D82322 /* TintSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828351F78445200D82322 /* TintSelectTableViewCell.swift */; };
+		A68828381F78467900D82322 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828371F78467900D82322 /* SubmitButton.swift */; };
 		A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */; };
 		A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */; };
 		A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */; };
@@ -46,6 +58,18 @@
 		A68828171F76FC7000D82322 /* LinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
 		A68828191F7706D200D82322 /* TintImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintImageView.swift; sourceTree = "<group>"; };
 		A688281B1F77094600D82322 /* TitleNavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleNavigationItem.swift; sourceTree = "<group>"; };
+		A688281F1F770EE700D82322 /* Cabin-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Regular.ttf"; sourceTree = "<group>"; };
+		A68828201F770EE800D82322 /* Cabin-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-SemiBold.ttf"; sourceTree = "<group>"; };
+		A68828211F770EE900D82322 /* Cabin-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Medium.ttf"; sourceTree = "<group>"; };
+		A68828221F770EE900D82322 /* Cabin-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-BoldItalic.ttf"; sourceTree = "<group>"; };
+		A68828231F770EEA00D82322 /* Cabin-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Bold.ttf"; sourceTree = "<group>"; };
+		A68828241F770EEB00D82322 /* Cabin-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Italic.ttf"; sourceTree = "<group>"; };
+		A68828251F770EEC00D82322 /* Cabin-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-MediumItalic.ttf"; sourceTree = "<group>"; };
+		A68828261F770EEC00D82322 /* Cabin-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		A68828311F783DC300D82322 /* ClassDatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDatesViewController.swift; sourceTree = "<group>"; };
+		A68828331F78410B00D82322 /* DateRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRange.swift; sourceTree = "<group>"; };
+		A68828351F78445200D82322 /* TintSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintSelectTableViewCell.swift; sourceTree = "<group>"; };
+		A68828371F78467900D82322 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		A6BA0F581F74E20C00FAF47E /* Dance Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Trix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -88,10 +112,35 @@
 			isa = PBXGroup;
 			children = (
 				A68828171F76FC7000D82322 /* LinkButton.swift */,
+				A68828371F78467900D82322 /* SubmitButton.swift */,
 				A68828191F7706D200D82322 /* TintImageView.swift */,
 				A688281B1F77094600D82322 /* TitleNavigationItem.swift */,
+				A68828351F78445200D82322 /* TintSelectTableViewCell.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		A688281D1F770ECB00D82322 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A688281E1F770ED600D82322 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A688281E1F770ED600D82322 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A68828231F770EEA00D82322 /* Cabin-Bold.ttf */,
+				A68828221F770EE900D82322 /* Cabin-BoldItalic.ttf */,
+				A68828241F770EEB00D82322 /* Cabin-Italic.ttf */,
+				A68828211F770EE900D82322 /* Cabin-Medium.ttf */,
+				A68828251F770EEC00D82322 /* Cabin-MediumItalic.ttf */,
+				A688281F1F770EE700D82322 /* Cabin-Regular.ttf */,
+				A68828201F770EE800D82322 /* Cabin-SemiBold.ttf */,
+				A68828261F770EEC00D82322 /* Cabin-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		A6BA0F4F1F74E20C00FAF47E = {
@@ -115,11 +164,13 @@
 		A6BA0F5A1F74E20C00FAF47E /* Dance Trix */ = {
 			isa = PBXGroup;
 			children = (
+				A688281D1F770ECB00D82322 /* Resources */,
 				A68828161F76FC5500D82322 /* UI */,
 				A6BA0F6D1F74F24600FAF47E /* Domain */,
 				A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */,
 				A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */,
 				A632F7891F7505E100F9FD8A /* ClassesViewController.swift */,
+				A68828311F783DC300D82322 /* ClassDatesViewController.swift */,
 				A68828111F756F0600D82322 /* Theme.swift */,
 				A6BA0F621F74E20C00FAF47E /* Assets.xcassets */,
 				A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */,
@@ -135,6 +186,7 @@
 				A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */,
 				A6BA0F721F74FEB800FAF47E /* Class.swift */,
 				A68828131F75AB6200D82322 /* ClassMenuParser.swift */,
+				A68828331F78410B00D82322 /* DateRange.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -229,6 +281,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A68828271F770F0700D82322 /* Cabin-Bold.ttf in Resources */,
+				A68828281F770F0700D82322 /* Cabin-BoldItalic.ttf in Resources */,
+				A68828291F770F0700D82322 /* Cabin-Italic.ttf in Resources */,
+				A688282A1F770F0700D82322 /* Cabin-Medium.ttf in Resources */,
+				A688282B1F770F0700D82322 /* Cabin-MediumItalic.ttf in Resources */,
+				A688282C1F770F0700D82322 /* Cabin-Regular.ttf in Resources */,
+				A688282D1F770F0700D82322 /* Cabin-SemiBold.ttf in Resources */,
+				A688282E1F770F0700D82322 /* Cabin-SemiBoldItalic.ttf in Resources */,
 				A6BA0F661F74E20C00FAF47E /* LaunchScreen.storyboard in Resources */,
 				A6BA0F631F74E20C00FAF47E /* Assets.xcassets in Resources */,
 				A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */,
@@ -255,12 +315,16 @@
 			files = (
 				A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */,
 				A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */,
+				A68828361F78445200D82322 /* TintSelectTableViewCell.swift in Sources */,
 				A688281A1F7706D200D82322 /* TintImageView.swift in Sources */,
 				A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */,
 				A68828141F75AB6200D82322 /* ClassMenuParser.swift in Sources */,
+				A68828341F78410B00D82322 /* DateRange.swift in Sources */,
+				A68828321F783DC300D82322 /* ClassDatesViewController.swift in Sources */,
 				A68828121F756F0600D82322 /* Theme.swift in Sources */,
 				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,
 				A688281C1F77094600D82322 /* TitleNavigationItem.swift in Sources */,
+				A68828381F78467900D82322 /* SubmitButton.swift in Sources */,
 				A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */,
 				A68828181F76FC7000D82322 /* LinkButton.swift in Sources */,
 			);

@@ -36,9 +36,12 @@ class Theme {
         
         // Buttons
         LinkButton.appearance().tintColor = Theme.colorTint
+        SubmitButton.appearance().backgroundColor = Theme.colorTint
+        SubmitButton.appearance().backgroundColor = Theme.colorTint
         
         // Images
         TintImageView.appearance().tintColor = Theme.colorTint
+        TintImageView.appearance(whenContainedInInstancesOf: [TintSelectTableViewCell.self]).tintColor = nil
     }
     
     static func applyTableViewCell(tableCell: UITableViewCell?) {
