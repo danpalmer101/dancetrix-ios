@@ -45,7 +45,7 @@ class ClassesViewController: UITableViewController {
         if (segue.identifier == "ViewChildren") {
             let destination: ClassesViewController = segue.destination as! ClassesViewController
             destination.classMenu = classMenu.children![cell.tag]
-            destination.title = classMenu.children![0].name
+            destination.title = classMenu.children![cell.tag].name
         } else if (segue.identifier == "ViewClass") {
             let destination: ClassDatesViewController = segue.destination as! ClassDatesViewController
             destination.classDetails = classMenu.children![cell.tag].classDetails
