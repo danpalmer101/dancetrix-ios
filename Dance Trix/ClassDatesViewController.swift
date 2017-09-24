@@ -15,6 +15,17 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet
     var tableView: UITableView?
     
+    @IBOutlet
+    var bookButton: UIButton?
+    
+    // MARK: - View lifecylce
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.updateBookButton()
+    }
+    
     // MARK: - Table view data source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,6 +45,14 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.updateBookButton()
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        self.updateBookButton()
+    }
+    
     // MARK: - Actions
     
     @IBAction
@@ -45,6 +64,21 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
                     animated: false,
                     scrollPosition: .none)
             }
+        }
+        self.updateBookButton()
+    }
+    
+    private func updateBookButton() {
+        if let count = tableView?.indexPathsForSelectedRows?.count {
+            self.bookButton?.isEnabled = true
+            if count == 1 {
+                self.bookButton?.setTitle("Book \(count) date", for: .normal)
+            } else {
+                self.bookButton?.setTitle("Book \(count) dates", for: .normal)
+            }
+        } else {
+            self.bookButton?.isEnabled = false
+            self.bookButton?.setTitle("Select dates", for: .normal)
         }
     }
 

@@ -23,7 +23,7 @@ class DateRange {
     //MARK: Accessors
     
     func asText() -> String {
-        return dateText(date: startDate) + " (" + timeText(date: startDate) + " - " + timeText(date: endDate) + ")"
+        return "\(dateText(date: startDate)) (\(timeText(date: startDate)) to \(timeText(date: endDate)))"
     }
     
     private func dateText(date: Date) -> String {
