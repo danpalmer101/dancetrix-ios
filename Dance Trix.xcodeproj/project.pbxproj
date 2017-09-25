@@ -54,6 +54,7 @@
 		A68828331F78410B00D82322 /* DateInterval_Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInterval_Text.swift; sourceTree = "<group>"; };
 		A68828351F78445200D82322 /* TintSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintSelectTableViewCell.swift; sourceTree = "<group>"; };
 		A68828371F78467900D82322 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
+		A688283C1F794C1F00D82322 /* set_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
 		A6BA0F581F74E20C00FAF47E /* Dance Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Trix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -132,9 +133,18 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		A688283B1F794BF700D82322 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				A688283C1F794C1F00D82322 /* set_build_number.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		A6BA0F4F1F74E20C00FAF47E = {
 			isa = PBXGroup;
 			children = (
+				A688283B1F794BF700D82322 /* Scripts */,
 				A6BA0F5A1F74E20C00FAF47E /* Dance Trix */,
 				A68828061F7560C600D82322 /* Dance Trix Tests */,
 				A6BA0F591F74E20C00FAF47E /* Products */,
@@ -203,6 +213,7 @@
 				A6BA0F541F74E20C00FAF47E /* Sources */,
 				A6BA0F551F74E20C00FAF47E /* Frameworks */,
 				A6BA0F561F74E20C00FAF47E /* Resources */,
+				A688283D1F794C4100D82322 /* Set Build Number */,
 			);
 			buildRules = (
 			);
@@ -272,6 +283,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A688283D1F794C4100D82322 /* Set Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Set Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = $SRCROOT/Scripts/set_build_number.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A68828011F7560C600D82322 /* Sources */ = {
