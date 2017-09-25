@@ -95,7 +95,7 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
         self.updateBookButton()
         
         DispatchQueue.global().async {
-            sleep(5)
+            sleep(2)
             
             // Today at 8pm
             var baseDateComponents = Calendar.current.dateComponents([.calendar, .year, .month, .day], from: Date())
