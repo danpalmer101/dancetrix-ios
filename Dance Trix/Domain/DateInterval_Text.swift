@@ -1,5 +1,5 @@
 //
-//  DateRange.swift
+//  DateInterval_Text.swift
 //  Dance Trix
 //
 //  Created by Daniel Palmer on 24/09/2017.
@@ -8,22 +8,10 @@
 
 import Foundation
 
-class DateRange {
-    
-    var startDate: Date
-    var endDate: Date
-    
-    //MARK: Initialization
-    
-    init?(startDate: Date, endDate: Date) {
-        self.startDate = startDate
-        self.endDate = endDate
-    }
-    
-    //MARK: Accessors
+extension DateInterval {
     
     func asText() -> String {
-        return "\(dateText(date: startDate)) (\(timeText(date: startDate)) to \(timeText(date: endDate)))"
+        return "\(dateText(date: start)) (\(timeText(date: start)) to \(timeText(date: end)))"
     }
     
     private func dateText(date: Date) -> String {

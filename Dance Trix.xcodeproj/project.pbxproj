@@ -26,7 +26,7 @@
 		A688282D1F770F0700D82322 /* Cabin-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A68828201F770EE800D82322 /* Cabin-SemiBold.ttf */; };
 		A688282E1F770F0700D82322 /* Cabin-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A68828261F770EEC00D82322 /* Cabin-SemiBoldItalic.ttf */; };
 		A68828321F783DC300D82322 /* ClassDatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828311F783DC300D82322 /* ClassDatesViewController.swift */; };
-		A68828341F78410B00D82322 /* DateRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828331F78410B00D82322 /* DateRange.swift */; };
+		A68828341F78410B00D82322 /* DateInterval_Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828331F78410B00D82322 /* DateInterval_Text.swift */; };
 		A68828361F78445200D82322 /* TintSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828351F78445200D82322 /* TintSelectTableViewCell.swift */; };
 		A68828381F78467900D82322 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828371F78467900D82322 /* SubmitButton.swift */; };
 		A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */; };
@@ -67,7 +67,7 @@
 		A68828251F770EEC00D82322 /* Cabin-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-MediumItalic.ttf"; sourceTree = "<group>"; };
 		A68828261F770EEC00D82322 /* Cabin-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		A68828311F783DC300D82322 /* ClassDatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDatesViewController.swift; sourceTree = "<group>"; };
-		A68828331F78410B00D82322 /* DateRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRange.swift; sourceTree = "<group>"; };
+		A68828331F78410B00D82322 /* DateInterval_Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInterval_Text.swift; sourceTree = "<group>"; };
 		A68828351F78445200D82322 /* TintSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintSelectTableViewCell.swift; sourceTree = "<group>"; };
 		A68828371F78467900D82322 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		A6BA0F581F74E20C00FAF47E /* Dance Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Trix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,7 +186,7 @@
 				A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */,
 				A6BA0F721F74FEB800FAF47E /* Class.swift */,
 				A68828131F75AB6200D82322 /* ClassMenuParser.swift */,
-				A68828331F78410B00D82322 /* DateRange.swift */,
+				A68828331F78410B00D82322 /* DateInterval_Text.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -319,7 +319,7 @@
 				A688281A1F7706D200D82322 /* TintImageView.swift in Sources */,
 				A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */,
 				A68828141F75AB6200D82322 /* ClassMenuParser.swift in Sources */,
-				A68828341F78410B00D82322 /* DateRange.swift in Sources */,
+				A68828341F78410B00D82322 /* DateInterval_Text.swift in Sources */,
 				A68828321F783DC300D82322 /* ClassDatesViewController.swift in Sources */,
 				A68828121F756F0600D82322 /* Theme.swift in Sources */,
 				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,

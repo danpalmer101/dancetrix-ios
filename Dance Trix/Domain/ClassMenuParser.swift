@@ -10,6 +10,8 @@ import Foundation
 
 class ClassMenuParser {
     
+    private static let trimCharacters = CharacterSet(charactersIn: " ")
+    
     static func parse(serviceNames: [String]) -> ClassMenu {
         var classMenus = [ClassMenu]()
         
@@ -17,19 +19,13 @@ class ClassMenuParser {
         for serviceName in serviceNames {
             var split = serviceName.split(separator: "|", maxSplits: Int.max, omittingEmptySubsequences: true)
             
-            let name = String(split.popLast()!)
-            let classDetails = Class(id: serviceName, name: name, dates: [
-                DateRange(startDate: Date().addingTimeInterval(0), endDate: Date().addingTimeInterval(3600))!,
-                DateRange(startDate: Date().addingTimeInterval(10000), endDate: Date().addingTimeInterval(13600))!,
-                DateRange(startDate: Date().addingTimeInterval(20000), endDate: Date().addingTimeInterval(23600))!,
-                DateRange(startDate: Date().addingTimeInterval(30000), endDate: Date().addingTimeInterval(33600))!,
-                DateRange(startDate: Date().addingTimeInterval(40000), endDate: Date().addingTimeInterval(43600))!
-            ])
+            let name = trim(String(split.popLast()!))
+            let classDetails = Class(id: serviceName, name: name)
             var classMenu = ClassMenu(name: name, classDetails: classDetails!)
             
             // Keep embedding class level in a parent
             for classLevel in split.reversed() {
-                classMenu = ClassMenu(name: String(classLevel), children: [classMenu!])
+                classMenu = ClassMenu(name: trim(String(classLevel)), children: [classMenu!])
             }
             
             classMenus.append(classMenu!)
@@ -38,7 +34,7 @@ class ClassMenuParser {
         return ClassMenu(name: "Classes", children: merge(classMenus: classMenus))!
     }
     
-    static func merge(classMenus: [ClassMenu]) -> [ClassMenu] {
+    private static func merge(classMenus: [ClassMenu]) -> [ClassMenu] {
         var mergedClassMenuDict = [String: ClassMenu]()
         
         for classMenu in classMenus {
@@ -65,6 +61,10 @@ class ClassMenuParser {
             (a: ClassMenu, b: ClassMenu) -> Bool in
                 return a.name < b.name
             })
+    }
+    
+    private static func trim(_ string: String) -> String {
+        return string.trimmingCharacters(in: trimCharacters)
     }
     
 }
