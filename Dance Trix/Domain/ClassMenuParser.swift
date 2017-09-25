@@ -35,14 +35,17 @@ class ClassMenuParser {
     }
     
     private static func merge(classMenus: [ClassMenu]) -> [ClassMenu] {
+        // Unique ClassMenu entries
         var mergedClassMenuDict = [String: ClassMenu]()
         
+        // Each classMenu is a single child branch, common root nodes should be merged
         for classMenu in classMenus {
             let existingClassMenu = mergedClassMenuDict[classMenu.name]
-            
-            if (existingClassMenu == nil) {
+            if existingClassMenu == nil {
+                // Unique root node (so far), add it to the map
                 mergedClassMenuDict[classMenu.name] = classMenu
             } else {
+                // Common root node found, merge the children and add to the existing menu item in the map
                 var children = [ClassMenu]()
                 if (existingClassMenu?.children != nil) {
                     children += (existingClassMenu?.children)!
@@ -57,8 +60,9 @@ class ClassMenuParser {
             }
         }
         
+        // Return the merged ClassMenu, sorted by name
         return Array(mergedClassMenuDict.values).sorted(by: {
-            (a: ClassMenu, b: ClassMenu) -> Bool in
+            (a, b) -> Bool in
                 return a.name < b.name
             })
     }
