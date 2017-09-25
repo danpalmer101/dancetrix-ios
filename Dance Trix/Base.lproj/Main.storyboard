@@ -61,15 +61,25 @@
                                 <rect key="frame" x="312" y="582" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" shadowImage="Tint" translatesAutoresizingMaskIntoConstraints="NO" id="FEg-dl-NIM">
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items/>
+                            </tabBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gu5-VG-RVf" customClass="LinkButton" customModule="Dance_Trix" customModuleProvider="target">
-                                <rect key="frame" x="16" y="715" width="343" height="55"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="visit dancetrix.co.uk"/>
                                 <connections>
                                     <action selector="visitWebsite" destination="SCD-zr-XIn" eventType="touchUpInside" id="Vsk-wc-cTX"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tint" translatesAutoresizingMaskIntoConstraints="NO" id="IEf-Fa-JEs">
+                                <rect key="frame" x="0.0" y="727" width="375" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="ST2-eM-d2Z"/>
