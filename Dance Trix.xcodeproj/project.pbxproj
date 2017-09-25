@@ -17,14 +17,6 @@
 		A68828181F76FC7000D82322 /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828171F76FC7000D82322 /* LinkButton.swift */; };
 		A688281A1F7706D200D82322 /* TintImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828191F7706D200D82322 /* TintImageView.swift */; };
 		A688281C1F77094600D82322 /* TitleNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688281B1F77094600D82322 /* TitleNavigationItem.swift */; };
-		A68828271F770F0700D82322 /* Cabin-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A68828231F770EEA00D82322 /* Cabin-Bold.ttf */; };
-		A68828281F770F0700D82322 /* Cabin-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A68828221F770EE900D82322 /* Cabin-BoldItalic.ttf */; };
-		A68828291F770F0700D82322 /* Cabin-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A68828241F770EEB00D82322 /* Cabin-Italic.ttf */; };
-		A688282A1F770F0700D82322 /* Cabin-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A68828211F770EE900D82322 /* Cabin-Medium.ttf */; };
-		A688282B1F770F0700D82322 /* Cabin-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A68828251F770EEC00D82322 /* Cabin-MediumItalic.ttf */; };
-		A688282C1F770F0700D82322 /* Cabin-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A688281F1F770EE700D82322 /* Cabin-Regular.ttf */; };
-		A688282D1F770F0700D82322 /* Cabin-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A68828201F770EE800D82322 /* Cabin-SemiBold.ttf */; };
-		A688282E1F770F0700D82322 /* Cabin-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A68828261F770EEC00D82322 /* Cabin-SemiBoldItalic.ttf */; };
 		A68828321F783DC300D82322 /* ClassDatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828311F783DC300D82322 /* ClassDatesViewController.swift */; };
 		A68828341F78410B00D82322 /* DateInterval_Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828331F78410B00D82322 /* DateInterval_Text.swift */; };
 		A68828361F78445200D82322 /* TintSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828351F78445200D82322 /* TintSelectTableViewCell.swift */; };
@@ -58,14 +50,6 @@
 		A68828171F76FC7000D82322 /* LinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
 		A68828191F7706D200D82322 /* TintImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintImageView.swift; sourceTree = "<group>"; };
 		A688281B1F77094600D82322 /* TitleNavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleNavigationItem.swift; sourceTree = "<group>"; };
-		A688281F1F770EE700D82322 /* Cabin-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Regular.ttf"; sourceTree = "<group>"; };
-		A68828201F770EE800D82322 /* Cabin-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-SemiBold.ttf"; sourceTree = "<group>"; };
-		A68828211F770EE900D82322 /* Cabin-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Medium.ttf"; sourceTree = "<group>"; };
-		A68828221F770EE900D82322 /* Cabin-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-BoldItalic.ttf"; sourceTree = "<group>"; };
-		A68828231F770EEA00D82322 /* Cabin-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Bold.ttf"; sourceTree = "<group>"; };
-		A68828241F770EEB00D82322 /* Cabin-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Italic.ttf"; sourceTree = "<group>"; };
-		A68828251F770EEC00D82322 /* Cabin-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-MediumItalic.ttf"; sourceTree = "<group>"; };
-		A68828261F770EEC00D82322 /* Cabin-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		A68828311F783DC300D82322 /* ClassDatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDatesViewController.swift; sourceTree = "<group>"; };
 		A68828331F78410B00D82322 /* DateInterval_Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInterval_Text.swift; sourceTree = "<group>"; };
 		A68828351F78445200D82322 /* TintSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintSelectTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,11 +95,9 @@
 		A68828161F76FC5500D82322 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A68828171F76FC7000D82322 /* LinkButton.swift */,
-				A68828371F78467900D82322 /* SubmitButton.swift */,
-				A68828191F7706D200D82322 /* TintImageView.swift */,
-				A688281B1F77094600D82322 /* TitleNavigationItem.swift */,
-				A68828351F78445200D82322 /* TintSelectTableViewCell.swift */,
+				A688283A1F794A9000D82322 /* Components */,
+				A68828391F794A7B00D82322 /* View Controllers */,
+				A68828111F756F0600D82322 /* Theme.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -123,24 +105,31 @@
 		A688281D1F770ECB00D82322 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A688281E1F770ED600D82322 /* Fonts */,
+				A6BA0F621F74E20C00FAF47E /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		A688281E1F770ED600D82322 /* Fonts */ = {
+		A68828391F794A7B00D82322 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A68828231F770EEA00D82322 /* Cabin-Bold.ttf */,
-				A68828221F770EE900D82322 /* Cabin-BoldItalic.ttf */,
-				A68828241F770EEB00D82322 /* Cabin-Italic.ttf */,
-				A68828211F770EE900D82322 /* Cabin-Medium.ttf */,
-				A68828251F770EEC00D82322 /* Cabin-MediumItalic.ttf */,
-				A688281F1F770EE700D82322 /* Cabin-Regular.ttf */,
-				A68828201F770EE800D82322 /* Cabin-SemiBold.ttf */,
-				A68828261F770EEC00D82322 /* Cabin-SemiBoldItalic.ttf */,
+				A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */,
+				A632F7891F7505E100F9FD8A /* ClassesViewController.swift */,
+				A68828311F783DC300D82322 /* ClassDatesViewController.swift */,
 			);
-			path = Fonts;
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A688283A1F794A9000D82322 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A68828171F76FC7000D82322 /* LinkButton.swift */,
+				A68828371F78467900D82322 /* SubmitButton.swift */,
+				A68828191F7706D200D82322 /* TintImageView.swift */,
+				A688281B1F77094600D82322 /* TitleNavigationItem.swift */,
+				A68828351F78445200D82322 /* TintSelectTableViewCell.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		A6BA0F4F1F74E20C00FAF47E = {
@@ -168,11 +157,6 @@
 				A68828161F76FC5500D82322 /* UI */,
 				A6BA0F6D1F74F24600FAF47E /* Domain */,
 				A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */,
-				A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */,
-				A632F7891F7505E100F9FD8A /* ClassesViewController.swift */,
-				A68828311F783DC300D82322 /* ClassDatesViewController.swift */,
-				A68828111F756F0600D82322 /* Theme.swift */,
-				A6BA0F621F74E20C00FAF47E /* Assets.xcassets */,
 				A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */,
 				A6BA0F641F74E20C00FAF47E /* LaunchScreen.storyboard */,
 				A6BA0F671F74E20C00FAF47E /* Info.plist */,
@@ -281,14 +265,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A68828271F770F0700D82322 /* Cabin-Bold.ttf in Resources */,
-				A68828281F770F0700D82322 /* Cabin-BoldItalic.ttf in Resources */,
-				A68828291F770F0700D82322 /* Cabin-Italic.ttf in Resources */,
-				A688282A1F770F0700D82322 /* Cabin-Medium.ttf in Resources */,
-				A688282B1F770F0700D82322 /* Cabin-MediumItalic.ttf in Resources */,
-				A688282C1F770F0700D82322 /* Cabin-Regular.ttf in Resources */,
-				A688282D1F770F0700D82322 /* Cabin-SemiBold.ttf in Resources */,
-				A688282E1F770F0700D82322 /* Cabin-SemiBoldItalic.ttf in Resources */,
 				A6BA0F661F74E20C00FAF47E /* LaunchScreen.storyboard in Resources */,
 				A6BA0F631F74E20C00FAF47E /* Assets.xcassets in Resources */,
 				A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */,
