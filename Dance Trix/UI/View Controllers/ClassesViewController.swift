@@ -29,7 +29,7 @@ class ClassesViewController: UITableViewController {
         Theme.applyTableViewCell(tableCell: cell)
         
         cell.textLabel?.text = classMenu.children![indexPath.row].name
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 25)
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 20)
         cell.tag = indexPath.row
 
         return cell
