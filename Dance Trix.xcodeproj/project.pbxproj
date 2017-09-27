@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A600265F1F7AACF000DDC90F /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A600265E1F7AACF000DDC90F /* TextField.swift */; };
 		A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */; };
+		A60026631F7BB4D200DDC90F /* prepare-commit-msg in Resources */ = {isa = PBXBuildFile; fileRef = A60026621F7BB4D200DDC90F /* prepare-commit-msg */; };
 		A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A627D0761F79A185009097C1 /* ReadOnlyTextView.swift */; };
 		A627D0791F79A733009097C1 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A627D0781F79A733009097C1 /* BackgroundView.swift */; };
 		A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632F7891F7505E100F9FD8A /* ClassesViewController.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		A600265E1F7AACF000DDC90F /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBookingViewController.swift; sourceTree = "<group>"; };
+		A60026621F7BB4D200DDC90F /* prepare-commit-msg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "prepare-commit-msg"; sourceTree = "<group>"; };
 		A627D0761F79A185009097C1 /* ReadOnlyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadOnlyTextView.swift; sourceTree = "<group>"; };
 		A627D0781F79A733009097C1 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		A632F7891F7505E100F9FD8A /* ClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		A688283B1F794BF700D82322 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				A60026621F7BB4D200DDC90F /* prepare-commit-msg */,
 				A688283C1F794C1F00D82322 /* set_build_number.sh */,
 			);
 			path = Scripts;
@@ -291,6 +294,7 @@
 				A6BA0F661F74E20C00FAF47E /* LaunchScreen.storyboard in Resources */,
 				A6BA0F631F74E20C00FAF47E /* Assets.xcassets in Resources */,
 				A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */,
+				A60026631F7BB4D200DDC90F /* prepare-commit-msg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +313,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = $SRCROOT/Scripts/set_build_number.sh;
+			shellScript = "$SRCROOT/Scripts/set_build_number.sh\n\nif [ -d \"$SRCROOT/.git\" ]; then\n  cp $SRCROOT/Scripts/prepare-commit-msg $SRCROOT/.git/hooks/prepare-commit-msg\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
