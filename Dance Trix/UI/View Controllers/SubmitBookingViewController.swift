@@ -23,6 +23,8 @@ class SubmitBookingViewController: UIViewController {
     var emailField: UITextField!
     @IBOutlet
     var submitButton: UIButton!
+    @IBOutlet
+    var submittingIndicator: UIActivityIndicatorView!
     
     // MARK: - View lifecycle
     
@@ -35,19 +37,9 @@ class SubmitBookingViewController: UIViewController {
         self.classesLabel.text = self.classDetails.path
         self.datesLabel.text = self.dates.map({
             (interval: DateInterval) -> String in return dateFormat.string(from: interval.start)
-        }).joined(separator: ",")
+        }).joined(separator: ", ")
         
         self.checkCompleteForm()
-    }
-    
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        if (segue.identifier == "Submit") {
-            // TODO
-        }
     }
     
     // MARK: - Actions
@@ -55,6 +47,47 @@ class SubmitBookingViewController: UIViewController {
     @IBAction
     func checkCompleteForm() {
         self.submitButton.isEnabled = self.nameField.hasText && self.emailField.hasText
+    }
+    
+    @IBAction
+    func submitBooking(sender: Any?) {
+        let name = self.nameField.text!
+        let email = self.emailField.text!
+        let submitTitle = self.submitButton.title(for: .normal)
+        
+        self.submitButton.setTitle("", for: .normal)
+        self.submittingIndicator.startAnimating()
+        self.submitButton.isEnabled = false
+        
+        DispatchQueue.global().async {
+            do {
+                try _ = ServiceLocator.bookingService.bookClass(classDetails: self.classDetails,
+                                                                dates: self.dates,
+                                                                name: name,
+                                                                email: email)
+                
+                DispatchQueue.main.async {
+                    self.submitButton.isEnabled = true
+                    self.submittingIndicator.stopAnimating()
+                    self.submitButton.setTitle(submitTitle, for: .normal)
+                    self.performSegue(withIdentifier: "unwindToHomeViewController", sender: sender)
+                }
+            } catch BookingError.errorBooking(_, _) {
+                // TODO
+                DispatchQueue.main.async {
+                    self.submitButton.isEnabled = true
+                    self.submittingIndicator.stopAnimating()
+                    self.submitButton.setTitle(submitTitle, for: .normal)
+                }
+            } catch {
+                // TODO
+                DispatchQueue.main.async {
+                    self.submitButton.isEnabled = true
+                    self.submittingIndicator.stopAnimating()
+                    self.submitButton.setTitle(submitTitle, for: .normal)
+                }
+            }
+        }
     }
     
 }

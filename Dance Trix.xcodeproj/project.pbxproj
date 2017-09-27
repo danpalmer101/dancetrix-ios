@@ -26,6 +26,11 @@
 		A68828341F78410B00D82322 /* DateInterval_Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828331F78410B00D82322 /* DateInterval_Text.swift */; };
 		A68828361F78445200D82322 /* TintSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828351F78445200D82322 /* TintSelectTableViewCell.swift */; };
 		A68828381F78467900D82322 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828371F78467900D82322 /* SubmitButton.swift */; };
+		A697F8661F7C32BF00195246 /* ClassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F8651F7C32BF00195246 /* ClassService.swift */; };
+		A697F8681F7C38C600195246 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F8671F7C38C600195246 /* ServiceLocator.swift */; };
+		A697F86A1F7C391400195246 /* BookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F8691F7C391400195246 /* BookingService.swift */; };
+		A697F86C1F7C3AD200195246 /* ClassesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F86B1F7C3AD200195246 /* ClassesError.swift */; };
+		A697F86E1F7C3D0E00195246 /* BookingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F86D1F7C3D0E00195246 /* BookingError.swift */; };
 		A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */; };
 		A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */; };
 		A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */; };
@@ -65,6 +70,11 @@
 		A68828351F78445200D82322 /* TintSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintSelectTableViewCell.swift; sourceTree = "<group>"; };
 		A68828371F78467900D82322 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		A688283C1F794C1F00D82322 /* set_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
+		A697F8651F7C32BF00195246 /* ClassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassService.swift; sourceTree = "<group>"; };
+		A697F8671F7C38C600195246 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		A697F8691F7C391400195246 /* BookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingService.swift; sourceTree = "<group>"; };
+		A697F86B1F7C3AD200195246 /* ClassesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesError.swift; sourceTree = "<group>"; };
+		A697F86D1F7C3D0E00195246 /* BookingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingError.swift; sourceTree = "<group>"; };
 		A6BA0F581F74E20C00FAF47E /* Dance Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Trix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +166,18 @@
 			path = Scripts;
 			sourceTree = "<group>";
 		};
+		A697F8641F7C326500195246 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A697F8671F7C38C600195246 /* ServiceLocator.swift */,
+				A697F8691F7C391400195246 /* BookingService.swift */,
+				A697F8651F7C32BF00195246 /* ClassService.swift */,
+				A697F86B1F7C3AD200195246 /* ClassesError.swift */,
+				A697F86D1F7C3D0E00195246 /* BookingError.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		A6BA0F4F1F74E20C00FAF47E = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +200,7 @@
 		A6BA0F5A1F74E20C00FAF47E /* Dance Trix */ = {
 			isa = PBXGroup;
 			children = (
+				A697F8641F7C326500195246 /* Services */,
 				A688281D1F770ECB00D82322 /* Resources */,
 				A6BA0F6D1F74F24600FAF47E /* Domain */,
 				A68828161F76FC5500D82322 /* UI */,
@@ -333,9 +356,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A697F86E1F7C3D0E00195246 /* BookingError.swift in Sources */,
 				A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */,
 				A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */,
 				A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */,
+				A697F86A1F7C391400195246 /* BookingService.swift in Sources */,
 				A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */,
 				A68828361F78445200D82322 /* TintSelectTableViewCell.swift in Sources */,
 				A688281A1F7706D200D82322 /* TintImageView.swift in Sources */,
@@ -343,11 +368,14 @@
 				A600265F1F7AACF000DDC90F /* TextField.swift in Sources */,
 				A68828141F75AB6200D82322 /* ClassMenuParser.swift in Sources */,
 				A68828341F78410B00D82322 /* DateInterval_Text.swift in Sources */,
+				A697F8661F7C32BF00195246 /* ClassService.swift in Sources */,
 				A68828321F783DC300D82322 /* ClassDatesViewController.swift in Sources */,
+				A697F86C1F7C3AD200195246 /* ClassesError.swift in Sources */,
 				A68828121F756F0600D82322 /* Theme.swift in Sources */,
 				A627D0791F79A733009097C1 /* BackgroundView.swift in Sources */,
 				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,
 				A688281C1F77094600D82322 /* TitleNavigationItem.swift in Sources */,
+				A697F8681F7C38C600195246 /* ServiceLocator.swift in Sources */,
 				A68828381F78467900D82322 /* SubmitButton.swift in Sources */,
 				A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */,
 				A68828181F76FC7000D82322 /* LinkButton.swift in Sources */,

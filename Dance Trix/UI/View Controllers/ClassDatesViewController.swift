@@ -105,42 +105,29 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     private func loadDates() {
-        self.loadingIndicator.startAnimating()
-        self.updateBookButton()
+        if (self.dates == nil) {
+            self.loadingIndicator.startAnimating()
+            self.updateBookButton()
         
-        DispatchQueue.global().async {
-            sleep(2)
-            
-            // Today at 8pm
-            var baseDateComponents = Calendar.current.dateComponents([.calendar, .year, .month, .day], from: Date())
-            baseDateComponents.hour = 20
-            let baseDate = baseDateComponents.date
-            
-            let minute: TimeInterval = 60.0
-            let hour: TimeInterval = 60.0 * minute
-            let day: TimeInterval = 24 * hour
-            
-            // Create dates every 7 days
-            let interval: TimeInterval = 7 * day
-            
-            self.dates = [
-                DateInterval(start: baseDate!.addingTimeInterval(interval), duration: hour),
-                DateInterval(start: baseDate!.addingTimeInterval(2*interval), duration: hour),
-                DateInterval(start: baseDate!.addingTimeInterval(3*interval), duration: hour),
-                DateInterval(start: baseDate!.addingTimeInterval(4*interval), duration: hour),
-                DateInterval(start: baseDate!.addingTimeInterval(5*interval), duration: hour),
-                DateInterval(start: baseDate!.addingTimeInterval(6*interval), duration: hour),
-                DateInterval(start: baseDate!.addingTimeInterval(7*interval), duration: hour),
-                DateInterval(start: baseDate!.addingTimeInterval(8*interval), duration: hour),
-                DateInterval(start: baseDate!.addingTimeInterval(9*interval), duration: hour),
-                DateInterval(start: baseDate!.addingTimeInterval(10*interval), duration: hour)
-            ]
-            
-            DispatchQueue.main.async(execute: {
-                self.tableView.reloadData()
-                self.loadingIndicator.stopAnimating()
-                self.updateBookButton()
-            })
+            DispatchQueue.global().async {
+                do {
+                    try self.dates = ServiceLocator.classService.getClassDates(self.classDetails)
+                } catch ClassesError.noClassDates(_) {
+                    // TODO
+                } catch ClassesError.errorRetrivingClassDates(_) {
+                    // TODO
+                } catch {
+                    // TODO
+                }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.loadingIndicator.stopAnimating()
+                    self.updateBookButton()
+                }
+            }
+        } else {
+            self.updateBookButton()
         }
     }
 
