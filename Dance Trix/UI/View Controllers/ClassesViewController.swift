@@ -15,7 +15,7 @@ class ClassesViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let rows = self.classMenu?.children?.count
+        let rows = self.classMenu.children?.count
         
         return rows != nil ? rows! : 0
     }

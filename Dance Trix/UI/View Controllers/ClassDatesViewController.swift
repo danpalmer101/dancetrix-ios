@@ -14,11 +14,11 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
     var dates: [DateInterval]?
 
     @IBOutlet
-    var tableView: UITableView?
+    var tableView: UITableView!
     @IBOutlet
-    var loadingIndicator: UIActivityIndicatorView?
+    var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet
-    var bookButton: UIButton?
+    var bookButton: UIButton!
     
     // MARK: - View lifecycle
     
@@ -63,8 +63,8 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
         if (segue.identifier == "Book") {
             let destination: SubmitBookingViewController = segue.destination as! SubmitBookingViewController
             destination.classDetails = self.classDetails
-            destination.dates = tableView?.indexPathsForSelectedRows?.map({ (indexPath: IndexPath) -> DateInterval in
-                return self.dates![indexPath.row]
+            destination.dates = self.tableView.indexPathsForSelectedRows?.map({
+                (indexPath: IndexPath) -> DateInterval in return self.dates![indexPath.row]
             })
         }
     }
@@ -73,9 +73,9 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBAction
     func selectAll() {
-        for section in 0..<(self.tableView?.numberOfSections ?? 1) {
-            for row in 0..<(self.tableView?.numberOfRows(inSection: section) ?? 0) {
-                self.tableView?.selectRow(
+        for section in 0..<(self.tableView.numberOfSections) {
+            for row in 0..<(self.tableView.numberOfRows(inSection: section)) {
+                self.tableView.selectRow(
                     at: IndexPath(row: row, section: section),
                     animated: false,
                     scrollPosition: .none)
@@ -85,27 +85,27 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     private func updateBookButton() {
-        if (self.loadingIndicator?.isAnimating ?? false) {
+        if (self.loadingIndicator.isAnimating) {
             // Loading, disable without text
-            self.bookButton?.isEnabled = false
-            self.bookButton?.setTitle("", for: .normal)
-        } else if let count = tableView?.indexPathsForSelectedRows?.count {
+            self.bookButton.isEnabled = false
+            self.bookButton.setTitle("", for: .normal)
+        } else if let count = tableView.indexPathsForSelectedRows?.count {
             // Loaded with selected dates, enable with text showing number of dates
-            self.bookButton?.isEnabled = true
+            self.bookButton.isEnabled = true
             if count == 1 {
-                self.bookButton?.setTitle("Book \(count) date", for: .normal)
+                self.bookButton.setTitle("Book \(count) date", for: .normal)
             } else {
-                self.bookButton?.setTitle("Book \(count) dates", for: .normal)
+                self.bookButton.setTitle("Book \(count) dates", for: .normal)
             }
         } else {
             // Loaded without selected dates, disable with text
-            self.bookButton?.isEnabled = false
-            self.bookButton?.setTitle("Select dates", for: .normal)
+            self.bookButton.isEnabled = false
+            self.bookButton.setTitle("Select dates", for: .normal)
         }
     }
     
     private func loadDates() {
-        self.loadingIndicator?.startAnimating()
+        self.loadingIndicator.startAnimating()
         self.updateBookButton()
         
         DispatchQueue.global().async {
@@ -128,12 +128,17 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
                 DateInterval(start: baseDate!.addingTimeInterval(2*interval), duration: hour),
                 DateInterval(start: baseDate!.addingTimeInterval(3*interval), duration: hour),
                 DateInterval(start: baseDate!.addingTimeInterval(4*interval), duration: hour),
-                DateInterval(start: baseDate!.addingTimeInterval(5*interval), duration: hour)
+                DateInterval(start: baseDate!.addingTimeInterval(5*interval), duration: hour),
+                DateInterval(start: baseDate!.addingTimeInterval(6*interval), duration: hour),
+                DateInterval(start: baseDate!.addingTimeInterval(7*interval), duration: hour),
+                DateInterval(start: baseDate!.addingTimeInterval(8*interval), duration: hour),
+                DateInterval(start: baseDate!.addingTimeInterval(9*interval), duration: hour),
+                DateInterval(start: baseDate!.addingTimeInterval(10*interval), duration: hour)
             ]
             
             DispatchQueue.main.async(execute: {
-                self.tableView?.reloadData()
-                self.loadingIndicator?.stopAnimating()
+                self.tableView.reloadData()
+                self.loadingIndicator.stopAnimating()
                 self.updateBookButton()
             })
         }

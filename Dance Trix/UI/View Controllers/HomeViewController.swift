@@ -10,11 +10,6 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //self.navigationController?.navigationBar.isTranslucent = false
-    }
-    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -65,6 +60,11 @@ class HomeViewController: UIViewController {
     @IBAction
     func visitWebsite() {
         UIApplication.shared.open(URL(string: "http://www.dancetrix.co.uk")!)
+    }
+    
+    @IBAction
+    func unwindToHomeViewController(segue: UIStoryboardSegue) {
+        
     }
 
 }
