@@ -20,12 +20,16 @@ class ClassMenuParser {
             var split = serviceName.split(separator: "|", maxSplits: Int.max, omittingEmptySubsequences: true)
             
             let name = trim(String(split.popLast()!))
-            let classDetails = Class(id: serviceName, name: name)
-            var classMenu = ClassMenu(name: name, classDetails: classDetails!)
+            let classDetails = Class(id: serviceName,
+                                     path: serviceName.replacingOccurrences(of: "|", with: " > "),
+                                     name: name)
+            var classMenu = ClassMenu(name: name,
+                                      classDetails: classDetails!)
             
             // Keep embedding class level in a parent
             for classLevel in split.reversed() {
-                classMenu = ClassMenu(name: trim(String(classLevel)), children: [classMenu!])
+                classMenu = ClassMenu(name: trim(String(classLevel)),
+                                      children: [classMenu!])
             }
             
             classMenus.append(classMenu!)

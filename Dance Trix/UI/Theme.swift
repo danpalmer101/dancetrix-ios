@@ -14,7 +14,7 @@ class Theme {
     static let colorTint = UIColor(displayP3Red: 28.0/256.0, green:146.0/256.0, blue: 128.0/256.0, alpha: 1)
     static let colorTintDark = UIColor(displayP3Red: 14.0/256.0, green:73.0/256.0, blue: 64.0/256.0, alpha: 1)
     static let colorForeground = UIColor.white
-    static let colorForegroundDark = UIColor.white.withAlphaComponent(0.5)
+    static let colorForegroundDark = UIColor.darkGray
     
     static func applyGlobal(window: UIWindow?) {
         // Global
@@ -49,6 +49,8 @@ class Theme {
         
         // Text
         UITextView.appearance().textColor = Theme.colorForeground
+        UITextField.appearance().textColor = Theme.colorForeground
+        UILabel.appearance().textColor = Theme.colorForeground
     }
     
     static func applyTableViewCell(tableCell: UITableViewCell?) {

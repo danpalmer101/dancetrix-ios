@@ -55,6 +55,20 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
         self.updateBookButton()
     }
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if (segue.identifier == "Book") {
+            let destination: SubmitBookingViewController = segue.destination as! SubmitBookingViewController
+            destination.classDetails = self.classDetails
+            destination.dates = tableView?.indexPathsForSelectedRows?.map({ (indexPath: IndexPath) -> DateInterval in
+                return self.dates![indexPath.row]
+            })
+        }
+    }
+    
     // MARK: - Actions
     
     @IBAction

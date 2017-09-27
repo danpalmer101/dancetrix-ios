@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A600265F1F7AACF000DDC90F /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A600265E1F7AACF000DDC90F /* TextField.swift */; };
+		A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */; };
 		A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A627D0761F79A185009097C1 /* ReadOnlyTextView.swift */; };
 		A627D0791F79A733009097C1 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A627D0781F79A733009097C1 /* BackgroundView.swift */; };
 		A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632F7891F7505E100F9FD8A /* ClassesViewController.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A600265E1F7AACF000DDC90F /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBookingViewController.swift; sourceTree = "<group>"; };
 		A627D0761F79A185009097C1 /* ReadOnlyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadOnlyTextView.swift; sourceTree = "<group>"; };
 		A627D0781F79A733009097C1 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		A632F7891F7505E100F9FD8A /* ClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 				A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */,
 				A632F7891F7505E100F9FD8A /* ClassesViewController.swift */,
 				A68828311F783DC300D82322 /* ClassDatesViewController.swift */,
+				A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 				A68828351F78445200D82322 /* TintSelectTableViewCell.swift */,
 				A627D0761F79A185009097C1 /* ReadOnlyTextView.swift */,
 				A627D0781F79A733009097C1 /* BackgroundView.swift */,
+				A600265E1F7AACF000DDC90F /* TextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -323,12 +329,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */,
 				A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */,
 				A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */,
 				A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */,
 				A68828361F78445200D82322 /* TintSelectTableViewCell.swift in Sources */,
 				A688281A1F7706D200D82322 /* TintImageView.swift in Sources */,
 				A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */,
+				A600265F1F7AACF000DDC90F /* TextField.swift in Sources */,
 				A68828141F75AB6200D82322 /* ClassMenuParser.swift in Sources */,
 				A68828341F78410B00D82322 /* DateInterval_Text.swift in Sources */,
 				A68828321F783DC300D82322 /* ClassDatesViewController.swift in Sources */,

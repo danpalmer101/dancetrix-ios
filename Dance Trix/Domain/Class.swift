@@ -13,12 +13,14 @@ class Class {
     //MARK: Properties
     
     var id: String
+    var path: String
     var name: String
     
     //MARK: Initialization
     
-    init?(id: String, name: String) {
+    init?(id: String, path: String, name: String) {
         self.id = id
+        self.path = path
         self.name = name
     }
     
