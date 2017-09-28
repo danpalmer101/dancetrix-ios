@@ -34,6 +34,7 @@
 		A697F86C1F7C3AD200195246 /* ClassesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F86B1F7C3AD200195246 /* ClassesError.swift */; };
 		A697F86E1F7C3D0E00195246 /* BookingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F86D1F7C3D0E00195246 /* BookingError.swift */; };
 		A697F8711F7CF0AB00195246 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F8701F7CF0AB00195246 /* CalendarViewController.swift */; };
+		A697F8731F7D42E000195246 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F8721F7D42E000195246 /* CalendarCell.swift */; };
 		A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */; };
 		A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */; };
 		A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */; };
@@ -83,6 +84,7 @@
 		A697F86B1F7C3AD200195246 /* ClassesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesError.swift; sourceTree = "<group>"; };
 		A697F86D1F7C3D0E00195246 /* BookingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingError.swift; sourceTree = "<group>"; };
 		A697F8701F7CF0AB00195246 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		A697F8721F7D42E000195246 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		A6BA0F581F74E20C00FAF47E /* Dance Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Trix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				A627D0761F79A185009097C1 /* ReadOnlyTextView.swift */,
 				A627D0781F79A733009097C1 /* BackgroundView.swift */,
 				A600265E1F7AACF000DDC90F /* TextField.swift */,
+				A697F8721F7D42E000195246 /* CalendarCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				A697F86E1F7C3D0E00195246 /* BookingError.swift in Sources */,
 				A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */,
 				A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */,
+				A697F8731F7D42E000195246 /* CalendarCell.swift in Sources */,
 				A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */,
 				A697F86A1F7C391400195246 /* BookingService.swift in Sources */,
 				A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */,

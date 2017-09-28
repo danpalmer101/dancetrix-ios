@@ -15,6 +15,7 @@ class Theme {
     static let colorTintDark = UIColor(displayP3Red: 14.0/256.0, green:73.0/256.0, blue: 64.0/256.0, alpha: 1)
     static let colorForeground = UIColor.white
     static let colorForegroundDark = UIColor.darkGray
+    static let colorForegroundMid = UIColor.lightGray
     
     static func applyGlobal(window: UIWindow?) {
         // Global

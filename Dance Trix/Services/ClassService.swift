@@ -16,25 +16,24 @@ class ClassService {
         
         return ClassMenuParser.parse(
             serviceNames: [
-                "Children|Friday Classes at Ingrave",
-                "Children|Saturday Classes|Autumn Half Term 1 2017",
-                "Children|Saturday Classes|Autumn Half Term 2 2017",
-                "Children|Saturday Classes|Spring Half Term 1 2018",
-                "Children|Saturday Classes|Spring Half Term 2 2018",
-                "Children|Saturday Classes|Summer Half Term 1 2018",
-                "Children|Saturday Classes|Summer Half Term 2 2018",
-                "Children|Tiny Trixies|Wickford|Autumn Half Term 1 2017",
-                "Children|Tiny Trixies|Wickford|Autumn Half Term 2 2017",
-                "Children|Tiny Trixies|Wickford|Spring Half Term 1 2018",
-                "Children|Tiny Trixies|Wickford|Spring Half Term 2 2018",
-                "Children|Tiny Trixies|Wickford|Summer Half Term 1 2018",
-                "Children|Tiny Trixies|Wickford|Summer Half Term 2 2018",
-                "Children|Tiny Trixies|Ingrave|Autumn Half Term 1 2017",
-                "Children|Tiny Trixies|Ingrave|Autumn Half Term 2 2017",
-                "Children|Tiny Trixies|Ingrave|Spring Half Term 1 2018",
-                "Children|Tiny Trixies|Ingrave|Spring Half Term 2 2018",
-                "Children|Tiny Trixies|Ingrave|Summer Half Term 1 2018",
-                "Children|Tiny Trixies|Ingrave|Summer Half Term 2 2018",
+                "Children|Autumn Half Term 1 2017|Children's Saturday Classes",
+                "Children|Autumn Half Term 2 2017|Children's Saturday Classes",
+                "Children|Spring Half Term 1 2018|Children's Saturday Classes",
+                "Children|Spring Half Term 2 2018|Children's Saturday Classes",
+                "Children|Summer Half Term 1 2018|Children's Saturday Classes",
+                "Children|Summer Half Term 2 2018|Children's Saturday Classes",
+                "Children|Autumn Half Term 1 2017|Tiny Trixies - Wickford",
+                "Children|Autumn Half Term 2 2017|Tiny Trixies - Wickford",
+                "Children|Spring Half Term 1 2018|Tiny Trixies - Wickford",
+                "Children|Spring Half Term 2 2018|Tiny Trixies - Wickford",
+                "Children|Summer Half Term 1 2018|Tiny Trixies - Wickford",
+                "Children|Summer Half Term 2 2018|Tiny Trixies - Wickford",
+                "Children|Autumn Half Term 1 2017|Tiny Trixies - Ingrave",
+                "Children|Autumn Half Term 2 2017|Tiny Trixies - Ingrave",
+                "Children|Spring Half Term 1 2018|Tiny Trixies - Ingrave",
+                "Children|Spring Half Term 2 2018|Tiny Trixies - Ingrave",
+                "Children|Summer Half Term 1 2018|Tiny Trixies - Ingrave",
+                "Children|Summer Half Term 2 2018|Tiny Trixies - Ingrave",
                 "Adults|Day Time Classes|Ballet & Tap",
                 "Adults|Day Time Classes|Mummy Ballet Burn",
                 "Adults|Evening Classes|Advanced Tap",
@@ -52,11 +51,6 @@ class ClassService {
         // TODO
         sleep(2)
         
-        // Today at 8pm
-        var baseDateComponents = Calendar.current.dateComponents([.calendar, .year, .month, .day], from: Date())
-        baseDateComponents.hour = 20
-        let baseDate = baseDateComponents.date
-        
         let minute: TimeInterval = 60.0
         let hour: TimeInterval = 60.0 * minute
         let day: TimeInterval = 24 * hour
@@ -64,18 +58,18 @@ class ClassService {
         // Create dates every 7 days
         let interval: TimeInterval = 7 * day
         
-        return [
-            DateInterval(start: baseDate!.addingTimeInterval(interval), duration: hour),
-            DateInterval(start: baseDate!.addingTimeInterval(2*interval), duration: hour),
-            DateInterval(start: baseDate!.addingTimeInterval(3*interval), duration: hour),
-            DateInterval(start: baseDate!.addingTimeInterval(4*interval), duration: hour),
-            DateInterval(start: baseDate!.addingTimeInterval(5*interval), duration: hour),
-            DateInterval(start: baseDate!.addingTimeInterval(6*interval), duration: hour),
-            DateInterval(start: baseDate!.addingTimeInterval(7*interval), duration: hour),
-            DateInterval(start: baseDate!.addingTimeInterval(8*interval), duration: hour),
-            DateInterval(start: baseDate!.addingTimeInterval(9*interval), duration: hour),
-            DateInterval(start: baseDate!.addingTimeInterval(10*interval), duration: hour)
-        ]
+        // First class is random time (9am - 8pm) on random day within the next 7 days
+        var baseDateComponents = Calendar.current.dateComponents([.calendar, .year, .month, .day], from: Date())
+        baseDateComponents.hour = Int(arc4random_uniform(11) + 9)
+        let baseDate = baseDateComponents.date?.addingTimeInterval(day * 3 * Double(arc4random_uniform(3)))
+        
+        var dates = [DateInterval]()
+        
+        for i in 0...9 {
+            dates.append(DateInterval(start: baseDate!.addingTimeInterval(Double(i) * interval), duration: hour))
+        }
+        
+        return dates
     }
     
 }
