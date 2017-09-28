@@ -1,0 +1,6 @@
+framework module Pods_Dance_Trix {
+  umbrella header "Pods-Dance Trix-umbrella.h"
+
+  export *
+  module * { export * }
+}

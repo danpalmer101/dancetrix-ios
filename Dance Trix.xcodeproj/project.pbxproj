@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261C9039DA2C9CDD6CD0E02F /* Pods_Dance_Trix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */; };
+		28690BA29C22982BBF91A486 /* Pods_Dance_Trix_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAFC10EAB243549E5EAA1C6 /* Pods_Dance_Trix_Tests.framework */; };
 		A600265F1F7AACF000DDC90F /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A600265E1F7AACF000DDC90F /* TextField.swift */; };
 		A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */; };
 		A60026631F7BB4D200DDC90F /* prepare-commit-msg in Resources */ = {isa = PBXBuildFile; fileRef = A60026621F7BB4D200DDC90F /* prepare-commit-msg */; };
@@ -31,6 +33,7 @@
 		A697F86A1F7C391400195246 /* BookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F8691F7C391400195246 /* BookingService.swift */; };
 		A697F86C1F7C3AD200195246 /* ClassesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F86B1F7C3AD200195246 /* ClassesError.swift */; };
 		A697F86E1F7C3D0E00195246 /* BookingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F86D1F7C3D0E00195246 /* BookingError.swift */; };
+		A697F8711F7CF0AB00195246 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F8701F7CF0AB00195246 /* CalendarViewController.swift */; };
 		A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */; };
 		A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */; };
 		A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */; };
@@ -51,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		024EE0214AAF4BA2CEFC5D30 /* Pods-Dance Trix Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		42F763BA46788E7A70E0443A /* Pods-Dance Trix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix/Pods-Dance Trix.release.xcconfig"; sourceTree = "<group>"; };
+		7EAFC10EAB243549E5EAA1C6 /* Pods_Dance_Trix_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		939F18AC94B46B075CEA7EE3 /* Pods-Dance Trix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix/Pods-Dance Trix.debug.xcconfig"; sourceTree = "<group>"; };
 		A600265E1F7AACF000DDC90F /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBookingViewController.swift; sourceTree = "<group>"; };
 		A60026621F7BB4D200DDC90F /* prepare-commit-msg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "prepare-commit-msg"; sourceTree = "<group>"; };
@@ -75,6 +82,7 @@
 		A697F8691F7C391400195246 /* BookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingService.swift; sourceTree = "<group>"; };
 		A697F86B1F7C3AD200195246 /* ClassesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesError.swift; sourceTree = "<group>"; };
 		A697F86D1F7C3D0E00195246 /* BookingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingError.swift; sourceTree = "<group>"; };
+		A697F8701F7CF0AB00195246 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		A6BA0F581F74E20C00FAF47E /* Dance Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Trix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +92,8 @@
 		A6BA0F671F74E20C00FAF47E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMenu.swift; sourceTree = "<group>"; };
 		A6BA0F721F74FEB800FAF47E /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		B7A5DCFF387C88D76065DD0C /* Pods-Dance Trix Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28690BA29C22982BBF91A486 /* Pods_Dance_Trix_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,12 +109,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				261C9039DA2C9CDD6CD0E02F /* Pods_Dance_Trix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A08054D158965EBACC42A8E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */,
+				7EAFC10EAB243549E5EAA1C6 /* Pods_Dance_Trix_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A68828061F7560C600D82322 /* Dance Trix Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +159,7 @@
 				A632F7891F7505E100F9FD8A /* ClassesViewController.swift */,
 				A68828311F783DC300D82322 /* ClassDatesViewController.swift */,
 				A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */,
+				A697F8701F7CF0AB00195246 /* CalendarViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -185,6 +207,8 @@
 				A6BA0F5A1F74E20C00FAF47E /* Dance Trix */,
 				A68828061F7560C600D82322 /* Dance Trix Tests */,
 				A6BA0F591F74E20C00FAF47E /* Products */,
+				FB2897419A9A66B57376CF5D /* Pods */,
+				A08054D158965EBACC42A8E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -223,6 +247,17 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		FB2897419A9A66B57376CF5D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				939F18AC94B46B075CEA7EE3 /* Pods-Dance Trix.debug.xcconfig */,
+				42F763BA46788E7A70E0443A /* Pods-Dance Trix.release.xcconfig */,
+				024EE0214AAF4BA2CEFC5D30 /* Pods-Dance Trix Tests.debug.xcconfig */,
+				B7A5DCFF387C88D76065DD0C /* Pods-Dance Trix Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -230,9 +265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A688280E1F7560C600D82322 /* Build configuration list for PBXNativeTarget "Dance Trix Tests" */;
 			buildPhases = (
+				84D7E19E3CE475573D74824E /* [CP] Check Pods Manifest.lock */,
 				A68828011F7560C600D82322 /* Sources */,
 				A68828021F7560C600D82322 /* Frameworks */,
 				A68828031F7560C600D82322 /* Resources */,
+				A2546CA2953DC6B873888C43 /* [CP] Embed Pods Frameworks */,
+				0ED64D756F210060A37DC3B8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,10 +286,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6BA0F6A1F74E20C00FAF47E /* Build configuration list for PBXNativeTarget "Dance Trix" */;
 			buildPhases = (
+				6673C4FCD9D06052D8F61655 /* [CP] Check Pods Manifest.lock */,
 				A6BA0F541F74E20C00FAF47E /* Sources */,
 				A6BA0F551F74E20C00FAF47E /* Frameworks */,
 				A6BA0F561F74E20C00FAF47E /* Resources */,
 				A688283D1F794C4100D82322 /* Set Build Number */,
+				9F556218C19EB29526B44CBA /* [CP] Embed Pods Frameworks */,
+				81F52B3CDFD8095970FF2D32 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,6 +365,105 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0ED64D756F210060A37DC3B8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6673C4FCD9D06052D8F61655 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dance Trix-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81F52B3CDFD8095970FF2D32 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dance Trix/Pods-Dance Trix-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84D7E19E3CE475573D74824E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dance Trix Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F556218C19EB29526B44CBA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Dance Trix/Pods-Dance Trix-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dance Trix/Pods-Dance Trix-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2546CA2953DC6B873888C43 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A688283D1F794C4100D82322 /* Set Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,6 +496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A697F8711F7CF0AB00195246 /* CalendarViewController.swift in Sources */,
 				A697F86E1F7C3D0E00195246 /* BookingError.swift in Sources */,
 				A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */,
 				A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */,
@@ -414,6 +555,7 @@
 /* Begin XCBuildConfiguration section */
 		A688280C1F7560C600D82322 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 024EE0214AAF4BA2CEFC5D30 /* Pods-Dance Trix Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -429,6 +571,7 @@
 		};
 		A688280D1F7560C600D82322 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7A5DCFF387C88D76065DD0C /* Pods-Dance Trix Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -551,6 +694,7 @@
 		};
 		A6BA0F6B1F74E20C00FAF47E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 939F18AC94B46B075CEA7EE3 /* Pods-Dance Trix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -566,6 +710,7 @@
 		};
 		A6BA0F6C1F74E20C00FAF47E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42F763BA46788E7A70E0443A /* Pods-Dance Trix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

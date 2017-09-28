@@ -8,7 +8,9 @@
 
 import UIKit
 
-class Class {
+class Class : Hashable, Equatable {
+    
+    var hashValue: Int
     
     //MARK: Properties
     
@@ -22,6 +24,12 @@ class Class {
         self.id = id
         self.path = path
         self.name = name
+        
+        self.hashValue = id.hashValue
+    }
+    
+    static func ==(lhs: Class, rhs: Class) -> Bool {
+        return lhs.id == rhs.id
     }
     
 }
