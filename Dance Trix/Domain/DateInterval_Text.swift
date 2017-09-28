@@ -11,7 +11,7 @@ import Foundation
 extension DateInterval {
     
     func asText() -> String {
-        return "\(dateText(date: start)) (\(asTimeOnlyText))"
+        return "\(dateText(date: start)) (\(asTimeOnlyText()))"
     }
     
     func asTimeOnlyText() -> String {
