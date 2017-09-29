@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import RMessage
 
 class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var classDetails: Class!
-    var dates: [DateInterval]?
+    private var dates: [DateInterval]?
 
     @IBOutlet
     var tableView: UITableView!
@@ -111,35 +110,44 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
             self.updateBookButton()
         
             DispatchQueue.global().async {
-                do {
-                    try self.dates = ServiceLocator.classService.getClassDates(self.classDetails)
-                } catch ClassesError.noClassDates(let classDetails) {
-                    log.warning(["No class dates found", classDetails])
-                    
-                    DispatchQueue.main.async {
-                        RMessage.showNotification(withTitle: "Sorry!",
-                                                  subtitle: String(format: "There aren't any dates available for %@ at the moment.", classDetails.name),
-                                                  type: RMessageType.warning,
-                                                  customTypeName: nil,
-                                                  callback: nil)
+                ServiceLocator.classService.getClassDates(
+                    self.classDetails,
+                    successHandler: { (dates: [DateInterval]) in
+                        self.dates = dates
+                        
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                            self.loadingIndicator.stopAnimating()
+                            self.updateBookButton()
+                        }
+                    },
+                    errorHandler: { (error: Error) in
+                        switch error {
+                        case ClassesError.noClassDates:
+                            log.warning(["No class dates found", self.classDetails])
+                            
+                            Notification.show(
+                                title: "Sorry!",
+                                subtitle: String(format: "There aren't any dates available for %@ at the moment.", self.classDetails.name),
+                                type: NotificationType.warning)
+                            
+                            break
+                        default:
+                            log.error(["An unexpected error occurred loading class dates", self.classDetails])
+                            
+                            Notification.show(
+                                title: "Error",
+                                subtitle: String(format: "An unexpected error occurred loading dates for %@, please try again later.", self.classDetails.name),
+                                type: NotificationType.error)
+                        }
+                        
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                            self.loadingIndicator.stopAnimating()
+                            self.updateBookButton()
+                        }
                     }
-                } catch {
-                    log.error(["An unexpected error occurred loading class dates", self.classDetails])
-                    
-                    DispatchQueue.main.async {
-                        RMessage.showNotification(withTitle: "Error",
-                                                  subtitle: String(format: "An unexpected error occurred loading dates for %@, please try again later.", self.classDetails.name),
-                                                  type: RMessageType.error,
-                                                  customTypeName: nil,
-                                                  callback: nil)
-                    }
-                }
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    self.loadingIndicator.stopAnimating()
-                    self.updateBookButton()
-                }
+                )
             }
         } else {
             self.updateBookButton()

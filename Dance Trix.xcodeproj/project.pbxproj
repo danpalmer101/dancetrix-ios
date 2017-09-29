@@ -42,6 +42,7 @@
 		A6BA0F661F74E20C00FAF47E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F641F74E20C00FAF47E /* LaunchScreen.storyboard */; };
 		A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */; };
 		A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F721F74FEB800FAF47E /* Class.swift */; };
+		A6BD4F271F7E9AB600D261D1 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD4F261F7E9AB600D261D1 /* Notification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		A6BA0F671F74E20C00FAF47E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMenu.swift; sourceTree = "<group>"; };
 		A6BA0F721F74FEB800FAF47E /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		A6BD4F261F7E9AB600D261D1 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		B7A5DCFF387C88D76065DD0C /* Pods-Dance Trix Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -178,6 +180,7 @@
 				A627D0781F79A733009097C1 /* BackgroundView.swift */,
 				A600265E1F7AACF000DDC90F /* TextField.swift */,
 				A697F8721F7D42E000195246 /* CalendarCell.swift */,
+				A6BD4F261F7E9AB600D261D1 /* Notification.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				A68828121F756F0600D82322 /* Theme.swift in Sources */,
 				A627D0791F79A733009097C1 /* BackgroundView.swift in Sources */,
 				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,
+				A6BD4F271F7E9AB600D261D1 /* Notification.swift in Sources */,
 				A688281C1F77094600D82322 /* TitleNavigationItem.swift in Sources */,
 				A697F8681F7C38C600195246 /* ServiceLocator.swift in Sources */,
 				A68828381F78467900D82322 /* SubmitButton.swift in Sources */,

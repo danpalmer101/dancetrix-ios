@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RMessage
 
 class SubmitBookingViewController: UIViewController {
 
@@ -61,42 +60,40 @@ class SubmitBookingViewController: UIViewController {
         self.submitButton.isEnabled = false
         
         DispatchQueue.global().async {
-            do {
-                try _ = ServiceLocator.bookingService.bookClass(classDetails: self.classDetails,
-                                                                dates: self.dates,
-                                                                name: name,
-                                                                email: email)
-                
-                DispatchQueue.main.async {
-                    self.submitButton.isEnabled = true
-                    self.submittingIndicator.stopAnimating()
-                    self.submitButton.setTitle(submitTitle, for: .normal)
+            ServiceLocator.bookingService.bookClass(
+                classDetails: self.classDetails,
+                dates: self.dates,
+                name: name,
+                email: email,
+                successHandler: {
+                    Notification.show(
+                        title: "Success",
+                        subtitle: String(format: "Your booking for %@ was successful!", self.classDetails.name),
+                        type: NotificationType.success)
                     
-                    RMessage.showNotification(withTitle: "Success",
-                                              subtitle: String(format: "Your booking for %@ was successful!", self.classDetails.name),
-                                              type: RMessageType.success,
-                                              customTypeName: nil,
-                                              callback: nil
-                    )
+                    DispatchQueue.main.async {
+                        self.submitButton.isEnabled = true
+                        self.submittingIndicator.stopAnimating()
+                        self.submitButton.setTitle(submitTitle, for: .normal)
+                        
+                        self.performSegue(withIdentifier: "unwindToHomeViewController", sender: sender)
+                    }
+                },
+                errorHandler: { (error: Error) in
+                    log.error(["An unexpected error occurred submitting booking", error])
                     
-                    self.performSegue(withIdentifier: "unwindToHomeViewController", sender: sender)
+                    Notification.show(
+                        title: "Error",
+                        subtitle: "An unexpected error occurred submitting your booking, please try again later.",
+                        type: NotificationType.error)
+                    
+                    DispatchQueue.main.async {
+                        self.submitButton.isEnabled = true
+                        self.submittingIndicator.stopAnimating()
+                        self.submitButton.setTitle(submitTitle, for: .normal)
+                    }
                 }
-            } catch {
-                log.error(["An unexpected error occurred submitting booking", error])
-                
-                DispatchQueue.main.async {
-                    self.submittingIndicator.stopAnimating()
-                    self.submitButton.setTitle(submitTitle, for: .normal)
-                    self.submitButton.isEnabled = true
-                    
-                    RMessage.showNotification(withTitle: "Error",
-                                              subtitle: "An unexpected error occurred submitting your booking, please try again later.",
-                                              type: RMessageType.error,
-                                              customTypeName: nil,
-                                              callback: nil
-                    )
-                }
-            }
+            )
         }
     }
     

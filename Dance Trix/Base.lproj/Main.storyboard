@@ -27,12 +27,8 @@
                                     <segue destination="BuF-jW-Oad" kind="show" identifier="Bookings" id="9Io-RD-CBk"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="bPx-0D-rTa" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
-                                <rect key="frame" x="312" y="149.5" width="25" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TiO-tZ-ojp">
-                                <rect key="frame" x="37" y="257" width="300" height="90"/>
+                                <rect key="frame" x="37" y="247" width="300" height="90"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="View our calendar"/>
@@ -41,27 +37,46 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="ATT-VL-tQv" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
-                                <rect key="frame" x="312" y="290" width="25" height="25"/>
+                                <rect key="frame" x="312" y="280" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmp-WU-apa">
-                                <rect key="frame" x="37" y="397" width="300" height="90"/>
+                                <rect key="frame" x="37" y="377" width="300" height="90"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Order uniforms"/>
+                                <connections>
+                                    <segue destination="je2-qY-wIw" kind="show" id="1wA-sv-HPy"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="Q8P-6O-zqS" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
-                                <rect key="frame" x="312" y="429.5" width="25" height="25"/>
+                                <rect key="frame" x="312" y="410" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHo-7S-ZKC">
-                                <rect key="frame" x="37" y="537" width="300" height="90"/>
+                                <rect key="frame" x="37" y="507" width="300" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Make a payment"/>
+                                <connections>
+                                    <segue destination="p44-8N-V6u" kind="show" id="Rrn-su-JQy"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="RX1-KG-7Uh" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="312" y="540" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sv-gf-DnJ">
+                                <rect key="frame" x="38" y="637" width="300" height="90"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="About us"/>
+                                <connections>
+                                    <segue destination="A79-jF-C7R" kind="show" id="2n1-gS-dWn"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="RX1-KG-7Uh" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
-                                <rect key="frame" x="312" y="570" width="25" height="25"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="iwV-tf-R2F" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="313" y="670" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" shadowImage="Tint" translatesAutoresizingMaskIntoConstraints="NO" id="FEg-dl-NIM">
@@ -82,6 +97,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tint" translatesAutoresizingMaskIntoConstraints="NO" id="IEf-Fa-JEs">
                                 <rect key="frame" x="0.0" y="761" width="375" height="1"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="bPx-0D-rTa" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="312" y="150" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -246,7 +265,73 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ey8-Un-Amn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1408.8" y="271.92118226600985"/>
+            <point key="canvasLocation" x="-90" y="296"/>
+        </scene>
+        <!--Order uniforms-->
+        <scene sceneID="iNG-Gy-Bi7">
+            <objects>
+                <viewController id="je2-qY-wIw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NdW-dW-Qee" customClass="BackgroundView" customModule="Dance_Trix" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Coming Soon" translatesAutoresizingMaskIntoConstraints="NO" id="bRD-my-2kV" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="16" y="88" width="343" height="690"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="vLw-bD-Hqu"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Order uniforms" id="EgL-J8-6Zu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zLK-aR-EKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="652" y="294.82758620689657"/>
+        </scene>
+        <!--Make a payment-->
+        <scene sceneID="6Ew-Bz-4pr">
+            <objects>
+                <viewController id="p44-8N-V6u" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KAC-l2-FDP" customClass="BackgroundView" customModule="Dance_Trix" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Coming Soon" translatesAutoresizingMaskIntoConstraints="NO" id="Vh8-kn-Bm6" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="16" y="88" width="343" height="690"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="oPx-TK-hXD"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Make a payment" id="NxJ-fF-2KX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xIt-7o-Gzk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1409" y="296"/>
+        </scene>
+        <!--About us-->
+        <scene sceneID="zXS-qh-vBO">
+            <objects>
+                <viewController id="A79-jF-C7R" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xOs-hD-TBg" customClass="BackgroundView" customModule="Dance_Trix" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Coming Soon" translatesAutoresizingMaskIntoConstraints="NO" id="HLA-Ba-V9v" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="16" y="88" width="343" height="690"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="oAv-XF-5rv"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About us" id="7KS-w9-Q1G"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NTf-Yr-Fy0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2159" y="296"/>
         </scene>
         <!--Select dates-->
         <scene sceneID="5Fn-np-ItR">
@@ -344,8 +429,8 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Class:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RL-43-e8W">
-                                <rect key="frame" x="16" y="102" width="72" height="33"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="16" y="102" width="111" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -358,8 +443,8 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dates:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9p-AN-Qfb">
-                                <rect key="frame" x="16" y="143" width="72" height="111"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="16" y="143" width="111" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -445,6 +530,7 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
     </scenes>
     <resources>
         <image name="Chevron Right" width="33" height="33"/>
+        <image name="Coming Soon" width="208" height="77"/>
         <image name="Tick" width="33" height="33"/>
         <image name="Tint" width="1" height="1"/>
     </resources>

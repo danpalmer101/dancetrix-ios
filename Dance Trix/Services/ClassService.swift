@@ -9,8 +9,8 @@
 import Foundation
 
 protocol ClassService {
-    func getClassMenu() throws -> ClassMenu
-    func getClassDates(_ classDetails: Class) throws -> [DateInterval]
+    func getClassMenu(successHandler: (ClassMenu) -> Void, errorHandler: (Error) -> Void)
+    func getClassDates(_ classDetails: Class, successHandler: ([DateInterval]) -> Void, errorHandler: (Error) -> Void)
 }
 
 class MockClassService {
@@ -18,9 +18,8 @@ class MockClassService {
     var classMenuCache: ClassMenu?
     var datesCache = [Class : [DateInterval]]()
     
-    func getClassMenu() throws -> ClassMenu {
+    func getClassMenu(successHandler: (ClassMenu) -> Void, errorHandler: (Error) -> Void) {
         if (self.classMenuCache == nil) {
-            // TODO
             sleep(2)
             
             self.classMenuCache = ClassMenuParser.parse(
@@ -31,18 +30,12 @@ class MockClassService {
                     "Children|Spring Half Term 2 2018|Children's Saturday Classes",
                     "Children|Summer Half Term 1 2018|Children's Saturday Classes",
                     "Children|Summer Half Term 2 2018|Children's Saturday Classes",
-                    "Children|Autumn Half Term 1 2017|Tiny Trixies - Wickford",
-                    "Children|Autumn Half Term 2 2017|Tiny Trixies - Wickford",
-                    "Children|Spring Half Term 1 2018|Tiny Trixies - Wickford",
-                    "Children|Spring Half Term 2 2018|Tiny Trixies - Wickford",
-                    "Children|Summer Half Term 1 2018|Tiny Trixies - Wickford",
-                    "Children|Summer Half Term 2 2018|Tiny Trixies - Wickford",
-                    "Children|Autumn Half Term 1 2017|Tiny Trixies - Ingrave",
-                    "Children|Autumn Half Term 2 2017|Tiny Trixies - Ingrave",
-                    "Children|Spring Half Term 1 2018|Tiny Trixies - Ingrave",
-                    "Children|Spring Half Term 2 2018|Tiny Trixies - Ingrave",
-                    "Children|Summer Half Term 1 2018|Tiny Trixies - Ingrave",
-                    "Children|Summer Half Term 2 2018|Tiny Trixies - Ingrave",
+                    "Children|Autumn Half Term 1 2017|Tiny Trixies",
+                    "Children|Autumn Half Term 2 2017|Tiny Trixies",
+                    "Children|Spring Half Term 1 2018|Tiny Trixies",
+                    "Children|Spring Half Term 2 2018|Tiny Trixies",
+                    "Children|Summer Half Term 1 2018|Tiny Trixies",
+                    "Children|Summer Half Term 2 2018|Tiny Trixies",
                     "Adults|Day Time Classes|Ballet & Tap",
                     "Adults|Day Time Classes|Mummy Ballet Burn",
                     "Adults|Evening Classes|Advanced Tap",
@@ -56,12 +49,13 @@ class MockClassService {
             )
         }
         
-        return self.classMenuCache!
+        //errorHandler(ClassesError.errorRetrievingClasses)
+        
+        successHandler(self.classMenuCache!)
     }
     
-    func getClassDates(_ classDetails: Class) throws -> [DateInterval] {
+    func getClassDates(_ classDetails: Class, successHandler: ([DateInterval]) -> Void, errorHandler: (Error) -> Void) {
         if (datesCache[classDetails] == nil) {
-            // TODO
             sleep(2)
             
             let minute: TimeInterval = 60.0
@@ -85,7 +79,9 @@ class MockClassService {
             datesCache[classDetails] = dates
         }
         
-        return datesCache[classDetails]!
+        //errorHandler(ClassesError.errorRetrivingClassDates(classDetails: classDetails))
+        
+        successHandler(datesCache[classDetails]!)
     }
     
 }

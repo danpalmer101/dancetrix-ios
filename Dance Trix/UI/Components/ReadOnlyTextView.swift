@@ -10,7 +10,7 @@ import UIKit
 
 class ReadOnlyTextView: UITextView {
 
-    let fadePercentage = CGFloat(0.2)
+    private let fadePercentage = CGFloat(0.2)
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

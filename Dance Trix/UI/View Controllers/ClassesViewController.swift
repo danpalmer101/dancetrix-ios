@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import RMessage
 
 class ClassesViewController: UITableViewController {
     
     var classMenu: ClassMenu?
     
-    var loadingIndicator: UIActivityIndicatorView!
+    private var loadingIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,34 +81,41 @@ class ClassesViewController: UITableViewController {
             self.loadingIndicator.startAnimating()
             
             DispatchQueue.global().async {
-                do {
-                    try self.classMenu = ServiceLocator.classService.getClassMenu()
-                } catch ClassesError.noClasses {
-                    log.warning("No classes found")
-                    
-                    DispatchQueue.main.async {
-                        RMessage.showNotification(withTitle: "Sorry!",
-                                                  subtitle: "There aren't any dance classes that can be booked at the moment.",
-                                                  type: RMessageType.warning,
-                                                  customTypeName: nil,
-                                                  callback: nil)
+                ServiceLocator.classService.getClassMenu(
+                    successHandler: { (classMenu: ClassMenu) in
+                        self.classMenu = classMenu
+                        
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                            self.loadingIndicator.stopAnimating()
+                        }
+                    },
+                    errorHandler: { (error: Error) in
+                        switch error {
+                        case ClassesError.noClasses:
+                            log.warning("No classes found")
+                            
+                            Notification.show(
+                                title: "Sorry!",
+                                subtitle: "There aren't any dance classes that can be booked at the moment.",
+                                type: NotificationType.warning)
+                            
+                            break
+                        default:
+                            log.error(["An unexpected error occurred loading classes", error])
+                            
+                            Notification.show(
+                                    title: "Error",
+                                    subtitle: "An unexpected error occurred loading our dance classes, please try again later.",
+                                    type: NotificationType.error)
+                        }
+                        
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                            self.loadingIndicator.stopAnimating()
+                        }
                     }
-                } catch {
-                    log.error(["An unexpected error occurred loading classes", error])
-                    
-                    DispatchQueue.main.async {
-                        RMessage.showNotification(withTitle: "Error",
-                                                  subtitle: "An unexpected error occurred loading our dance classes, please try again later.",
-                                                  type: RMessageType.error,
-                                                  customTypeName: nil,
-                                                  callback: nil)
-                    }
-                }
-        
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    self.loadingIndicator.stopAnimating()
-                }
+                )
             }
         }
     }

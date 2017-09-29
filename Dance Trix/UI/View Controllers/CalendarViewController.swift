@@ -8,13 +8,12 @@
 
 import UIKit
 import JTAppleCalendar
-import RMessage
 
 class CalendarViewController : UIViewController, JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource, UITableViewDelegate, UITableViewDataSource {
     
-    var dates = [Date : [(classDetails: Class, date: DateInterval)]]()
+    private var dates = [Date : [(classDetails: Class, date: DateInterval)]]()
     
-    var datesErrorDisplayed = false
+    private var datesErrorDisplayed = false
     
     @IBOutlet
     var calendarView: JTAppleCalendarView!
@@ -35,68 +34,77 @@ class CalendarViewController : UIViewController, JTAppleCalendarViewDelegate, JT
         self.datesErrorDisplayed = false
         
         DispatchQueue.global().async {
-            do {
-                // Add the dates for the whole class menu
-                try self.addDates(ServiceLocator.classService.getClassMenu())
-            } catch ClassesError.noClasses {
-                log.warning("No classes found")
-                
-                DispatchQueue.main.async {
-                    RMessage.showNotification(withTitle: "Sorry!",
-                                              subtitle: "There aren't any dance classes that can be booked at the moment.",
-                                              type: RMessageType.warning,
-                                              customTypeName: nil,
-                                              callback: nil)
+            ServiceLocator.classService.getClassMenu(
+                successHandler: { (classMenu: ClassMenu) in
+                    self.addDates(classMenu)
+                },
+                errorHandler: { (error: Error) in
+                    switch error {
+                    case ClassesError.noClasses:
+                        log.warning("No classes found")
+                        
+                        Notification.show(
+                            title: "Sorry!",
+                            subtitle: "There aren't any dance classes that can be booked at the moment.",
+                            type: NotificationType.warning)
+                        
+                        break
+                    default:
+                        log.error(["An unexpected error occurred loading classes", error])
+                        
+                        Notification.show(
+                            title: "Error",
+                            subtitle: "An unexpected error occurred loading our dance classes, please try again later.",
+                            type: NotificationType.error)
+                    }
                 }
-            } catch {
-                log.error(["An unexpected error occurred loading classes", error])
-                
-                DispatchQueue.main.async {
-                    RMessage.showNotification(withTitle: "Error",
-                                              subtitle: "An unexpected error occurred loading our dance classes, please try again later.",
-                                              type: RMessageType.error,
-                                              customTypeName: nil,
-                                              callback: nil)
-                }
-            }
+            )
         }
     }
     
     private func addDates(_ classMenu: ClassMenu) {
         if let classDetails = classMenu.classDetails {
-            do {
-                try ServiceLocator.classService.getClassDates(classDetails).forEach({
-                    (date: DateInterval) in self.addDate((classDetails, date))
-                })
-                
-                // Reload the data for this class
-                DispatchQueue.main.async {
-                    let selectedDates = self.calendarView.selectedDates
-                    self.calendarView.reloadData(withanchor: self.calendarView.selectedDates.first,
-                                                 completionHandler: {
-                                                    self.tableView.reloadData()
-                                                    self.calendarView.selectDates(selectedDates)
+            ServiceLocator.classService.getClassDates(
+                classDetails,
+                successHandler: { (dates: [DateInterval]) in
+                    // Add each date to the map
+                    dates.forEach({
+                        (date: DateInterval) in self.addDate((classDetails, date))
                     })
-                }
-            } catch ClassesError.noClassDates(let classDetails) {
-                log.warning(["No class dates found", classDetails])
-                
-                // No user notification required
-            } catch {
-                log.error(["An unexpected error occurred loading class dates", error])
-                
-                if (!datesErrorDisplayed) {
-                    datesErrorDisplayed = true
                     
+                    // Reload the calendar with the new date
+                    // (and ensure current selected dates remain selected after reload)
                     DispatchQueue.main.async {
-                        RMessage.showNotification(withTitle: "Warning",
-                                                  subtitle: "An unexpected error occurred loading dates for some of the classes, some classes will be missing from the calendar.",
-                                                  type: RMessageType.warning,
-                                                  customTypeName: nil,
-                                                  callback: nil)
+                        let selectedDates = self.calendarView.selectedDates
+                        self.calendarView.reloadData(
+                            withanchor: self.calendarView.selectedDates.first,
+                            completionHandler: {
+                                self.tableView.reloadData()
+                                self.calendarView.selectDates(selectedDates)
+                            }
+                        )
+                    }
+                },
+                errorHandler: { (error: Error) in
+                    switch error {
+                    case ClassesError.noClassDates:
+                        // No message to user if no dates found
+                        log.warning(["No class dates found", classDetails])
+                        break
+                    default:
+                        log.error(["An unexpected error occurred loading class dates", error])
+                        
+                        if (!datesErrorDisplayed) {
+                            datesErrorDisplayed = true
+                            
+                            Notification.show(
+                                title: "Warning",
+                                subtitle: "An unexpected error occurred loading dates for some of our classes, some classes will be missing from the calendar.",
+                                type: NotificationType.warning)
+                        }
                     }
                 }
-            }
+            )
         }
         
         // Add the children recursively

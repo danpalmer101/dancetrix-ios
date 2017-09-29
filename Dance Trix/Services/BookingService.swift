@@ -9,14 +9,17 @@
 import Foundation
 
 protocol BookingService {
-    func bookClass(classDetails: Class, dates: [DateInterval], name: String, email: String) throws
+    func bookClass(classDetails: Class, dates: [DateInterval], name: String, email: String, successHandler: () -> Void, errorHandler: (Error) -> Void)
 }
 
 class MockBookingService {
     
-    func bookClass(classDetails: Class, dates: [DateInterval], name: String, email: String) throws {
-        // TODO
+    func bookClass(classDetails: Class, dates: [DateInterval], name: String, email: String, successHandler: () -> Void, errorHandler: (Error) -> Void) {
         sleep(2)
+        
+        //errorHandler(BookingError.errorBooking(classDetails: classDetails, dates: dates))
+        
+        successHandler()
     }
     
 }
