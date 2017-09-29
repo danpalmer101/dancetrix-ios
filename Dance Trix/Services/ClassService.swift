@@ -8,7 +8,12 @@
 
 import Foundation
 
-class ClassService {
+protocol ClassService {
+    func getClassMenu() throws -> ClassMenu
+    func getClassDates(_ classDetails: Class) throws -> [DateInterval]
+}
+
+class MockClassService {
     
     var classMenuCache: ClassMenu?
     var datesCache = [Class : [DateInterval]]()

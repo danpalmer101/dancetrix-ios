@@ -8,7 +8,11 @@
 
 import Foundation
 
-class BookingService {
+protocol BookingService {
+    func bookClass(classDetails: Class, dates: [DateInterval], name: String, email: String) throws
+}
+
+class MockBookingService {
     
     func bookClass(classDetails: Class, dates: [DateInterval], name: String, email: String) throws {
         // TODO
