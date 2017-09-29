@@ -72,7 +72,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="About us"/>
                                 <connections>
-                                    <segue destination="A79-jF-C7R" kind="show" id="2n1-gS-dWn"/>
+                                    <segue destination="A79-jF-C7R" kind="show" identifier="AboutUs" id="2n1-gS-dWn"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="iwV-tf-R2F" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
@@ -265,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ey8-Un-Amn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-90" y="296"/>
+            <point key="canvasLocation" x="-91" y="612"/>
         </scene>
         <!--Order uniforms-->
         <scene sceneID="iNG-Gy-Bi7">
@@ -287,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zLK-aR-EKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652" y="294.82758620689657"/>
+            <point key="canvasLocation" x="652" y="612"/>
         </scene>
         <!--Make a payment-->
         <scene sceneID="6Ew-Bz-4pr">
@@ -309,29 +309,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIt-7o-Gzk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1409" y="296"/>
+            <point key="canvasLocation" x="1409" y="612"/>
         </scene>
         <!--About us-->
         <scene sceneID="zXS-qh-vBO">
             <objects>
-                <viewController id="A79-jF-C7R" sceneMemberID="viewController">
+                <viewController id="A79-jF-C7R" customClass="WebViewController" customModule="Dance_Trix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xOs-hD-TBg" customClass="BackgroundView" customModule="Dance_Trix" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Coming Soon" translatesAutoresizingMaskIntoConstraints="NO" id="HLA-Ba-V9v" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
-                                <rect key="frame" x="16" y="88" width="343" height="690"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9jl-3g-mkX">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="oAv-XF-5rv"/>
                     </view>
                     <navigationItem key="navigationItem" title="About us" id="7KS-w9-Q1G"/>
+                    <connections>
+                        <outlet property="webContainerView" destination="9jl-3g-mkX" id="MH6-ZD-97J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTf-Yr-Fy0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2159" y="296"/>
+            <point key="canvasLocation" x="2157.5999999999999" y="611.82266009852219"/>
         </scene>
         <!--Select dates-->
         <scene sceneID="5Fn-np-ItR">

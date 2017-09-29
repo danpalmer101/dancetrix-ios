@@ -1,0 +1,6 @@
+header, footer, .footer-widget-area, .page-header {
+    display: none
+}
+.site-main {
+    margin: 0
+}

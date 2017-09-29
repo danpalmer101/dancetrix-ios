@@ -10,6 +10,18 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if (segue.identifier == "AboutUs") {
+            let destination: WebViewController = segue.destination as! WebViewController
+            destination.url = "http://www.dancetrix.co.uk"
+            destination.cssFileName = "dancetrix-body-only"
+        }
+    }
+    
     // MARK: - Actions
     
     @IBAction

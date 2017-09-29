@@ -42,5 +42,20 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>dancetrix.co.uk</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 </dict>
 </plist>

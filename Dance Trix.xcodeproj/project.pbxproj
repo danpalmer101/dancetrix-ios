@@ -43,6 +43,8 @@
 		A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */; };
 		A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F721F74FEB800FAF47E /* Class.swift */; };
 		A6BD4F271F7E9AB600D261D1 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD4F261F7E9AB600D261D1 /* Notification.swift */; };
+		A6BD4F291F7EE9BD00D261D1 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD4F281F7EE9BD00D261D1 /* WebViewController.swift */; };
+		A6BD4F2C1F7EEEB800D261D1 /* dancetrix-body-only.css in Resources */ = {isa = PBXBuildFile; fileRef = A6BD4F2B1F7EEEB800D261D1 /* dancetrix-body-only.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMenu.swift; sourceTree = "<group>"; };
 		A6BA0F721F74FEB800FAF47E /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		A6BD4F261F7E9AB600D261D1 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		A6BD4F281F7EE9BD00D261D1 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		A6BD4F2B1F7EEEB800D261D1 /* dancetrix-body-only.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "dancetrix-body-only.css"; sourceTree = "<group>"; };
 		B7A5DCFF387C88D76065DD0C /* Pods-Dance Trix Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -151,6 +155,7 @@
 		A688281D1F770ECB00D82322 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A6BD4F2A1F7EEE9500D261D1 /* CSS */,
 				A6BA0F621F74E20C00FAF47E /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -164,6 +169,7 @@
 				A68828311F783DC300D82322 /* ClassDatesViewController.swift */,
 				A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */,
 				A697F8701F7CF0AB00195246 /* CalendarViewController.swift */,
+				A6BD4F281F7EE9BD00D261D1 /* WebViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -251,6 +257,14 @@
 				A68828331F78410B00D82322 /* DateInterval_Text.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		A6BD4F2A1F7EEE9500D261D1 /* CSS */ = {
+			isa = PBXGroup;
+			children = (
+				A6BD4F2B1F7EEEB800D261D1 /* dancetrix-body-only.css */,
+			);
+			path = CSS;
 			sourceTree = "<group>";
 		};
 		FB2897419A9A66B57376CF5D /* Pods */ = {
@@ -363,6 +377,7 @@
 			files = (
 				A6BA0F661F74E20C00FAF47E /* LaunchScreen.storyboard in Resources */,
 				A6BA0F631F74E20C00FAF47E /* Assets.xcassets in Resources */,
+				A6BD4F2C1F7EEEB800D261D1 /* dancetrix-body-only.css in Resources */,
 				A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */,
 				A60026631F7BB4D200DDC90F /* prepare-commit-msg in Resources */,
 			);
@@ -511,6 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A697F8711F7CF0AB00195246 /* CalendarViewController.swift in Sources */,
+				A6BD4F291F7EE9BD00D261D1 /* WebViewController.swift in Sources */,
 				A697F86E1F7C3D0E00195246 /* BookingError.swift in Sources */,
 				A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */,
 				A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */,
