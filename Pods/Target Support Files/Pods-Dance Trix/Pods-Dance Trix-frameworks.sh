@@ -102,10 +102,18 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PPTopMostController/PPTopMostController.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RMessage/RMessage.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PPTopMostController/PPTopMostController.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RMessage/RMessage.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

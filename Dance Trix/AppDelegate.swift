@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import SwiftyBeaver
+
+let log = SwiftyBeaver.self
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,9 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        enableLogging()
+        
         applyBranding()
         
         return true
+    }
+    
+    func enableLogging() {
+        // define log destination
+        let console = ConsoleDestination()  // log to Xcode Console
+        
+        // use custom format and set console output to short time, log level & message
+        console.format = "$DHH:mm:ss$d $L $M"
+        
+        // add the destination(s) to SwiftyBeaver
+        log.addDestination(console)
     }
     
     func applyBranding() {

@@ -7,6 +7,8 @@ target 'Dance Trix' do
 
   # Pods for Dance Trix
   pod 'JTAppleCalendar', '~> 7.0'
+  pod 'RMessage'
+  pod 'SwiftyBeaver'
 
   target 'Dance Trix Tests' do
     inherit! :search_paths

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RMessage
 
 class SubmitBookingViewController: UIViewController {
 
@@ -70,21 +71,30 @@ class SubmitBookingViewController: UIViewController {
                     self.submitButton.isEnabled = true
                     self.submittingIndicator.stopAnimating()
                     self.submitButton.setTitle(submitTitle, for: .normal)
+                    
+                    RMessage.showNotification(withTitle: "Success",
+                                              subtitle: String(format: "Your booking for %@ was successful!", self.classDetails.name),
+                                              type: RMessageType.success,
+                                              customTypeName: nil,
+                                              callback: nil
+                    )
+                    
                     self.performSegue(withIdentifier: "unwindToHomeViewController", sender: sender)
                 }
-            } catch BookingError.errorBooking(_, _) {
-                // TODO
-                DispatchQueue.main.async {
-                    self.submitButton.isEnabled = true
-                    self.submittingIndicator.stopAnimating()
-                    self.submitButton.setTitle(submitTitle, for: .normal)
-                }
             } catch {
-                // TODO
+                log.error(["An unexpected error occurred submitting booking", error])
+                
                 DispatchQueue.main.async {
-                    self.submitButton.isEnabled = true
                     self.submittingIndicator.stopAnimating()
                     self.submitButton.setTitle(submitTitle, for: .normal)
+                    self.submitButton.isEnabled = true
+                    
+                    RMessage.showNotification(withTitle: "Error",
+                                              subtitle: "An unexpected error occurred submitting your booking, please try again later.",
+                                              type: RMessageType.error,
+                                              customTypeName: nil,
+                                              callback: nil
+                    )
                 }
             }
         }

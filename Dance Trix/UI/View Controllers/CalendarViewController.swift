@@ -8,10 +8,13 @@
 
 import UIKit
 import JTAppleCalendar
+import RMessage
 
 class CalendarViewController : UIViewController, JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource, UITableViewDelegate, UITableViewDataSource {
     
     var dates = [Date : [(classDetails: Class, date: DateInterval)]]()
+    
+    var datesErrorDisplayed = false
     
     @IBOutlet
     var calendarView: JTAppleCalendarView!
@@ -29,12 +32,32 @@ class CalendarViewController : UIViewController, JTAppleCalendarViewDelegate, JT
     }
     
     private func loadClassDates() {
+        self.datesErrorDisplayed = false
+        
         DispatchQueue.global().async {
             do {
                 // Add the dates for the whole class menu
                 try self.addDates(ServiceLocator.classService.getClassMenu())
+            } catch ClassesError.noClasses {
+                log.warning("No classes found")
+                
+                DispatchQueue.main.async {
+                    RMessage.showNotification(withTitle: "Sorry!",
+                                              subtitle: "There aren't any dance classes that can be booked at the moment.",
+                                              type: RMessageType.warning,
+                                              customTypeName: nil,
+                                              callback: nil)
+                }
             } catch {
-                // TODO
+                log.error(["An unexpected error occurred loading classes", error])
+                
+                DispatchQueue.main.async {
+                    RMessage.showNotification(withTitle: "Error",
+                                              subtitle: "An unexpected error occurred loading our dance classes, please try again later.",
+                                              type: RMessageType.error,
+                                              customTypeName: nil,
+                                              callback: nil)
+                }
             }
         }
     }
@@ -45,18 +68,34 @@ class CalendarViewController : UIViewController, JTAppleCalendarViewDelegate, JT
                 try ServiceLocator.classService.getClassDates(classDetails).forEach({
                     (date: DateInterval) in self.addDate((classDetails, date))
                 })
+                
+                // Reload the data for this class
+                DispatchQueue.main.async {
+                    let selectedDates = self.calendarView.selectedDates
+                    self.calendarView.reloadData(withanchor: self.calendarView.selectedDates.first,
+                                                 completionHandler: {
+                                                    self.tableView.reloadData()
+                                                    self.calendarView.selectDates(selectedDates)
+                    })
+                }
+            } catch ClassesError.noClassDates(let classDetails) {
+                log.warning(["No class dates found", classDetails])
+                
+                // No user notification required
             } catch {
-                // TODO
-            }
-            
-            // Reload the data for this class
-            DispatchQueue.main.async {
-                let selectedDates = self.calendarView.selectedDates
-                self.calendarView.reloadData(withanchor: self.calendarView.selectedDates.first,
-                                             completionHandler: {
-                                                self.tableView.reloadData()
-                                                self.calendarView.selectDates(selectedDates)
-                })
+                log.error(["An unexpected error occurred loading class dates", error])
+                
+                if (!datesErrorDisplayed) {
+                    datesErrorDisplayed = true
+                    
+                    DispatchQueue.main.async {
+                        RMessage.showNotification(withTitle: "Warning",
+                                                  subtitle: "An unexpected error occurred loading dates for some of the classes, some classes will be missing from the calendar.",
+                                                  type: RMessageType.warning,
+                                                  customTypeName: nil,
+                                                  callback: nil)
+                    }
+                }
             }
         }
         

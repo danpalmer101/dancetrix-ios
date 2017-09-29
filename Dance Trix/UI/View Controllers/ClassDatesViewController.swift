@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RMessage
 
 class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -112,12 +113,26 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
             DispatchQueue.global().async {
                 do {
                     try self.dates = ServiceLocator.classService.getClassDates(self.classDetails)
-                } catch ClassesError.noClassDates(_) {
-                    // TODO
-                } catch ClassesError.errorRetrivingClassDates(_) {
-                    // TODO
+                } catch ClassesError.noClassDates(let classDetails) {
+                    log.warning(["No class dates found", classDetails])
+                    
+                    DispatchQueue.main.async {
+                        RMessage.showNotification(withTitle: "Sorry!",
+                                                  subtitle: String(format: "There aren't any dates available for %@ at the moment.", classDetails.name),
+                                                  type: RMessageType.warning,
+                                                  customTypeName: nil,
+                                                  callback: nil)
+                    }
                 } catch {
-                    // TODO
+                    log.error(["An unexpected error occurred loading class dates", self.classDetails])
+                    
+                    DispatchQueue.main.async {
+                        RMessage.showNotification(withTitle: "Error",
+                                                  subtitle: String(format: "An unexpected error occurred loading dates for %@, please try again later.", self.classDetails.name),
+                                                  type: RMessageType.error,
+                                                  customTypeName: nil,
+                                                  callback: nil)
+                    }
                 }
                 
                 DispatchQueue.main.async {

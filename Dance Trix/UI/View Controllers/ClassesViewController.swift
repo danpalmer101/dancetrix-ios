@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RMessage
 
 class ClassesViewController: UITableViewController {
     
@@ -83,12 +84,26 @@ class ClassesViewController: UITableViewController {
             DispatchQueue.global().async {
                 do {
                     try self.classMenu = ServiceLocator.classService.getClassMenu()
-                } catch ClassesError.errorRetrievingClasses {
-                    // TODO
                 } catch ClassesError.noClasses {
-                    // TODO
+                    log.warning("No classes found")
+                    
+                    DispatchQueue.main.async {
+                        RMessage.showNotification(withTitle: "Sorry!",
+                                                  subtitle: "There aren't any dance classes that can be booked at the moment.",
+                                                  type: RMessageType.warning,
+                                                  customTypeName: nil,
+                                                  callback: nil)
+                    }
                 } catch {
-                    // TODO
+                    log.error(["An unexpected error occurred loading classes", error])
+                    
+                    DispatchQueue.main.async {
+                        RMessage.showNotification(withTitle: "Error",
+                                                  subtitle: "An unexpected error occurred loading our dance classes, please try again later.",
+                                                  type: RMessageType.error,
+                                                  customTypeName: nil,
+                                                  callback: nil)
+                    }
                 }
         
                 DispatchQueue.main.async {

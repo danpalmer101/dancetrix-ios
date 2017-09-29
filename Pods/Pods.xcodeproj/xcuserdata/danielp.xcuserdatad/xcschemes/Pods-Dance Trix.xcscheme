@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0900"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B8A7A25DA11A9EC9D455718A967788E3"
+               BlueprintIdentifier = "F6802B7056BF30681360621DA27A35D9"
                BuildableName = "Pods_Dance_Trix.framework"
                BlueprintName = "Pods-Dance Trix"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B8A7A25DA11A9EC9D455718A967788E3"
+            BlueprintIdentifier = "F6802B7056BF30681360621DA27A35D9"
             BuildableName = "Pods_Dance_Trix.framework"
             BlueprintName = "Pods-Dance Trix"
             ReferencedContainer = "container:Pods.xcodeproj">

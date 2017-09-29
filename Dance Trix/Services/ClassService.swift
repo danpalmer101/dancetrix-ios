@@ -47,7 +47,7 @@ class ClassService {
                     "Adults|Evening Classes|Beginners Tap",
                     "Adults|Evening Classes|Ballet Burn & Limbering",
                     "Adults|Evening Classes|Jazz",
-                    ]
+                ]
             )
         }
         
