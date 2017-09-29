@@ -11,8 +11,6 @@ import Foundation
 class BookingService {
     
     func bookClass(classDetails: Class, dates: [DateInterval], name: String, email: String) throws {
-        
-        throw BookingError.errorBooking(classDetails: classDetails, dates: dates)
         // TODO
         sleep(2)
     }
