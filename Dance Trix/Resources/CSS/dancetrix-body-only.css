@@ -1,4 +1,4 @@
-header, footer, .footer-widget-area, .page-header {
+header, footer, .footer-widget-area, .page-header, iframe, .page-content span {
     display: none
 }
 .site-main {

@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHandler {
+class WebViewController: UIViewController, WKNavigationDelegate {
     
     var cssFileName : String?
     var url : String!
@@ -31,7 +31,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKScriptMessage
                 let cssString = try! String(contentsOfFile: path)
                                         .trimmingCharacters(in: .whitespacesAndNewlines)
                                         .replacingOccurrences(of: "\n", with: "")
-                let jsString = String(format: "var styleTag = document.createElement(\"style\"); styleTag.textContent = \"%@\"; document.documentElement.appendChild(styleTag);", cssString)
+                let jsString = String(format: "var styleTag = document.createElement(\"style\"); styleTag.textContent = \"%@\"; document.documentElement.appendChild(styleTag); document.body.style.background = 'black'; document.body.style.color = 'white'", cssString)
                 let userScript = WKUserScript(source: jsString, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
  
                 let userContentController = WKUserContentController()
@@ -42,6 +42,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKScriptMessage
         
         self.webView = WKWebView.init(frame: CGRect.zero, configuration: config)
         self.webView.navigationDelegate = self
+        self.webView.alpha = 0
         
         if (self.url != nil) {
             self.webView.load(URLRequest(url: URL(string: self.url)!))
@@ -61,8 +62,10 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKScriptMessage
     
     // MARK: - WK delegates
     
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        log.info(message)
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
+            self.webView.alpha = 1
+        })
     }
 
 }
