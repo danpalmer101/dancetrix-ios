@@ -81,6 +81,28 @@ class Theme {
             row.placeholderColor = Theme.colorForegroundMid
         }
         EmailRow.defaultCellUpdate = EmailRow.defaultCellSetup
+        
+        DecimalRow.defaultCellSetup = { cell, row in
+            cell.textField?.textColor = Theme.colorForeground
+            cell.textLabel?.textColor = Theme.colorForeground
+            cell.tintColor = Theme.colorTint
+            row.placeholderColor = Theme.colorForegroundMid
+        }
+        DecimalRow.defaultCellUpdate = DecimalRow.defaultCellSetup
+        
+        DateRow.defaultCellSetup = { cell, row in
+            cell.textLabel?.textColor = Theme.colorForeground
+            cell.detailTextLabel?.textColor = Theme.colorForeground
+            cell.tintColor = Theme.colorTint
+        }
+        DateRow.defaultCellUpdate = DateRow.defaultCellSetup
+        
+        PushRow<String>.defaultCellSetup = { cell, row in
+            cell.textLabel?.textColor = Theme.colorForeground
+            cell.detailTextLabel?.textColor = Theme.colorForeground
+            cell.tintColor = Theme.colorTint
+        }
+        PushRow<String>.defaultCellUpdate = PushRow<String>.defaultCellSetup
     }
     
     static func applyTableViewCell(tableCell: UITableViewCell?) {

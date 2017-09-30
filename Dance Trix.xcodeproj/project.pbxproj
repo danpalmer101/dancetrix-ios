@@ -45,6 +45,7 @@
 		A6BD4F271F7E9AB600D261D1 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD4F261F7E9AB600D261D1 /* Notification.swift */; };
 		A6BD4F291F7EE9BD00D261D1 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD4F281F7EE9BD00D261D1 /* WebViewController.swift */; };
 		A6BD4F2C1F7EEEB800D261D1 /* dancetrix-body-only.css in Resources */ = {isa = PBXBuildFile; fileRef = A6BD4F2B1F7EEEB800D261D1 /* dancetrix-body-only.css */; };
+		A6BD4F2E1F803C8800D261D1 /* PaymentFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD4F2D1F803C8800D261D1 /* PaymentFormViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		A6BD4F261F7E9AB600D261D1 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		A6BD4F281F7EE9BD00D261D1 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A6BD4F2B1F7EEEB800D261D1 /* dancetrix-body-only.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "dancetrix-body-only.css"; sourceTree = "<group>"; };
+		A6BD4F2D1F803C8800D261D1 /* PaymentFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentFormViewController.swift; sourceTree = "<group>"; };
 		B7A5DCFF387C88D76065DD0C /* Pods-Dance Trix Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -169,6 +171,7 @@
 				A68828311F783DC300D82322 /* ClassDatesViewController.swift */,
 				A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */,
 				A697F8701F7CF0AB00195246 /* CalendarViewController.swift */,
+				A6BD4F2D1F803C8800D261D1 /* PaymentFormViewController.swift */,
 				A6BD4F281F7EE9BD00D261D1 /* WebViewController.swift */,
 			);
 			path = "View Controllers";
@@ -546,6 +549,7 @@
 				A68828321F783DC300D82322 /* ClassDatesViewController.swift in Sources */,
 				A697F86C1F7C3AD200195246 /* ClassesError.swift in Sources */,
 				A68828121F756F0600D82322 /* Theme.swift in Sources */,
+				A6BD4F2E1F803C8800D261D1 /* PaymentFormViewController.swift in Sources */,
 				A627D0791F79A733009097C1 /* BackgroundView.swift in Sources */,
 				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,
 				A6BD4F271F7E9AB600D261D1 /* Notification.swift in Sources */,

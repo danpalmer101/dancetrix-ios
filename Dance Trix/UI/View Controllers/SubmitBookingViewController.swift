@@ -29,7 +29,7 @@ class SubmitBookingViewController: FormViewController {
         
         self.form
             +++ Section("Class")
-            <<< TextAreaRow(){ row in
+            <<< TextAreaRow() { row in
                 row.textAreaHeight = TextAreaHeight.dynamic(initialTextViewHeight: 10)
                 row.value = self.classDetails.name
                 row.disabled = Condition(booleanLiteral: true)
@@ -41,16 +41,14 @@ class SubmitBookingViewController: FormViewController {
                 row.disabled = Condition(booleanLiteral: true)
                 }
             +++ Section("Your details")
-            <<< TextRow("name"){ row in
+            <<< TextRow("name") { row in
                 row.title = "Name"
                 row.add(rule: RuleRequired())
                 row.placeholder = "Enter your full name"
-                }.cellSetup { (cell, row) in
-                    cell.textLabel?.textColor = Theme.colorTint
                 }.cellUpdate { (_, _) in
                     self.checkCompleteForm()
                 }
-            <<< EmailRow("email"){ row in
+            <<< EmailRow("email") { row in
                 row.title = "Email address"
                 row.add(rule: RuleRequired())
                 row.add(rule: RuleEmail())
@@ -59,7 +57,6 @@ class SubmitBookingViewController: FormViewController {
                     if !row.isValid {
                         cell.textField?.textColor = Theme.colorError
                     }
-                    
                     self.checkCompleteForm()
                 }
     }
