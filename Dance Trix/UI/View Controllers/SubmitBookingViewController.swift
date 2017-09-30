@@ -7,20 +7,13 @@
 //
 
 import UIKit
+import Eureka
 
-class SubmitBookingViewController: UIViewController {
+class SubmitBookingViewController: FormViewController {
 
     var classDetails: Class!
     var dates: [DateInterval]!
     
-    @IBOutlet
-    var classesLabel: UILabel!
-    @IBOutlet
-    var datesLabel: UILabel!
-    @IBOutlet
-    var nameField: UITextField!
-    @IBOutlet
-    var emailField: UITextField!
     @IBOutlet
     var submitButton: UIButton!
     @IBOutlet
@@ -28,31 +21,72 @@ class SubmitBookingViewController: UIViewController {
     
     // MARK: - View lifecycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM 'at' HH:mm"
+        
+        self.form
+            +++ Section("Class")
+            <<< TextAreaRow(){ row in
+                row.textAreaHeight = TextAreaHeight.dynamic(initialTextViewHeight: 10)
+                row.value = self.classDetails.name
+                row.disabled = Condition(booleanLiteral: true)
+                }
+            +++ Section("Dates")
+            <<< TextAreaRow() { row in
+                row.textAreaHeight = TextAreaHeight.dynamic(initialTextViewHeight: 10)
+                row.value = self.dates.map({ (d: DateInterval) in dateFormatter.string(from: d.start)}).joined(separator: ", ")
+                row.disabled = Condition(booleanLiteral: true)
+                }
+            +++ Section("Your details")
+            <<< TextRow("name"){ row in
+                row.title = "Name"
+                row.add(rule: RuleRequired())
+                row.placeholder = "Enter your full name"
+                }.cellSetup { (cell, row) in
+                    cell.textLabel?.textColor = Theme.colorTint
+                }.cellUpdate { (_, _) in
+                    self.checkCompleteForm()
+                }
+            <<< EmailRow("email"){ row in
+                row.title = "Email address"
+                row.add(rule: RuleRequired())
+                row.add(rule: RuleEmail())
+                row.placeholder = "Enter your email address"
+                }.cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.textField?.textColor = Theme.colorError
+                    }
+                    
+                    self.checkCompleteForm()
+                }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "dd MMM HH:mm"
-        
-        self.classesLabel.text = self.classDetails.path
-        self.datesLabel.text = self.dates.map({
-            (interval: DateInterval) -> String in return dateFormat.string(from: interval.start)
-        }).joined(separator: ", ")
-        
-        self.checkCompleteForm()
+        self.view.bringSubview(toFront: self.submitButton)
+        self.view.bringSubview(toFront: self.submittingIndicator)
     }
     
     // MARK: - Actions
     
-    @IBAction
-    func checkCompleteForm() {
-        self.submitButton.isEnabled = self.nameField.hasText && self.emailField.hasText
+    private func checkCompleteForm() {
+        let nameRow = self.form.rowBy(tag: "name") as! TextRow
+        let emailRow = self.form.rowBy(tag: "email") as! EmailRow
+        
+        self.submitButton.isEnabled =
+            nameRow.value != nil && nameRow.isValid
+            && emailRow.value != nil && emailRow.isValid
     }
     
     @IBAction
     func submitBooking(sender: Any?) {
-        let name = self.nameField.text!
-        let email = self.emailField.text!
+        let name = (self.form.rowBy(tag: "name") as! TextRow).value!
+        let email = (self.form.rowBy(tag: "email") as! EmailRow).value!
+        
         let submitTitle = self.submitButton.title(for: .normal)
         
         self.submitButton.setTitle("", for: .normal)

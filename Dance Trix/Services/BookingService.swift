@@ -14,12 +14,13 @@ protocol BookingService {
 
 class MockBookingService {
     
-    func bookClass(classDetails: Class, dates: [DateInterval], name: String, email: String, successHandler: () -> Void, errorHandler: (Error) -> Void) {
+    func bookClass(classDetails: Class, dates: [DateInterval], name: String, email: String, successHandler: @escaping () -> Void, errorHandler: (Error) -> Void) {
         sleep(2)
         
-        //errorHandler(BookingError.errorBooking(classDetails: classDetails, dates: dates))
-        
-        successHandler()
+        DispatchQueue.global().async {
+            //errorHandler(BookingError.errorBooking(classDetails: classDetails, dates: dates))
+            successHandler()
+        }
     }
     
 }

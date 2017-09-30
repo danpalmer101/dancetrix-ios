@@ -18,9 +18,9 @@ class MockClassService {
     var classMenuCache: ClassMenu?
     var datesCache = [Class : [DateInterval]]()
     
-    func getClassMenu(successHandler: (ClassMenu) -> Void, errorHandler: (Error) -> Void) {
+    func getClassMenu(successHandler: @escaping (ClassMenu) -> Void, errorHandler: (Error) -> Void) {
         if (self.classMenuCache == nil) {
-            sleep(2)
+            //sleep(2)
             
             self.classMenuCache = ClassMenuParser.parse(
                 serviceNames: [
@@ -49,14 +49,15 @@ class MockClassService {
             )
         }
         
-        //errorHandler(ClassesError.errorRetrievingClasses)
-        
-        successHandler(self.classMenuCache!)
+        DispatchQueue.global().async {
+            //errorHandler(ClassesError.errorRetrievingClasses)
+            successHandler(self.classMenuCache!)
+        }
     }
     
-    func getClassDates(_ classDetails: Class, successHandler: ([DateInterval]) -> Void, errorHandler: (Error) -> Void) {
+    func getClassDates(_ classDetails: Class, successHandler: @escaping ([DateInterval]) -> Void, errorHandler: (Error) -> Void) {
         if (datesCache[classDetails] == nil) {
-            sleep(2)
+            //sleep(2)
             
             let minute: TimeInterval = 60.0
             let hour: TimeInterval = 60.0 * minute
@@ -79,9 +80,10 @@ class MockClassService {
             datesCache[classDetails] = dates
         }
         
-        //errorHandler(ClassesError.errorRetrivingClassDates(classDetails: classDetails))
-        
-        successHandler(datesCache[classDetails]!)
+        DispatchQueue.global().async {
+            //errorHandler(ClassesError.errorRetrivingClassDates(classDetails: classDetails))
+            successHandler(self.datesCache[classDetails]!)
+        }
     }
     
 }
