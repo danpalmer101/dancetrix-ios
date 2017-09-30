@@ -1,4 +1,5 @@
 PODS:
+  - Eureka (4.0.0)
   - HexColors (4.0.0)
   - JTAppleCalendar (7.0.6)
   - PPTopMostController (0.0.1)
@@ -8,17 +9,19 @@ PODS:
   - SwiftyBeaver (1.4.2)
 
 DEPENDENCIES:
+  - Eureka (~> 4.0.0)
   - JTAppleCalendar (~> 7.0)
-  - RMessage
-  - SwiftyBeaver
+  - RMessage (~> 2.1.5)
+  - SwiftyBeaver (~> 1.4.2)
 
 SPEC CHECKSUMS:
+  Eureka: c0b55d2aec82050c1400c7d65960b700be8d10ef
   HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
   JTAppleCalendar: 6a942475e33b9ad4dee0a0e14aa4c63adcf4f543
   PPTopMostController: 4e6f1e5f8c645bdcc74cd837a20f607ff262c048
   RMessage: 31d44bd26a8f353f987d2e7194f3e9ffb203cbf2
   SwiftyBeaver: 91057725648ee4980308f1650af077d04b3654a0
 
-PODFILE CHECKSUM: 22eb1d0a05e58066ed4875f8a9fdef08d9333f1e
+PODFILE CHECKSUM: da6b729b6927b939ed9b24083555b240339661ab
 
 COCOAPODS: 1.3.1
