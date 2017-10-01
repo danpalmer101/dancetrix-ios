@@ -9,16 +9,11 @@
 import UIKit
 import Eureka
 
-class SubmitBookingViewController: FormViewController {
+class SubmitBookingViewController: SubmitFormViewController {
 
     var classDetails: Class!
     var allDates: [DateInterval]!
     var selectedDates: [DateInterval]!
-    
-    @IBOutlet
-    var submitButton: UIButton!
-    @IBOutlet
-    var submittingIndicator: UIActivityIndicatorView!
     
     // MARK: - View lifecycle
     
@@ -70,13 +65,11 @@ class SubmitBookingViewController: FormViewController {
                     }
                     self.checkCompleteForm()
                 }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        self.view.bringSubview(toFront: self.submitButton)
-        self.view.bringSubview(toFront: self.submittingIndicator)
+        self.submitButton.setTitle("Submit booking", for: .normal)
+        self.submitButton.addTarget(self, action: #selector(submitBooking), for: .touchUpInside)
+        
+        self.checkCompleteForm()
     }
     
     // MARK: - Actions
@@ -89,9 +82,8 @@ class SubmitBookingViewController: FormViewController {
             nameRow.value != nil && nameRow.isValid
             && emailRow.value != nil && emailRow.isValid
     }
-    
-    @IBAction
-    func submitBooking(sender: Any?) {
+
+    @objc private func submitBooking(sender: Any?) {
         let name = (self.form.rowBy(tag: "name") as! TextRow).value!
         let email = (self.form.rowBy(tag: "email") as! EmailRow).value!
         

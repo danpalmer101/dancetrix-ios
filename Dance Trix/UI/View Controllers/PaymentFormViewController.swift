@@ -9,12 +9,7 @@
 import UIKit
 import Eureka
 
-class PaymentFormViewController: FormViewController {
-
-    @IBOutlet
-    var submitButton: UIButton!
-    @IBOutlet
-    var submittingIndicator: UIActivityIndicatorView!
+class PaymentFormViewController: SubmitFormViewController {
     
     // MARK: - View lifecycle
     
@@ -147,13 +142,11 @@ class PaymentFormViewController: FormViewController {
                 .cellUpdate { cell, row in
                     self.checkCompleteForm()
                 }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        self.view.bringSubview(toFront: self.submitButton)
-        self.view.bringSubview(toFront: self.submittingIndicator)
+        self.submitButton.setTitle("Submit payment details", for: .normal)
+        self.submitButton.addTarget(self, action: #selector(submitPaymentNotification), for: .touchUpInside)
+        
+        self.checkCompleteForm()
     }
     
     // MARK: - Actions
@@ -183,8 +176,7 @@ class PaymentFormViewController: FormViewController {
             && additional.isValid
     }
     
-    @IBAction
-    func submitPaymentNotification(sender: Any?) {
+    @objc private func submitPaymentNotification(sender: Any?) {
         let date = (self.form.rowBy(tag: "date") as! DateRow).value!
         let amount = (self.form.rowBy(tag: "amount") as! DecimalRow).value!
         let name = (self.form.rowBy(tag: "name") as! TextRow).value!
@@ -240,8 +232,7 @@ class PaymentFormViewController: FormViewController {
                         self.submittingIndicator.stopAnimating()
                         self.submitButton.setTitle(submitTitle, for: .normal)
                     }
-            }
-            )
+            })
         }
     }
 

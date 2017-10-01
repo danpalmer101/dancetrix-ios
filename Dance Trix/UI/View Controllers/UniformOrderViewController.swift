@@ -9,7 +9,7 @@
 import UIKit
 import Eureka
 
-class UniformOrderViewController: FormViewController {
+class UniformOrderViewController: SubmitFormViewController {
     
     let childClothesSizes = [
         "3 - 4 years (Size 0)",
@@ -225,6 +225,13 @@ class UniformOrderViewController: FormViewController {
                 })
             +++ Section("Anything else we should know?")
             <<< TextAreaRow("additional")
+        
+        self.submitButton.setTitle("Submit order", for: .normal)
+        self.submitButton.addTarget(self, action: #selector(submit), for: .touchUpInside)
+    }
+    
+    @objc private func submit(sender: Any?) {
+        log.info("Submit")
     }
 
 }

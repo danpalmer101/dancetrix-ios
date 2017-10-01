@@ -48,6 +48,7 @@
 		A6BD4F2E1F803C8800D261D1 /* PaymentFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD4F2D1F803C8800D261D1 /* PaymentFormViewController.swift */; };
 		A6D23AD71F813B5700229DEC /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AD61F813B5700229DEC /* PaymentService.swift */; };
 		A6D23AD91F814B4400229DEC /* UniformOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AD81F814B4400229DEC /* UniformOrderViewController.swift */; };
+		A6D23ADB1F818A5800229DEC /* SubmitFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23ADA1F818A5800229DEC /* SubmitFormViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		A6BD4F2D1F803C8800D261D1 /* PaymentFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentFormViewController.swift; sourceTree = "<group>"; };
 		A6D23AD61F813B5700229DEC /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
 		A6D23AD81F814B4400229DEC /* UniformOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformOrderViewController.swift; sourceTree = "<group>"; };
+		A6D23ADA1F818A5800229DEC /* SubmitFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitFormViewController.swift; sourceTree = "<group>"; };
 		B7A5DCFF387C88D76065DD0C /* Pods-Dance Trix Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -170,6 +172,7 @@
 		A68828391F794A7B00D82322 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A6D23ADA1F818A5800229DEC /* SubmitFormViewController.swift */,
 				A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */,
 				A632F7891F7505E100F9FD8A /* ClassesViewController.swift */,
 				A68828311F783DC300D82322 /* ClassDatesViewController.swift */,
@@ -543,6 +546,7 @@
 				A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */,
 				A6D23AD71F813B5700229DEC /* PaymentService.swift in Sources */,
 				A697F8731F7D42E000195246 /* CalendarCell.swift in Sources */,
+				A6D23ADB1F818A5800229DEC /* SubmitFormViewController.swift in Sources */,
 				A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */,
 				A697F86A1F7C391400195246 /* BookingService.swift in Sources */,
 				A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */,
