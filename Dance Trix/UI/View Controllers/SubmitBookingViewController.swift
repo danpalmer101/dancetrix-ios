@@ -51,7 +51,11 @@ class SubmitBookingViewController: FormViewController {
                 row.title = "Name"
                 row.add(rule: RuleRequired())
                 row.placeholder = "Enter your full name"
-                }.cellUpdate { (_, _) in
+                }.cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.textLabel?.textColor = Theme.colorError
+                        cell.textField?.textColor = Theme.colorError
+                    }
                     self.checkCompleteForm()
                 }
             <<< EmailRow("email") { row in
@@ -61,6 +65,7 @@ class SubmitBookingViewController: FormViewController {
                 row.placeholder = "Enter your email address"
                 }.cellUpdate { cell, row in
                     if !row.isValid {
+                        cell.textLabel?.textColor = Theme.colorError
                         cell.textField?.textColor = Theme.colorError
                     }
                     self.checkCompleteForm()

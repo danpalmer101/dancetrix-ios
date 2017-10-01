@@ -104,6 +104,13 @@ class Theme {
         }
         PushRow<String>.defaultCellUpdate = PushRow<String>.defaultCellSetup
         
+        PushRow<Double>.defaultCellSetup = { cell, row in
+            cell.textLabel?.textColor = Theme.colorForeground
+            cell.detailTextLabel?.textColor = Theme.colorForeground
+            cell.tintColor = Theme.colorTint
+        }
+        PushRow<Double>.defaultCellUpdate = PushRow<Double>.defaultCellSetup
+        
         MultipleSelectorRow<String>.defaultCellSetup = { cell, row in
             cell.textLabel?.textColor = Theme.colorForeground
             cell.detailTextLabel?.textColor = Theme.colorForeground
@@ -117,6 +124,13 @@ class Theme {
             cell.tintColor = Theme.colorTint
         }
         SwitchRow.defaultCellUpdate = SwitchRow.defaultCellSetup
+        
+        CheckRow.defaultCellSetup = { cell, row in
+            cell.textLabel?.textColor = Theme.colorForeground
+            cell.detailTextLabel?.textColor = Theme.colorForeground
+            cell.tintColor = Theme.colorTint
+        }
+        CheckRow.defaultCellUpdate = CheckRow.defaultCellSetup
     }
     
     static func applyTableViewCell(tableCell: UITableViewCell?) {

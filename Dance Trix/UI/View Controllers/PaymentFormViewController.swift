@@ -27,11 +27,23 @@ class PaymentFormViewController: FormViewController {
                 row.title = "Your name"
                 row.placeholder = "Enter your name"
                 row.add(rule: RuleRequired())
+                }.cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.textLabel?.textColor = Theme.colorError
+                        cell.textField?.textColor = Theme.colorError
+                    }
+                    self.checkCompleteForm()
                 }
             <<< TextRow("student_name") { row in
-                row.title = "Student name"
+                row.title = "Student's name"
                 row.placeholder = "Enter the student's name"
                 row.add(rule: RuleRequired())
+                }.cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.textLabel?.textColor = Theme.colorError
+                        cell.textField?.textColor = Theme.colorError
+                    }
+                    self.checkCompleteForm()
                 }
             <<< EmailRow("email") { row in
                 row.title = "Email address"
@@ -40,28 +52,37 @@ class PaymentFormViewController: FormViewController {
                 row.placeholder = "Enter your email address"
                 }.cellUpdate { cell, row in
                     if !row.isValid {
+                        cell.textLabel?.textColor = Theme.colorError
                         cell.textField?.textColor = Theme.colorError
                     }
+                    self.checkCompleteForm()
                 }
             +++ Section("Your payment")
             <<< DateRow("date") { row in
-                row.title = "Payment date"
+                row.title = "Date"
                 row.value = Date()
                 row.maximumDate = Date()
                 row.add(rule: RuleRequired())
+                }.cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.textLabel?.textColor = Theme.colorError
+                    }
+                    self.checkCompleteForm()
                 }
             <<< DecimalRow("amount") { row in
-                row.title = "Payment amount"
+                row.title = "Amount"
                 row.placeholder = "Enter payment amount"
                 row.add(rule: RuleRequired())
                 row.add(rule: RuleGreaterThan(min: 0))
                 }.cellUpdate { cell, row in
                     if !row.isValid {
+                        cell.textLabel?.textColor = Theme.colorError
                         cell.textField?.textColor = Theme.colorError
                     }
+                    self.checkCompleteForm()
                 }
             <<< PushRow<String>("method") { row in
-                row.title = "Payment method"
+                row.title = "Method"
                 row.selectorTitle = "Select a method"
                 row.options = [
                     "Bank transfer",
@@ -70,6 +91,11 @@ class PaymentFormViewController: FormViewController {
                     "Cash"
                 ]
                 row.add(rule: RuleRequired())
+                }.cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.textLabel?.textColor = Theme.colorError
+                    }
+                    self.checkCompleteForm()
                 }.onPresent({ (_, presentingVC) -> () in
                     presentingVC.selectableRowCellUpdate = { cell, row in
                         cell.textLabel?.textColor = Theme.colorForeground
@@ -77,11 +103,12 @@ class PaymentFormViewController: FormViewController {
                     }
                 })
             <<< PushRow<String>("reason") { row in
-                row.title = "Payment reason"
+                row.title = "Reason"
                 row.selectorTitle = "Select a reason"
                 row.options = [
-                    "Lesson fees (termly [children] / quarterly or monthly [adults])",
-                    "Pay as you go lesson fee (children)",
+                    "Children's lesson fees (termly)",
+                    "Children's lesson fee (pas as you go)",
+                    "Adult's lesson fees (quarterly or monthly)",
                     "Uniform / dancewear",
                     "Show fee",
                     "Exam fee",
@@ -90,6 +117,11 @@ class PaymentFormViewController: FormViewController {
                     "Other"
                 ]
                 row.add(rule: RuleRequired())
+                }.cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.textLabel?.textColor = Theme.colorError
+                    }
+                    self.checkCompleteForm()
                 }.onPresent({ (_, presentingVC) -> () in
                     presentingVC.selectableRowCellUpdate = { cell, row in
                         cell.textLabel?.textColor = Theme.colorForeground
@@ -103,9 +135,18 @@ class PaymentFormViewController: FormViewController {
                 row.hidden = Condition.function(["reason"], { form in
                         return ((form.rowBy(tag: "reason") as? PushRow<String>)?.value != "Other")
                     })
+                }.cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.textLabel?.textColor = Theme.colorError
+                        cell.textField?.textColor = Theme.colorError
+                    }
+                    self.checkCompleteForm()
                 }
             +++ Section("Anything else we should know?")
             <<< TextAreaRow("additional")
+                .cellUpdate { cell, row in
+                    self.checkCompleteForm()
+                }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -117,12 +158,38 @@ class PaymentFormViewController: FormViewController {
     
     // MARK: - Actions
     
+    private func checkCompleteForm() {
+        let date = (self.form.rowBy(tag: "date") as! DateRow)
+        let amount = (self.form.rowBy(tag: "amount") as! DecimalRow)
+        let name = (self.form.rowBy(tag: "name") as! TextRow)
+        let studentName = (self.form.rowBy(tag: "student_name") as! TextRow)
+        let email = (self.form.rowBy(tag: "email") as! EmailRow)
+        let method = (self.form.rowBy(tag: "method") as! PushRow<String>)
+        let reason = (self.form.rowBy(tag: "reason") as! PushRow<String>)
+        var otherReason: TextRow?
+        if (reason.value == "Other") {
+            otherReason = (self.form.rowBy(tag: "other_reason") as! TextRow)
+        }
+        let additional = (self.form.rowBy(tag: "additional") as! TextAreaRow)
+        
+        self.submitButton.isEnabled = date.value != nil && date.isValid
+            && amount.value != nil && amount.isValid
+            && name.value != nil && name.isValid
+            && studentName.value != nil && studentName.isValid
+            && email.value != nil && email.isValid
+            && method.value != nil && method.isValid
+            && reason.value != nil && reason.isValid
+            && (reason.value != "Other" || (otherReason?.value != nil && otherReason?.isValid ?? false))
+            && additional.isValid
+    }
+    
     @IBAction
-    func submitBooking(sender: Any?) {
+    func submitPaymentNotification(sender: Any?) {
         let date = (self.form.rowBy(tag: "date") as! DateRow).value!
         let amount = (self.form.rowBy(tag: "amount") as! DecimalRow).value!
         let name = (self.form.rowBy(tag: "name") as! TextRow).value!
         let studentName = (self.form.rowBy(tag: "student_name") as! TextRow).value!
+        let email = (self.form.rowBy(tag: "email") as! EmailRow).value!
         let method = (self.form.rowBy(tag: "method") as! PushRow<String>).value!
         var reason = (self.form.rowBy(tag: "reason") as! PushRow<String>).value!
         if (reason == "Other") {
@@ -142,6 +209,7 @@ class PaymentFormViewController: FormViewController {
                 amount: amount,
                 name: name,
                 studentName: studentName,
+                email: email,
                 method: method,
                 reason: reason,
                 otherDetails: additional,
