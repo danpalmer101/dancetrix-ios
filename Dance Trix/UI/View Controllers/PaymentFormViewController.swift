@@ -22,7 +22,28 @@ class PaymentFormViewController: FormViewController {
         super.viewDidLoad()
         
         self.form
-            +++ Section("Payment Details")
+            +++ Section("Your details")
+            <<< TextRow("name") { row in
+                row.title = "Your name"
+                row.placeholder = "Enter your name"
+                row.add(rule: RuleRequired())
+                }
+            <<< TextRow("student_name") { row in
+                row.title = "Student name"
+                row.placeholder = "Enter the student's name"
+                row.add(rule: RuleRequired())
+                }
+            <<< EmailRow("email") { row in
+                row.title = "Email address"
+                row.add(rule: RuleRequired())
+                row.add(rule: RuleEmail())
+                row.placeholder = "Enter your email address"
+                }.cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.textField?.textColor = Theme.colorError
+                    }
+                }
+            +++ Section("Your payment")
             <<< DateRow("date") { row in
                 row.title = "Payment date"
                 row.value = Date()
@@ -39,16 +60,22 @@ class PaymentFormViewController: FormViewController {
                         cell.textField?.textColor = Theme.colorError
                     }
                 }
-            <<< TextRow("name") { row in
-                row.title = "Your name"
-                row.placeholder = "Enter your name"
+            <<< PushRow<String>("method") { row in
+                row.title = "Payment method"
+                row.selectorTitle = "Select a method"
+                row.options = [
+                    "Bank transfer",
+                    "PayPal",
+                    "Credit/Debit card",
+                    "Cash"
+                ]
                 row.add(rule: RuleRequired())
-                }
-            <<< TextRow("student_name") { row in
-                row.title = "Student name"
-                row.placeholder = "Enter the student's name"
-                row.add(rule: RuleRequired())
-                }
+                }.onPresent({ (_, presentingVC) -> () in
+                    presentingVC.selectableRowCellUpdate = { cell, row in
+                        cell.textLabel?.textColor = Theme.colorForeground
+                        cell.tintColor = Theme.colorTint
+                    }
+                })
             <<< PushRow<String>("reason") { row in
                 row.title = "Payment reason"
                 row.selectorTitle = "Select a reason"
@@ -96,6 +123,7 @@ class PaymentFormViewController: FormViewController {
         let amount = (self.form.rowBy(tag: "amount") as! DecimalRow).value!
         let name = (self.form.rowBy(tag: "name") as! TextRow).value!
         let studentName = (self.form.rowBy(tag: "student_name") as! TextRow).value!
+        let method = (self.form.rowBy(tag: "method") as! PushRow<String>).value!
         var reason = (self.form.rowBy(tag: "reason") as! PushRow<String>).value!
         if (reason == "Other") {
             reason = (self.form.rowBy(tag: "other_reason") as! TextRow).value!
@@ -114,6 +142,7 @@ class PaymentFormViewController: FormViewController {
                 amount: amount,
                 name: name,
                 studentName: studentName,
+                method: method,
                 reason: reason,
                 otherDetails: additional,
                 successHandler: {

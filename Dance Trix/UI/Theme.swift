@@ -110,6 +110,13 @@ class Theme {
             cell.tintColor = Theme.colorTint
         }
         MultipleSelectorRow<String>.defaultCellUpdate = MultipleSelectorRow<String>.defaultCellSetup
+        
+        SwitchRow.defaultCellSetup = { cell, row in
+            cell.textLabel?.textColor = Theme.colorForeground
+            cell.detailTextLabel?.textColor = Theme.colorForeground
+            cell.tintColor = Theme.colorTint
+        }
+        SwitchRow.defaultCellUpdate = SwitchRow.defaultCellSetup
     }
     
     static func applyTableViewCell(tableCell: UITableViewCell?) {
