@@ -94,8 +94,8 @@ class CalendarViewController : UIViewController, JTAppleCalendarViewDelegate, JT
                     default:
                         log.error(["An unexpected error occurred loading class dates", error])
                         
-                        if (!datesErrorDisplayed) {
-                            datesErrorDisplayed = true
+                        if (!self.datesErrorDisplayed) {
+                            self.datesErrorDisplayed = true
                             
                             Notification.show(
                                 title: "Warning",

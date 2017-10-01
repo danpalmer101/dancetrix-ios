@@ -412,12 +412,33 @@ Once you have completed the transaction, please let us know with the button belo
                     <view key="view" contentMode="scaleToFill" id="KAC-l2-FDP" customClass="BackgroundView" customModule="Dance_Trix" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axK-sw-hTt" customClass="SubmitButton" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="16" y="737" width="343" height="55"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Submit booking"/>
+                                <connections>
+                                    <action selector="submitBookingWithSender:" destination="p44-8N-V6u" eventType="touchUpInside" id="ZqG-e9-8Lt"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="omy-Lf-FLA">
+                                <rect key="frame" x="169" y="746" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="oPx-TK-hXD"/>
                     </view>
                     <navigationItem key="navigationItem" title="Payment details" id="NxJ-fF-2KX"/>
+                    <connections>
+                        <outlet property="submitButton" destination="axK-sw-hTt" id="0ah-fk-6Pt"/>
+                        <outlet property="submittingIndicator" destination="omy-Lf-FLA" id="GiV-9L-Wa3"/>
+                        <segue destination="nhq-bo-cF1" kind="unwind" identifier="unwindToHomeViewController" unwindAction="unwindToHomeViewControllerWithSegue:" id="54w-kU-fjw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIt-7o-Gzk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="nhq-bo-cF1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1409" y="1335"/>
         </scene>

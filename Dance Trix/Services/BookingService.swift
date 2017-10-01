@@ -9,15 +9,17 @@
 import Foundation
 
 protocol BookingService {
-    func bookClass(classDetails: Class, dates: [DateInterval], name: String, email: String, successHandler: () -> Void, errorHandler: (Error) -> Void)
+    
+    func bookClass(classDetails: Class, dates: [DateInterval], name: String, email: String, successHandler: @escaping () -> Void, errorHandler: @escaping (Error) -> Void)
+    
 }
 
-class MockBookingService {
+class MockBookingService : BookingService {
     
-    func bookClass(classDetails: Class, dates: [DateInterval], name: String, email: String, successHandler: @escaping () -> Void, errorHandler: (Error) -> Void) {
-        sleep(2)
-        
+    func bookClass(classDetails: Class, dates: [DateInterval], name: String, email: String, successHandler: @escaping () -> Void, errorHandler: @escaping (Error) -> Void) {
         DispatchQueue.global().async {
+            sleep(2)
+            
             //errorHandler(BookingError.errorBooking(classDetails: classDetails, dates: dates))
             successHandler()
         }

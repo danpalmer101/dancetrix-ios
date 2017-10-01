@@ -9,19 +9,19 @@
 import Foundation
 
 protocol ClassService {
-    func getClassMenu(successHandler: (ClassMenu) -> Void, errorHandler: (Error) -> Void)
-    func getClassDates(_ classDetails: Class, successHandler: ([DateInterval]) -> Void, errorHandler: (Error) -> Void)
+    
+    func getClassMenu(successHandler: @escaping (ClassMenu) -> Void, errorHandler: @escaping (Error) -> Void)
+    func getClassDates(_ classDetails: Class, successHandler: @escaping ([DateInterval]) -> Void, errorHandler: @escaping (Error) -> Void)
+    
 }
 
-class MockClassService {
+class MockClassService: ClassService {
     
     var classMenuCache: ClassMenu?
     var datesCache = [Class : [DateInterval]]()
     
-    func getClassMenu(successHandler: @escaping (ClassMenu) -> Void, errorHandler: (Error) -> Void) {
+    func getClassMenu(successHandler: @escaping (ClassMenu) -> Void, errorHandler: @escaping (Error) -> Void) {
         if (self.classMenuCache == nil) {
-            //sleep(2)
-            
             self.classMenuCache = ClassMenuParser.parse(
                 serviceNames: [
                     "Children|Autumn Half Term 1 2017|Children's Saturday Classes",
@@ -50,15 +50,15 @@ class MockClassService {
         }
         
         DispatchQueue.global().async {
+            //sleep(2)
+            
             //errorHandler(ClassesError.errorRetrievingClasses)
             successHandler(self.classMenuCache!)
         }
     }
     
-    func getClassDates(_ classDetails: Class, successHandler: @escaping ([DateInterval]) -> Void, errorHandler: (Error) -> Void) {
+    func getClassDates(_ classDetails: Class, successHandler: @escaping ([DateInterval]) -> Void, errorHandler: @escaping (Error) -> Void) {
         if (datesCache[classDetails] == nil) {
-            //sleep(2)
-            
             let minute: TimeInterval = 60.0
             let hour: TimeInterval = 60.0 * minute
             let day: TimeInterval = 24 * hour
@@ -81,6 +81,8 @@ class MockClassService {
         }
         
         DispatchQueue.global().async {
+            //sleep(2)
+            
             //errorHandler(ClassesError.errorRetrivingClassDates(classDetails: classDetails))
             successHandler(self.datesCache[classDetails]!)
         }

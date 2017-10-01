@@ -10,7 +10,8 @@ import Foundation
 
 class ServiceLocator {
     
-    static var classService = MockClassService()
-    static var bookingService = MockBookingService()
+    static var classService: ClassService = MockClassService()
+    static var bookingService: BookingService = MockBookingService()
+    static var paymentService: PaymentService = MockPaymentService()
     
 }

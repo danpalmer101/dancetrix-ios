@@ -11,6 +11,11 @@ import Eureka
 
 class PaymentFormViewController: FormViewController {
 
+    @IBOutlet
+    var submitButton: UIButton!
+    @IBOutlet
+    var submittingIndicator: UIActivityIndicatorView!
+    
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
@@ -44,9 +49,9 @@ class PaymentFormViewController: FormViewController {
                 row.placeholder = "Enter the student's name"
                 row.add(rule: RuleRequired())
                 }
-            <<< PushRow<String>("for") { row in
-                row.title = "Payment for"
-                row.selectorTitle = "Payment for"
+            <<< PushRow<String>("reason") { row in
+                row.title = "Payment reason"
+                row.selectorTitle = "Select a reason"
                 row.options = [
                     "Lesson fees (termly [children] / quarterly or monthly [adults])",
                     "Pay as you go lesson fee (children)",
@@ -64,16 +69,83 @@ class PaymentFormViewController: FormViewController {
                         cell.tintColor = Theme.colorTint
                     }
                 })
-            <<< TextRow("other_for") { row in
+            <<< TextRow("other_reason") { row in
                 row.title = "Other"
                 row.placeholder = "Enter other reason for payment"
                 row.add(rule: RuleRequired())
-                row.hidden = Condition.function(["for"], { form in
-                        return ((form.rowBy(tag: "for") as? PushRow)?.value != "Other")
+                row.hidden = Condition.function(["reason"], { form in
+                        return ((form.rowBy(tag: "reason") as? PushRow<String>)?.value != "Other")
                     })
                 }
             +++ Section("Anything else we should know?")
             <<< TextAreaRow("additional")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.view.bringSubview(toFront: self.submitButton)
+        self.view.bringSubview(toFront: self.submittingIndicator)
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction
+    func submitBooking(sender: Any?) {
+        let date = (self.form.rowBy(tag: "date") as! DateRow).value!
+        let amount = (self.form.rowBy(tag: "amount") as! DecimalRow).value!
+        let name = (self.form.rowBy(tag: "name") as! TextRow).value!
+        let studentName = (self.form.rowBy(tag: "student_name") as! TextRow).value!
+        var reason = (self.form.rowBy(tag: "reason") as! PushRow<String>).value!
+        if (reason == "Other") {
+            reason = (self.form.rowBy(tag: "other_reason") as! TextRow).value!
+        }
+        let additional = (self.form.rowBy(tag: "additional") as! TextAreaRow).value
+        
+        let submitTitle = self.submitButton.title(for: .normal)
+        
+        self.submitButton.setTitle("", for: .normal)
+        self.submittingIndicator.startAnimating()
+        self.submitButton.isEnabled = false
+        
+        DispatchQueue.global().async {
+            ServiceLocator.paymentService.notify(
+                date: date,
+                amount: amount,
+                name: name,
+                studentName: studentName,
+                reason: reason,
+                otherDetails: additional,
+                successHandler: {
+                    Notification.show(
+                        title: "Success",
+                        subtitle: "Thanks for letting us know!",
+                        type: NotificationType.success)
+                    
+                    DispatchQueue.main.async {
+                        self.submitButton.isEnabled = true
+                        self.submittingIndicator.stopAnimating()
+                        self.submitButton.setTitle(submitTitle, for: .normal)
+                        
+                        self.performSegue(withIdentifier: "unwindToHomeViewController", sender: sender)
+                    }
+                },
+                errorHandler: { (error: Error) in
+                    log.error(["An unexpected error occurred notifing payment", error])
+                    
+                    Notification.show(
+                        title: "Error",
+                        subtitle: "An unexpected error occurred submitting your payment information, please try again later.",
+                        type: NotificationType.error)
+                    
+                    DispatchQueue.main.async {
+                        self.submitButton.isEnabled = true
+                        self.submittingIndicator.stopAnimating()
+                        self.submitButton.setTitle(submitTitle, for: .normal)
+                    }
+            }
+            )
+        }
     }
 
 }
