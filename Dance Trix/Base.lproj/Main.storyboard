@@ -59,7 +59,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Make a payment"/>
                                 <connections>
-                                    <segue destination="p44-8N-V6u" kind="show" id="Rrn-su-JQy"/>
+                                    <segue destination="Syn-4R-O6g" kind="show" id="lnq-xV-MM9"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="RX1-KG-7Uh" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
@@ -290,6 +290,122 @@
             <point key="canvasLocation" x="652" y="612"/>
         </scene>
         <!--Make a payment-->
+        <scene sceneID="4mN-Vz-Jwe">
+            <objects>
+                <viewController id="Syn-4R-O6g" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IGU-WD-Lqy" customClass="BackgroundView" customModule="Dance_Trix" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4b-J4-IFT" customClass="SubmitButton" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="16" y="737" width="343" height="55"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Let us know about a payment"/>
+                                <connections>
+                                    <segue destination="p44-8N-V6u" kind="show" id="d9o-TH-i53"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="duc-o5-Q52">
+                                <rect key="frame" x="16" y="88" width="343" height="641"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">We accept payment via a number of methods:
+
+1. Our preferred method of payment is </string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="bank transfer">
+                                        <attributes>
+                                            <color key="NSColor" red="0.10980392156862745" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="15" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> into our account:
+
+	Sort code: 09-01-28
+	Account number: 89761875
+
+2. You can pay via </string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="PayPal">
+                                        <attributes>
+                                            <color key="NSColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="15" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> using our email address (dancetrix@yahoo.co.uk) as the payee.
+
+3. You can pay via </string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="credit/debit card">
+                                        <attributes>
+                                            <color key="NSColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="15" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> by calling either one of us on the numbers on the contact page (please note that there is a 3% transaction fee for this).
+
+4. You can pay before the class is attended or goods are received in </string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="cash">
+                                        <attributes>
+                                            <color key="NSColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="15" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">.
+
+Once you have completed the transaction, please let us know with the button below.</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="bKo-6c-WVX"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Make a payment" id="he6-hS-NVP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uZ8-o2-ep4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1408.8" y="611.82266009852219"/>
+        </scene>
+        <!--Payment details-->
         <scene sceneID="6Ew-Bz-4pr">
             <objects>
                 <viewController id="p44-8N-V6u" customClass="PaymentFormViewController" customModule="Dance_Trix" customModuleProvider="target" sceneMemberID="viewController">
@@ -299,11 +415,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="oPx-TK-hXD"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Make a payment" id="NxJ-fF-2KX"/>
+                    <navigationItem key="navigationItem" title="Payment details" id="NxJ-fF-2KX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIt-7o-Gzk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1409" y="612"/>
+            <point key="canvasLocation" x="1409" y="1335"/>
         </scene>
         <!--About us-->
         <scene sceneID="zXS-qh-vBO">

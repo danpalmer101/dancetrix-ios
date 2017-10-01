@@ -63,7 +63,8 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
         if (segue.identifier == "Book") {
             let destination: SubmitBookingViewController = segue.destination as! SubmitBookingViewController
             destination.classDetails = self.classDetails
-            destination.dates = self.tableView.indexPathsForSelectedRows?.map({
+            destination.allDates = self.dates
+            destination.selectedDates = self.tableView.indexPathsForSelectedRows?.map({
                 (indexPath: IndexPath) -> DateInterval in return self.dates![indexPath.row]
             })
         }

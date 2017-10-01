@@ -12,7 +12,8 @@ import Eureka
 class SubmitBookingViewController: FormViewController {
 
     var classDetails: Class!
-    var dates: [DateInterval]!
+    var allDates: [DateInterval]!
+    var selectedDates: [DateInterval]!
     
     @IBOutlet
     var submitButton: UIButton!
@@ -29,17 +30,22 @@ class SubmitBookingViewController: FormViewController {
         
         self.form
             +++ Section("Class")
-            <<< TextAreaRow() { row in
-                row.textAreaHeight = TextAreaHeight.dynamic(initialTextViewHeight: 10)
+            <<< TextRow() { row in
+                row.title = "Name"
                 row.value = self.classDetails.name
                 row.disabled = Condition(booleanLiteral: true)
                 }
-            +++ Section("Dates")
-            <<< TextAreaRow() { row in
-                row.textAreaHeight = TextAreaHeight.dynamic(initialTextViewHeight: 10)
-                row.value = self.dates.map({ (d: DateInterval) in dateFormatter.string(from: d.start)}).joined(separator: ", ")
-                row.disabled = Condition(booleanLiteral: true)
-                }
+           <<<  MultipleSelectorRow<String>("dates") { row in
+                row.title = "Dates"
+                row.options = self.allDates.map({ (date: DateInterval) -> String in dateFormatter.string(from: date.start) })
+                row.value = Set(self.selectedDates.map({ (date: DateInterval) -> String in dateFormatter.string(from: date.start) }))
+                }.onPresent({ (_, presentingVC) -> () in
+                    presentingVC.selectableRowCellUpdate = { cell, row in
+                        cell.textLabel?.textColor = Theme.colorForeground
+                        cell.tintColor = Theme.colorTint
+                        cell.isUserInteractionEnabled = false
+                    }
+                })
             +++ Section("Your details")
             <<< TextRow("name") { row in
                 row.title = "Name"
@@ -93,7 +99,7 @@ class SubmitBookingViewController: FormViewController {
         DispatchQueue.global().async {
             ServiceLocator.bookingService.bookClass(
                 classDetails: self.classDetails,
-                dates: self.dates,
+                dates: self.selectedDates,
                 name: name,
                 email: email,
                 successHandler: {

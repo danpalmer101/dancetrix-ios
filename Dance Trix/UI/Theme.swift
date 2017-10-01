@@ -12,8 +12,8 @@ import Eureka
 class Theme {
     
     static let colorBackground = UIColor.black
-    static let colorTint = UIColor(displayP3Red: 28.0/256.0, green:146.0/256.0, blue: 128.0/256.0, alpha: 1)
-    static let colorTintDark = UIColor(displayP3Red: 14.0/256.0, green:73.0/256.0, blue: 64.0/256.0, alpha: 1)
+    static let colorTint = UIColor(displayP3Red: 28.0/255.0, green:146.0/255.0, blue: 128.0/255.0, alpha: 1)
+    static let colorTintDark = UIColor(displayP3Red: 14.0/255.0, green:73.0/255.0, blue: 64.0/255.0, alpha: 1)
     static let colorForeground = UIColor.white
     static let colorForegroundDark = UIColor.darkGray
     static let colorForegroundMid = UIColor.lightGray
@@ -103,6 +103,13 @@ class Theme {
             cell.tintColor = Theme.colorTint
         }
         PushRow<String>.defaultCellUpdate = PushRow<String>.defaultCellSetup
+        
+        MultipleSelectorRow<String>.defaultCellSetup = { cell, row in
+            cell.textLabel?.textColor = Theme.colorForeground
+            cell.detailTextLabel?.textColor = Theme.colorForeground
+            cell.tintColor = Theme.colorTint
+        }
+        MultipleSelectorRow<String>.defaultCellUpdate = MultipleSelectorRow<String>.defaultCellSetup
     }
     
     static func applyTableViewCell(tableCell: UITableViewCell?) {
