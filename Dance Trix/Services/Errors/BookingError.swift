@@ -9,5 +9,4 @@
 import Foundation
 
 enum BookingError: Error {
-    case errorBooking(classDetails: Class, dates: [DateInterval]?)
 }

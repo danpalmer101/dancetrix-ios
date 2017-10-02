@@ -28,9 +28,8 @@
 		A68828341F78410B00D82322 /* DateInterval_Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828331F78410B00D82322 /* DateInterval_Text.swift */; };
 		A68828361F78445200D82322 /* TintSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828351F78445200D82322 /* TintSelectTableViewCell.swift */; };
 		A68828381F78467900D82322 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828371F78467900D82322 /* SubmitButton.swift */; };
-		A697F8661F7C32BF00195246 /* ClassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F8651F7C32BF00195246 /* ClassService.swift */; };
+		A697F8661F7C32BF00195246 /* MockClassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F8651F7C32BF00195246 /* MockClassService.swift */; };
 		A697F8681F7C38C600195246 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F8671F7C38C600195246 /* ServiceLocator.swift */; };
-		A697F86A1F7C391400195246 /* BookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F8691F7C391400195246 /* BookingService.swift */; };
 		A697F86C1F7C3AD200195246 /* ClassesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F86B1F7C3AD200195246 /* ClassesError.swift */; };
 		A697F86E1F7C3D0E00195246 /* BookingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F86D1F7C3D0E00195246 /* BookingError.swift */; };
 		A697F8711F7CF0AB00195246 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F8701F7CF0AB00195246 /* CalendarViewController.swift */; };
@@ -46,9 +45,17 @@
 		A6BD4F291F7EE9BD00D261D1 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD4F281F7EE9BD00D261D1 /* WebViewController.swift */; };
 		A6BD4F2C1F7EEEB800D261D1 /* dancetrix-body-only.css in Resources */ = {isa = PBXBuildFile; fileRef = A6BD4F2B1F7EEEB800D261D1 /* dancetrix-body-only.css */; };
 		A6BD4F2E1F803C8800D261D1 /* PaymentFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BD4F2D1F803C8800D261D1 /* PaymentFormViewController.swift */; };
-		A6D23AD71F813B5700229DEC /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AD61F813B5700229DEC /* PaymentService.swift */; };
+		A6D23AD71F813B5700229DEC /* MockPaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AD61F813B5700229DEC /* MockPaymentService.swift */; };
 		A6D23AD91F814B4400229DEC /* UniformOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AD81F814B4400229DEC /* UniformOrderViewController.swift */; };
 		A6D23ADB1F818A5800229DEC /* SubmitFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23ADA1F818A5800229DEC /* SubmitFormViewController.swift */; };
+		A6D23ADD1F82504500229DEC /* MockOrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23ADC1F82504500229DEC /* MockOrderService.swift */; };
+		A6D23ADF1F8252D600229DEC /* OrderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23ADE1F8252D600229DEC /* OrderError.swift */; };
+		A6D23AE11F8252EB00229DEC /* PaymentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AE01F8252EB00229DEC /* PaymentError.swift */; };
+		A6D23AE91F82537D00229DEC /* BookingServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AE81F82537D00229DEC /* BookingServiceType.swift */; };
+		A6D23AEB1F8253DC00229DEC /* ClassServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AEA1F8253DC00229DEC /* ClassServiceType.swift */; };
+		A6D23AED1F8253EE00229DEC /* PaymentServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AEC1F8253EE00229DEC /* PaymentServiceType.swift */; };
+		A6D23AEF1F82540B00229DEC /* OrderServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AEE1F82540B00229DEC /* OrderServiceType.swift */; };
+		A6D23AF11F82544800229DEC /* MockBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AF01F82544800229DEC /* MockBookingService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,9 +92,8 @@
 		A68828351F78445200D82322 /* TintSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintSelectTableViewCell.swift; sourceTree = "<group>"; };
 		A68828371F78467900D82322 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		A688283C1F794C1F00D82322 /* set_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
-		A697F8651F7C32BF00195246 /* ClassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassService.swift; sourceTree = "<group>"; };
+		A697F8651F7C32BF00195246 /* MockClassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockClassService.swift; sourceTree = "<group>"; };
 		A697F8671F7C38C600195246 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
-		A697F8691F7C391400195246 /* BookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingService.swift; sourceTree = "<group>"; };
 		A697F86B1F7C3AD200195246 /* ClassesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesError.swift; sourceTree = "<group>"; };
 		A697F86D1F7C3D0E00195246 /* BookingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingError.swift; sourceTree = "<group>"; };
 		A697F8701F7CF0AB00195246 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -105,9 +111,17 @@
 		A6BD4F281F7EE9BD00D261D1 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A6BD4F2B1F7EEEB800D261D1 /* dancetrix-body-only.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "dancetrix-body-only.css"; sourceTree = "<group>"; };
 		A6BD4F2D1F803C8800D261D1 /* PaymentFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentFormViewController.swift; sourceTree = "<group>"; };
-		A6D23AD61F813B5700229DEC /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
+		A6D23AD61F813B5700229DEC /* MockPaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPaymentService.swift; sourceTree = "<group>"; };
 		A6D23AD81F814B4400229DEC /* UniformOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformOrderViewController.swift; sourceTree = "<group>"; };
 		A6D23ADA1F818A5800229DEC /* SubmitFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitFormViewController.swift; sourceTree = "<group>"; };
+		A6D23ADC1F82504500229DEC /* MockOrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockOrderService.swift; sourceTree = "<group>"; };
+		A6D23ADE1F8252D600229DEC /* OrderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderError.swift; sourceTree = "<group>"; };
+		A6D23AE01F8252EB00229DEC /* PaymentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentError.swift; sourceTree = "<group>"; };
+		A6D23AE81F82537D00229DEC /* BookingServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingServiceType.swift; sourceTree = "<group>"; };
+		A6D23AEA1F8253DC00229DEC /* ClassServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassServiceType.swift; sourceTree = "<group>"; };
+		A6D23AEC1F8253EE00229DEC /* PaymentServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentServiceType.swift; sourceTree = "<group>"; };
+		A6D23AEE1F82540B00229DEC /* OrderServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderServiceType.swift; sourceTree = "<group>"; };
+		A6D23AF01F82544800229DEC /* MockBookingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBookingService.swift; sourceTree = "<group>"; };
 		B7A5DCFF387C88D76065DD0C /* Pods-Dance Trix Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -214,12 +228,11 @@
 		A697F8641F7C326500195246 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A6D23AE51F82531800229DEC /* Errors */,
+				A6D23AE21F82530100229DEC /* Protocols */,
+				A6D23AE41F82531000229DEC /* Implementations */,
+				A6D23AE31F82530600229DEC /* Mocks */,
 				A697F8671F7C38C600195246 /* ServiceLocator.swift */,
-				A697F8691F7C391400195246 /* BookingService.swift */,
-				A697F8651F7C32BF00195246 /* ClassService.swift */,
-				A6D23AD61F813B5700229DEC /* PaymentService.swift */,
-				A697F86B1F7C3AD200195246 /* ClassesError.swift */,
-				A697F86D1F7C3D0E00195246 /* BookingError.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -277,6 +290,46 @@
 				A6BD4F2B1F7EEEB800D261D1 /* dancetrix-body-only.css */,
 			);
 			path = CSS;
+			sourceTree = "<group>";
+		};
+		A6D23AE21F82530100229DEC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A6D23AE81F82537D00229DEC /* BookingServiceType.swift */,
+				A6D23AEA1F8253DC00229DEC /* ClassServiceType.swift */,
+				A6D23AEC1F8253EE00229DEC /* PaymentServiceType.swift */,
+				A6D23AEE1F82540B00229DEC /* OrderServiceType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A6D23AE31F82530600229DEC /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A6D23AF01F82544800229DEC /* MockBookingService.swift */,
+				A697F8651F7C32BF00195246 /* MockClassService.swift */,
+				A6D23AD61F813B5700229DEC /* MockPaymentService.swift */,
+				A6D23ADC1F82504500229DEC /* MockOrderService.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		A6D23AE41F82531000229DEC /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		A6D23AE51F82531800229DEC /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				A697F86B1F7C3AD200195246 /* ClassesError.swift */,
+				A697F86D1F7C3D0E00195246 /* BookingError.swift */,
+				A6D23AE01F8252EB00229DEC /* PaymentError.swift */,
+				A6D23ADE1F8252D600229DEC /* OrderError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		FB2897419A9A66B57376CF5D /* Pods */ = {
@@ -544,11 +597,12 @@
 				A697F86E1F7C3D0E00195246 /* BookingError.swift in Sources */,
 				A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */,
 				A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */,
-				A6D23AD71F813B5700229DEC /* PaymentService.swift in Sources */,
+				A6D23AD71F813B5700229DEC /* MockPaymentService.swift in Sources */,
 				A697F8731F7D42E000195246 /* CalendarCell.swift in Sources */,
 				A6D23ADB1F818A5800229DEC /* SubmitFormViewController.swift in Sources */,
+				A6D23AED1F8253EE00229DEC /* PaymentServiceType.swift in Sources */,
 				A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */,
-				A697F86A1F7C391400195246 /* BookingService.swift in Sources */,
+				A6D23AEF1F82540B00229DEC /* OrderServiceType.swift in Sources */,
 				A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */,
 				A68828361F78445200D82322 /* TintSelectTableViewCell.swift in Sources */,
 				A688281A1F7706D200D82322 /* TintImageView.swift in Sources */,
@@ -556,19 +610,25 @@
 				A600265F1F7AACF000DDC90F /* TextField.swift in Sources */,
 				A68828141F75AB6200D82322 /* ClassMenuParser.swift in Sources */,
 				A68828341F78410B00D82322 /* DateInterval_Text.swift in Sources */,
-				A697F8661F7C32BF00195246 /* ClassService.swift in Sources */,
+				A697F8661F7C32BF00195246 /* MockClassService.swift in Sources */,
 				A68828321F783DC300D82322 /* ClassDatesViewController.swift in Sources */,
 				A697F86C1F7C3AD200195246 /* ClassesError.swift in Sources */,
 				A68828121F756F0600D82322 /* Theme.swift in Sources */,
 				A6BD4F2E1F803C8800D261D1 /* PaymentFormViewController.swift in Sources */,
+				A6D23AF11F82544800229DEC /* MockBookingService.swift in Sources */,
 				A627D0791F79A733009097C1 /* BackgroundView.swift in Sources */,
+				A6D23AE91F82537D00229DEC /* BookingServiceType.swift in Sources */,
+				A6D23AE11F8252EB00229DEC /* PaymentError.swift in Sources */,
 				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,
 				A6BD4F271F7E9AB600D261D1 /* Notification.swift in Sources */,
 				A688281C1F77094600D82322 /* TitleNavigationItem.swift in Sources */,
+				A6D23ADD1F82504500229DEC /* MockOrderService.swift in Sources */,
 				A697F8681F7C38C600195246 /* ServiceLocator.swift in Sources */,
 				A68828381F78467900D82322 /* SubmitButton.swift in Sources */,
+				A6D23ADF1F8252D600229DEC /* OrderError.swift in Sources */,
 				A6D23AD91F814B4400229DEC /* UniformOrderViewController.swift in Sources */,
 				A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */,
+				A6D23AEB1F8253DC00229DEC /* ClassServiceType.swift in Sources */,
 				A68828181F76FC7000D82322 /* LinkButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

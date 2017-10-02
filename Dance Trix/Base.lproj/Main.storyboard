@@ -278,8 +278,12 @@
                         <viewLayoutGuide key="safeArea" id="vLw-bD-Hqu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Order uniforms" id="EgL-J8-6Zu"/>
+                    <connections>
+                        <segue destination="Twf-Ov-ZF5" kind="unwind" identifier="unwindToHomeViewController" unwindAction="unwindToHomeViewControllerWithSegue:" id="3ys-xv-EXZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zLK-aR-EKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Twf-Ov-ZF5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="652" y="612"/>
         </scene>

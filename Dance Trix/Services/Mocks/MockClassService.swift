@@ -1,5 +1,5 @@
 //
-//  ClassServices.swift
+//  MockClassService.swift
 //  Dance Trix
 //
 //  Created by Daniel Palmer on 27/09/2017.
@@ -8,21 +8,19 @@
 
 import Foundation
 
-protocol ClassService {
-    
-    func getClassMenu(successHandler: @escaping (ClassMenu) -> Void, errorHandler: @escaping (Error) -> Void)
-    func getClassDates(_ classDetails: Class, successHandler: @escaping ([DateInterval]) -> Void, errorHandler: @escaping (Error) -> Void)
-    
-}
-
-class MockClassService: ClassService {
+class MockClassService: ClassServiceType {
     
     var classMenuCache: ClassMenu?
     var datesCache = [Class : [DateInterval]]()
     
-    func getClassMenu(successHandler: @escaping (ClassMenu) -> Void, errorHandler: @escaping (Error) -> Void) {
+    func getClassMenu(successHandler: @escaping (ClassMenu) -> Void,
+                      errorHandler: @escaping (Error) -> Void) {
         DispatchQueue.global().async {
+            log.info("Mock class menu retrieval...")
+            
             if (self.classMenuCache == nil) {
+                sleep(1)
+                
                 self.classMenuCache = ClassMenuParser.parse(
                     serviceNames: [
                         "Children|Autumn Half Term 1 2017|Children's Saturday Classes",
@@ -50,16 +48,21 @@ class MockClassService: ClassService {
                 )
             }
         
-            //sleep(2)
+            log.info("... mock class menu retrieved")
             
-            //errorHandler(ClassesError.errorRetrievingClasses)
             successHandler(self.classMenuCache!)
         }
     }
     
-    func getClassDates(_ classDetails: Class, successHandler: @escaping ([DateInterval]) -> Void, errorHandler: @escaping (Error) -> Void) {
+    func getClassDates(_ classDetails: Class,
+                       successHandler: @escaping ([DateInterval]) -> Void,
+                       errorHandler: @escaping (Error) -> Void) {
         DispatchQueue.global().async {
+            log.info("Mock class date retrieval...")
+            
             if (self.datesCache[classDetails] == nil) {
+                sleep(1)
+                
                 let minute: TimeInterval = 60.0
                 let hour: TimeInterval = 60.0 * minute
                 let day: TimeInterval = 24 * hour
@@ -80,10 +83,9 @@ class MockClassService: ClassService {
                 
                 self.datesCache[classDetails] = dates
             }
-
-            //sleep(2)
             
-            //errorHandler(ClassesError.errorRetrivingClassDates(classDetails: classDetails))
+            log.info("... mock dates retrieved")
+            
             successHandler(self.datesCache[classDetails]!)
         }
     }

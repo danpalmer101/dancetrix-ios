@@ -10,7 +10,5 @@ import Foundation
 
 enum ClassesError: Error {
     case noClasses
-    case errorRetrievingClasses
     case noClassDates(classDetails: Class)
-    case errorRetrivingClassDates(classDetails: Class)
 }
