@@ -10,9 +10,10 @@ target 'Dance Trix' do
   pod 'RMessage', '~> 2.1.5'
   pod 'SwiftyBeaver', '~> 1.4.2'
   pod 'Eureka', '~> 4.0.0'
-  pod 'Firebase/Core', '~> 4.2.0'
-  pod 'Firebase/RemoteConfig', '~> 2.0.3'
-  pod 'Firebase/Storage', '~> 2.0.2'
+  pod 'Firebase/Core'
+  pod 'Firebase/RemoteConfig'
+  pod 'Firebase/Storage'
+  pod 'SendGrid', :git => 'https://github.com/scottkawai/sendgrid-swift.git'
 
   target 'Dance Trix Tests' do
     inherit! :search_paths
