@@ -43,6 +43,7 @@
 		A69ED4A01F82E3910005B845 /* dates_spring_half_term_2_2018.csv in Resources */ = {isa = PBXBuildFile; fileRef = A69ED49F1F82E3910005B845 /* dates_spring_half_term_2_2018.csv */; };
 		A69ED4A21F82E3D00005B845 /* dates_summer_half_term_1_2018.csv in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4A11F82E3D00005B845 /* dates_summer_half_term_1_2018.csv */; };
 		A69ED4A41F82E4020005B845 /* dates_summer_half_term_2_2018.csv in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4A31F82E4020005B845 /* dates_summer_half_term_2_2018.csv */; };
+		A69ED4A61F82E5BD0005B845 /* FirebaseStorageClassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4A51F82E5BD0005B845 /* FirebaseStorageClassService.swift */; };
 		A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */; };
 		A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */; };
 		A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */; };
@@ -116,6 +117,7 @@
 		A69ED49F1F82E3910005B845 /* dates_spring_half_term_2_2018.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dates_spring_half_term_2_2018.csv; sourceTree = "<group>"; };
 		A69ED4A11F82E3D00005B845 /* dates_summer_half_term_1_2018.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dates_summer_half_term_1_2018.csv; sourceTree = "<group>"; };
 		A69ED4A31F82E4020005B845 /* dates_summer_half_term_2_2018.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dates_summer_half_term_2_2018.csv; sourceTree = "<group>"; };
+		A69ED4A51F82E5BD0005B845 /* FirebaseStorageClassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageClassService.swift; sourceTree = "<group>"; };
 		A6BA0F581F74E20C00FAF47E /* Dance Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Trix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 		A6D23AE41F82531000229DEC /* Implementations */ = {
 			isa = PBXGroup;
 			children = (
+				A69ED4A51F82E5BD0005B845 /* FirebaseStorageClassService.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				A627D0791F79A733009097C1 /* BackgroundView.swift in Sources */,
 				A6D23AE91F82537D00229DEC /* BookingServiceType.swift in Sources */,
 				A6D23AE11F8252EB00229DEC /* PaymentError.swift in Sources */,
+				A69ED4A61F82E5BD0005B845 /* FirebaseStorageClassService.swift in Sources */,
 				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,
 				A6BD4F271F7E9AB600D261D1 /* Notification.swift in Sources */,
 				A688281C1F77094600D82322 /* TitleNavigationItem.swift in Sources */,
