@@ -12,27 +12,30 @@ class ClassMenuParser {
     
     private static let trimCharacters = CharacterSet(charactersIn: " ")
     
-    static func parse(serviceNames: [String]) -> ClassMenu {
+    static func parse(csvString: String) -> ClassMenu {
         var classMenus = [ClassMenu]()
         
-        // Create a single branch ClassMenu tree for each 'serviceName'
-        for serviceName in serviceNames {
-            var split = serviceName.split(separator: "|", maxSplits: Int.max, omittingEmptySubsequences: true)
-            
-            let name = trim(String(split.popLast()!))
-            let classDetails = Class(id: serviceName,
-                                     path: serviceName.replacingOccurrences(of: "|", with: " > "),
-                                     name: name)
-            var classMenu = ClassMenu(name: name,
-                                      classDetails: classDetails!)
-            
-            // Keep embedding class level in a parent
-            for classLevel in split.reversed() {
-                classMenu = ClassMenu(name: trim(String(classLevel)),
-                                      children: [classMenu!])
+        let csvRows = csvString.components(separatedBy: "\n")
+        
+        for csvRow in csvRows {
+            if (trim(csvRow) == "") {
+                // Skip empty rows
+                continue
             }
             
-            classMenus.append(classMenu!)
+            let csvColumns = csvRow.components(separatedBy: ",")
+            let format = csvColumns[0]
+            
+            var classMenu: ClassMenu?
+            
+            switch (format) {
+                case "V1": classMenu = parseFormat1(csvRow: csvColumns)
+                default: log.warning(["Unrecognised ClassMenu CSV format", format])
+            }
+            
+            if (classMenu != nil) {
+                classMenus.append(classMenu!)
+            }
         }
         
         return ClassMenu(name: "Classes", children: merge(classMenus: classMenus))!
@@ -69,6 +72,29 @@ class ClassMenuParser {
             (a, b) -> Bool in
                 return a.name < b.name
             })
+    }
+
+    private static func parseFormat1(csvRow: [String]) -> ClassMenu? {
+        // Create a single branch ClassMenu tree
+        let name = trim(csvRow[1])
+        let menuPath = csvRow[2].components(separatedBy: "|").map { (s: String) -> String in return trim(s) }
+        let datesLocation = trim(csvRow[3])
+        
+        let classDetails = Class(id: "TODO",
+                                 path: menuPath.joined(separator: " > "),
+                                 name: name,
+                                 datesLocation: datesLocation)
+        
+        var classMenu = ClassMenu(name: name,
+                                  classDetails: classDetails!)
+        
+        // Keep embedding class level in a parent
+        for menuLevel in menuPath.reversed() {
+            classMenu = ClassMenu(name: menuLevel,
+                                  children: [classMenu!])
+        }
+        
+        return classMenu
     }
     
     private static func trim(_ string: String) -> String {

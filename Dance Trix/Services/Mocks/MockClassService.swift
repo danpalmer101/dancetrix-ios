@@ -25,38 +25,21 @@ class MockClassService: ClassServiceType {
                 
                 log.debug("    Generating menu")
                 
-                menu = ClassMenuParser.parse(
-                    serviceNames: [
-                        "Children|Autumn Half Term 1 2017|Children's Saturday Classes",
-                        "Children|Autumn Half Term 2 2017|Children's Saturday Classes",
-                        "Children|Spring Half Term 1 2018|Children's Saturday Classes",
-                        "Children|Spring Half Term 2 2018|Children's Saturday Classes",
-                        "Children|Summer Half Term 1 2018|Children's Saturday Classes",
-                        "Children|Summer Half Term 2 2018|Children's Saturday Classes",
-                        "Children|Autumn Half Term 1 2017|Tiny Trixies",
-                        "Children|Autumn Half Term 2 2017|Tiny Trixies",
-                        "Children|Spring Half Term 1 2018|Tiny Trixies",
-                        "Children|Spring Half Term 2 2018|Tiny Trixies",
-                        "Children|Summer Half Term 1 2018|Tiny Trixies",
-                        "Children|Summer Half Term 2 2018|Tiny Trixies",
-                        "Adults|Day Time Classes|Ballet & Tap",
-                        "Adults|Day Time Classes|Mummy Ballet Burn",
-                        "Adults|Evening Classes|Advanced Tap",
-                        "Adults|Evening Classes|Advanced Ballet",
-                        "Adults|Evening Classes|Beginner/Intermediate Ballet",
-                        "Adults|Evening Classes|Intermediate Tap",
-                        "Adults|Evening Classes|Beginners Tap",
-                        "Adults|Evening Classes|Ballet Burn & Limbering",
-                        "Adults|Evening Classes|Jazz",
-                    ]
-                )
+                if let path = Bundle.main.path(forResource: "classes", ofType: "csv") {
+                    let csvString = try! String(contentsOfFile: path)
+                    menu = ClassMenuParser.parse(csvString: csvString)
+                }
                 
                 self.classMenuCache = menu
             }
-        
-            log.info("...mock class menu retrieved")
             
-            successHandler(menu!)
+            if (menu == nil) {
+                log.warning("...Unable to load mock classes")
+                errorHandler(ClassesError.noClasses)
+            } else {
+                log.info("...mock class menu retrieved")
+                successHandler(menu!)
+            }
         }
     }
     
@@ -73,31 +56,21 @@ class MockClassService: ClassServiceType {
                 
                 log.debug(String(format: "    Generating dates for %@", classDetails.name))
                 
-                let minute: TimeInterval = 60.0
-                let hour: TimeInterval = 60.0 * minute
-                let day: TimeInterval = 24 * hour
-                
-                // Create dates every 7 days
-                let interval: TimeInterval = 7 * day
-                
-                // First class is random time (9am - 8pm) on random day within the next 7 days
-                var baseDateComponents = Calendar.current.dateComponents([.calendar, .year, .month, .day], from: Date())
-                baseDateComponents.hour = Int(arc4random_uniform(11) + 9)
-                let baseDate = baseDateComponents.date?.addingTimeInterval(day * 3 * Double(arc4random_uniform(3)))
-                
-                dates = [DateInterval]()
-                
-                for i in 0...9 {
-                    dates!.append(DateInterval(start: baseDate!.addingTimeInterval(Double(i) * interval),
-                                               duration: hour))
+                if let path = Bundle.main.path(forResource: classDetails.datesLocation, ofType: "csv") {
+                    let csvString = try! String(contentsOfFile: path)
+                    dates = ClassDatesParser.parse(csvString: csvString)
                 }
                 
                 self.datesCache[classDetails] = dates
             }
             
-            log.info(String(format: "...mock dates retrieved for %@", classDetails.name))
-            
-            successHandler(dates!)
+            if (dates == nil) {
+                log.warning("...Unable to load mock class dates")
+                errorHandler(ClassesError.noClassDates(classDetails: classDetails))
+            } else {
+                log.info(String(format: "...mock dates retrieved for %@", classDetails.name))
+                successHandler(dates!)
+            }
         }
     }
     
