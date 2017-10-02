@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -26,6 +27,12 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewWillAppear(animated)
         
         self.loadDates()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        Analytics.setScreenName(String(format: "Class Dates [%@]", self.classDetails.name), screenClass: nil)
     }
     
     // MARK: - Table view data source

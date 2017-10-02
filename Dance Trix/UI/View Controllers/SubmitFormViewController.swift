@@ -18,10 +18,10 @@ class SubmitFormViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.size.width, height: 87))
         
-        submitButton = SubmitButton(parentView: footerView, title: "Submit")!
+        self.submitButton = SubmitButton(parentView: footerView, title: "Submit")!
         
         self.submittingIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
         let width = submittingIndicator.frame.size.width

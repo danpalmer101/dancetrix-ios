@@ -18,10 +18,14 @@ class MockClassService: ClassServiceType {
         DispatchQueue.global().async {
             log.info("Mock class menu retrieval...")
             
-            if (self.classMenuCache == nil) {
+            var menu = self.classMenuCache
+            
+            if (menu == nil) {
                 sleep(1)
                 
-                self.classMenuCache = ClassMenuParser.parse(
+                log.debug("    Generating menu")
+                
+                menu = ClassMenuParser.parse(
                     serviceNames: [
                         "Children|Autumn Half Term 1 2017|Children's Saturday Classes",
                         "Children|Autumn Half Term 2 2017|Children's Saturday Classes",
@@ -46,11 +50,13 @@ class MockClassService: ClassServiceType {
                         "Adults|Evening Classes|Jazz",
                     ]
                 )
+                
+                self.classMenuCache = menu
             }
         
-            log.info("... mock class menu retrieved")
+            log.info("...mock class menu retrieved")
             
-            successHandler(self.classMenuCache!)
+            successHandler(menu!)
         }
     }
     
@@ -58,10 +64,14 @@ class MockClassService: ClassServiceType {
                        successHandler: @escaping ([DateInterval]) -> Void,
                        errorHandler: @escaping (Error) -> Void) {
         DispatchQueue.global().async {
-            log.info("Mock class date retrieval...")
+            log.info(String(format: "Mock class date retrieval for %@...", classDetails.name))
             
-            if (self.datesCache[classDetails] == nil) {
+            var dates = self.datesCache[classDetails]
+            
+            if (dates == nil) {
                 sleep(1)
+                
+                log.debug(String(format: "    Generating dates for %@", classDetails.name))
                 
                 let minute: TimeInterval = 60.0
                 let hour: TimeInterval = 60.0 * minute
@@ -75,18 +85,19 @@ class MockClassService: ClassServiceType {
                 baseDateComponents.hour = Int(arc4random_uniform(11) + 9)
                 let baseDate = baseDateComponents.date?.addingTimeInterval(day * 3 * Double(arc4random_uniform(3)))
                 
-                var dates = [DateInterval]()
+                dates = [DateInterval]()
                 
                 for i in 0...9 {
-                    dates.append(DateInterval(start: baseDate!.addingTimeInterval(Double(i) * interval), duration: hour))
+                    dates!.append(DateInterval(start: baseDate!.addingTimeInterval(Double(i) * interval),
+                                               duration: hour))
                 }
                 
                 self.datesCache[classDetails] = dates
             }
             
-            log.info("... mock dates retrieved")
+            log.info(String(format: "...mock dates retrieved for %@", classDetails.name))
             
-            successHandler(self.datesCache[classDetails]!)
+            successHandler(dates!)
         }
     }
     

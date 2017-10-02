@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class ClassesViewController: UITableViewController {
     
     var classMenu: ClassMenu?
     
     private var loadingIndicator: UIActivityIndicatorView!
+    
+    // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,12 @@ class ClassesViewController: UITableViewController {
                                              y: 30,
                                              width: self.loadingIndicator.frame.size.width,
                                              height: self.loadingIndicator.frame.size.height)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        Analytics.setScreenName(String(format: "Class Menu [%@]", classMenu?.name ?? "unknown"), screenClass: nil)
     }
 
     // MARK: - Table view data source

@@ -34,6 +34,7 @@
 		A697F86E1F7C3D0E00195246 /* BookingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F86D1F7C3D0E00195246 /* BookingError.swift */; };
 		A697F8711F7CF0AB00195246 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F8701F7CF0AB00195246 /* CalendarViewController.swift */; };
 		A697F8731F7D42E000195246 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697F8721F7D42E000195246 /* CalendarCell.swift */; };
+		A69ED4921F829C710005B845 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4911F829C710005B845 /* GoogleService-Info.plist */; };
 		A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */; };
 		A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */; };
 		A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */; };
@@ -98,6 +99,7 @@
 		A697F86D1F7C3D0E00195246 /* BookingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingError.swift; sourceTree = "<group>"; };
 		A697F8701F7CF0AB00195246 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		A697F8721F7D42E000195246 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		A69ED4911F829C710005B845 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A6BA0F581F74E20C00FAF47E /* Dance Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Trix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +239,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		A69ED4931F82D1540005B845 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A68828131F75AB6200D82322 /* ClassMenuParser.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		A6BA0F4F1F74E20C00FAF47E = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +271,7 @@
 		A6BA0F5A1F74E20C00FAF47E /* Dance Trix */ = {
 			isa = PBXGroup;
 			children = (
+				A69ED4931F82D1540005B845 /* Utilities */,
 				A697F8641F7C326500195246 /* Services */,
 				A688281D1F770ECB00D82322 /* Resources */,
 				A6BA0F6D1F74F24600FAF47E /* Domain */,
@@ -269,6 +280,7 @@
 				A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */,
 				A6BA0F641F74E20C00FAF47E /* LaunchScreen.storyboard */,
 				A6BA0F671F74E20C00FAF47E /* Info.plist */,
+				A69ED4911F829C710005B845 /* GoogleService-Info.plist */,
 			);
 			path = "Dance Trix";
 			sourceTree = "<group>";
@@ -278,7 +290,6 @@
 			children = (
 				A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */,
 				A6BA0F721F74FEB800FAF47E /* Class.swift */,
-				A68828131F75AB6200D82322 /* ClassMenuParser.swift */,
 				A68828331F78410B00D82322 /* DateInterval_Text.swift */,
 			);
 			path = Domain;
@@ -445,6 +456,7 @@
 				A6BD4F2C1F7EEEB800D261D1 /* dancetrix-body-only.css in Resources */,
 				A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */,
 				A60026631F7BB4D200DDC90F /* prepare-commit-msg in Resources */,
+				A69ED4921F829C710005B845 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,20 +537,28 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Dance Trix/Pods-Dance Trix-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/PPTopMostController/PPTopMostController.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RMessage/RMessage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PPTopMostController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMessage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -811,7 +831,7 @@
 				INFOPLIST_FILE = "Dance Trix/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.dancetrix.Dance-Trix";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.dancetrix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -827,7 +847,7 @@
 				INFOPLIST_FILE = "Dance Trix/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.dancetrix.Dance-Trix";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.dancetrix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

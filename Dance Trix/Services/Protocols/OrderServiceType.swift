@@ -17,7 +17,7 @@ protocol OrderServiceType {
                paymentMade: Bool,
                paymentMethod: String,
                additionalInfo: String?,
-               orderItems: [String : (Bool, String?)],
+               orderItems: [String : String?],
                successHandler: @escaping () -> Void,
                errorHandler: @escaping (Error) -> Void)
     

@@ -8,6 +8,7 @@
 
 import UIKit
 import Eureka
+import Firebase
 
 class PaymentFormViewController: SubmitFormViewController {
     
@@ -147,6 +148,12 @@ class PaymentFormViewController: SubmitFormViewController {
         self.submitButton.addTarget(self, action: #selector(submitPaymentNotification), for: .touchUpInside)
         
         self.checkCompleteForm()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        Analytics.setScreenName("Submit Payment", screenClass: nil)
     }
     
     // MARK: - Actions

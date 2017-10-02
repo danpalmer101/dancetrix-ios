@@ -8,6 +8,7 @@
 
 import UIKit
 import JTAppleCalendar
+import Firebase
 
 class CalendarViewController : UIViewController, JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource, UITableViewDelegate, UITableViewDataSource {
     
@@ -28,6 +29,12 @@ class CalendarViewController : UIViewController, JTAppleCalendarViewDelegate, JT
         self.updateTitle()
         
         self.loadClassDates()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        Analytics.setScreenName("Calendar", screenClass: nil)
     }
     
     private func loadClassDates() {

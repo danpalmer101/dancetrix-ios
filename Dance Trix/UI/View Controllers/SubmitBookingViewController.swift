@@ -8,6 +8,7 @@
 
 import UIKit
 import Eureka
+import Firebase
 
 class SubmitBookingViewController: SubmitFormViewController {
 
@@ -70,6 +71,12 @@ class SubmitBookingViewController: SubmitFormViewController {
         self.submitButton.addTarget(self, action: #selector(submitBooking), for: .touchUpInside)
         
         self.checkCompleteForm()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        Analytics.setScreenName(String(format: "Submit Booking [%@]", self.classDetails.name), screenClass: nil)
     }
     
     // MARK: - Actions

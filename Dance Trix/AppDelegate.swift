@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyBeaver
+import Firebase
 
 let log = SwiftyBeaver.self
 
@@ -20,9 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         enableLogging()
         
+        enableFirebase()
+        
         applyBranding()
         
         return true
+    }
+    
+    func enableFirebase() {
+        // TODO - enable once GoogleService-Info.plist is added to the project
+        FirebaseApp.configure()
     }
     
     func enableLogging() {

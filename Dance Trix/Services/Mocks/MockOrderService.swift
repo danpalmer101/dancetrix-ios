@@ -17,18 +17,17 @@ class MockOrderService: OrderServiceType {
                paymentMade: Bool,
                paymentMethod: String,
                additionalInfo: String?,
-               orderItems: [String : (Bool, String?)],
+               orderItems: [String : String?],
                successHandler: @escaping () -> Void,
                errorHandler: @escaping (Error) -> Void) {
         DispatchQueue.global().async {
             log.info("Mock order processing...")
             
-            orderItems.forEach { (arg: (key: String, value: (Bool, String?))) in
-                let (key, (ordered, size)) = arg
+            orderItems.forEach { (arg: (key: String, value: String?)) in
+                let (key, size) = arg
                 
-                log.info(String(format: "   %@ - ordered: %@, size: %@",
+                log.info(String(format: "    %@ - size: %@",
                                 key,
-                                ordered ? "true" : "false",
                                 size ?? "N/A"))
             }
             

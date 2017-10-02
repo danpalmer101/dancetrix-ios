@@ -10,6 +10,9 @@ target 'Dance Trix' do
   pod 'RMessage', '~> 2.1.5'
   pod 'SwiftyBeaver', '~> 1.4.2'
   pod 'Eureka', '~> 4.0.0'
+  pod 'Firebase/Core', '~> 4.2.0'
+  pod 'Firebase/RemoteConfig', '~> 2.0.3'
+  pod 'Firebase/Storage', '~> 2.0.2'
 
   target 'Dance Trix Tests' do
     inherit! :search_paths

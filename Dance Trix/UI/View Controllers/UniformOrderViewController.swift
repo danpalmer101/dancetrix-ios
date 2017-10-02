@@ -8,6 +8,7 @@
 
 import UIKit
 import Eureka
+import Firebase
 
 class UniformOrderViewController: SubmitFormViewController {
     
@@ -218,6 +219,12 @@ class UniformOrderViewController: SubmitFormViewController {
         self.submitButton.addTarget(self, action: #selector(submitOrder), for: .touchUpInside)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        Analytics.setScreenName("Uniform Order", screenClass: nil)
+    }
+    
     // MARK: - Actions
     
     private func checkCompleteForm() {
@@ -237,7 +244,7 @@ class UniformOrderViewController: SubmitFormViewController {
         let orderItemIds = ["child_turquoise_skirted_leotard", "child_turquoise_leggings", "child_turquoise_skirt", "child_dance_trix_branded_hoodie", "child_dance_trix_branded_tshirt", "child_black_high_neck_leotard", "child_shoes_tap_white", "child_shoes_tap_black", "child_pink_ballet_shoes", "adult_dance_trix_hoodie", "adult_dance_trix_tshirt", "adult_shoes_ballet", "adult_shoes_tap", "pink_ballet_socks", "child_ballet_bag", "adult_ballet_bag", "child_ballet_purse", "exam_headband"]
         
         // Turn the list of item IDs into a map containing the order state and size info
-        let orderItems: [String : (Bool, String?)] = orderItemIds.reduce(into: [:]) { dict, orderItemId in
+        let orderItems: [String : String?] = orderItemIds.reduce(into: [:]) { dict, orderItemId in
             // Get the value of the row, the orderItemId is the row's tag
             let rowValue = (self.form.rowBy(tag: orderItemId))?.baseValue
             
@@ -245,26 +252,29 @@ class UniformOrderViewController: SubmitFormViewController {
             // otherwise it's ordered if there is a value provided
             let rowOrdered = rowValue as? Bool ?? rowValue != nil
             
-            // The row's value is the size, which could be a double or String
-            // Boolean values are ignored as they do not represent a size
-            var rowSize: String? = nil
-            if (rowValue != nil) {
-                switch (rowValue) {
-                case is Double: rowSize = String(rowValue as! Double)
-                case is String: rowSize = (rowValue as! String)
-                default: rowSize = nil
+            // Only process the row if it's ordered
+            if (rowOrdered) {
+                // The row's value is the size, which could be a double or String
+                // Boolean values are ignored as they do not represent a size
+                var rowSize: String? = nil
+                if (rowValue != nil) {
+                    switch (rowValue) {
+                    case is Double: rowSize = String(rowValue as! Double)
+                    case is String: rowSize = (rowValue as! String)
+                    default: rowSize = nil
+                    }
                 }
+                
+                // Add to the dictionary
+                dict[orderItemId] = rowSize
             }
-            
-            // Add to the dictionary
-            dict[orderItemId] = (rowOrdered, rowSize)
         }
         
         let name = (self.form.rowBy(tag: "name") as! TextRow).value!
         let student = (self.form.rowBy(tag: "student_name") as! TextRow).value!
         let email = (self.form.rowBy(tag: "email") as! EmailRow).value!
         let orderPackage = (self.form.rowBy(tag: "order_package") as! PushRow<String>).value
-        let paymentMade = (self.form.rowBy(tag: "payment_made") as! SwitchRow).value!
+        let paymentMade = (self.form.rowBy(tag: "payment_made") as! SwitchRow).value ?? false
         let paymentMethod = (self.form.rowBy(tag: "payment_method") as! PushRow<String>).value!
         let additionalInfo = (self.form.rowBy(tag: "additional") as! TextAreaRow).value
         
