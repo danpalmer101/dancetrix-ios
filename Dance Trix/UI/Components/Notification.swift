@@ -25,16 +25,26 @@ class Notification {
         .success: .success
     ]
     
-    static func show(title: String, subtitle: String, type: NotificationType) {
+    static func show(title: String, subtitle: String, type: NotificationType, endless : Bool = false) {
         // Always in main thread
         DispatchQueue.main.async {
-            RMessage.showNotification(
-                withTitle: title,
-                subtitle: subtitle,
-                type: typeMap[type] ?? .normal,
-                customTypeName: nil,
-                callback: nil)
+            if (endless) {
+                RMessage.showNotification(withTitle: title,
+                                          subtitle: subtitle,
+                                          type: typeMap[type] ?? .normal,
+                                          customTypeName: nil,
+                                          duration: TimeInterval(RMessageDuration.endless.rawValue),
+                                          callback: nil,
+                                          canBeDismissedByUser: true)
+            } else {
+                RMessage.showNotification(withTitle: title,
+                                          subtitle: subtitle,
+                                          type: typeMap[type] ?? .normal,
+                                          customTypeName: nil,
+                                          callback: nil)
+            }
         }
+        
     }
     
 }
