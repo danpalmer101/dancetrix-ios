@@ -44,6 +44,12 @@
 		A69ED4A21F82E3D00005B845 /* dates_summer_half_term_1_2018.csv in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4A11F82E3D00005B845 /* dates_summer_half_term_1_2018.csv */; };
 		A69ED4A41F82E4020005B845 /* dates_summer_half_term_2_2018.csv in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4A31F82E4020005B845 /* dates_summer_half_term_2_2018.csv */; };
 		A69ED4A61F82E5BD0005B845 /* FirebaseStorageClassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4A51F82E5BD0005B845 /* FirebaseStorageClassService.swift */; };
+		A69ED4A81F83BC8C0005B845 /* EmailServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4A71F83BC8C0005B845 /* EmailServiceType.swift */; };
+		A69ED4AA1F83BD6E0005B845 /* MockEmailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4A91F83BD6E0005B845 /* MockEmailService.swift */; };
+		A69ED4AC1F83BDCB0005B845 /* SendGridEmailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4AB1F83BDCB0005B845 /* SendGridEmailService.swift */; };
+		A69ED4B11F83C06A0005B845 /* test_subject.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4B01F83C06A0005B845 /* test_subject.mustache */; };
+		A69ED4B31F83C3650005B845 /* test_body_html.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4B21F83C3650005B845 /* test_body_html.mustache */; };
+		A69ED4B51F83C3860005B845 /* test_body_plain.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4B41F83C3860005B845 /* test_body_plain.mustache */; };
 		A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */; };
 		A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */; };
 		A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */; };
@@ -118,6 +124,12 @@
 		A69ED4A11F82E3D00005B845 /* dates_summer_half_term_1_2018.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dates_summer_half_term_1_2018.csv; sourceTree = "<group>"; };
 		A69ED4A31F82E4020005B845 /* dates_summer_half_term_2_2018.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dates_summer_half_term_2_2018.csv; sourceTree = "<group>"; };
 		A69ED4A51F82E5BD0005B845 /* FirebaseStorageClassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageClassService.swift; sourceTree = "<group>"; };
+		A69ED4A71F83BC8C0005B845 /* EmailServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailServiceType.swift; sourceTree = "<group>"; };
+		A69ED4A91F83BD6E0005B845 /* MockEmailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEmailService.swift; sourceTree = "<group>"; };
+		A69ED4AB1F83BDCB0005B845 /* SendGridEmailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGridEmailService.swift; sourceTree = "<group>"; };
+		A69ED4B01F83C06A0005B845 /* test_subject.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_subject.mustache; sourceTree = "<group>"; };
+		A69ED4B21F83C3650005B845 /* test_body_html.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_body_html.mustache; sourceTree = "<group>"; };
+		A69ED4B41F83C3860005B845 /* test_body_plain.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_body_plain.mustache; sourceTree = "<group>"; };
 		A6BA0F581F74E20C00FAF47E /* Dance Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Trix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +209,7 @@
 		A688281D1F770ECB00D82322 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A69ED4AD1F83C0480005B845 /* Templates */,
 				A69ED4941F82DAA30005B845 /* Mock Data */,
 				A6BD4F2A1F7EEE9500D261D1 /* CSS */,
 				A6BA0F621F74E20C00FAF47E /* Assets.xcassets */,
@@ -281,6 +294,24 @@
 			path = "Mock Data";
 			sourceTree = "<group>";
 		};
+		A69ED4AD1F83C0480005B845 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				A69ED4AE1F83C0510005B845 /* Emails */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		A69ED4AE1F83C0510005B845 /* Emails */ = {
+			isa = PBXGroup;
+			children = (
+				A69ED4B01F83C06A0005B845 /* test_subject.mustache */,
+				A69ED4B41F83C3860005B845 /* test_body_plain.mustache */,
+				A69ED4B21F83C3650005B845 /* test_body_html.mustache */,
+			);
+			path = Emails;
+			sourceTree = "<group>";
+		};
 		A6BA0F4F1F74E20C00FAF47E = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +375,7 @@
 				A6D23AEA1F8253DC00229DEC /* ClassServiceType.swift */,
 				A6D23AEC1F8253EE00229DEC /* PaymentServiceType.swift */,
 				A6D23AEE1F82540B00229DEC /* OrderServiceType.swift */,
+				A69ED4A71F83BC8C0005B845 /* EmailServiceType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -355,6 +387,7 @@
 				A697F8651F7C32BF00195246 /* MockClassService.swift */,
 				A6D23AD61F813B5700229DEC /* MockPaymentService.swift */,
 				A6D23ADC1F82504500229DEC /* MockOrderService.swift */,
+				A69ED4A91F83BD6E0005B845 /* MockEmailService.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -363,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				A69ED4A51F82E5BD0005B845 /* FirebaseStorageClassService.swift */,
+				A69ED4AB1F83BDCB0005B845 /* SendGridEmailService.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -486,8 +520,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A69ED4B51F83C3860005B845 /* test_body_plain.mustache in Resources */,
 				A69ED49C1F82E2270005B845 /* dates_autumn_half_term_2_2017.csv in Resources */,
+				A69ED4B31F83C3650005B845 /* test_body_html.mustache in Resources */,
 				A69ED4A41F82E4020005B845 /* dates_summer_half_term_2_2018.csv in Resources */,
+				A69ED4B11F83C06A0005B845 /* test_subject.mustache in Resources */,
 				A6BA0F661F74E20C00FAF47E /* LaunchScreen.storyboard in Resources */,
 				A69ED4A01F82E3910005B845 /* dates_spring_half_term_2_2018.csv in Resources */,
 				A6BA0F631F74E20C00FAF47E /* Assets.xcassets in Resources */,
@@ -662,6 +699,7 @@
 				A6BD4F291F7EE9BD00D261D1 /* WebViewController.swift in Sources */,
 				A697F86E1F7C3D0E00195246 /* BookingError.swift in Sources */,
 				A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */,
+				A69ED4A81F83BC8C0005B845 /* EmailServiceType.swift in Sources */,
 				A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */,
 				A6D23AD71F813B5700229DEC /* MockPaymentService.swift in Sources */,
 				A697F8731F7D42E000195246 /* CalendarCell.swift in Sources */,
@@ -670,6 +708,7 @@
 				A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */,
 				A6D23AEF1F82540B00229DEC /* OrderServiceType.swift in Sources */,
 				A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */,
+				A69ED4AC1F83BDCB0005B845 /* SendGridEmailService.swift in Sources */,
 				A68828361F78445200D82322 /* TintSelectTableViewCell.swift in Sources */,
 				A688281A1F7706D200D82322 /* TintImageView.swift in Sources */,
 				A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */,
@@ -687,6 +726,7 @@
 				A6D23AE11F8252EB00229DEC /* PaymentError.swift in Sources */,
 				A69ED4A61F82E5BD0005B845 /* FirebaseStorageClassService.swift in Sources */,
 				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,
+				A69ED4AA1F83BD6E0005B845 /* MockEmailService.swift in Sources */,
 				A6BD4F271F7E9AB600D261D1 /* Notification.swift in Sources */,
 				A688281C1F77094600D82322 /* TitleNavigationItem.swift in Sources */,
 				A6D23ADD1F82504500229DEC /* MockOrderService.swift in Sources */,

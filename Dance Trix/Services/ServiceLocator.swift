@@ -14,5 +14,6 @@ class ServiceLocator {
     static var bookingService: BookingServiceType = MockBookingService()
     static var paymentService: PaymentServiceType = MockPaymentService()
     static var orderService: OrderServiceType = MockOrderService()
+    static var emailService: EmailServiceType = SendGridEmailService()
     
 }
