@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FBD1ACEE67DC92BACC689D7513F8B2F3"
+               BlueprintIdentifier = "C6608D7F25E308A484DA5737FF0BF561"
                BuildableName = "Pods_Dance_Trix.framework"
                BlueprintName = "Pods-Dance Trix"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FBD1ACEE67DC92BACC689D7513F8B2F3"
+            BlueprintIdentifier = "C6608D7F25E308A484DA5737FF0BF561"
             BuildableName = "Pods_Dance_Trix.framework"
             BlueprintName = "Pods-Dance Trix"
             ReferencedContainer = "container:Pods.xcodeproj">

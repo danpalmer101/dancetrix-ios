@@ -14,6 +14,11 @@ class MockEmailService : SendGridEmailService {
     override func send(email: Email,
                        successHandler: @escaping () -> Void,
                        errorHandler: @escaping (Error) -> Void) {
+        
+        log.debug("Subject: " + (email.subject ?? ""))
+        log.debug("Content:")
+        log.debug(email.content)
+        
         sleep(2)
         
         log.info("...mock email sent")

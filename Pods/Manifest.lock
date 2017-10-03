@@ -30,6 +30,7 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GRMustache.swift (2.0.0)
   - GTMSessionFetcher/Core (1.1.12)
   - HexColors (4.0.0)
   - JTAppleCalendar (7.0.6)
@@ -52,6 +53,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/RemoteConfig
   - Firebase/Storage
+  - GRMustache.swift
   - JTAppleCalendar (~> 7.0)
   - ReachabilitySwift
   - RMessage (~> 2.1.5)
@@ -76,6 +78,7 @@ SPEC CHECKSUMS:
   FirebaseRemoteConfig: 1c982f73af48ec048c8fa8621d5178cfdffac9aa
   FirebaseStorage: 0cca42d9b889a0227c3a50121f45a4469fc9eb27
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  GRMustache.swift: 8a547c12bea16052071b2b540af83d770075f0eb
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
   JTAppleCalendar: 6a942475e33b9ad4dee0a0e14aa4c63adcf4f543
@@ -87,6 +90,6 @@ SPEC CHECKSUMS:
   SendGrid: 68f670b6d3eb6e3f5014e4a540aaa0abfdfd6553
   SwiftyBeaver: 91057725648ee4980308f1650af077d04b3654a0
 
-PODFILE CHECKSUM: 27d76a27a03406063358e201cd4a45ad81a88ba1
+PODFILE CHECKSUM: 7bf440fa241300584dd85fb9a93ae941c83ddf71
 
 COCOAPODS: 1.3.1

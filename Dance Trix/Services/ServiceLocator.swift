@@ -12,8 +12,8 @@ class ServiceLocator {
     
     static var classService: ClassServiceType = FirebaseStorageClassService()
     static var bookingService: BookingServiceType = MockBookingService()
-    static var paymentService: PaymentServiceType = MockPaymentService()
+    static var paymentService: PaymentServiceType = EmailPaymentService()
     static var orderService: OrderServiceType = MockOrderService()
-    static var emailService: EmailServiceType = SendGridEmailService()
+    static var emailService: EmailServiceType = MockEmailService()
     
 }

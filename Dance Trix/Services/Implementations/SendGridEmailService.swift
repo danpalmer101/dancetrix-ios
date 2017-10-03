@@ -8,6 +8,7 @@
 
 import Foundation
 import SendGrid
+import Mustache
 
 class SendGridEmailService : EmailServiceType {
 
@@ -15,9 +16,18 @@ class SendGridEmailService : EmailServiceType {
     private let bodyPlainFileNameFormat = "%@_body_plain"
     private let bodyHtmlFileNameFormat = "%@_body_html"
     
+    private let dateFormatter = DateFormatter()
+    private let dateTimeFormatter = DateFormatter()
+    private let currencyFormatter = NumberFormatter()
+    
     init() {
         // "danpalmer101" account, "Dance Trix iOS" key
         Session.shared.authentication = Authentication.apiKey("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")
+        
+        self.dateFormatter.dateFormat = "dd/MM/yyyy"
+        self.dateTimeFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+        self.currencyFormatter.numberStyle = .currency
+        self.currencyFormatter.currencyCode = "GBP"
     }
     
     func sendEmail(templateName: String,
@@ -35,22 +45,32 @@ class SendGridEmailService : EmailServiceType {
         
         // Build plain and html content from template files
         var content = [Content]()
-        if let fileContent = getFileContents(fileName: String(format: bodyPlainFileNameFormat, templateName)) {
-            content.append(Content(contentType: ContentType.plainText, value: fileContent))
-        } else {
-            log.warning(String(format:"Unable to find plain file content for %@", templateName))
-        }
-        if let fileContent = getFileContents(fileName: String(format: bodyHtmlFileNameFormat, templateName)) {
-            content.append(Content(contentType: ContentType.htmlText, value: fileContent))
-        } else {
-            log.warning(String(format:"Unable to find HTML file content for %@", templateName))
+        
+        do {
+            let template = try Template(named: String(format: bodyPlainFileNameFormat, templateName))
+            registerFormatters(template: template)
+            let rendering = try template.render(templateVariables)
+            content.append(Content(contentType: .plainText, value: rendering))
+        } catch {
+            log.warning(String(format:"Unable to render plain file content for %@", templateName))
         }
         
-        // Build subject content from template file
-        let subject = getFileContents(fileName: String(format: subjectFileNameFormat, templateName))
+        do {
+            let template = try Template(named: String(format: bodyHtmlFileNameFormat, templateName))
+            registerFormatters(template: template)
+            let rendering = try template.render(templateVariables)
+            content.append(Content(contentType: .htmlText, value: rendering))
+        } catch {
+            log.warning(String(format:"Unable to render HTML file content for %@", templateName))
+        }
         
-        if (subject == nil) {
-            log.warning(String(format:"Unable to find subject file content for %@", templateName))
+        var subject: String?
+        do {
+            let template = try Template(named: String(format: bodyHtmlFileNameFormat, templateName))
+            registerFormatters(template: template)
+            subject = try template.render(templateVariables)
+        } catch {
+            log.warning(String(format:"Unable to render subject file content for %@", templateName))
         }
         
         let email = Email(personalizations: personalizations,
@@ -87,6 +107,12 @@ class SendGridEmailService : EmailServiceType {
         }
         
         return nil
+    }
+    
+    private func registerFormatters(template: Template) {
+        template.register(self.dateFormatter, forKey: "dateFormat")
+        template.register(self.dateTimeFormatter, forKey: "dateTimeFormat")
+        template.register(self.currencyFormatter, forKey: "currencyFormat")
     }
     
 }

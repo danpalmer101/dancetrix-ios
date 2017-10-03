@@ -23,18 +23,9 @@ class MockPaymentService: PaymentServiceType {
         DispatchQueue.global().async {
             log.info("Mock payment processing...")
             
-            ServiceLocator.emailService.sendEmail(templateName: "test",
-                                                  from: "payments@dancetrix.co.uk",
-                                                  to: ["d.palmer101@googlemail.com"],
-                                                  templateVariables: [:],
-                                                  successHandler: {
-                                                    log.info("...payment processing complete")
-                                                    
-                                                    successHandler()
-                                                  },
-                                                  errorHandler: {(e: Error) in
-                                                    errorHandler(e)
-                                                  })
+            sleep(2)
+            
+            successHandler()
         }
     }
     

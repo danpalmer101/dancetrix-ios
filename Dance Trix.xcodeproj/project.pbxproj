@@ -47,9 +47,10 @@
 		A69ED4A81F83BC8C0005B845 /* EmailServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4A71F83BC8C0005B845 /* EmailServiceType.swift */; };
 		A69ED4AA1F83BD6E0005B845 /* MockEmailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4A91F83BD6E0005B845 /* MockEmailService.swift */; };
 		A69ED4AC1F83BDCB0005B845 /* SendGridEmailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4AB1F83BDCB0005B845 /* SendGridEmailService.swift */; };
-		A69ED4B11F83C06A0005B845 /* test_subject.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4B01F83C06A0005B845 /* test_subject.mustache */; };
-		A69ED4B31F83C3650005B845 /* test_body_html.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4B21F83C3650005B845 /* test_body_html.mustache */; };
-		A69ED4B51F83C3860005B845 /* test_body_plain.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4B41F83C3860005B845 /* test_body_plain.mustache */; };
+		A69ED4B11F83C06A0005B845 /* payment_notify_subject.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4B01F83C06A0005B845 /* payment_notify_subject.mustache */; };
+		A69ED4B31F83C3650005B845 /* payment_notify_body_html.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4B21F83C3650005B845 /* payment_notify_body_html.mustache */; };
+		A69ED4B51F83C3860005B845 /* payment_notify_body_plain.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4B41F83C3860005B845 /* payment_notify_body_plain.mustache */; };
+		A69ED4B71F83E79F0005B845 /* EmailPaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4B61F83E79F0005B845 /* EmailPaymentService.swift */; };
 		A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */; };
 		A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */; };
 		A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */; };
@@ -127,9 +128,10 @@
 		A69ED4A71F83BC8C0005B845 /* EmailServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailServiceType.swift; sourceTree = "<group>"; };
 		A69ED4A91F83BD6E0005B845 /* MockEmailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEmailService.swift; sourceTree = "<group>"; };
 		A69ED4AB1F83BDCB0005B845 /* SendGridEmailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGridEmailService.swift; sourceTree = "<group>"; };
-		A69ED4B01F83C06A0005B845 /* test_subject.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_subject.mustache; sourceTree = "<group>"; };
-		A69ED4B21F83C3650005B845 /* test_body_html.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_body_html.mustache; sourceTree = "<group>"; };
-		A69ED4B41F83C3860005B845 /* test_body_plain.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_body_plain.mustache; sourceTree = "<group>"; };
+		A69ED4B01F83C06A0005B845 /* payment_notify_subject.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = payment_notify_subject.mustache; sourceTree = "<group>"; };
+		A69ED4B21F83C3650005B845 /* payment_notify_body_html.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = payment_notify_body_html.mustache; sourceTree = "<group>"; };
+		A69ED4B41F83C3860005B845 /* payment_notify_body_plain.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = payment_notify_body_plain.mustache; sourceTree = "<group>"; };
+		A69ED4B61F83E79F0005B845 /* EmailPaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPaymentService.swift; sourceTree = "<group>"; };
 		A6BA0F581F74E20C00FAF47E /* Dance Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Trix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -305,9 +307,9 @@
 		A69ED4AE1F83C0510005B845 /* Emails */ = {
 			isa = PBXGroup;
 			children = (
-				A69ED4B01F83C06A0005B845 /* test_subject.mustache */,
-				A69ED4B41F83C3860005B845 /* test_body_plain.mustache */,
-				A69ED4B21F83C3650005B845 /* test_body_html.mustache */,
+				A69ED4B01F83C06A0005B845 /* payment_notify_subject.mustache */,
+				A69ED4B41F83C3860005B845 /* payment_notify_body_plain.mustache */,
+				A69ED4B21F83C3650005B845 /* payment_notify_body_html.mustache */,
 			);
 			path = Emails;
 			sourceTree = "<group>";
@@ -397,6 +399,7 @@
 			children = (
 				A69ED4A51F82E5BD0005B845 /* FirebaseStorageClassService.swift */,
 				A69ED4AB1F83BDCB0005B845 /* SendGridEmailService.swift */,
+				A69ED4B61F83E79F0005B845 /* EmailPaymentService.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -520,11 +523,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A69ED4B51F83C3860005B845 /* test_body_plain.mustache in Resources */,
+				A69ED4B51F83C3860005B845 /* payment_notify_body_plain.mustache in Resources */,
 				A69ED49C1F82E2270005B845 /* dates_autumn_half_term_2_2017.csv in Resources */,
-				A69ED4B31F83C3650005B845 /* test_body_html.mustache in Resources */,
+				A69ED4B31F83C3650005B845 /* payment_notify_body_html.mustache in Resources */,
 				A69ED4A41F82E4020005B845 /* dates_summer_half_term_2_2018.csv in Resources */,
-				A69ED4B11F83C06A0005B845 /* test_subject.mustache in Resources */,
+				A69ED4B11F83C06A0005B845 /* payment_notify_subject.mustache in Resources */,
 				A6BA0F661F74E20C00FAF47E /* LaunchScreen.storyboard in Resources */,
 				A69ED4A01F82E3910005B845 /* dates_spring_half_term_2_2018.csv in Resources */,
 				A6BA0F631F74E20C00FAF47E /* Assets.xcassets in Resources */,
@@ -616,6 +619,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Dance Trix/Pods-Dance Trix-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/GRMustache.swift/Mustache.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
@@ -631,6 +635,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mustache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
@@ -734,6 +739,7 @@
 				A68828381F78467900D82322 /* SubmitButton.swift in Sources */,
 				A6D23ADF1F8252D600229DEC /* OrderError.swift in Sources */,
 				A69ED4981F82DE270005B845 /* ClassDatesParser.swift in Sources */,
+				A69ED4B71F83E79F0005B845 /* EmailPaymentService.swift in Sources */,
 				A6D23AD91F814B4400229DEC /* UniformOrderViewController.swift in Sources */,
 				A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */,
 				A6D23AEB1F8253DC00229DEC /* ClassServiceType.swift in Sources */,
