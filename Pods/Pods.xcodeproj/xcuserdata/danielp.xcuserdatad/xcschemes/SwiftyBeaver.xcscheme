@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7F115446D4C43AD0D681012A5BB16634"
+               BlueprintIdentifier = "5751B08CAF9E864C69028F5775F8A0FD"
                BuildableName = "SwiftyBeaver.framework"
                BlueprintName = "SwiftyBeaver"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7F115446D4C43AD0D681012A5BB16634"
+            BlueprintIdentifier = "5751B08CAF9E864C69028F5775F8A0FD"
             BuildableName = "SwiftyBeaver.framework"
             BlueprintName = "SwiftyBeaver"
             ReferencedContainer = "container:Pods.xcodeproj">

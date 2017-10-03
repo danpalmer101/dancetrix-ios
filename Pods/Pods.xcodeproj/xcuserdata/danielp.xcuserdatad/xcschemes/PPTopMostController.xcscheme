@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B8F2F3C56DDFCFE0D0549A09BB5CA753"
+               BlueprintIdentifier = "EC6BE0A47E8C00A7F99978919D59B390"
                BuildableName = "PPTopMostController.framework"
                BlueprintName = "PPTopMostController"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B8F2F3C56DDFCFE0D0549A09BB5CA753"
+            BlueprintIdentifier = "EC6BE0A47E8C00A7F99978919D59B390"
             BuildableName = "PPTopMostController.framework"
             BlueprintName = "PPTopMostController"
             ReferencedContainer = "container:Pods.xcodeproj">

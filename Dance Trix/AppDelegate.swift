@@ -9,8 +9,10 @@
 import UIKit
 import SwiftyBeaver
 import Firebase
+import ReachabilitySwift
 
 let log = SwiftyBeaver.self
+let reachability = Reachability()!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,13 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         enableFirebase()
         
+        enableReachabilityCheck()
+        
         applyBranding()
         
         return true
     }
     
     func enableFirebase() {
-        // TODO - enable once GoogleService-Info.plist is added to the project
         FirebaseApp.configure()
     }
     
@@ -46,6 +49,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applyBranding() {
         Theme.applyGlobal(window: window)
+    }
+    
+    func enableReachabilityCheck() {
+        reachability.whenUnreachable = { _ in
+            Notification.show(title: "No internet connection",
+                              subtitle: "Some features may not be available",
+                              type: .warning)
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            log.warning("Unable to start Reachability notifier")
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
