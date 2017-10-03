@@ -10,8 +10,8 @@ import Foundation
 
 class ServiceLocator {
     
-    static var classService: ClassServiceType = FirebaseStorageClassService()
-    static var bookingService: BookingServiceType = MockBookingService()
+    static var classService: ClassServiceType = MockClassService()
+    static var bookingService: BookingServiceType = EmailBookingService()
     static var paymentService: PaymentServiceType = EmailPaymentService()
     static var orderService: OrderServiceType = MockOrderService()
     static var emailService: EmailServiceType = MockEmailService()

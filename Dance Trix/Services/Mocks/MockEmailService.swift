@@ -17,7 +17,10 @@ class MockEmailService : SendGridEmailService {
         
         log.debug("Subject: " + (email.subject ?? ""))
         log.debug("Content:")
-        log.debug(email.content)
+        email.content.forEach { (c: Content) in
+            log.debug("=======" + c.type.description + "=======")
+            log.debug(c.value)
+        }
         
         sleep(2)
         

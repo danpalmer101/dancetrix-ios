@@ -50,33 +50,36 @@ class SendGridEmailService : EmailServiceType {
             let template = try Template(named: String(format: bodyPlainFileNameFormat, templateName))
             registerFormatters(template: template)
             let rendering = try template.render(templateVariables)
-            content.append(Content(contentType: .plainText, value: rendering))
+            content.append(Content(contentType: .plainText, value: trim(rendering)!))
         } catch {
             log.warning(String(format:"Unable to render plain file content for %@", templateName))
+            log.warning([error])
         }
         
         do {
             let template = try Template(named: String(format: bodyHtmlFileNameFormat, templateName))
             registerFormatters(template: template)
             let rendering = try template.render(templateVariables)
-            content.append(Content(contentType: .htmlText, value: rendering))
+            content.append(Content(contentType: .htmlText, value: trim(rendering)!))
         } catch {
             log.warning(String(format:"Unable to render HTML file content for %@", templateName))
+            log.warning([error])
         }
         
         var subject: String?
         do {
-            let template = try Template(named: String(format: bodyHtmlFileNameFormat, templateName))
+            let template = try Template(named: String(format: subjectFileNameFormat, templateName))
             registerFormatters(template: template)
             subject = try template.render(templateVariables)
         } catch {
             log.warning(String(format:"Unable to render subject file content for %@", templateName))
+            log.warning([error])
         }
         
         let email = Email(personalizations: personalizations,
                           from: Address(email: from),
                           content: content,
-                          subject: subject)
+                          subject: trim(subject))
         
         // Send
         DispatchQueue.global().async {
@@ -101,12 +104,8 @@ class SendGridEmailService : EmailServiceType {
         }
     }
     
-    private func getFileContents(fileName: String, fileExtension: String = "mustache") -> String? {
-        if let path = Bundle.main.path(forResource: fileName, ofType: fileExtension) {
-            return try! String(contentsOfFile: path).trimmingCharacters(in: CharacterSet(charactersIn: " \n"))
-        }
-        
-        return nil
+    private func trim(_ text: String?) -> String? {
+        return text?.trimmingCharacters(in: CharacterSet(charactersIn: " \n"))
     }
     
     private func registerFormatters(template: Template) {

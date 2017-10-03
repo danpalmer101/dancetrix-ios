@@ -51,6 +51,11 @@
 		A69ED4B31F83C3650005B845 /* payment_notify_body_html.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4B21F83C3650005B845 /* payment_notify_body_html.mustache */; };
 		A69ED4B51F83C3860005B845 /* payment_notify_body_plain.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4B41F83C3860005B845 /* payment_notify_body_plain.mustache */; };
 		A69ED4B71F83E79F0005B845 /* EmailPaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4B61F83E79F0005B845 /* EmailPaymentService.swift */; };
+		A69ED4B91F83FD450005B845 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4B81F83FD450005B845 /* Configuration.swift */; };
+		A69ED4BB1F83FDC60005B845 /* EmailBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4BA1F83FDC60005B845 /* EmailBookingService.swift */; };
+		A69ED4BD1F83FE6A0005B845 /* class_booking_subject.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4BC1F83FE6A0005B845 /* class_booking_subject.mustache */; };
+		A69ED4BF1F83FE890005B845 /* class_booking_body_plain.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4BE1F83FE890005B845 /* class_booking_body_plain.mustache */; };
+		A69ED4C11F83FF330005B845 /* class_booking_body_html.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4C01F83FF330005B845 /* class_booking_body_html.mustache */; };
 		A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */; };
 		A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */; };
 		A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */; };
@@ -132,6 +137,11 @@
 		A69ED4B21F83C3650005B845 /* payment_notify_body_html.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = payment_notify_body_html.mustache; sourceTree = "<group>"; };
 		A69ED4B41F83C3860005B845 /* payment_notify_body_plain.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = payment_notify_body_plain.mustache; sourceTree = "<group>"; };
 		A69ED4B61F83E79F0005B845 /* EmailPaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPaymentService.swift; sourceTree = "<group>"; };
+		A69ED4B81F83FD450005B845 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		A69ED4BA1F83FDC60005B845 /* EmailBookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailBookingService.swift; sourceTree = "<group>"; };
+		A69ED4BC1F83FE6A0005B845 /* class_booking_subject.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = class_booking_subject.mustache; sourceTree = "<group>"; };
+		A69ED4BE1F83FE890005B845 /* class_booking_body_plain.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = class_booking_body_plain.mustache; sourceTree = "<group>"; };
+		A69ED4C01F83FF330005B845 /* class_booking_body_html.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = class_booking_body_html.mustache; sourceTree = "<group>"; };
 		A6BA0F581F74E20C00FAF47E /* Dance Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Trix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +320,9 @@
 				A69ED4B01F83C06A0005B845 /* payment_notify_subject.mustache */,
 				A69ED4B41F83C3860005B845 /* payment_notify_body_plain.mustache */,
 				A69ED4B21F83C3650005B845 /* payment_notify_body_html.mustache */,
+				A69ED4BC1F83FE6A0005B845 /* class_booking_subject.mustache */,
+				A69ED4BE1F83FE890005B845 /* class_booking_body_plain.mustache */,
+				A69ED4C01F83FF330005B845 /* class_booking_body_html.mustache */,
 			);
 			path = Emails;
 			sourceTree = "<group>";
@@ -343,6 +356,7 @@
 				A688281D1F770ECB00D82322 /* Resources */,
 				A6BA0F6D1F74F24600FAF47E /* Domain */,
 				A68828161F76FC5500D82322 /* UI */,
+				A69ED4B81F83FD450005B845 /* Configuration.swift */,
 				A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */,
 				A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */,
 				A6BA0F641F74E20C00FAF47E /* LaunchScreen.storyboard */,
@@ -399,6 +413,7 @@
 			children = (
 				A69ED4A51F82E5BD0005B845 /* FirebaseStorageClassService.swift */,
 				A69ED4AB1F83BDCB0005B845 /* SendGridEmailService.swift */,
+				A69ED4BA1F83FDC60005B845 /* EmailBookingService.swift */,
 				A69ED4B61F83E79F0005B845 /* EmailPaymentService.swift */,
 			);
 			path = Implementations;
@@ -530,14 +545,17 @@
 				A69ED4B11F83C06A0005B845 /* payment_notify_subject.mustache in Resources */,
 				A6BA0F661F74E20C00FAF47E /* LaunchScreen.storyboard in Resources */,
 				A69ED4A01F82E3910005B845 /* dates_spring_half_term_2_2018.csv in Resources */,
+				A69ED4C11F83FF330005B845 /* class_booking_body_html.mustache in Resources */,
 				A6BA0F631F74E20C00FAF47E /* Assets.xcassets in Resources */,
 				A6BD4F2C1F7EEEB800D261D1 /* dancetrix-body-only.css in Resources */,
+				A69ED4BF1F83FE890005B845 /* class_booking_body_plain.mustache in Resources */,
 				A69ED4A21F82E3D00005B845 /* dates_summer_half_term_1_2018.csv in Resources */,
 				A69ED4961F82DAB80005B845 /* classes.csv in Resources */,
 				A69ED49E1F82E3490005B845 /* dates_spring_half_term_1_2018.csv in Resources */,
 				A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */,
 				A69ED49A1F82DEFE0005B845 /* dates_adults.csv in Resources */,
 				A60026631F7BB4D200DDC90F /* prepare-commit-msg in Resources */,
+				A69ED4BD1F83FE6A0005B845 /* class_booking_subject.mustache in Resources */,
 				A69ED4921F829C710005B845 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -716,11 +734,13 @@
 				A69ED4AC1F83BDCB0005B845 /* SendGridEmailService.swift in Sources */,
 				A68828361F78445200D82322 /* TintSelectTableViewCell.swift in Sources */,
 				A688281A1F7706D200D82322 /* TintImageView.swift in Sources */,
+				A69ED4BB1F83FDC60005B845 /* EmailBookingService.swift in Sources */,
 				A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */,
 				A600265F1F7AACF000DDC90F /* TextField.swift in Sources */,
 				A68828141F75AB6200D82322 /* ClassMenuParser.swift in Sources */,
 				A68828341F78410B00D82322 /* DateInterval_Text.swift in Sources */,
 				A697F8661F7C32BF00195246 /* MockClassService.swift in Sources */,
+				A69ED4B91F83FD450005B845 /* Configuration.swift in Sources */,
 				A68828321F783DC300D82322 /* ClassDatesViewController.swift in Sources */,
 				A697F86C1F7C3AD200195246 /* ClassesError.swift in Sources */,
 				A68828121F756F0600D82322 /* Theme.swift in Sources */,

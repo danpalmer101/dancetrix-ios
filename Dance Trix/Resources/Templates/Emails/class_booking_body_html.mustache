@@ -1,0 +1,8 @@
+<p><b>{{name}}</b> has booked <b>{{class}}</b>:</p>
+
+<table border="0">
+<tr><td><b>Dates</b></td><td></td></tr>
+{{#dates}}<tr><td></td><td>{{dateTimeFormat(.)}}</td></tr>
+{{/dates}}
+<tr><td><b>Email</b></td><td>{{email}}</td></tr>
+</table>

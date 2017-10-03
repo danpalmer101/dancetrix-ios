@@ -20,10 +20,12 @@ class EmailPaymentService : PaymentServiceType {
                 otherDetails: String?,
                 successHandler: @escaping () -> Void,
                 errorHandler: @escaping (Error) -> Void) {
+        log.info("Processing payment via email...")
+        
         ServiceLocator.emailService.sendEmail(
             templateName: "payment_notify",
-            from: "payments@dancetrix.co.uk",
-            to: ["d.palmer101@googlemail.com"],
+            from: Configuration.fromPaymentEmailAddress(),
+            to: [Configuration.toEmailAddress()],
             templateVariables: [
                 "date": date,
                 "amount": amount,
