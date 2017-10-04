@@ -11,19 +11,19 @@ import Foundation
 class Configuration {
     
     static func fromPaymentEmailAddress() -> String {
-        return "payments@dancetrix.co.uk"
+        return "Dance Trix Payments <payments@danpalmer101.io>"
     }
     
     static func fromBookingEmailAddress() -> String {
-        return "payments@dancetrix.co.uk"
+        return "Dance Trix Bookings <payments@danpalmer101.io>"
     }
     
     static func fromUniformOrderEmailAddress() -> String {
-        return "uniforms@dancetrix.co.uk"
+        return "Dance Trix Uniforms <uniforms@danpalmer101.io>"
     }
     
     static func toEmailAddress() -> String {
-        return "uniforms@dancetrix.co.uk"
+        return "d.palmer101@googlemail.com"
     }
     
 }

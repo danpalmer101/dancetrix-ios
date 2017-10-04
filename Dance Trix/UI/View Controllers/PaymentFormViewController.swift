@@ -103,7 +103,7 @@ class PaymentFormViewController: SubmitFormViewController {
                 row.selectorTitle = "Select a reason"
                 row.options = [
                     "Children's lesson fees (termly)",
-                    "Children's lesson fee (pas as you go)",
+                    "Children's lesson fee (pay as you go)",
                     "Adult's lesson fees (quarterly or monthly)",
                     "Uniform / dancewear",
                     "Show fee",

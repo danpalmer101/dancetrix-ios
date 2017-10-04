@@ -24,7 +24,7 @@ class MailgunEmailService : EmailServiceType {
     
     init() {
         // d.palmer101 account
-        self.mailgun = MailgunAPI(apiKey: "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", clientDomain: "danpalmer101.io")
+        self.mailgun = MailgunAPI(apiKey: "key-2e89955da550daaac2207a3b48d1c338", clientDomain: "danpalmer101.io")
         
         self.dateFormatter.dateFormat = "dd/MM/yyyy"
         self.dateTimeFormatter.dateFormat = "dd/MM/yyyy HH:mm"
@@ -92,7 +92,7 @@ class MailgunEmailService : EmailServiceType {
                 
                 successHandler()
             } else {
-                log.warning(String(format: "...error sending email via SendGrid, message = %@", result.message ?? "<null>"))
+                log.warning(String(format: "...error sending email via Mailgun, message = %@", result.message ?? "<null>"))
                 
                 errorHandler(EmailError.unableToSend(message: result.message))
             }
