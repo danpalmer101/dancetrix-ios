@@ -287,7 +287,7 @@ class UniformOrderViewController: SubmitFormViewController {
         DispatchQueue.global().async {
             ServiceLocator.orderService.order(
                 name: name,
-                student: student,
+                studentName: student,
                 email: email,
                 package: orderPackage,
                 paymentMade: paymentMade,

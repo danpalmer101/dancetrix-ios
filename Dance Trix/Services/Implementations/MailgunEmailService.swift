@@ -107,6 +107,8 @@ class MailgunEmailService : EmailServiceType {
         template.register(self.dateFormatter, forKey: "dateFormat")
         template.register(self.dateTimeFormatter, forKey: "dateTimeFormat")
         template.register(self.currencyFormatter, forKey: "currencyFormat")
+        template.register(StandardLibrary.each, forKey: "each")
+        template.register(StandardLibrary.zip, forKey: "zip")
     }
     
 }

@@ -1,0 +1,33 @@
+<p><b>{{name}}</b> has placed a uniform order:</p>
+
+<table border="0">
+    <tr><td><b>Student name</b></td><td>{{studentName}}</td></tr>
+    <tr><td><b>Email</b></td><td>{{email}}</td></tr>
+    <tr><td><b>Package</b></td><td>{{package}}</td></tr>
+    <tr><td><b>Payment made</b></td><td>{{#paymentMade}}yes{{/paymentMade}}{{^paymentMade}}no{{/paymentMade}}</td></tr>
+    <tr><td><b>Payment method</b></td><td>{{paymentMethod}}</td></tr>
+    <tr><td><b>Additional information</b></td><td>{{additionalInfo}}</td></tr>
+</table>
+
+<p><b>Order:</b></p>
+
+<table style="border-width:1px;border-style:solid;border-color:#ddd;border-collapse:collapse;padding-top:4px;padding-bottom:4px;padding-right:4px;padding-left:4px;" >
+    <tr>
+        <th style="border-width:1px;border-style:solid;border-color:#ddd;border-collapse:collapse;padding-top:4px;padding-bottom:4px;padding-right:4px;padding-left:4px;" >
+            <b>Item</b>
+        </th>
+        <th style="border-width:1px;border-style:solid;border-color:#ddd;border-collapse:collapse;padding-top:4px;padding-bottom:4px;padding-right:4px;padding-left:4px;" >
+            <b>Size</b>
+        </th>
+    </tr>
+    {{# each(orderItems) }}
+    <tr>
+        <td style="border-width:1px;border-style:solid;border-color:#ddd;border-collapse:collapse;padding-top:4px;padding-bottom:4px;padding-right:4px;padding-left:4px;" >
+            {{ @key }}
+        </td>
+        <td style="border-width:1px;border-style:solid;border-color:#ddd;border-collapse:collapse;padding-top:4px;padding-bottom:4px;padding-right:4px;padding-left:4px;" >
+            {{#.}}{{.}}{{/.}}
+        </td>
+    </tr>
+    {{/}}
+</table>

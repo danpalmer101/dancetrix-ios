@@ -17,7 +17,7 @@ class MockPaymentService: PaymentServiceType {
                 email: String,
                 method: String,
                 reason: String,
-                otherDetails: String?,
+                additionalInfo: String?,
                 successHandler: @escaping () -> Void,
                 errorHandler: @escaping (Error) -> Void) {
         DispatchQueue.global().async {

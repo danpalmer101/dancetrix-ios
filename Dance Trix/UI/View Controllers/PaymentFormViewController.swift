@@ -211,7 +211,7 @@ class PaymentFormViewController: SubmitFormViewController {
                 email: email,
                 method: method,
                 reason: reason,
-                otherDetails: additional,
+                additionalInfo: additional,
                 successHandler: {
                     Notification.show(
                         title: "Success",

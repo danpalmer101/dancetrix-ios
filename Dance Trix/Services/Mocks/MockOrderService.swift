@@ -11,7 +11,7 @@ import Foundation
 class MockOrderService: OrderServiceType {
     
     func order(name: String,
-               student: String,
+               studentName: String,
                email: String,
                package: String?,
                paymentMade: Bool,

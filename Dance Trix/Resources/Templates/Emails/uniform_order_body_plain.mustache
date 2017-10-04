@@ -1,0 +1,14 @@
+{{% CONTENT_TYPE:TEXT }}
+{{name}} has placed a uniform order:
+
+Student name: {{studentName}}
+Email: {{email}}
+Package: {{package}}
+Payment made: {{#paymentMade}}yes{{/paymentMade}}{{^paymentMade}}no{{/paymentMade}}
+Payment method: {{paymentMethod}}
+Additional information: {{additionalInfo}}
+
+Order:
+{{# each(orderItems) }}
+ * item: {{ @key }}{{#.}}, size: {{.}}{{/.}}
+{{/}}

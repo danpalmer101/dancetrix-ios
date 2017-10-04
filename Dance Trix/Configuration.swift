@@ -15,7 +15,7 @@ class Configuration {
     }
     
     static func fromBookingEmailAddress() -> String {
-        return "Dance Trix Bookings <payments@danpalmer101.io>"
+        return "Dance Trix Bookings <bookings@danpalmer101.io>"
     }
     
     static func fromUniformOrderEmailAddress() -> String {

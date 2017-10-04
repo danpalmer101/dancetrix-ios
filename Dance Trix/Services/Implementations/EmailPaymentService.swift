@@ -17,7 +17,7 @@ class EmailPaymentService : PaymentServiceType {
                 email: String,
                 method: String,
                 reason: String,
-                otherDetails: String?,
+                additionalInfo: String?,
                 successHandler: @escaping () -> Void,
                 errorHandler: @escaping (Error) -> Void) {
         log.info("Processing payment via email...")
@@ -34,7 +34,7 @@ class EmailPaymentService : PaymentServiceType {
                 "email": email,
                 "method": method,
                 "reason": reason,
-                "otherDetails": otherDetails
+                "additionalInfo": additionalInfo
             ],
             successHandler: {
                 log.info("...payment processing complete")
