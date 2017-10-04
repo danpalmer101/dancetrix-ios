@@ -12,7 +12,7 @@ protocol EmailServiceType {
     
     func sendEmail(templateName: String,
                    from: String,
-                   to: [String],
+                   to: String,
                    templateVariables: [String : Any?],
                    successHandler: @escaping () -> Void,
                    errorHandler: @escaping (Error) -> Void)

@@ -25,7 +25,7 @@ class EmailPaymentService : PaymentServiceType {
         ServiceLocator.emailService.sendEmail(
             templateName: "payment_notify",
             from: Configuration.fromPaymentEmailAddress(),
-            to: [Configuration.toEmailAddress()],
+            to: Configuration.toEmailAddress(),
             templateVariables: [
                 "date": date,
                 "amount": amount,

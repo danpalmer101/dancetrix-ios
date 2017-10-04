@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.5.1)
   - Eureka (4.0.0)
   - Firebase/Core (4.2.0):
     - FirebaseAnalytics (= 4.0.3)
@@ -39,13 +40,16 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - ObjectMapper (3.0.0)
   - PPTopMostController (0.0.1)
   - Protobuf (3.4.0)
   - ReachabilitySwift (3)
   - RMessage (2.1.5):
     - HexColors (~> 4.0)
     - PPTopMostController
-  - SendGrid (1.0.0)
+  - SwiftMailgun (1.0.1):
+    - Alamofire
+    - ObjectMapper
   - SwiftyBeaver (1.4.2)
 
 DEPENDENCIES:
@@ -57,19 +61,11 @@ DEPENDENCIES:
   - JTAppleCalendar (~> 7.0)
   - ReachabilitySwift
   - RMessage (~> 2.1.5)
-  - SendGrid (from `https://github.com/scottkawai/sendgrid-swift.git`)
+  - SwiftMailgun
   - SwiftyBeaver (~> 1.4.2)
 
-EXTERNAL SOURCES:
-  SendGrid:
-    :git: https://github.com/scottkawai/sendgrid-swift.git
-
-CHECKOUT OPTIONS:
-  SendGrid:
-    :commit: b21053cd9909cee6441097046735328274ac538f
-    :git: https://github.com/scottkawai/sendgrid-swift.git
-
 SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Eureka: c0b55d2aec82050c1400c7d65960b700be8d10ef
   Firebase: 9548cae14d69718add12d75a5b312893f7ef89c7
   FirebaseAnalytics: 76f754d37ca5b04f36856729b6af3ca0152d1069
@@ -83,13 +79,14 @@ SPEC CHECKSUMS:
   HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
   JTAppleCalendar: 6a942475e33b9ad4dee0a0e14aa4c63adcf4f543
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
   PPTopMostController: 4e6f1e5f8c645bdcc74cd837a20f607ff262c048
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   RMessage: 31d44bd26a8f353f987d2e7194f3e9ffb203cbf2
-  SendGrid: 68f670b6d3eb6e3f5014e4a540aaa0abfdfd6553
+  SwiftMailgun: 311a28057e0ced2dbcfbc8320e4aa282511877d2
   SwiftyBeaver: 91057725648ee4980308f1650af077d04b3654a0
 
-PODFILE CHECKSUM: 7bf440fa241300584dd85fb9a93ae941c83ddf71
+PODFILE CHECKSUM: a54f17600b5775dd9c4351c21ddbf6922902e9b0
 
 COCOAPODS: 1.3.1

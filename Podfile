@@ -14,8 +14,8 @@ target 'Dance Trix' do
   pod 'Firebase/Core'
   pod 'Firebase/RemoteConfig'
   pod 'Firebase/Storage'
-  pod 'SendGrid', :git => 'https://github.com/scottkawai/sendgrid-swift.git'
   pod 'GRMustache.swift'
+  pod 'SwiftMailgun'
   
   target 'Dance Trix Tests' do
     inherit! :search_paths

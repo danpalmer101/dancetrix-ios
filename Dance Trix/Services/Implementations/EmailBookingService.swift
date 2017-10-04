@@ -21,7 +21,7 @@ class EmailBookingService : BookingServiceType {
         ServiceLocator.emailService.sendEmail(
             templateName: "class_booking",
             from: Configuration.fromBookingEmailAddress(),
-            to: [Configuration.toEmailAddress()],
+            to: Configuration.toEmailAddress(),
             templateVariables: [
                 "class": classDetails.name,
                 "dates": dates.map({ d -> Date in d.start }),
