@@ -12,6 +12,7 @@ class MockClassService: ClassServiceType {
     
     var classMenuCache: ClassMenu?
     var datesCache = [Class : [DateInterval]]()
+    var descCache = [Class : String]()
     
     func getClassMenu(successHandler: @escaping (ClassMenu) -> Void,
                       errorHandler: @escaping (Error) -> Void) {
@@ -70,6 +71,36 @@ class MockClassService: ClassServiceType {
             } else {
                 log.info(String(format: "...mock dates retrieved for %@", classDetails.name))
                 successHandler(dates!)
+            }
+        }
+    }
+    
+    func getClassDescription(_ classDetails: Class,
+                             successHandler: @escaping (String) -> Void,
+                             errorHandler: @escaping (Error) -> Void) {
+        DispatchQueue.global().async {
+            log.info(String(format: "Mock class date retrieval for %@...", classDetails.name))
+            
+            var desc = self.descCache[classDetails]
+            
+            if (desc == nil) {
+                sleep(1)
+                
+                log.debug(String(format: "    Reading description for %@", classDetails.name))
+                
+                if let path = Bundle.main.path(forResource: classDetails.descriptionLocation, ofType: "txt") {
+                    desc = try! String(contentsOfFile: path)
+                }
+                
+                self.descCache[classDetails] = desc
+            }
+            
+            if (desc == nil) {
+                log.warning("...Unable to load mock class description")
+                errorHandler(ClassesError.noClassDescription(classDetails: classDetails))
+            } else {
+                log.info(String(format: "...mock description retrieved for %@", classDetails.name))
+                successHandler(desc!)
             }
         }
     }

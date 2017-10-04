@@ -18,14 +18,16 @@ class Class : Hashable, Equatable {
     var path: String
     var name: String
     var datesLocation: String
+    var descriptionLocation: String
     
     //MARK: Initialization
     
-    init?(id: String, path: String, name: String, datesLocation: String) {
+    init?(id: String, path: String, name: String, datesLocation: String, descriptionLocation: String) {
         self.id = id
         self.path = path
         self.name = name
         self.datesLocation = datesLocation
+        self.descriptionLocation = descriptionLocation
         
         self.hashValue = id.hashValue
     }

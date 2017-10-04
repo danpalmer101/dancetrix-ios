@@ -40,7 +40,9 @@ class FirebaseStorageClassService : ClassServiceType {
         }
     }
     
-    func getClassDates(_ classDetails: Class, successHandler: @escaping ([DateInterval]) -> Void, errorHandler: @escaping (Error) -> Void) {
+    func getClassDates(_ classDetails: Class,
+                       successHandler: @escaping ([DateInterval]) -> Void,
+                       errorHandler: @escaping (Error) -> Void) {
         let classesMenuCsv = Storage.storage().reference().child(classDetails.datesLocation)
         
         log.info(String(format: "Retrieving dates for %@...", classDetails.name))
@@ -64,6 +66,30 @@ class FirebaseStorageClassService : ClassServiceType {
                 log.info(String(format: "...retrieved dates for %@", classDetails.name))
                 
                 successHandler(dates)
+            }
+        }
+    }
+    
+    func getClassDescription(_ classDetails: Class,
+                             successHandler: @escaping (String) -> Void,
+                             errorHandler: @escaping (Error) -> Void) {
+        let classesMenuCsv = Storage.storage().reference().child(classDetails.descriptionLocation)
+        
+        log.info(String(format: "Retrieving description for %@...", classDetails.name))
+        
+        log.debug(String(format: "    Downloading text from Firebase storage: %@", classDetails.descriptionLocation))
+        
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        classesMenuCsv.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                log.warning([String(format: "    An error occurred downloading the text file: %@", classDetails.descriptionLocation), error])
+                errorHandler(error)
+            } else {
+                log.debug(String(format: "    Downloaded text from Firebase storage: %@", classDetails.descriptionLocation))
+                
+                let descriptionText = String(data: data!, encoding: String.Encoding.utf8)
+                
+                successHandler(descriptionText!)
             }
         }
     }

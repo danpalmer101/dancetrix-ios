@@ -15,6 +15,8 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
     private var dates: [DateInterval]?
 
     @IBOutlet
+    var descriptionView: UITextView!
+    @IBOutlet
     var tableView: UITableView!
     @IBOutlet
     var loadingIndicator: UIActivityIndicatorView!
@@ -27,6 +29,8 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewWillAppear(animated)
         
         self.loadDates()
+        
+        self.loadDescription()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -109,6 +113,22 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
             // Loaded without selected dates, disable with text
             self.bookButton.isEnabled = false
             self.bookButton.setTitle("Select dates", for: .normal)
+        }
+    }
+    
+    private func loadDescription() {
+        DispatchQueue.global().async {
+            ServiceLocator.classService.getClassDescription(
+                self.classDetails,
+                successHandler: { (description: String) in
+                    DispatchQueue.main.async {
+                        self.descriptionView.text = "\n" + description
+                    }
+                },
+                errorHandler: { (error: Error) in
+                    log.error(["An unexpected error occurred loading class description", self.classDetails, error])
+                }
+            )
         }
     }
     

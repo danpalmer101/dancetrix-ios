@@ -17,4 +17,7 @@ protocol ClassServiceType {
                        successHandler: @escaping ([DateInterval]) -> Void,
                        errorHandler: @escaping (Error) -> Void)
     
+    func getClassDescription(_ classDetails: Class,
+                             successHandler: @escaping (String) -> Void,
+                             errorHandler: @escaping (Error) -> Void)
 }

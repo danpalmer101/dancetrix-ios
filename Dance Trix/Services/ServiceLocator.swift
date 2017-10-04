@@ -10,10 +10,13 @@ import Foundation
 
 class ServiceLocator {
     
-    static var classService: ClassServiceType = MockClassService()
-    static var bookingService: BookingServiceType = EmailBookingService()
-    static var paymentService: PaymentServiceType = EmailPaymentService()
-    static var orderService: OrderServiceType = EmailOrderService()
-    static var emailService: EmailServiceType = MailgunEmailService()
+    // Quickly switch between fully mocked and real services
+    static let mock = false
     
+    static let classService: ClassServiceType = mock ? MockClassService() : FirebaseStorageClassService()
+    static let bookingService: BookingServiceType = mock ? MockBookingService() : EmailBookingService()
+    static let paymentService: PaymentServiceType = mock ? MockPaymentService() : EmailPaymentService()
+    static let orderService: OrderServiceType = mock ? MockOrderService() : EmailOrderService()
+    static let emailService: EmailServiceType = mock ? MockEmailService() : MailgunEmailService()
+
 }
