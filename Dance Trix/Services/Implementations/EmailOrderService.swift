@@ -10,17 +10,17 @@ import UIKit
 
 class EmailOrderService: OrderServiceType {
 
-    func order(name: String,
-               studentName: String,
-               email: String,
-               package: String?,
-               paymentMade: Bool,
-               paymentMethod: String,
-               additionalInfo: String?,
-               orderItems: [String : String?],
-               successHandler: @escaping () -> Void,
-               errorHandler: @escaping (Error) -> Void) {
-        log.info("Placing order via email...")
+    func orderUniform(name: String,
+                      studentName: String,
+                      email: String,
+                      package: String?,
+                      paymentMade: Bool,
+                      paymentMethod: String,
+                      additionalInfo: String?,
+                      orderItems: [String : String?],
+                      successHandler: @escaping () -> Void,
+                      errorHandler: @escaping (Error) -> Void) {
+        log.info("Placing uniform order via email...")
         
         ServiceLocator.emailService.sendEmail(
             templateName: "uniform_order",
@@ -37,7 +37,7 @@ class EmailOrderService: OrderServiceType {
                 "additionalInfo": additionalInfo
             ],
             successHandler: {
-                log.info("...payment processing complete")
+                log.info("...uniform order complete")
                 successHandler()
         },
             errorHandler: {(e: Error) in

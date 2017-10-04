@@ -285,7 +285,7 @@ class UniformOrderViewController: SubmitFormViewController {
         self.submitButton.isEnabled = false
         
         DispatchQueue.global().async {
-            ServiceLocator.orderService.order(
+            ServiceLocator.orderService.orderUniform(
                 name: name,
                 studentName: student,
                 email: email,
@@ -297,7 +297,7 @@ class UniformOrderViewController: SubmitFormViewController {
                 successHandler: {
                     Notification.show(
                         title: "Success",
-                        subtitle: "Your uniform order has been received!",
+                        subtitle: "Your uniform order has been sent!",
                         type: NotificationType.success)
                     
                     DispatchQueue.main.async {

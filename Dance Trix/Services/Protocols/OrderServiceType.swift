@@ -10,15 +10,15 @@ import Foundation
 
 protocol OrderServiceType {
     
-    func order(name: String,
-               studentName: String,
-               email: String,
-               package: String?,
-               paymentMade: Bool,
-               paymentMethod: String,
-               additionalInfo: String?,
-               orderItems: [String : String?],
-               successHandler: @escaping () -> Void,
-               errorHandler: @escaping (Error) -> Void)
+    func orderUniform(name: String,
+                      studentName: String,
+                      email: String,
+                      package: String?,
+                      paymentMade: Bool,
+                      paymentMethod: String,
+                      additionalInfo: String?,
+                      orderItems: [String : String?],
+                      successHandler: @escaping () -> Void,
+                      errorHandler: @escaping (Error) -> Void)
     
 }
