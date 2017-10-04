@@ -51,7 +51,6 @@
 		A69ED4B31F83C3650005B845 /* payment_notify_body_html.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4B21F83C3650005B845 /* payment_notify_body_html.mustache */; };
 		A69ED4B51F83C3860005B845 /* payment_notify_body_plain.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4B41F83C3860005B845 /* payment_notify_body_plain.mustache */; };
 		A69ED4B71F83E79F0005B845 /* EmailPaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4B61F83E79F0005B845 /* EmailPaymentService.swift */; };
-		A69ED4B91F83FD450005B845 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4B81F83FD450005B845 /* Configuration.swift */; };
 		A69ED4BB1F83FDC60005B845 /* EmailBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4BA1F83FDC60005B845 /* EmailBookingService.swift */; };
 		A69ED4BD1F83FE6A0005B845 /* class_booking_subject.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4BC1F83FE6A0005B845 /* class_booking_subject.mustache */; };
 		A69ED4BF1F83FE890005B845 /* class_booking_body_plain.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4BE1F83FE890005B845 /* class_booking_body_plain.mustache */; };
@@ -62,6 +61,7 @@
 		A69ED4C91F852A5C0005B845 /* EmailOrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4C81F852A5C0005B845 /* EmailOrderService.swift */; };
 		A69ED4CB1F852C140005B845 /* uniform_order_body_html.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4CA1F852C140005B845 /* uniform_order_body_html.mustache */; };
 		A69ED4CD1F8534810005B845 /* description_lorem_ipsum.txt in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4CC1F8534810005B845 /* description_lorem_ipsum.txt */; };
+		A69ED4D61F8542580005B845 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4D51F8542580005B845 /* Configuration.swift */; };
 		A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */; };
 		A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */; };
 		A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */; };
@@ -143,7 +143,6 @@
 		A69ED4B21F83C3650005B845 /* payment_notify_body_html.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = payment_notify_body_html.mustache; sourceTree = "<group>"; };
 		A69ED4B41F83C3860005B845 /* payment_notify_body_plain.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = payment_notify_body_plain.mustache; sourceTree = "<group>"; };
 		A69ED4B61F83E79F0005B845 /* EmailPaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPaymentService.swift; sourceTree = "<group>"; };
-		A69ED4B81F83FD450005B845 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		A69ED4BA1F83FDC60005B845 /* EmailBookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailBookingService.swift; sourceTree = "<group>"; };
 		A69ED4BC1F83FE6A0005B845 /* class_booking_subject.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = class_booking_subject.mustache; sourceTree = "<group>"; };
 		A69ED4BE1F83FE890005B845 /* class_booking_body_plain.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = class_booking_body_plain.mustache; sourceTree = "<group>"; };
@@ -154,6 +153,7 @@
 		A69ED4C81F852A5C0005B845 /* EmailOrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailOrderService.swift; sourceTree = "<group>"; };
 		A69ED4CA1F852C140005B845 /* uniform_order_body_html.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = uniform_order_body_html.mustache; sourceTree = "<group>"; };
 		A69ED4CC1F8534810005B845 /* description_lorem_ipsum.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = description_lorem_ipsum.txt; sourceTree = "<group>"; };
+		A69ED4D51F8542580005B845 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		A6BA0F581F74E20C00FAF47E /* Dance Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Trix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -298,6 +298,7 @@
 		A69ED4931F82D1540005B845 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A69ED4D51F8542580005B845 /* Configuration.swift */,
 				A68828131F75AB6200D82322 /* ClassMenuParser.swift */,
 				A69ED4971F82DE270005B845 /* ClassDatesParser.swift */,
 			);
@@ -372,7 +373,6 @@
 				A688281D1F770ECB00D82322 /* Resources */,
 				A6BA0F6D1F74F24600FAF47E /* Domain */,
 				A68828161F76FC5500D82322 /* UI */,
-				A69ED4B81F83FD450005B845 /* Configuration.swift */,
 				A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */,
 				A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */,
 				A6BA0F641F74E20C00FAF47E /* LaunchScreen.storyboard */,
@@ -750,6 +750,7 @@
 				A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */,
 				A69ED4A81F83BC8C0005B845 /* EmailServiceType.swift in Sources */,
 				A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */,
+				A69ED4D61F8542580005B845 /* Configuration.swift in Sources */,
 				A6D23AD71F813B5700229DEC /* MockPaymentService.swift in Sources */,
 				A697F8731F7D42E000195246 /* CalendarCell.swift in Sources */,
 				A6D23ADB1F818A5800229DEC /* SubmitFormViewController.swift in Sources */,
@@ -766,7 +767,6 @@
 				A68828141F75AB6200D82322 /* ClassMenuParser.swift in Sources */,
 				A68828341F78410B00D82322 /* DateInterval_Text.swift in Sources */,
 				A697F8661F7C32BF00195246 /* MockClassService.swift in Sources */,
-				A69ED4B91F83FD450005B845 /* Configuration.swift in Sources */,
 				A69ED4C31F84D55B0005B845 /* EmailError.swift in Sources */,
 				A68828321F783DC300D82322 /* ClassDatesViewController.swift in Sources */,
 				A697F86C1F7C3AD200195246 /* ClassesError.swift in Sources */,
