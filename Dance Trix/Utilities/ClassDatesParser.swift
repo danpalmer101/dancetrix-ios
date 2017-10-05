@@ -8,37 +8,27 @@
 
 import Foundation
 
-class ClassDatesParser {
-
-    private static let trimCharacters = CharacterSet(charactersIn: " ")
+class ClassDatesParser : CsvParser {
 
     static func parse(csvString: String) -> [DateInterval] {
-        var dates = [DateInterval]()
+        let csvRows = rows(csv: csvString)
         
-        let csvRows = csvString.components(separatedBy: "\n")
-        
-        for csvRow in csvRows {
-            if (trim(csvRow) == "") {
-                // Skip empty rows
-                continue
-            }
-            
-            let csvColumns = csvRow.components(separatedBy: ",")
+        return csvRows.map({ csvRow -> DateInterval? in
+            let csvColumns = columns(csvRow: csvRow)
             let format = csvColumns[0]
             
             var date: DateInterval?
             
             switch (format) {
-            case "V1": date = parseFormat1(csvRow: csvColumns)
-            default: log.warning(["Unrecognised Class Date CSV format", format])
+                case "V1": date = parseFormat1(csvRow: csvColumns)
+                default: log.warning(["Unrecognised Class Date CSV format", format])
             }
             
-            if (date != nil) {
-                dates.append(date!)
-            }
-        }
-        
-        return dates
+            return date
+        }).filter({ date -> Bool in
+            // Date must exist and be in the future
+            return date != nil && date!.start >= Date()
+        }).map({ $0! })
     }
     
     private static func parseFormat1(csvRow: [String]) -> DateInterval? {
@@ -51,16 +41,7 @@ class ClassDatesParser {
         
         let startDate = dateFormatter.date(from: date + " " + time)
         
-        // Ignore past dates
-        if startDate! < Date() {
-            return nil
-        }
-        
         return DateInterval(start: startDate!, duration: Double(duration)! * 60)
-    }
-    
-    private static func trim(_ string: String) -> String {
-        return string.trimmingCharacters(in: trimCharacters)
     }
 
 }

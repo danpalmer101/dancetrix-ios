@@ -8,22 +8,13 @@
 
 import Foundation
 
-class ClassMenuParser {
-    
-    private static let trimCharacters = CharacterSet(charactersIn: " ")
+class ClassMenuParser : CsvParser {
     
     static func parse(csvString: String) -> ClassMenu {
-        var classMenus = [ClassMenu]()
+        let csvRows = rows(csv: csvString)
         
-        let csvRows = csvString.components(separatedBy: "\n")
-        
-        for csvRow in csvRows {
-            if (trim(csvRow) == "") {
-                // Skip empty rows
-                continue
-            }
-            
-            let csvColumns = csvRow.components(separatedBy: ",")
+        let classMenus = csvRows.map({ csvRow -> ClassMenu? in
+            let csvColumns = columns(csvRow: csvRow)
             let format = csvColumns[0]
             
             var classMenu: ClassMenu?
@@ -33,10 +24,8 @@ class ClassMenuParser {
                 default: log.warning(["Unrecognised ClassMenu CSV format", format])
             }
             
-            if (classMenu != nil) {
-                classMenus.append(classMenu!)
-            }
-        }
+            return classMenu
+        }).filter({ $0 != nil }).map({ $0! })
         
         return ClassMenu(name: "Classes", children: merge(classMenus: classMenus))!
     }
@@ -97,10 +86,6 @@ class ClassMenuParser {
         }
         
         return classMenu
-    }
-    
-    private static func trim(_ string: String) -> String {
-        return string.trimmingCharacters(in: trimCharacters)
     }
     
 }

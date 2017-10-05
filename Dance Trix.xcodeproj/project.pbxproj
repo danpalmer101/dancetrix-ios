@@ -18,6 +18,8 @@
 		A66EF18B1F863CFB00B8EDFE /* UniformGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF18A1F863CFB00B8EDFE /* UniformGroup.swift */; };
 		A66EF18D1F863D4300B8EDFE /* UniformItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF18C1F863D4300B8EDFE /* UniformItem.swift */; };
 		A66EF18F1F8655A000B8EDFE /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = A66EF18E1F8655A000B8EDFE /* Configuration.plist */; };
+		A66EF1911F86647F00B8EDFE /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF1901F86647F00B8EDFE /* Preferences.swift */; };
+		A66EF1931F86678900B8EDFE /* CsvParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF1921F86678900B8EDFE /* CsvParser.swift */; };
 		A68828081F7560C600D82322 /* Dance_Trix_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828071F7560C600D82322 /* Dance_Trix_Tests.swift */; };
 		A688280F1F75626300D82322 /* ClassMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */; };
 		A68828101F75627F00D82322 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F721F74FEB800FAF47E /* Class.swift */; };
@@ -113,6 +115,8 @@
 		A66EF18A1F863CFB00B8EDFE /* UniformGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformGroup.swift; sourceTree = "<group>"; };
 		A66EF18C1F863D4300B8EDFE /* UniformItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformItem.swift; sourceTree = "<group>"; };
 		A66EF18E1F8655A000B8EDFE /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
+		A66EF1901F86647F00B8EDFE /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		A66EF1921F86678900B8EDFE /* CsvParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvParser.swift; sourceTree = "<group>"; };
 		A68828051F7560C600D82322 /* Dance Trix Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dance Trix Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68828071F7560C600D82322 /* Dance_Trix_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dance_Trix_Tests.swift; sourceTree = "<group>"; };
 		A68828091F7560C600D82322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -305,8 +309,10 @@
 			isa = PBXGroup;
 			children = (
 				A69ED4D51F8542580005B845 /* Configuration.swift */,
+				A66EF1901F86647F00B8EDFE /* Preferences.swift */,
 				A68828131F75AB6200D82322 /* ClassMenuParser.swift */,
 				A69ED4971F82DE270005B845 /* ClassDatesParser.swift */,
+				A66EF1921F86678900B8EDFE /* CsvParser.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -777,6 +783,7 @@
 				A600265F1F7AACF000DDC90F /* TextField.swift in Sources */,
 				A68828141F75AB6200D82322 /* ClassMenuParser.swift in Sources */,
 				A68828341F78410B00D82322 /* DateInterval_Text.swift in Sources */,
+				A66EF1911F86647F00B8EDFE /* Preferences.swift in Sources */,
 				A697F8661F7C32BF00195246 /* MockClassService.swift in Sources */,
 				A69ED4C31F84D55B0005B845 /* EmailError.swift in Sources */,
 				A68828321F783DC300D82322 /* ClassDatesViewController.swift in Sources */,
@@ -784,6 +791,7 @@
 				A68828121F756F0600D82322 /* Theme.swift in Sources */,
 				A6BD4F2E1F803C8800D261D1 /* PaymentFormViewController.swift in Sources */,
 				A6D23AF11F82544800229DEC /* MockBookingService.swift in Sources */,
+				A66EF1931F86678900B8EDFE /* CsvParser.swift in Sources */,
 				A627D0791F79A733009097C1 /* BackgroundView.swift in Sources */,
 				A6D23AE91F82537D00229DEC /* BookingServiceType.swift in Sources */,
 				A6D23AE11F8252EB00229DEC /* PaymentError.swift in Sources */,

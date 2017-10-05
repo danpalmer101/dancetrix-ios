@@ -27,14 +27,14 @@ class SubmitBookingViewController: SubmitFormViewController {
         self.form
             +++ Section("Class")
             <<< TextRow() { row in
-                row.title = "Name"
-                row.value = self.classDetails.name
-                row.disabled = Condition(booleanLiteral: true)
+                    row.title = "Name"
+                    row.value = self.classDetails.name
+                    row.disabled = Condition(booleanLiteral: true)
                 }
            <<<  MultipleSelectorRow<String>("dates") { row in
-                row.title = "Dates"
-                row.options = self.allDates.map({ (date: DateInterval) -> String in dateFormatter.string(from: date.start) })
-                row.value = Set(self.selectedDates.map({ (date: DateInterval) -> String in dateFormatter.string(from: date.start) }))
+                    row.title = "Dates"
+                    row.options = self.allDates.map({ (date: DateInterval) -> String in dateFormatter.string(from: date.start) })
+                    row.value = Set(self.selectedDates.map({ (date: DateInterval) -> String in dateFormatter.string(from: date.start) }))
                 }.onPresent({ (_, presentingVC) -> () in
                     presentingVC.selectableRowCellUpdate = { cell, row in
                         cell.textLabel?.textColor = Theme.colorForeground
@@ -43,10 +43,13 @@ class SubmitBookingViewController: SubmitFormViewController {
                     }
                 })
             +++ Section("Your details")
-            <<< TextRow("name") { row in
-                row.title = "Name"
-                row.add(rule: RuleRequired())
-                row.placeholder = "Enter your full name"
+            <<< TextRow("student_name") { row in
+                    row.title = "Student name"
+                    row.add(rule: RuleRequired())
+                    row.placeholder = "Enter the dancer's full name"
+                    if let studentName = Preferences.get(key: "student_name") {
+                        row.value = studentName as? String
+                    }
                 }.cellUpdate { cell, row in
                     if !row.isValid {
                         cell.textLabel?.textColor = Theme.colorError
@@ -55,10 +58,13 @@ class SubmitBookingViewController: SubmitFormViewController {
                     self.checkCompleteForm()
                 }
             <<< EmailRow("email") { row in
-                row.title = "Email address"
-                row.add(rule: RuleRequired())
-                row.add(rule: RuleEmail())
-                row.placeholder = "Enter your email address"
+                    row.title = "Email address"
+                    row.add(rule: RuleRequired())
+                    row.add(rule: RuleEmail())
+                    row.placeholder = "Enter your email address"
+                    if let email = Preferences.get(key: "email") {
+                        row.value = email as? String
+                    }
                 }.cellUpdate { cell, row in
                     if !row.isValid {
                         cell.textLabel?.textColor = Theme.colorError
@@ -82,17 +88,21 @@ class SubmitBookingViewController: SubmitFormViewController {
     // MARK: - Actions
     
     private func checkCompleteForm() {
-        let nameRow = self.form.rowBy(tag: "name") as! TextRow
+        let studentNameRow = self.form.rowBy(tag: "student_name") as! TextRow
         let emailRow = self.form.rowBy(tag: "email") as! EmailRow
         
         self.submitButton.isEnabled =
-            nameRow.value != nil && nameRow.isValid
+            studentNameRow.value != nil && studentNameRow.isValid
             && emailRow.value != nil && emailRow.isValid
     }
 
     @objc private func submitBooking(sender: Any?) {
-        let name = (self.form.rowBy(tag: "name") as! TextRow).value!
+        let studentName = (self.form.rowBy(tag: "student_name") as! TextRow).value!
         let email = (self.form.rowBy(tag: "email") as! EmailRow).value!
+        
+        // Store student/email as preferences for next time
+        Preferences.store(key: "student_name", value: studentName)
+        Preferences.store(key: "email", value: email)
         
         let submitTitle = self.submitButton.title(for: .normal)
         
@@ -104,7 +114,7 @@ class SubmitBookingViewController: SubmitFormViewController {
             ServiceLocator.bookingService.bookClass(
                 classDetails: self.classDetails,
                 dates: self.selectedDates,
-                name: name,
+                name: studentName,
                 email: email,
                 successHandler: {
                     Notification.show(

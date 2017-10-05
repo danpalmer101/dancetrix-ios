@@ -110,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeL-6w-nr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652.17391304347836" y="-556.79347826086962"/>
+            <point key="canvasLocation" x="-50" y="-1971"/>
         </scene>
         <!--Book a class-->
         <scene sceneID="Cxa-S2-ibL">
@@ -165,7 +165,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylz-bJ-Oxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1408.8" y="-556.4039408866995"/>
+            <point key="canvasLocation" x="-1550" y="-1041"/>
         </scene>
         <!--Ib Calendar Data Source-->
         <scene sceneID="ef1-Sg-IBi">
@@ -265,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ey8-Un-Amn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-91" y="612"/>
+            <point key="canvasLocation" x="-794" y="-1041"/>
         </scene>
         <!--Order uniforms-->
         <scene sceneID="iNG-Gy-Bi7">
@@ -285,7 +285,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zLK-aR-EKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Twf-Ov-ZF5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="652" y="1334"/>
+            <point key="canvasLocation" x="-50" y="-319"/>
         </scene>
         <!--Make a payment-->
         <scene sceneID="4mN-Vz-Jwe">
@@ -401,7 +401,7 @@ Once you have completed the transaction, please let us know with the button belo
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZ8-o2-ep4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1408.8" y="611.82266009852219"/>
+            <point key="canvasLocation" x="706" y="-1041"/>
         </scene>
         <!--Payment details-->
         <scene sceneID="6Ew-Bz-4pr">
@@ -421,7 +421,7 @@ Once you have completed the transaction, please let us know with the button belo
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIt-7o-Gzk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="nhq-bo-cF1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1409" y="1335"/>
+            <point key="canvasLocation" x="706" y="-318"/>
         </scene>
         <!--About us-->
         <scene sceneID="zXS-qh-vBO">
@@ -452,7 +452,7 @@ Once you have completed the transaction, please let us know with the button belo
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTf-Yr-Fy0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2157.5999999999999" y="611.82266009852219"/>
+            <point key="canvasLocation" x="1455" y="-1041"/>
         </scene>
         <!--Select dates-->
         <scene sceneID="5Fn-np-ItR">
@@ -537,7 +537,7 @@ Once you have completed the transaction, please let us know with the button belo
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmW-M1-eKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2159.1999999999998" y="-557.88177339901483"/>
+            <point key="canvasLocation" x="-1550" y="-319"/>
         </scene>
         <!--Book a class-->
         <scene sceneID="brJ-s6-Ssp">
@@ -557,7 +557,7 @@ Once you have completed the transaction, please let us know with the button belo
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKf-UJ-2cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ihh-tw-aJT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2936.8000000000002" y="-554.57271364317842"/>
+            <point key="canvasLocation" x="-1550" y="414"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pz5-0q-OFX">
@@ -575,7 +575,7 @@ Once you have completed the transaction, please let us know with the button belo
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lok-kM-4HD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-89.599999999999994" y="-554.1229385307347"/>
+            <point key="canvasLocation" x="-1550" y="-1971"/>
         </scene>
         <!--Order Uniforms-->
         <scene sceneID="zRD-PD-fR1">
@@ -615,7 +615,7 @@ Once you have completed the transaction, please let us know with the button belo
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiF-4r-C86" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652" y="611.82266009852219"/>
+            <point key="canvasLocation" x="-50" y="-1041"/>
         </scene>
     </scenes>
     <resources>

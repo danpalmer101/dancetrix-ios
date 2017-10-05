@@ -12,12 +12,12 @@ import Firebase
 import ReachabilitySwift
 
 let log = SwiftyBeaver.self
-let reachability = Reachability()!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let reachability = Reachability()!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func enableReachabilityCheck() {
-        reachability.whenUnreachable = { _ in
+        self.reachability.whenUnreachable = { _ in
             Notification.show(title: "No internet connection",
                               subtitle: "Some features may not be available. Tap to dismiss.",
                               type: .warning,
@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         do {
-            try reachability.startNotifier()
+            try self.reachability.startNotifier()
         } catch {
             log.warning("Unable to start Reachability notifier")
         }

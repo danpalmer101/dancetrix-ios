@@ -27,9 +27,12 @@ class UniformOrderViewController: SubmitFormViewController {
         self.form
             +++ Section("Your details")
             <<< TextRow("name") { row in
-                row.title = "Your name"
-                row.placeholder = "Enter your name"
-                row.add(rule: RuleRequired())
+                    row.title = "Your name"
+                    row.placeholder = "Enter your name"
+                    row.add(rule: RuleRequired())
+                    if let name = Preferences.get(key: "name") {
+                        row.value = name as? String
+                    }
                 }.cellUpdate { cell, row in
                     if !row.isValid {
                         cell.textLabel?.textColor = Theme.colorError
@@ -38,9 +41,12 @@ class UniformOrderViewController: SubmitFormViewController {
                     self.checkCompleteForm()
                 }
             <<< TextRow("student_name") { row in
-                row.title = "Student's name"
-                row.placeholder = "Enter the student's name"
-                row.add(rule: RuleRequired())
+                    row.title = "Student's name"
+                    row.placeholder = "Enter the student's name"
+                    row.add(rule: RuleRequired())
+                    if let studentName = Preferences.get(key: "student_name") {
+                        row.value = studentName as? String
+                    }
                 }.cellUpdate { cell, row in
                     if !row.isValid {
                         cell.textLabel?.textColor = Theme.colorError
@@ -49,10 +55,13 @@ class UniformOrderViewController: SubmitFormViewController {
                     self.checkCompleteForm()
                 }
             <<< EmailRow("email") { row in
-                row.title = "Email address"
-                row.add(rule: RuleRequired())
-                row.add(rule: RuleEmail())
-                row.placeholder = "Enter your email address"
+                    row.title = "Email address"
+                    row.add(rule: RuleRequired())
+                    row.add(rule: RuleEmail())
+                    row.placeholder = "Enter your email address"
+                    if let email = Preferences.get(key: "email") {
+                        row.value = email as? String
+                    }
                 }.cellUpdate { cell, row in
                     if !row.isValid {
                         cell.textLabel?.textColor = Theme.colorError
@@ -92,32 +101,32 @@ class UniformOrderViewController: SubmitFormViewController {
         self.form
             +++ Section("Your payment")
             <<< PushRow<String>("order_package") { row in
-                row.title = "Package"
-                row.selectorTitle = "Select your package"
-                row.options = [
-                    "Bronze",
-                    "Bronze Plus",
-                    "Silver",
-                    "Silver Plus",
-                    "Gold",
-                    "Gold Plus"
-                ]
+                    row.title = "Package"
+                    row.selectorTitle = "Select your package"
+                    row.options = [
+                        "Bronze",
+                        "Bronze Plus",
+                        "Silver",
+                        "Silver Plus",
+                        "Gold",
+                        "Gold Plus"
+                    ]
                 }.onPresent({ (_, presentingVC) -> () in
                     presentingVC.selectableRowCellUpdate = selectableRowCellUpdate
                 })
             <<< SwitchRow("payment_made") { row in
-                row.title = "Payment made"
+                    row.title = "Payment made"
                 }
             <<< PushRow<String>("payment_method") { row in
-                row.title = "Payment method"
-                row.selectorTitle = "Select a method"
-                row.options = [
-                    "Bank transfer",
-                    "PayPal",
-                    "Credit/Debit card",
-                    "Cheque"
-                ]
-                row.add(rule: RuleRequired())
+                    row.title = "Payment method"
+                    row.selectorTitle = "Select a method"
+                    row.options = [
+                        "Bank transfer",
+                        "PayPal",
+                        "Credit/Debit card",
+                        "Cheque"
+                    ]
+                    row.add(rule: RuleRequired())
                 }.cellUpdate { cell, row in
                     if !row.isValid {
                         cell.textLabel?.textColor = Theme.colorError
@@ -188,12 +197,17 @@ class UniformOrderViewController: SubmitFormViewController {
         }
         
         let name = (self.form.rowBy(tag: "name") as! TextRow).value!
-        let student = (self.form.rowBy(tag: "student_name") as! TextRow).value!
+        let studentName = (self.form.rowBy(tag: "student_name") as! TextRow).value!
         let email = (self.form.rowBy(tag: "email") as! EmailRow).value!
         let orderPackage = (self.form.rowBy(tag: "order_package") as! PushRow<String>).value
         let paymentMade = (self.form.rowBy(tag: "payment_made") as! SwitchRow).value ?? false
         let paymentMethod = (self.form.rowBy(tag: "payment_method") as! PushRow<String>).value!
         let additionalInfo = (self.form.rowBy(tag: "additional") as! TextAreaRow).value
+        
+        // Store name/student/email for next time
+        Preferences.store(key: "name", value: name)
+        Preferences.store(key: "student_name", value: studentName)
+        Preferences.store(key: "email", value: email)
         
         let submitTitle = self.submitButton.title(for: .normal)
         
@@ -204,7 +218,7 @@ class UniformOrderViewController: SubmitFormViewController {
         DispatchQueue.global().async {
             ServiceLocator.orderService.orderUniform(
                 name: name,
-                studentName: student,
+                studentName: studentName,
                 email: email,
                 package: orderPackage,
                 paymentMade: paymentMade,
