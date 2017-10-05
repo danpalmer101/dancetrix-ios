@@ -10,6 +10,10 @@ import UIKit
 
 class EmailOrderService: OrderServiceType {
 
+    func getUniformOrderItems() -> [(String, [(String, String, [String])])] {
+        return MockOrderService().getUniformOrderItems()
+    }
+    
     func orderUniform(name: String,
                       studentName: String,
                       email: String,

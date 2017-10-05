@@ -10,6 +10,8 @@ import Foundation
 
 protocol OrderServiceType {
     
+    func getUniformOrderItems() -> [(String, [(String, String, [String])])];
+    
     func orderUniform(name: String,
                       studentName: String,
                       email: String,
