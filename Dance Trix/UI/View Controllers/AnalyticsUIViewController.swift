@@ -11,7 +11,7 @@ import Firebase
 
 class AnalyticsUIViewController: UIViewController {
 
-    var screenName : String?
+    @IBInspectable var screenName : String?
     
     // MARK: - View lifecycle
     

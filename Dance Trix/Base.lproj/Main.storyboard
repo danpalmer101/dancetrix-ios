@@ -399,7 +399,7 @@ Once you have completed the transaction, please let us know with the button belo
                     </view>
                     <navigationItem key="navigationItem" title="Make a payment" id="he6-hS-NVP"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="Make Payment Details"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Make Payment Details"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZ8-o2-ep4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -450,7 +450,7 @@ Once you have completed the transaction, please let us know with the button belo
                     </view>
                     <navigationItem key="navigationItem" title="About us" id="7KS-w9-Q1G"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="About Us"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="About Us"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="webContainerView" destination="9jl-3g-mkX" id="MH6-ZD-97J"/>
