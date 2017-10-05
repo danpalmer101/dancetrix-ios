@@ -37,7 +37,7 @@ class EmailOrderService: OrderServiceType {
                 "package": package,
                 "paymentMade": paymentMade,
                 "paymentMethod": paymentMethod,
-                "orderItems": orderItems,
+                "orderItems": Dictionary(uniqueKeysWithValues: orderItems.map { (key, value) in return (key.name, value) }),
                 "additionalInfo": additionalInfo
             ],
             successHandler: {

@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import Mustache
 
-class UniformItem : Hashable, Equatable, MustacheBoxable {
+class UniformItem : Hashable, Equatable {
     
     //MARK: Hashable
     
@@ -35,12 +34,6 @@ class UniformItem : Hashable, Equatable, MustacheBoxable {
     
     static func ==(lhs: UniformItem, rhs: UniformItem) -> Bool {
         return lhs.key == rhs.key
-    }
-    
-    //MARK: Mustache
-    
-    var mustacheBox: MustacheBox {
-        return Box(["key": self.key, "name": self.name, "sizes": self.sizes])
     }
     
 }

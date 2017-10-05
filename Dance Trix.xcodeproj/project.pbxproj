@@ -372,11 +372,11 @@
 		A6BA0F5A1F74E20C00FAF47E /* Dance Trix */ = {
 			isa = PBXGroup;
 			children = (
+				A6BA0F6D1F74F24600FAF47E /* Domain */,
 				A69ED4931F82D1540005B845 /* Utilities */,
 				A697F8641F7C326500195246 /* Services */,
-				A688281D1F770ECB00D82322 /* Resources */,
-				A6BA0F6D1F74F24600FAF47E /* Domain */,
 				A68828161F76FC5500D82322 /* UI */,
+				A688281D1F770ECB00D82322 /* Resources */,
 				A6BA0F5B1F74E20C00FAF47E /* AppDelegate.swift */,
 				A6BA0F5F1F74E20C00FAF47E /* Main.storyboard */,
 				A6BA0F641F74E20C00FAF47E /* LaunchScreen.storyboard */,

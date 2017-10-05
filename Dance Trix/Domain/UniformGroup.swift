@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import Mustache
 
-class UniformGroup : Hashable, Equatable, MustacheBoxable {
+class UniformGroup : Hashable, Equatable {
     
     //MARK: Hashable
     
@@ -33,12 +32,6 @@ class UniformGroup : Hashable, Equatable, MustacheBoxable {
     
     static func ==(lhs: UniformGroup, rhs: UniformGroup) -> Bool {
         return lhs.name == rhs.name
-    }
-    
-    //MARK: Mustache
-    
-    var mustacheBox: MustacheBox {
-        return Box(["name": self.name, "items": self.items])
     }
     
 }
