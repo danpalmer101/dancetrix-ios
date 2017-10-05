@@ -14,6 +14,7 @@
 		A60026631F7BB4D200DDC90F /* prepare-commit-msg in Resources */ = {isa = PBXBuildFile; fileRef = A60026621F7BB4D200DDC90F /* prepare-commit-msg */; };
 		A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A627D0761F79A185009097C1 /* ReadOnlyTextView.swift */; };
 		A627D0791F79A733009097C1 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A627D0781F79A733009097C1 /* BackgroundView.swift */; };
+		A62CA2051F86772A0087D3D0 /* AnalyticsUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62CA2041F86772A0087D3D0 /* AnalyticsUIViewController.swift */; };
 		A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632F7891F7505E100F9FD8A /* ClassesViewController.swift */; };
 		A66EF18B1F863CFB00B8EDFE /* UniformGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF18A1F863CFB00B8EDFE /* UniformGroup.swift */; };
 		A66EF18D1F863D4300B8EDFE /* UniformItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF18C1F863D4300B8EDFE /* UniformItem.swift */; };
@@ -111,6 +112,7 @@
 		A60026621F7BB4D200DDC90F /* prepare-commit-msg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "prepare-commit-msg"; sourceTree = "<group>"; };
 		A627D0761F79A185009097C1 /* ReadOnlyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadOnlyTextView.swift; sourceTree = "<group>"; };
 		A627D0781F79A733009097C1 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		A62CA2041F86772A0087D3D0 /* AnalyticsUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsUIViewController.swift; sourceTree = "<group>"; };
 		A632F7891F7505E100F9FD8A /* ClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesViewController.swift; sourceTree = "<group>"; };
 		A66EF18A1F863CFB00B8EDFE /* UniformGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformGroup.swift; sourceTree = "<group>"; };
 		A66EF18C1F863D4300B8EDFE /* UniformItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformItem.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		A68828391F794A7B00D82322 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A62CA2041F86772A0087D3D0 /* AnalyticsUIViewController.swift */,
 				A6D23ADA1F818A5800229DEC /* SubmitFormViewController.swift */,
 				A6BA0F5D1F74E20C00FAF47E /* HomeViewController.swift */,
 				A632F7891F7505E100F9FD8A /* ClassesViewController.swift */,
@@ -793,6 +796,7 @@
 				A6D23AF11F82544800229DEC /* MockBookingService.swift in Sources */,
 				A66EF1931F86678900B8EDFE /* CsvParser.swift in Sources */,
 				A627D0791F79A733009097C1 /* BackgroundView.swift in Sources */,
+				A62CA2051F86772A0087D3D0 /* AnalyticsUIViewController.swift in Sources */,
 				A6D23AE91F82537D00229DEC /* BookingServiceType.swift in Sources */,
 				A6D23AE11F8252EB00229DEC /* PaymentError.swift in Sources */,
 				A69ED4A61F82E5BD0005B845 /* FirebaseStorageClassService.swift in Sources */,

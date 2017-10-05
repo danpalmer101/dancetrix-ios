@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController, WKNavigationDelegate {
+class WebViewController: AnalyticsUIViewController, WKNavigationDelegate {
     
     var cssFileName : String?
     var url : String!

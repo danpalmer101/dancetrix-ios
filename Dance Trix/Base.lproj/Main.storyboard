@@ -290,7 +290,7 @@
         <!--Make a payment-->
         <scene sceneID="4mN-Vz-Jwe">
             <objects>
-                <viewController id="Syn-4R-O6g" sceneMemberID="viewController">
+                <viewController id="Syn-4R-O6g" customClass="AnalyticsUIViewController" customModule="Dance_Trix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IGU-WD-Lqy" customClass="BackgroundView" customModule="Dance_Trix" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -398,6 +398,9 @@ Once you have completed the transaction, please let us know with the button belo
                         <viewLayoutGuide key="safeArea" id="bKo-6c-WVX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Make a payment" id="he6-hS-NVP"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="Make Payment Details"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZ8-o2-ep4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -446,6 +449,9 @@ Once you have completed the transaction, please let us know with the button belo
                         <viewLayoutGuide key="safeArea" id="oAv-XF-5rv"/>
                     </view>
                     <navigationItem key="navigationItem" title="About us" id="7KS-w9-Q1G"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="About Us"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="webContainerView" destination="9jl-3g-mkX" id="MH6-ZD-97J"/>
                     </connections>
@@ -609,6 +615,9 @@ Once you have completed the transaction, please let us know with the button belo
                         <viewLayoutGuide key="safeArea" id="Lco-td-ngW"/>
                     </view>
                     <navigationItem key="navigationItem" title="Order Uniforms" id="nGU-Lk-9wx"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Uniform Order Catalog"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="webContainerView" destination="2vC-O6-a5a" id="wUt-He-Od1"/>
                     </connections>

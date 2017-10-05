@@ -162,7 +162,7 @@ class PaymentFormViewController: SubmitFormViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        Analytics.setScreenName("Submit Payment", screenClass: nil)
+        Analytics.setScreenName("Make Payment Form", screenClass: nil)
     }
     
     // MARK: - Actions
