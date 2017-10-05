@@ -10,7 +10,7 @@ import UIKit
 
 class EmailOrderService: OrderServiceType {
 
-    func getUniformOrderItems() -> [(String, [(String, String, [String])])] {
+    func getUniformOrderItems() -> [UniformGroup] {
         return MockOrderService().getUniformOrderItems()
     }
     
@@ -21,7 +21,7 @@ class EmailOrderService: OrderServiceType {
                       paymentMade: Bool,
                       paymentMethod: String,
                       additionalInfo: String?,
-                      orderItems: [String : String?],
+                      orderItems: [UniformItem : String?],
                       successHandler: @escaping () -> Void,
                       errorHandler: @escaping (Error) -> Void) {
         log.info("Placing uniform order via email...")

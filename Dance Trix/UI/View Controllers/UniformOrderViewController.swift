@@ -12,7 +12,7 @@ import Firebase
 
 class UniformOrderViewController: SubmitFormViewController {
 
-    var orderItems : [(String, [(String, String, [String])])]!
+    var orderItems : [UniformGroup]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,22 +62,22 @@ class UniformOrderViewController: SubmitFormViewController {
                 }
         
         // For each uniform section, build the form section and add to the form
-        self.orderItems.forEach { (sectionName, items) in
-            let section = Section(sectionName)
+        self.orderItems.forEach { uniformGroup in
+            let section = Section(uniformGroup.name)
             
             // For each uniform item, build the item and add to the section
-            items.forEach({ (key, title, sizes) in
+            uniformGroup.items.forEach({ uniformItem in
                 var baseRow : BaseRow
                 
-                if (sizes.count == 0) {
-                    baseRow = CheckRow(key) { row in
-                            row.title = title
+                if (uniformItem.sizes.count == 0) {
+                    baseRow = CheckRow(uniformItem.key) { row in
+                            row.title = uniformItem.name
                         }
                 } else {
-                    baseRow = PushRow<String>(key) { row in
-                            row.title = title
+                    baseRow = PushRow<String>(uniformItem.key) { row in
+                            row.title = uniformItem.name
                             row.selectorTitle = "Select size"
-                            row.options = sizes
+                            row.options = uniformItem.sizes
                         }.onPresent({ (_, presentingVC) -> () in
                             presentingVC.selectableRowCellUpdate = selectableRowCellUpdate
                         })
@@ -156,18 +156,14 @@ class UniformOrderViewController: SubmitFormViewController {
     
     @objc private func submitOrder(sender: Any?) {
         // Get a list of all (key,title) of items
-        let orderItemIds = self.orderItems.flatMap { (key, value) in
-            return value.map({ (key, title, sizes) -> (String, String) in
-                return (key, title)
-            })
+        let orderItemIds = self.orderItems.flatMap { uniformGroup in
+            return uniformGroup.items
         }
         
         // Turn the list of items (key,title) into a map of (title,size)
-        let orderItems: [String : String?] = orderItemIds.reduce(into: [:]) { dict, orderItemId in
-            let (itemKey, itemTitle) = orderItemId
-            
+        let orderItems: [UniformItem : String?] = orderItemIds.reduce(into: [:]) { dict, uniformItem in
             // Get the value of the row, the orderItemId is the row's tag
-            let rowValue = (self.form.rowBy(tag: itemKey))?.baseValue
+            let rowValue = (self.form.rowBy(tag: uniformItem.key))?.baseValue
             
             // If row is a boolean then use that to indicate if it's ordered,
             // otherwise it's ordered if there is a value provided
@@ -187,7 +183,7 @@ class UniformOrderViewController: SubmitFormViewController {
                 }
                 
                 // Add to the dictionary
-                dict[itemTitle] = rowSize
+                dict[uniformItem] = rowSize
             }
         }
         

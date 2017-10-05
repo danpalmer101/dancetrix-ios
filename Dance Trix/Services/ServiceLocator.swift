@@ -12,11 +12,12 @@ class ServiceLocator {
     
     // Quickly switch between fully mocked and real services
     static let mock = false
+    static let mockEmail = true
     
     static let classService: ClassServiceType = mock ? MockClassService() : FirebaseStorageClassService()
     static let bookingService: BookingServiceType = mock ? MockBookingService() : EmailBookingService()
     static let paymentService: PaymentServiceType = mock ? MockPaymentService() : EmailPaymentService()
     static let orderService: OrderServiceType = mock ? MockOrderService() : EmailOrderService()
-    static let emailService: EmailServiceType = mock ? MockEmailService() : MailgunEmailService()
+    static let emailService: EmailServiceType = mockEmail ? MockEmailService() : MailgunEmailService()
 
 }

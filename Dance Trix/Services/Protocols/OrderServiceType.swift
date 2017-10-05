@@ -10,7 +10,7 @@ import Foundation
 
 protocol OrderServiceType {
     
-    func getUniformOrderItems() -> [(String, [(String, String, [String])])];
+    func getUniformOrderItems() -> [UniformGroup];
     
     func orderUniform(name: String,
                       studentName: String,
@@ -19,7 +19,7 @@ protocol OrderServiceType {
                       paymentMade: Bool,
                       paymentMethod: String,
                       additionalInfo: String?,
-                      orderItems: [String : String?],
+                      orderItems: [UniformItem : String?],
                       successHandler: @escaping () -> Void,
                       errorHandler: @escaping (Error) -> Void)
     

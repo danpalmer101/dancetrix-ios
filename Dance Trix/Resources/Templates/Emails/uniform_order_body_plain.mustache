@@ -10,5 +10,5 @@ Additional information: {{additionalInfo}}
 
 Order:
 {{# each(orderItems) }}
- * item: {{ @key }}{{#.}}, size: {{.}}{{/.}}
+ * item: {{ @key.name }}{{#.}}, size: {{.}}{{/.}}
 {{/}}

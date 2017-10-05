@@ -10,6 +10,8 @@ import UIKit
 
 class Class : Hashable, Equatable {
     
+    //MARK: Hashable
+    
     var hashValue: Int
     
     //MARK: Properties
@@ -31,6 +33,8 @@ class Class : Hashable, Equatable {
         
         self.hashValue = id.hashValue
     }
+    
+    //MARK: Equatable
     
     static func ==(lhs: Class, rhs: Class) -> Bool {
         return lhs.id == rhs.id

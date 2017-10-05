@@ -16,36 +16,36 @@ class MockOrderService: OrderServiceType {
     private let adultShoeSizes = ["4", "4.5", "5", "5.5", "6", "6.5", "7", "7.5"]
     private let sockSizes = ["6 - 8.5", "9 - 12", "12.5 - 3"]
     
-    func getUniformOrderItems() -> [(String, [(String, String, [String])])] {
+    func getUniformOrderItems() -> [UniformGroup] {
         // Children's clothes
         return [
-            ("Order children's clothes", [
-                ("child_turquoise_skirted_leotard", "Turquoise skirted leotard", childClothesSizes),
-                ("child_turquoise_leggings", "Turquoise leggings", childClothesSizes),
-                ("child_turquoise_skirt", "Turquoise skirt", childClothesSizes),
-                ("child_dance_trix_branded_hoodie", "Dance Trix branded hoodie", childClothesSizes),
-                ("child_dance_trix_branded_tshirt", "Dance Trix branded t-shirt", childClothesSizes),
-                ("child_black_high_neck_leotard", "Black high neck leotard", childClothesSizes)
+            UniformGroup(name: "Order children's clothes", items: [
+                UniformItem(key: "child_turquoise_skirted_leotard", name: "Turquoise skirted leotard", sizes: childClothesSizes),
+                UniformItem(key: "child_turquoise_leggings", name: "Turquoise leggings", sizes: childClothesSizes),
+                UniformItem(key: "child_turquoise_skirt", name: "Turquoise skirt", sizes: childClothesSizes),
+                UniformItem(key: "child_dance_trix_branded_hoodie", name: "Dance Trix branded hoodie", sizes: childClothesSizes),
+                UniformItem(key: "child_dance_trix_branded_tshirt", name: "Dance Trix branded t-shirt", sizes: childClothesSizes),
+                UniformItem(key: "child_black_high_neck_leotard", name: "Black high neck leotard", sizes: childClothesSizes)
             ]),
-            ("Order children's shoes", [
-                ("child_shoes_tap_white", "White tap shoes", childShoeSizes),
-                ("child_shoes_tap_black", "Black tap shoes", childShoeSizes),
-                ("child_pink_ballet_shoes", "Pink ballet shoes", childShoeSizes)
+            UniformGroup(name: "Order children's shoes", items: [
+                UniformItem(key: "child_shoes_tap_white", name: "White tap shoes", sizes: childShoeSizes),
+                UniformItem(key: "child_shoes_tap_black", name: "Black tap shoes", sizes: childShoeSizes),
+                UniformItem(key: "child_pink_ballet_shoes", name: "Pink ballet shoes", sizes: childShoeSizes)
             ]),
-            ("Order adult's clothes", [
-                ("adult_dance_trix_hoodie", "Dance Trix branded hoodie", adultClothesSizes),
-                ("adult_dance_trix_tshirt", "Dance Trix branded t-shirt", adultClothesSizes)
+            UniformGroup(name: "Order adult's clothes", items: [
+                UniformItem(key: "adult_dance_trix_hoodie", name: "Dance Trix branded hoodie", sizes: adultClothesSizes),
+                UniformItem(key: "adult_dance_trix_tshirt", name: "Dance Trix branded t-shirt", sizes: adultClothesSizes)
             ]),
-            ("Order adult's shoes", [
-                ("adult_shoes_tap", "Tap shoes", adultShoeSizes),
-                ("adult_shoes_ballet", "Ballet shoes", adultShoeSizes)
+            UniformGroup(name: "Order adult's shoes", items: [
+                UniformItem(key: "adult_shoes_tap", name: "Tap shoes", sizes: adultShoeSizes),
+                UniformItem(key: "adult_shoes_ballet", name: "Ballet shoes", sizes: adultShoeSizes)
             ]),
-            ("Order other items", [
-                ("pink_ballet_socks", "Pink ballet socks", sockSizes),
-                ("child_ballet_bag", "Child's ballet bag", []),
-                ("adult_ballet_bag", "Adult's ballet bag", []),
-                ("child_ballet_purse", "Child's ballet purse", []),
-                ("exam_headband", "Exam headband", [])
+            UniformGroup(name: "Order other items", items: [
+                UniformItem(key: "pink_ballet_socks", name: "Pink ballet socks", sizes: sockSizes),
+                UniformItem(key: "child_ballet_bag", name: "Child's ballet bag", sizes: []),
+                UniformItem(key: "adult_ballet_bag", name: "Adult's ballet bag", sizes: []),
+                UniformItem(key: "child_ballet_purse", name: "Child's ballet purse", sizes: []),
+                UniformItem(key: "exam_headband", name: "Exam headband", sizes: [])
             ])
         ]
     }
@@ -57,17 +57,17 @@ class MockOrderService: OrderServiceType {
                       paymentMade: Bool,
                       paymentMethod: String,
                       additionalInfo: String?,
-                      orderItems: [String : String?],
+                      orderItems: [UniformItem : String?],
                       successHandler: @escaping () -> Void,
                       errorHandler: @escaping (Error) -> Void) {
         DispatchQueue.global().async {
             log.info("Mock uniform order...")
             
-            orderItems.forEach { (arg: (key: String, value: String?)) in
+            orderItems.forEach { (arg: (key: UniformItem, value: String?)) in
                 let (key, size) = arg
                 
                 log.info(String(format: "    %@ - size: %@",
-                                key,
+                                key.name,
                                 size ?? "N/A"))
             }
             

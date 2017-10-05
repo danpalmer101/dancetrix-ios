@@ -15,6 +15,8 @@
 		A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A627D0761F79A185009097C1 /* ReadOnlyTextView.swift */; };
 		A627D0791F79A733009097C1 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A627D0781F79A733009097C1 /* BackgroundView.swift */; };
 		A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632F7891F7505E100F9FD8A /* ClassesViewController.swift */; };
+		A66EF18B1F863CFB00B8EDFE /* UniformGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF18A1F863CFB00B8EDFE /* UniformGroup.swift */; };
+		A66EF18D1F863D4300B8EDFE /* UniformItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF18C1F863D4300B8EDFE /* UniformItem.swift */; };
 		A68828081F7560C600D82322 /* Dance_Trix_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828071F7560C600D82322 /* Dance_Trix_Tests.swift */; };
 		A688280F1F75626300D82322 /* ClassMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */; };
 		A68828101F75627F00D82322 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F721F74FEB800FAF47E /* Class.swift */; };
@@ -107,6 +109,8 @@
 		A627D0761F79A185009097C1 /* ReadOnlyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadOnlyTextView.swift; sourceTree = "<group>"; };
 		A627D0781F79A733009097C1 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		A632F7891F7505E100F9FD8A /* ClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesViewController.swift; sourceTree = "<group>"; };
+		A66EF18A1F863CFB00B8EDFE /* UniformGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformGroup.swift; sourceTree = "<group>"; };
+		A66EF18C1F863D4300B8EDFE /* UniformItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformItem.swift; sourceTree = "<group>"; };
 		A68828051F7560C600D82322 /* Dance Trix Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dance Trix Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68828071F7560C600D82322 /* Dance_Trix_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dance_Trix_Tests.swift; sourceTree = "<group>"; };
 		A68828091F7560C600D82322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -388,6 +392,8 @@
 				A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */,
 				A6BA0F721F74FEB800FAF47E /* Class.swift */,
 				A68828331F78410B00D82322 /* DateInterval_Text.swift */,
+				A66EF18A1F863CFB00B8EDFE /* UniformGroup.swift */,
+				A66EF18C1F863D4300B8EDFE /* UniformItem.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -747,6 +753,7 @@
 				A697F8711F7CF0AB00195246 /* CalendarViewController.swift in Sources */,
 				A6BD4F291F7EE9BD00D261D1 /* WebViewController.swift in Sources */,
 				A697F86E1F7C3D0E00195246 /* BookingError.swift in Sources */,
+				A66EF18D1F863D4300B8EDFE /* UniformItem.swift in Sources */,
 				A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */,
 				A69ED4A81F83BC8C0005B845 /* EmailServiceType.swift in Sources */,
 				A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */,
@@ -778,6 +785,7 @@
 				A6D23AE11F8252EB00229DEC /* PaymentError.swift in Sources */,
 				A69ED4A61F82E5BD0005B845 /* FirebaseStorageClassService.swift in Sources */,
 				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,
+				A66EF18B1F863CFB00B8EDFE /* UniformGroup.swift in Sources */,
 				A69ED4AA1F83BD6E0005B845 /* MockEmailService.swift in Sources */,
 				A6BD4F271F7E9AB600D261D1 /* Notification.swift in Sources */,
 				A688281C1F77094600D82322 /* TitleNavigationItem.swift in Sources */,
