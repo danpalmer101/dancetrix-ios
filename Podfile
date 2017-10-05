@@ -10,11 +10,11 @@ target 'Dance Trix' do
   pod 'JTAppleCalendar', '~> 7.0'
   pod 'RMessage', '~> 2.1.5'
   pod 'SwiftyBeaver', '~> 1.4.2'
-  pod 'Eureka', '~> 4.0.0'
+  pod 'Eureka', '~> 4.0.0', :inhibit_warnings => true
   pod 'Firebase/Core'
   pod 'Firebase/RemoteConfig'
   pod 'Firebase/Storage'
-  pod 'GRMustache.swift'
+  pod 'GRMustache.swift', :inhibit_warnings => true
   pod 'SwiftMailgun'
   
   target 'Dance Trix Tests' do
