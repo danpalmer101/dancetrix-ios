@@ -30,6 +30,12 @@ class UniformItem : Hashable, Equatable {
         self.hashValue = key.hashValue
     }
     
+    convenience init(json: [String : Any?]) {
+        self.init(key: json["key"] as! String,
+                  name: json["name"] as! String,
+                  sizes: (json["sizes"] as? [String]) ?? [])
+    }
+    
     //MARK: Equatable
     
     static func ==(lhs: UniformItem, rhs: UniformItem) -> Bool {

@@ -28,6 +28,14 @@ class UniformGroup : Hashable, Equatable {
         self.hashValue = name.hashValue
     }
     
+    convenience init(json: [String : Any?]) {
+        self.init(name: json["name"] as! String,
+             items: (json["items"] as! [Any]).map({ itemJson -> UniformItem in
+                    return UniformItem(json: itemJson as! [String : Any?])
+                 })
+            )
+    }
+    
     //MARK: Equatable
     
     static func ==(lhs: UniformGroup, rhs: UniformGroup) -> Bool {

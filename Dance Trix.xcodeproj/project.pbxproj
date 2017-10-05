@@ -15,13 +15,17 @@
 		A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A627D0761F79A185009097C1 /* ReadOnlyTextView.swift */; };
 		A627D0791F79A733009097C1 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A627D0781F79A733009097C1 /* BackgroundView.swift */; };
 		A62CA2051F86772A0087D3D0 /* AnalyticsUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62CA2041F86772A0087D3D0 /* AnalyticsUIViewController.swift */; };
+		A62CA2061F8683070087D3D0 /* UniformGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF18A1F863CFB00B8EDFE /* UniformGroup.swift */; };
+		A62CA2071F86830A0087D3D0 /* UniformItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF18C1F863D4300B8EDFE /* UniformItem.swift */; };
+		A62CA2081F8683920087D3D0 /* ClassDatesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4971F82DE270005B845 /* ClassDatesParser.swift */; };
+		A62CA2091F8683950087D3D0 /* CsvParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF1921F86678900B8EDFE /* CsvParser.swift */; };
 		A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632F7891F7505E100F9FD8A /* ClassesViewController.swift */; };
 		A66EF18B1F863CFB00B8EDFE /* UniformGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF18A1F863CFB00B8EDFE /* UniformGroup.swift */; };
 		A66EF18D1F863D4300B8EDFE /* UniformItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF18C1F863D4300B8EDFE /* UniformItem.swift */; };
 		A66EF18F1F8655A000B8EDFE /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = A66EF18E1F8655A000B8EDFE /* Configuration.plist */; };
 		A66EF1911F86647F00B8EDFE /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF1901F86647F00B8EDFE /* Preferences.swift */; };
 		A66EF1931F86678900B8EDFE /* CsvParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF1921F86678900B8EDFE /* CsvParser.swift */; };
-		A68828081F7560C600D82322 /* Dance_Trix_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828071F7560C600D82322 /* Dance_Trix_Tests.swift */; };
+		A68828081F7560C600D82322 /* UniformGroupTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828071F7560C600D82322 /* UniformGroupTest.swift */; };
 		A688280F1F75626300D82322 /* ClassMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */; };
 		A68828101F75627F00D82322 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F721F74FEB800FAF47E /* Class.swift */; };
 		A68828121F756F0600D82322 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828111F756F0600D82322 /* Theme.swift */; };
@@ -120,7 +124,7 @@
 		A66EF1901F86647F00B8EDFE /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		A66EF1921F86678900B8EDFE /* CsvParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvParser.swift; sourceTree = "<group>"; };
 		A68828051F7560C600D82322 /* Dance Trix Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dance Trix Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A68828071F7560C600D82322 /* Dance_Trix_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dance_Trix_Tests.swift; sourceTree = "<group>"; };
+		A68828071F7560C600D82322 /* UniformGroupTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformGroupTest.swift; sourceTree = "<group>"; };
 		A68828091F7560C600D82322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A68828111F756F0600D82322 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A68828131F75AB6200D82322 /* ClassMenuParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMenuParser.swift; sourceTree = "<group>"; };
@@ -226,7 +230,7 @@
 		A68828061F7560C600D82322 /* Dance Trix Tests */ = {
 			isa = PBXGroup;
 			children = (
-				A68828071F7560C600D82322 /* Dance_Trix_Tests.swift */,
+				A68828071F7560C600D82322 /* UniformGroupTest.swift */,
 				A68828091F7560C600D82322 /* Info.plist */,
 			);
 			path = "Dance Trix Tests";
@@ -755,7 +759,11 @@
 				A68828151F75ADD100D82322 /* ClassMenuParser.swift in Sources */,
 				A68828101F75627F00D82322 /* Class.swift in Sources */,
 				A688280F1F75626300D82322 /* ClassMenu.swift in Sources */,
-				A68828081F7560C600D82322 /* Dance_Trix_Tests.swift in Sources */,
+				A62CA2091F8683950087D3D0 /* CsvParser.swift in Sources */,
+				A62CA2071F86830A0087D3D0 /* UniformItem.swift in Sources */,
+				A68828081F7560C600D82322 /* UniformGroupTest.swift in Sources */,
+				A62CA2081F8683920087D3D0 /* ClassDatesParser.swift in Sources */,
+				A62CA2061F8683070087D3D0 /* UniformGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
