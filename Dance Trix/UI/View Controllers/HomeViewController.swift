@@ -28,6 +28,9 @@ class HomeViewController: UIViewController {
             let destination: WebViewController = segue.destination as! WebViewController
             destination.url = Configuration.websiteUrl()
             destination.cssFileName = "dancetrix-body-only"
+        } else if (segue.identifier == "OrderUniforms") {
+            let destination: WebViewController = segue.destination as! WebViewController
+            destination.url = Configuration.uniformCatalogUrl()
         }
     }
     

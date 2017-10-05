@@ -33,7 +33,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="View our calendar"/>
                                 <connections>
-                                    <segue destination="WvM-Tx-H4v" kind="show" id="rYN-d4-QLh"/>
+                                    <segue destination="WvM-Tx-H4v" kind="show" identifier="ViewCalendar" id="rYN-d4-QLh"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="ATT-VL-tQv" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
@@ -46,7 +46,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Order uniforms"/>
                                 <connections>
-                                    <segue destination="je2-qY-wIw" kind="show" id="1wA-sv-HPy"/>
+                                    <segue destination="xJI-t5-IHB" kind="show" identifier="OrderUniforms" id="aga-YX-2pn"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="Q8P-6O-zqS" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
@@ -59,7 +59,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Make a payment"/>
                                 <connections>
-                                    <segue destination="Syn-4R-O6g" kind="show" id="lnq-xV-MM9"/>
+                                    <segue destination="Syn-4R-O6g" kind="show" identifier="MakePayment" id="lnq-xV-MM9"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="RX1-KG-7Uh" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
@@ -285,7 +285,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zLK-aR-EKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Twf-Ov-ZF5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="652" y="612"/>
+            <point key="canvasLocation" x="652" y="1334"/>
         </scene>
         <!--Make a payment-->
         <scene sceneID="4mN-Vz-Jwe">
@@ -576,6 +576,46 @@ Once you have completed the transaction, please let us know with the button belo
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lok-kM-4HD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-89.599999999999994" y="-554.1229385307347"/>
+        </scene>
+        <!--Order Uniforms-->
+        <scene sceneID="zRD-PD-fR1">
+            <objects>
+                <viewController id="xJI-t5-IHB" customClass="WebViewController" customModule="Dance_Trix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WYF-P9-Sbj" customClass="BackgroundView" customModule="Dance_Trix" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2vC-O6-a5a">
+                                <rect key="frame" x="0.0" y="88" width="375" height="632"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZVQ-9Q-hIU">
+                                        <rect key="frame" x="169" y="298" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOX-RU-JLa" customClass="SubmitButton" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="16" y="737" width="343" height="55"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Place an order"/>
+                                <connections>
+                                    <segue destination="je2-qY-wIw" kind="show" id="ds9-vW-hea"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Lco-td-ngW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Order Uniforms" id="nGU-Lk-9wx"/>
+                    <connections>
+                        <outlet property="webContainerView" destination="2vC-O6-a5a" id="wUt-He-Od1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kiF-4r-C86" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="652" y="611.82266009852219"/>
         </scene>
     </scenes>
     <resources>

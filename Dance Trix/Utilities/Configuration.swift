@@ -39,6 +39,10 @@ class Configuration {
         return getRemoteConfig("dancetrix_website")
     }
     
+    static func uniformCatalogUrl() -> String {
+        return getRemoteConfig("dancetrix_uniform_catalog")
+    }
+    
     static func getRemoteConfig(_ key : String) -> String {
         return RemoteConfig.remoteConfig().configValue(forKey: key).stringValue!
     }
