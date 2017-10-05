@@ -24,7 +24,8 @@ class MailgunEmailService : EmailServiceType {
     
     init() {
         // d.palmer101 account
-        self.mailgun = MailgunAPI(apiKey: "key-2e89955da550daaac2207a3b48d1c338", clientDomain: "danpalmer101.io")
+        self.mailgun = MailgunAPI(apiKey: Configuration.mailgunApiKey(),
+                                  clientDomain: Configuration.mailgunDomain())
         
         self.dateFormatter.dateFormat = "dd/MM/yyyy"
         self.dateTimeFormatter.dateFormat = "dd/MM/yyyy HH:mm"

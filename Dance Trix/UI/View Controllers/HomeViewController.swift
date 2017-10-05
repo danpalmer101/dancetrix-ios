@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         
         if (segue.identifier == "AboutUs") {
             let destination: WebViewController = segue.destination as! WebViewController
-            destination.url = "http://www.dancetrix.co.uk"
+            destination.url = Configuration.websiteUrl()
             destination.cssFileName = "dancetrix-body-only"
         }
     }
@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
     
     @IBAction
     func visitWebsite() {
-        UIApplication.shared.open(URL(string: "http://www.dancetrix.co.uk")!)
+        UIApplication.shared.open(URL(string: Configuration.websiteUrl())!)
     }
     
     @IBAction

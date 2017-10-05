@@ -20,17 +20,8 @@ class Dance_Trix_Tests: XCTestCase {
         super.tearDown()
     }
     
-    func testClassMenuParser() {
-        let classMenu = ClassMenuParser.parse(serviceNames: ["Hello|World|1","Hello|World|2","Hello|Earth"])
-        
-        assert(classMenu.name == "Classes")
-        assert(classMenu.classDetails == nil)
-        assert(classMenu.children?.count == 1)
-        assert(classMenu.children?[0].name == "Hello")
-        assert(classMenu.children?[0].children?[0].name == "Earth")
-        assert(classMenu.children?[0].children?[1].name == "World")
-        assert(classMenu.children?[0].children?[1].children?[0].name == "1")
-        assert(classMenu.children?[0].children?[1].children?[1].name == "2")
+    func test() {
+        // Implement test here
     }
 
 }

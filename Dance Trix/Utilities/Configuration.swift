@@ -26,4 +26,16 @@ class Configuration {
         return "d.palmer101@googlemail.com"
     }
     
+    static func mailgunApiKey() -> String {
+        return "key-2e89955da550daaac2207a3b48d1c338"
+    }
+    
+    static func mailgunDomain() -> String {
+        return "danpalmer101.io"
+    }
+ 
+    static func websiteUrl() -> String {
+        return "http://www.dancetrix.co.uk"
+    }
+    
 }
