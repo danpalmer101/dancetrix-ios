@@ -25,17 +25,15 @@ class ClassMenuParser : CsvParser {
             }
             
             return classMenu
-        }).filter({ $0 != nil }).map({ $0! })
+        }).filter({ $0 != nil }) // ClassMenu cannot be null
+            .map({ $0! }) // Unbox optionals now nulls are filtered out
         
         return ClassMenu(name: "Classes", children: merge(classMenus: classMenus))!
     }
     
     private static func merge(classMenus: [ClassMenu]) -> [ClassMenu] {
-        // Unique ClassMenu entries
-        var mergedClassMenuDict = [String: ClassMenu]()
-        
         // Each classMenu is a single child branch, common root nodes should be merged
-        for classMenu in classMenus {
+        let merged: [String : ClassMenu] = classMenus.reduce(into: [:]) { mergedClassMenuDict, classMenu in
             let existingClassMenu = mergedClassMenuDict[classMenu.name]
             if existingClassMenu == nil {
                 // Unique root node (so far), add it to the map
@@ -57,7 +55,7 @@ class ClassMenuParser : CsvParser {
         }
         
         // Return the merged ClassMenu, sorted by name
-        return Array(mergedClassMenuDict.values).sorted(by: {
+        return Array(merged.values).sorted(by: {
             (a, b) -> Bool in
                 return a.name < b.name
             })

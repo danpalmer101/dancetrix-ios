@@ -25,10 +25,9 @@ class ClassDatesParser : CsvParser {
             }
             
             return date
-        }).filter({ date -> Bool in
-            // Date must exist and be in the future
-            return date != nil && date!.start >= Date()
-        }).map({ $0! })
+        }).filter({ $0 != nil }) // Date cannot be null
+            .map({ $0! }) // Unbox optionals now nulls are filtered out
+            .filter({ $0.start >= Date() }) // Date cannot be in the past
     }
     
     private static func parseFormat1(csvRow: [String]) -> DateInterval? {
