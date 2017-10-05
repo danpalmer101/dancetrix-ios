@@ -7,35 +7,40 @@
 //
 
 import Foundation
+import FirebaseRemoteConfig
 
 class Configuration {
     
     static func fromPaymentEmailAddress() -> String {
-        return "Dance Trix Payments <payments@danpalmer101.io>"
+        return getRemoteConfig("email_address_payment_from")
     }
     
     static func fromBookingEmailAddress() -> String {
-        return "Dance Trix Bookings <bookings@danpalmer101.io>"
+        return getRemoteConfig("email_address_booking_from")
     }
     
     static func fromUniformOrderEmailAddress() -> String {
-        return "Dance Trix Uniforms <uniforms@danpalmer101.io>"
+        return getRemoteConfig("email_address_uniform_from")
     }
     
     static func toEmailAddress() -> String {
-        return "d.palmer101@googlemail.com"
+        return getRemoteConfig("email_address_to")
     }
     
     static func mailgunApiKey() -> String {
-        return "key-2e89955da550daaac2207a3b48d1c338"
+        return getRemoteConfig("mailgun_api_key")
     }
     
     static func mailgunDomain() -> String {
-        return "danpalmer101.io"
+        return getRemoteConfig("mailgun_domain")
     }
  
     static func websiteUrl() -> String {
-        return "http://www.dancetrix.co.uk"
+        return getRemoteConfig("dancetrix_website")
+    }
+    
+    static func getRemoteConfig(_ key : String) -> String {
+        return RemoteConfig.remoteConfig().configValue(forKey: key).stringValue!
     }
     
 }

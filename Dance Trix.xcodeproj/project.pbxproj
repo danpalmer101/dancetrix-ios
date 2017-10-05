@@ -17,6 +17,7 @@
 		A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632F7891F7505E100F9FD8A /* ClassesViewController.swift */; };
 		A66EF18B1F863CFB00B8EDFE /* UniformGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF18A1F863CFB00B8EDFE /* UniformGroup.swift */; };
 		A66EF18D1F863D4300B8EDFE /* UniformItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF18C1F863D4300B8EDFE /* UniformItem.swift */; };
+		A66EF18F1F8655A000B8EDFE /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = A66EF18E1F8655A000B8EDFE /* Configuration.plist */; };
 		A68828081F7560C600D82322 /* Dance_Trix_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828071F7560C600D82322 /* Dance_Trix_Tests.swift */; };
 		A688280F1F75626300D82322 /* ClassMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */; };
 		A68828101F75627F00D82322 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F721F74FEB800FAF47E /* Class.swift */; };
@@ -111,6 +112,7 @@
 		A632F7891F7505E100F9FD8A /* ClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesViewController.swift; sourceTree = "<group>"; };
 		A66EF18A1F863CFB00B8EDFE /* UniformGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformGroup.swift; sourceTree = "<group>"; };
 		A66EF18C1F863D4300B8EDFE /* UniformItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformItem.swift; sourceTree = "<group>"; };
+		A66EF18E1F8655A000B8EDFE /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		A68828051F7560C600D82322 /* Dance Trix Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dance Trix Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68828071F7560C600D82322 /* Dance_Trix_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dance_Trix_Tests.swift; sourceTree = "<group>"; };
 		A68828091F7560C600D82322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				A6BA0F641F74E20C00FAF47E /* LaunchScreen.storyboard */,
 				A6BA0F671F74E20C00FAF47E /* Info.plist */,
 				A69ED4911F829C710005B845 /* GoogleService-Info.plist */,
+				A66EF18E1F8655A000B8EDFE /* Configuration.plist */,
 			);
 			path = "Dance Trix";
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				A69ED49A1F82DEFE0005B845 /* dates_adults.csv in Resources */,
 				A69ED4CB1F852C140005B845 /* uniform_order_body_html.mustache in Resources */,
 				A60026631F7BB4D200DDC90F /* prepare-commit-msg in Resources */,
+				A66EF18F1F8655A000B8EDFE /* Configuration.plist in Resources */,
 				A69ED4BD1F83FE6A0005B845 /* class_booking_subject.mustache in Resources */,
 				A69ED4921F829C710005B845 /* GoogleService-Info.plist in Resources */,
 			);

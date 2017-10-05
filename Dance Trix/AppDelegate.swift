@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func enableFirebase() {
         FirebaseApp.configure()
+        RemoteConfig.remoteConfig().setDefaults(fromPlist: "Configuration")
     }
     
     func enableLogging() {
