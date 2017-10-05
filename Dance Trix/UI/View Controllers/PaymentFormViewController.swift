@@ -159,12 +159,6 @@ class PaymentFormViewController: SubmitFormViewController {
         self.checkCompleteForm()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        Analytics.setScreenName("Make Payment Form", screenClass: nil)
-    }
-    
     // MARK: - Actions
     
     private func checkCompleteForm() {

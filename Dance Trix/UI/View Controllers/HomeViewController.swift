@@ -7,17 +7,8 @@
 //
 
 import UIKit
-import Firebase
 
-class HomeViewController: UIViewController {
-    
-    // MARK: - View lifecycle
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        Analytics.setScreenName("Home", screenClass: nil)
-    }
+class HomeViewController: AnalyticsUIViewController {
     
     // MARK: - Navigation
     

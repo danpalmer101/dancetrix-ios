@@ -142,12 +142,6 @@ class UniformOrderViewController: SubmitFormViewController {
         self.submitButton.addTarget(self, action: #selector(submitOrder), for: .touchUpInside)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        Analytics.setScreenName("Uniform Order", screenClass: nil)
-    }
-    
     // MARK: - Actions
     
     private func checkCompleteForm() {

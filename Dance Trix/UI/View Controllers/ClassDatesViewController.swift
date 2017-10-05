@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ClassDatesViewController: AnalyticsUIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var classDetails: Class!
     private var dates: [DateInterval]?
@@ -31,12 +31,10 @@ class ClassDatesViewController: UIViewController, UITableViewDelegate, UITableVi
         self.loadDates()
         
         self.loadDescription()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
-        Analytics.setScreenName(String(format: "Class Dates [%@]", self.classDetails.name), screenClass: nil)
+        if (self.screenName != nil) {
+            self.screenName = String(format: self.screenName!, self.classDetails.name)
+        }
     }
     
     // MARK: - Table view data source

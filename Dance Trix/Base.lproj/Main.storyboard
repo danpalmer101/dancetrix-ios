@@ -107,6 +107,9 @@
                         <viewLayoutGuide key="safeArea" id="ST2-eM-d2Z"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="yJQ-IW-hVT" customClass="TitleNavigationItem" customModule="Dance_Trix" customModuleProvider="target"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Home"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeL-6w-nr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,6 +165,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Book a class" id="wgP-8I-UfF"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Select Class [%@]"/>
+                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylz-bJ-Oxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -258,6 +264,9 @@
                         <viewLayoutGuide key="safeArea" id="HcM-iK-OnV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Calendar" id="J6Z-Y0-tgT"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Calendar"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="calendarView" destination="F8J-61-boZ" id="U4g-4v-xJo"/>
                         <outlet property="tableView" destination="SXj-uY-bMC" id="xUY-cr-eKD"/>
@@ -278,6 +287,9 @@
                         <viewLayoutGuide key="safeArea" id="vLw-bD-Hqu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Order uniforms" id="EgL-J8-6Zu"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Order Uniform Form"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="Twf-Ov-ZF5" kind="unwind" identifier="unwindToHomeViewController" unwindAction="unwindToHomeViewControllerWithSegue:" id="3ys-xv-EXZ"/>
                     </connections>
@@ -417,6 +429,9 @@ Once you have completed the transaction, please let us know with the button belo
                         <viewLayoutGuide key="safeArea" id="oPx-TK-hXD"/>
                     </view>
                     <navigationItem key="navigationItem" title="Payment details" id="NxJ-fF-2KX"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Make Payment Form"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="nhq-bo-cF1" kind="unwind" identifier="unwindToHomeViewController" unwindAction="unwindToHomeViewControllerWithSegue:" id="54w-kU-fjw"/>
                     </connections>
@@ -534,6 +549,9 @@ Once you have completed the transaction, please let us know with the button belo
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Select Class Dates [%@]"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="bookButton" destination="rM3-xu-Zxj" id="T1x-jZ-cUD"/>
                         <outlet property="descriptionView" destination="qSi-jU-0DM" id="70c-Ss-f1F"/>
@@ -556,6 +574,9 @@ Once you have completed the transaction, please let us know with the button belo
                         <viewLayoutGuide key="safeArea" id="AiI-Se-dhY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Book a class" id="Su0-Mu-cHW"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Book Class Form [%@]"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="ihh-tw-aJT" kind="unwind" identifier="unwindToHomeViewController" unwindAction="unwindToHomeViewControllerWithSegue:" id="rae-4b-SSE"/>
                     </connections>

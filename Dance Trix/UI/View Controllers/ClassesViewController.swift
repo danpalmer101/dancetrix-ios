@@ -11,6 +11,8 @@ import Firebase
 
 class ClassesViewController: UITableViewController {
     
+    @IBInspectable var screenName : String?
+    
     var classMenu: ClassMenu?
     
     private var loadingIndicator: UIActivityIndicatorView!
@@ -40,7 +42,9 @@ class ClassesViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        Analytics.setScreenName(String(format: "Class Menu [%@]", classMenu?.name ?? "unknown"), screenClass: nil)
+        if (self.screenName != nil) {
+            Analytics.setScreenName(String(format: self.screenName!, classMenu?.name ?? "unknown"), screenClass: nil)
+        }
     }
 
     // MARK: - Table view data source

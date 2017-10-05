@@ -8,8 +8,11 @@
 
 import UIKit
 import Eureka
+import Firebase
 
 class SubmitFormViewController: FormViewController {
+    
+    @IBInspectable var screenName : String?
 
     var submitButton: SubmitButton!
     var submittingIndicator: UIActivityIndicatorView!
@@ -37,6 +40,16 @@ class SubmitFormViewController: FormViewController {
         footerView.addSubview(self.submittingIndicator)
         
         self.tableView.tableFooterView = footerView
+    }
+    
+    // MARK: - View lifecycle
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if (self.screenName != nil) {
+            Analytics.setScreenName(self.screenName, screenClass: nil)
+        }
     }
 
 }

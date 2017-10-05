@@ -79,10 +79,12 @@ class SubmitBookingViewController: SubmitFormViewController {
         self.checkCompleteForm()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        Analytics.setScreenName(String(format: "Submit Booking [%@]", self.classDetails.name), screenClass: nil)
+        if (self.screenName != nil) {
+            self.screenName = String(format: self.screenName!, self.classDetails.name)
+        }
     }
     
     // MARK: - Actions
