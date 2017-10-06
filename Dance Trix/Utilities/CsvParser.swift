@@ -17,12 +17,22 @@ class CsvParser {
     }
     
     static func rows(csv: String) -> [String] {
-        // Filter out empty rows
-        return csv.components(separatedBy: "\n").filter { trim($0) != "" }
+        let cleanCsv = clean(csv)
+        
+        // Filter out empty rows, and ignore the fist row which is assumed to be a header
+        return Array(cleanCsv.components(separatedBy: "\n").dropFirst()).filter { trim($0) != "" }
     }
     
     static func columns(csvRow: String) -> [String] {
         return csvRow.components(separatedBy: ",")
+    }
+    
+    static func clean(_ string: String) -> String {
+        // Standardise new line characters
+        return string
+            .replacingOccurrences(of: "\r\n", with: "\n") // CR+LF -> LF
+            .replacingOccurrences(of: "\n\r", with: "\n") // LF+CR -> LF
+            .replacingOccurrences(of: "\r", with: "\n")   // CR    -> LF
     }
     
 }

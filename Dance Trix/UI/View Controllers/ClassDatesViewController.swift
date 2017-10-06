@@ -22,11 +22,16 @@ class ClassDatesViewController: AnalyticsUIViewController, UITableViewDelegate, 
     var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet
     var bookButton: UIButton!
+    @IBOutlet
+    var selectAllButton: UIButton!
     
     // MARK: - View lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.tableView.allowsSelection = self.classDetails.allowIndividualBookings
+        self.selectAllButton.isHidden = !self.tableView.allowsSelection
         
         self.loadDates()
         
@@ -53,6 +58,9 @@ class ClassDatesViewController: AnalyticsUIViewController, UITableViewDelegate, 
         cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
         cell.tag = indexPath.row
         
+        // Hide the tick if selection is disabled
+        cell.viewWithTag(98765)?.isHidden = !self.tableView.allowsSelection
+        
         return cell
     }
     
@@ -73,9 +81,16 @@ class ClassDatesViewController: AnalyticsUIViewController, UITableViewDelegate, 
             let destination: SubmitBookingViewController = segue.destination as! SubmitBookingViewController
             destination.classDetails = self.classDetails
             destination.allDates = self.dates
-            destination.selectedDates = self.tableView.indexPathsForSelectedRows?.map({
-                (indexPath: IndexPath) -> DateInterval in return self.dates![indexPath.row]
-            })
+            
+            if (self.classDetails.allowIndividualBookings) {
+                // Selected dates
+                destination.selectedDates = self.tableView.indexPathsForSelectedRows?.map({
+                    (indexPath: IndexPath) -> DateInterval in return self.dates![indexPath.row]
+                })
+            } else {
+                // All dates
+                destination.selectedDates = self.dates
+            }
         }
     }
     
@@ -99,6 +114,10 @@ class ClassDatesViewController: AnalyticsUIViewController, UITableViewDelegate, 
             // Loading, disable without text
             self.bookButton.isEnabled = false
             self.bookButton.setTitle("", for: .normal)
+        } else if (!self.classDetails.allowIndividualBookings) {
+            // Block bookings only, enable with block booking text
+            self.bookButton.isEnabled = true
+            self.bookButton.setTitle("Book block", for: .normal)
         } else if let count = tableView.indexPathsForSelectedRows?.count {
             // Loaded with selected dates, enable with text showing number of dates
             self.bookButton.isEnabled = true

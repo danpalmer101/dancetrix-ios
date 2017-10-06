@@ -21,15 +21,22 @@ class Class : Hashable, Equatable {
     var name: String
     var datesLocation: String
     var descriptionLocation: String
+    var allowIndividualBookings: Bool
     
     //MARK: Initialization
     
-    init?(id: String, path: String, name: String, datesLocation: String, descriptionLocation: String) {
+    init?(id: String,
+          path: String,
+          name: String,
+          datesLocation: String,
+          descriptionLocation: String,
+          allowIndividualBookings: Bool) {
         self.id = id
         self.path = path
         self.name = name
         self.datesLocation = datesLocation
         self.descriptionLocation = descriptionLocation
+        self.allowIndividualBookings = allowIndividualBookings
         
         self.hashValue = id.hashValue
     }

@@ -11,7 +11,7 @@ import Foundation
 class ServiceLocator {
     
     // Quickly switch between fully mocked and real services
-    static let mock = false
+    static let mock = true
     static let mockEmail = true
     
     static let classService: ClassServiceType = mock ? MockClassService() : FirebaseStorageClassService()

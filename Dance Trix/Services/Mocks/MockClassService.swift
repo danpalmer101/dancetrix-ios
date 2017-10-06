@@ -57,7 +57,9 @@ class MockClassService: ClassServiceType {
                 
                 log.debug(String(format: "    Generating dates for %@", classDetails.name))
                 
-                if let path = Bundle.main.path(forResource: classDetails.datesLocation, ofType: "csv") {
+                let datesLocation = classDetails.datesLocation.replacingOccurrences(of: ".csv", with: "")
+                
+                if let path = Bundle.main.path(forResource: datesLocation, ofType: "csv") {
                     let csvString = try! String(contentsOfFile: path)
                     dates = ClassDatesParser.parse(csvString: csvString)
                 }
@@ -88,7 +90,9 @@ class MockClassService: ClassServiceType {
                 
                 log.debug(String(format: "    Reading description for %@", classDetails.name))
                 
-                if let path = Bundle.main.path(forResource: classDetails.descriptionLocation, ofType: "txt") {
+                let descriptionLocation = classDetails.descriptionLocation.replacingOccurrences(of: ".txt", with: "")
+                
+                if let path = Bundle.main.path(forResource: descriptionLocation, ofType: "txt") {
                     desc = try! String(contentsOfFile: path)
                 }
                 

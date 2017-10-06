@@ -67,12 +67,14 @@ class ClassMenuParser : CsvParser {
         let menuPath = csvRow[2].components(separatedBy: "|").map { (s: String) -> String in return trim(s) }
         let datesLocation = trim(csvRow[3])
         let descriptionLocation = trim(csvRow[4])
+        let allowIndividualBookings = ["yes", "true", "1"].contains(trim(csvRow[5]).lowercased())
         
         let classDetails = Class(id: csvRow.joined(separator: ","),
                                  path: menuPath.joined(separator: " > "),
                                  name: name,
                                  datesLocation: datesLocation,
-                                 descriptionLocation: descriptionLocation)
+                                 descriptionLocation: descriptionLocation,
+                                 allowIndividualBookings: allowIndividualBookings)
         
         var classMenu = ClassMenu(name: name,
                                   classDetails: classDetails!)

@@ -507,7 +507,7 @@ Once you have completed the transaction, please let us know with the button belo
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tick" translatesAutoresizingMaskIntoConstraints="NO" id="hcT-NB-mgp" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" tag="98765" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tick" translatesAutoresizingMaskIntoConstraints="NO" id="hcT-NB-mgp" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
                                                     <rect key="frame" x="332" y="17" width="25" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -556,6 +556,7 @@ Once you have completed the transaction, please let us know with the button belo
                         <outlet property="bookButton" destination="rM3-xu-Zxj" id="T1x-jZ-cUD"/>
                         <outlet property="descriptionView" destination="qSi-jU-0DM" id="70c-Ss-f1F"/>
                         <outlet property="loadingIndicator" destination="AYN-rK-5Sr" id="dWl-iW-9ey"/>
+                        <outlet property="selectAllButton" destination="fHS-iT-uKq" id="Zh3-DE-31l"/>
                         <outlet property="tableView" destination="Ddn-Co-noj" id="reV-WF-2aP"/>
                     </connections>
                 </viewController>
