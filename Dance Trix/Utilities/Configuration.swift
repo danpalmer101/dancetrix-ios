@@ -11,17 +11,21 @@ import FirebaseRemoteConfig
 
 class Configuration {
     
+    // Command line configuration
+    
     static func isMockServicesEnabled() -> Bool {
-        return CommandLine.arguments.contains("-DTMockServicesEnabled")
+        return checkCommandLine("-DTMockServicesEnabled")
     }
     
     static func isMockEmailEnabled() -> Bool {
-        return CommandLine.arguments.contains("-DTMockEmailEnabled")
+        return checkCommandLine("-DTMockEmailEnabled")
     }
     
     static func isPreferenceCleaningEnabled() -> Bool {
-        return CommandLine.arguments.contains("-DTPreferencesClean")
+        return checkCommandLine("-DTPreferencesClean")
     }
+    
+    // Remote config - Emails
     
     static func fromPaymentEmailAddress() -> String {
         return getRemoteConfig("email_address_payment_from")
@@ -46,6 +50,8 @@ class Configuration {
     static func mailgunDomain() -> String {
         return getRemoteConfig("mailgun_domain")
     }
+    
+    // Remote config - Website
  
     static func websiteUrl() -> String {
         return getRemoteConfig("dancetrix_website")
@@ -55,7 +61,13 @@ class Configuration {
         return getRemoteConfig("dancetrix_uniform_catalog")
     }
     
-    static func getRemoteConfig(_ key : String) -> String {
+    // Tools
+    
+    private static func checkCommandLine(_ arg : String) -> Bool {
+        return CommandLine.arguments.contains(arg)
+    }
+    
+    private static func getRemoteConfig(_ key : String) -> String {
         return RemoteConfig.remoteConfig().configValue(forKey: key).stringValue!
     }
     
