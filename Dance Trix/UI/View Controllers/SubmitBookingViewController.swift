@@ -121,7 +121,7 @@ class SubmitBookingViewController: SubmitFormViewController {
                 successHandler: {
                     Notification.show(
                         title: "Success",
-                        subtitle: String(format: "Your booking for %@ was successful!", self.classDetails.name),
+                        subtitle: "Your booking for \(self.classDetails.name) was successful!",
                         type: NotificationType.success)
                     
                     DispatchQueue.main.async {

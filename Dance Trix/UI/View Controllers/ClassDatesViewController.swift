@@ -117,7 +117,7 @@ class ClassDatesViewController: AnalyticsUIViewController, UITableViewDelegate, 
         } else if (!self.classDetails.allowIndividualBookings) {
             // Block bookings only, enable with block booking text
             self.bookButton.isEnabled = true
-            self.bookButton.setTitle("Book block", for: .normal)
+            self.bookButton.setTitle("Book this block", for: .normal)
         } else if let count = tableView.indexPathsForSelectedRows?.count {
             // Loaded with selected dates, enable with text showing number of dates
             self.bookButton.isEnabled = true
@@ -173,7 +173,7 @@ class ClassDatesViewController: AnalyticsUIViewController, UITableViewDelegate, 
                             
                             Notification.show(
                                 title: "Sorry!",
-                                subtitle: String(format: "There aren't any dates available for %@ at the moment.", self.classDetails.name),
+                                subtitle: "There aren't any dates available for \(self.classDetails.name) at the moment.",
                                 type: NotificationType.warning)
                             
                             break
@@ -182,7 +182,7 @@ class ClassDatesViewController: AnalyticsUIViewController, UITableViewDelegate, 
                             
                             Notification.show(
                                 title: "Error",
-                                subtitle: String(format: "An unexpected error occurred loading dates for %@, please try again later.", self.classDetails.name),
+                                subtitle: "An unexpected error occurred loading dates for \(self.classDetails.name), please try again later.",
                                 type: NotificationType.error)
                         }
                         

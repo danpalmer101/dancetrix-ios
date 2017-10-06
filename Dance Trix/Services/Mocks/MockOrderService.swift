@@ -66,9 +66,7 @@ class MockOrderService: OrderServiceType {
             orderItems.forEach { (arg: (key: UniformItem, value: String?)) in
                 let (key, size) = arg
                 
-                log.info(String(format: "    %@ - size: %@",
-                                key.name,
-                                size ?? "N/A"))
+                log.info("    \(key.name) - size: \(size ?? "N/A")")
             }
             
             sleep(2)

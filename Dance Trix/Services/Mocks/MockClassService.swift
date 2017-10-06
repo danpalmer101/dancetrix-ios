@@ -48,14 +48,14 @@ class MockClassService: ClassServiceType {
                        successHandler: @escaping ([DateInterval]) -> Void,
                        errorHandler: @escaping (Error) -> Void) {
         DispatchQueue.global().async {
-            log.info(String(format: "Mock class date retrieval for %@...", classDetails.name))
+            log.info("Mock class date retrieval for \(classDetails.name)...")
             
             var dates = self.datesCache[classDetails]
             
             if (dates == nil) {
                 sleep(1)
                 
-                log.debug(String(format: "    Generating dates for %@", classDetails.name))
+                log.debug("    Generating dates for \(classDetails.name)")
                 
                 let datesLocation = classDetails.datesLocation.replacingOccurrences(of: ".csv", with: "")
                 
@@ -71,7 +71,7 @@ class MockClassService: ClassServiceType {
                 log.warning("...Unable to load mock class dates")
                 errorHandler(ClassesError.noClassDates(classDetails: classDetails))
             } else {
-                log.info(String(format: "...mock dates retrieved for %@", classDetails.name))
+                log.info("...mock dates retrieved for \(classDetails.name)")
                 successHandler(dates!)
             }
         }
@@ -81,14 +81,14 @@ class MockClassService: ClassServiceType {
                              successHandler: @escaping (String) -> Void,
                              errorHandler: @escaping (Error) -> Void) {
         DispatchQueue.global().async {
-            log.info(String(format: "Mock class date retrieval for %@...", classDetails.name))
+            log.info("Mock class date retrieval for \(classDetails.name)")
             
             var desc = self.descCache[classDetails]
             
             if (desc == nil) {
                 sleep(1)
                 
-                log.debug(String(format: "    Reading description for %@", classDetails.name))
+                log.debug("    Reading description for \(classDetails.name)")
                 
                 let descriptionLocation = classDetails.descriptionLocation.replacingOccurrences(of: ".txt", with: "")
                 
@@ -103,7 +103,7 @@ class MockClassService: ClassServiceType {
                 log.warning("...Unable to load mock class description")
                 errorHandler(ClassesError.noClassDescription(classDetails: classDetails))
             } else {
-                log.info(String(format: "...mock description retrieved for %@", classDetails.name))
+                log.info("...mock description retrieved for \(classDetails.name)")
                 successHandler(desc!)
             }
         }

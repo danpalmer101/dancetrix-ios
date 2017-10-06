@@ -31,7 +31,7 @@ class WebViewController: AnalyticsUIViewController, WKNavigationDelegate {
                 let cssString = try! String(contentsOfFile: path)
                                         .trimmingCharacters(in: .whitespacesAndNewlines)
                                         .replacingOccurrences(of: "\n", with: "")
-                let jsString = String(format: "var styleTag = document.createElement(\"style\"); styleTag.textContent = \"%@\"; document.documentElement.appendChild(styleTag); document.body.style.background = 'black'; document.body.style.color = 'white'", cssString)
+                let jsString = "var styleTag = document.createElement(\"style\"); styleTag.textContent = \"\(cssString)\"; document.documentElement.appendChild(styleTag); document.body.style.background = 'black'; document.body.style.color = 'white'"
                 let userScript = WKUserScript(source: jsString, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
  
                 let userContentController = WKUserContentController()

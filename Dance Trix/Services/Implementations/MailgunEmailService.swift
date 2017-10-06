@@ -52,7 +52,7 @@ class MailgunEmailService : EmailServiceType {
             let rendering = try template.render(templateVariables)
             email.text = trim(rendering)!
         } catch {
-            log.warning(String(format:"Unable to render plain file content for %@", templateName))
+            log.warning("Unable to render plain file content for \(templateName)")
             log.warning([error])
         }
         
@@ -62,7 +62,7 @@ class MailgunEmailService : EmailServiceType {
             let rendering = try template.render(templateVariables)
             email.html = trim(rendering)!
         } catch {
-            log.warning(String(format:"Unable to render HTML file content for %@", templateName))
+            log.warning("Unable to render HTML file content for \(templateName)")
             log.warning([error])
         }
         
@@ -71,7 +71,7 @@ class MailgunEmailService : EmailServiceType {
             registerFormatters(template: template)
             email.subject = try template.render(templateVariables)
         } catch {
-            log.warning(String(format:"Unable to render subject file content for %@", templateName))
+            log.warning("Unable to render subject file content for \(templateName)")
             log.warning([error])
         }
         
@@ -93,7 +93,7 @@ class MailgunEmailService : EmailServiceType {
                 
                 successHandler()
             } else {
-                log.warning(String(format: "...error sending email via Mailgun, message = %@", result.message ?? "<null>"))
+                log.warning("...error sending email via Mailgun, message = \(result.message ?? "<null>")")
                 
                 errorHandler(EmailError.unableToSend(message: result.message))
             }
