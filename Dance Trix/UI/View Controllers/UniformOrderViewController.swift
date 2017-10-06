@@ -17,7 +17,7 @@ class UniformOrderViewController: SubmitFormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.orderItems = ServiceLocator.orderService.getUniformOrderItems()
+        self.orderItems = ServiceLocator.uniformService.getUniformOrderItems()
         
         let selectableRowCellUpdate: ((_ cell: BaseCell, _ row: BaseRow) -> Void) = { cell, row in
             cell.textLabel?.textColor = Theme.colorForeground
@@ -210,7 +210,7 @@ class UniformOrderViewController: SubmitFormViewController {
         self.submitButton.isEnabled = false
         
         DispatchQueue.global().async {
-            ServiceLocator.orderService.orderUniform(
+            ServiceLocator.uniformService.orderUniform(
                 name: name,
                 studentName: studentName,
                 email: email,

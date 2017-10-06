@@ -1,5 +1,5 @@
 //
-//  OrderServiceType.swift
+//  UniformServiceType.swift
 //  Dance Trix
 //
 //  Created by Daniel Palmer on 02/10/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol OrderServiceType {
+protocol UniformServiceType {
     
     func getUniformOrderItems() -> [UniformGroup];
     

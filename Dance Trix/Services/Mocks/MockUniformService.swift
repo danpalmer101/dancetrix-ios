@@ -1,5 +1,5 @@
 //
-//  MockOrderService.swift
+//  MockUniformService.swift
 //  Dance Trix
 //
 //  Created by Daniel Palmer on 02/10/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MockOrderService: OrderServiceType {
+class MockUniformService: UniformServiceType {
     
     private let childClothesSizes = ["3 - 4 years (Size 0)", "5 - 6 years (Size 1)", "7 - 8 years (Size 1b)", "9 - 10 years (Size 2)", "11 - 13 years (Size 3a)", "Adult Small (Size 3)", "Adult Medium (Size 4)"]
     private let childShoeSizes = ["5", "6", "7", "8", "9", "9.5", "10", "10.5"]

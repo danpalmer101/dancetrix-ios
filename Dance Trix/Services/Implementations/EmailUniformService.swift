@@ -1,5 +1,5 @@
 //
-//  EmailOrderService.swift
+//  EmailUniformService.swift
 //  Dance Trix
 //
 //  Created by Daniel Palmer on 04/10/2017.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class EmailOrderService: OrderServiceType {
+class EmailUniformService: UniformServiceType {
 
     func getUniformOrderItems() -> [UniformGroup] {
-        return MockOrderService().getUniformOrderItems()
+        return MockUniformService().getUniformOrderItems()
     }
     
     func orderUniform(name: String,

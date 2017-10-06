@@ -68,7 +68,7 @@
 		A69ED4C31F84D55B0005B845 /* EmailError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4C21F84D55B0005B845 /* EmailError.swift */; };
 		A69ED4C51F8528AD0005B845 /* uniform_order_subject.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4C41F8528AD0005B845 /* uniform_order_subject.mustache */; };
 		A69ED4C71F8528D40005B845 /* uniform_order_body_plain.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4C61F8528D40005B845 /* uniform_order_body_plain.mustache */; };
-		A69ED4C91F852A5C0005B845 /* EmailOrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4C81F852A5C0005B845 /* EmailOrderService.swift */; };
+		A69ED4C91F852A5C0005B845 /* EmailUniformService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4C81F852A5C0005B845 /* EmailUniformService.swift */; };
 		A69ED4CB1F852C140005B845 /* uniform_order_body_html.mustache in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4CA1F852C140005B845 /* uniform_order_body_html.mustache */; };
 		A69ED4CD1F8534810005B845 /* description_lorem_ipsum.txt in Resources */ = {isa = PBXBuildFile; fileRef = A69ED4CC1F8534810005B845 /* description_lorem_ipsum.txt */; };
 		A69ED4D61F8542580005B845 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69ED4D51F8542580005B845 /* Configuration.swift */; };
@@ -86,13 +86,13 @@
 		A6D23AD71F813B5700229DEC /* MockPaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AD61F813B5700229DEC /* MockPaymentService.swift */; };
 		A6D23AD91F814B4400229DEC /* UniformOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AD81F814B4400229DEC /* UniformOrderViewController.swift */; };
 		A6D23ADB1F818A5800229DEC /* SubmitFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23ADA1F818A5800229DEC /* SubmitFormViewController.swift */; };
-		A6D23ADD1F82504500229DEC /* MockOrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23ADC1F82504500229DEC /* MockOrderService.swift */; };
+		A6D23ADD1F82504500229DEC /* MockUniformService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23ADC1F82504500229DEC /* MockUniformService.swift */; };
 		A6D23ADF1F8252D600229DEC /* OrderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23ADE1F8252D600229DEC /* OrderError.swift */; };
 		A6D23AE11F8252EB00229DEC /* PaymentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AE01F8252EB00229DEC /* PaymentError.swift */; };
 		A6D23AE91F82537D00229DEC /* BookingServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AE81F82537D00229DEC /* BookingServiceType.swift */; };
 		A6D23AEB1F8253DC00229DEC /* ClassServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AEA1F8253DC00229DEC /* ClassServiceType.swift */; };
 		A6D23AED1F8253EE00229DEC /* PaymentServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AEC1F8253EE00229DEC /* PaymentServiceType.swift */; };
-		A6D23AEF1F82540B00229DEC /* OrderServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AEE1F82540B00229DEC /* OrderServiceType.swift */; };
+		A6D23AEF1F82540B00229DEC /* UniformServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AEE1F82540B00229DEC /* UniformServiceType.swift */; };
 		A6D23AF11F82544800229DEC /* MockBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AF01F82544800229DEC /* MockBookingService.swift */; };
 /* End PBXBuildFile section */
 
@@ -166,7 +166,7 @@
 		A69ED4C21F84D55B0005B845 /* EmailError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailError.swift; sourceTree = "<group>"; };
 		A69ED4C41F8528AD0005B845 /* uniform_order_subject.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = uniform_order_subject.mustache; sourceTree = "<group>"; };
 		A69ED4C61F8528D40005B845 /* uniform_order_body_plain.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = uniform_order_body_plain.mustache; sourceTree = "<group>"; };
-		A69ED4C81F852A5C0005B845 /* EmailOrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailOrderService.swift; sourceTree = "<group>"; };
+		A69ED4C81F852A5C0005B845 /* EmailUniformService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailUniformService.swift; sourceTree = "<group>"; };
 		A69ED4CA1F852C140005B845 /* uniform_order_body_html.mustache */ = {isa = PBXFileReference; lastKnownFileType = text; path = uniform_order_body_html.mustache; sourceTree = "<group>"; };
 		A69ED4CC1F8534810005B845 /* description_lorem_ipsum.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = description_lorem_ipsum.txt; sourceTree = "<group>"; };
 		A69ED4D51F8542580005B845 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -186,13 +186,13 @@
 		A6D23AD61F813B5700229DEC /* MockPaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPaymentService.swift; sourceTree = "<group>"; };
 		A6D23AD81F814B4400229DEC /* UniformOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformOrderViewController.swift; sourceTree = "<group>"; };
 		A6D23ADA1F818A5800229DEC /* SubmitFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitFormViewController.swift; sourceTree = "<group>"; };
-		A6D23ADC1F82504500229DEC /* MockOrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockOrderService.swift; sourceTree = "<group>"; };
+		A6D23ADC1F82504500229DEC /* MockUniformService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUniformService.swift; sourceTree = "<group>"; };
 		A6D23ADE1F8252D600229DEC /* OrderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderError.swift; sourceTree = "<group>"; };
 		A6D23AE01F8252EB00229DEC /* PaymentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentError.swift; sourceTree = "<group>"; };
 		A6D23AE81F82537D00229DEC /* BookingServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingServiceType.swift; sourceTree = "<group>"; };
 		A6D23AEA1F8253DC00229DEC /* ClassServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassServiceType.swift; sourceTree = "<group>"; };
 		A6D23AEC1F8253EE00229DEC /* PaymentServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentServiceType.swift; sourceTree = "<group>"; };
-		A6D23AEE1F82540B00229DEC /* OrderServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderServiceType.swift; sourceTree = "<group>"; };
+		A6D23AEE1F82540B00229DEC /* UniformServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformServiceType.swift; sourceTree = "<group>"; };
 		A6D23AF01F82544800229DEC /* MockBookingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBookingService.swift; sourceTree = "<group>"; };
 		B7A5DCFF387C88D76065DD0C /* Pods-Dance Trix Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -428,7 +428,7 @@
 				A6D23AE81F82537D00229DEC /* BookingServiceType.swift */,
 				A6D23AEA1F8253DC00229DEC /* ClassServiceType.swift */,
 				A6D23AEC1F8253EE00229DEC /* PaymentServiceType.swift */,
-				A6D23AEE1F82540B00229DEC /* OrderServiceType.swift */,
+				A6D23AEE1F82540B00229DEC /* UniformServiceType.swift */,
 				A69ED4A71F83BC8C0005B845 /* EmailServiceType.swift */,
 			);
 			path = Protocols;
@@ -440,7 +440,7 @@
 				A6D23AF01F82544800229DEC /* MockBookingService.swift */,
 				A697F8651F7C32BF00195246 /* MockClassService.swift */,
 				A6D23AD61F813B5700229DEC /* MockPaymentService.swift */,
-				A6D23ADC1F82504500229DEC /* MockOrderService.swift */,
+				A6D23ADC1F82504500229DEC /* MockUniformService.swift */,
 				A69ED4A91F83BD6E0005B845 /* MockEmailService.swift */,
 			);
 			path = Mocks;
@@ -453,7 +453,7 @@
 				A69ED4AB1F83BDCB0005B845 /* MailgunEmailService.swift */,
 				A69ED4BA1F83FDC60005B845 /* EmailBookingService.swift */,
 				A69ED4B61F83E79F0005B845 /* EmailPaymentService.swift */,
-				A69ED4C81F852A5C0005B845 /* EmailOrderService.swift */,
+				A69ED4C81F852A5C0005B845 /* EmailUniformService.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -784,7 +784,7 @@
 				A6D23ADB1F818A5800229DEC /* SubmitFormViewController.swift in Sources */,
 				A6D23AED1F8253EE00229DEC /* PaymentServiceType.swift in Sources */,
 				A6BA0F731F74FEB800FAF47E /* Class.swift in Sources */,
-				A6D23AEF1F82540B00229DEC /* OrderServiceType.swift in Sources */,
+				A6D23AEF1F82540B00229DEC /* UniformServiceType.swift in Sources */,
 				A6BA0F5E1F74E20C00FAF47E /* HomeViewController.swift in Sources */,
 				A69ED4AC1F83BDCB0005B845 /* MailgunEmailService.swift in Sources */,
 				A68828361F78445200D82322 /* TintSelectTableViewCell.swift in Sources */,
@@ -813,9 +813,9 @@
 				A69ED4AA1F83BD6E0005B845 /* MockEmailService.swift in Sources */,
 				A6BD4F271F7E9AB600D261D1 /* Notification.swift in Sources */,
 				A688281C1F77094600D82322 /* TitleNavigationItem.swift in Sources */,
-				A6D23ADD1F82504500229DEC /* MockOrderService.swift in Sources */,
+				A6D23ADD1F82504500229DEC /* MockUniformService.swift in Sources */,
 				A697F8681F7C38C600195246 /* ServiceLocator.swift in Sources */,
-				A69ED4C91F852A5C0005B845 /* EmailOrderService.swift in Sources */,
+				A69ED4C91F852A5C0005B845 /* EmailUniformService.swift in Sources */,
 				A68828381F78467900D82322 /* SubmitButton.swift in Sources */,
 				A6D23ADF1F8252D600229DEC /* OrderError.swift in Sources */,
 				A69ED4981F82DE270005B845 /* ClassDatesParser.swift in Sources */,
