@@ -200,9 +200,9 @@ class PaymentFormViewController: SubmitFormViewController {
         let additional = (self.form.rowBy(tag: "additional") as! TextAreaRow).value
         
         // Store name/student/email as preferences for next time
-        Preferences.store(key: "name", value: name)
-        Preferences.store(key: "student_name", value: studentName)
-        Preferences.store(key: "email", value: email)
+        Preferences.store(key: Preferences.KEY_NAME, value: name)
+        Preferences.store(key: Preferences.KEY_STUDENT_NAME, value: studentName)
+        Preferences.store(key: Preferences.KEY_EMAIL, value: email)
         
         let submitTitle = self.submitButton.title(for: .normal)
         

@@ -11,8 +11,8 @@ import Foundation
 class ServiceLocator {
     
     // Quickly switch between fully mocked and real services
-    static let mock = CommandLine.arguments.contains("-DTMockServicesEnabled")
-    static let mockEmail = CommandLine.arguments.contains("-DTMockEmailEnabled")
+    static let mock = Configuration.isMockServicesEnabled()
+    static let mockEmail = Configuration.isMockEmailEnabled()
     
     static let classService: ClassServiceType = mock ? MockClassService() : FirebaseStorageClassService()
     static let bookingService: BookingServiceType = mock ? MockBookingService() : EmailBookingService()

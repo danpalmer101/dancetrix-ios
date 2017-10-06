@@ -11,6 +11,18 @@ import FirebaseRemoteConfig
 
 class Configuration {
     
+    static func isMockServicesEnabled() -> Bool {
+        return CommandLine.arguments.contains("-DTMockServicesEnabled")
+    }
+    
+    static func isMockEmailEnabled() -> Bool {
+        return CommandLine.arguments.contains("-DTMockEmailEnabled")
+    }
+    
+    static func isPreferenceCleaningEnabled() -> Bool {
+        return CommandLine.arguments.contains("-DTPreferencesClean")
+    }
+    
     static func fromPaymentEmailAddress() -> String {
         return getRemoteConfig("email_address_payment_from")
     }

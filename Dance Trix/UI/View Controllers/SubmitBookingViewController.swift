@@ -103,8 +103,8 @@ class SubmitBookingViewController: SubmitFormViewController {
         let email = (self.form.rowBy(tag: "email") as! EmailRow).value!
         
         // Store student/email as preferences for next time
-        Preferences.store(key: "student_name", value: studentName)
-        Preferences.store(key: "email", value: email)
+        Preferences.store(key: Preferences.KEY_STUDENT_NAME, value: studentName)
+        Preferences.store(key: Preferences.KEY_EMAIL, value: email)
         
         let submitTitle = self.submitButton.title(for: .normal)
         

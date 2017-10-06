@@ -23,18 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         enableLogging()
         
+        enableReachabilityCheck()
+        
         enableFirebase()
         
-        enableReachabilityCheck()
+        enablePreferences()
         
         applyBranding()
         
         return true
-    }
-    
-    func enableFirebase() {
-        FirebaseApp.configure()
-        RemoteConfig.remoteConfig().setDefaults(fromPlist: "Configuration")
     }
     
     func enableLogging() {
@@ -46,10 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // add the destination(s) to SwiftyBeaver
         log.addDestination(console)
-    }
-    
-    func applyBranding() {
-        Theme.applyGlobal(window: window)
     }
     
     func enableReachabilityCheck() {
@@ -65,6 +58,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             log.warning("Unable to start Reachability notifier")
         }
+    }
+    
+    func enableFirebase() {
+        FirebaseApp.configure()
+        RemoteConfig.remoteConfig().setDefaults(fromPlist: "Configuration")
+    }
+    
+    func enablePreferences() {
+        if (Configuration.isPreferenceCleaningEnabled()) {
+            Preferences.cleanAll()
+        }
+    }
+    
+    func applyBranding() {
+        Theme.applyGlobal(window: window)
     }
     
 }
