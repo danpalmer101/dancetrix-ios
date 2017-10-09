@@ -68,14 +68,14 @@ class CalendarViewController : AnalyticsUIViewController, JTAppleCalendarViewDel
             ServiceLocator.classService.getClassDates(
                 classDetails,
                 successHandler: { (dates: [DateInterval]) in
-                    // Add each date to the map
-                    dates.forEach({
-                        (date: DateInterval) in self.addDate((classDetails, date))
-                    })
-                    
-                    // Reload the calendar with the new date
-                    // (and ensure current selected dates remain selected after reload)
                     DispatchQueue.main.async {
+                        // Add each date to the map
+                        dates.forEach({
+                            (date: DateInterval) in self.addDate((classDetails, date))
+                        })
+                    
+                        // Reload the calendar with the new date
+                        // (and ensure current selected dates remain selected after reload)
                         let selectedDates = self.calendarView.selectedDates
                         self.calendarView.reloadData(
                             withanchor: self.calendarView.selectedDates.first,

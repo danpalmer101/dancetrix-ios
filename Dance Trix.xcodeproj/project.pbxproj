@@ -114,6 +114,7 @@
 		A600265E1F7AACF000DDC90F /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBookingViewController.swift; sourceTree = "<group>"; };
 		A60026621F7BB4D200DDC90F /* prepare-commit-msg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "prepare-commit-msg"; sourceTree = "<group>"; };
+		A62529291F8BC9FD001E277D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A627D0761F79A185009097C1 /* ReadOnlyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadOnlyTextView.swift; sourceTree = "<group>"; };
 		A627D0781F79A733009097C1 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		A62CA2041F86772A0087D3D0 /* AnalyticsUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsUIViewController.swift; sourceTree = "<group>"; };
@@ -366,6 +367,7 @@
 		A6BA0F4F1F74E20C00FAF47E = {
 			isa = PBXGroup;
 			children = (
+				A62529291F8BC9FD001E277D /* README.md */,
 				A688283B1F794BF700D82322 /* Scripts */,
 				A6BA0F5A1F74E20C00FAF47E /* Dance Trix */,
 				A68828061F7560C600D82322 /* Dance Trix Tests */,
