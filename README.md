@@ -42,11 +42,11 @@ _The following steps assume you have a Google account, if not, you will need to 
    
       ```
       service firebase.storage {
-      match /b/{bucket}/o {
-      match /{allPaths=**} {
-      allow read, write;
-      }
-      }
+        match /b/{bucket}/o {
+          match /{allPaths=**} {
+            allow read, write;
+          }
+        }
       }
       ```
 
