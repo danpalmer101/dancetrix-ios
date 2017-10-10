@@ -7,34 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>445455344762-ur14482h8rrd85vo1co8g8io18f5hedv.apps.googleusercontent.com</string>
+	<string>424242602269-2dvgffnml6onsf191he11njen8ib15dg.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.445455344762-ur14482h8rrd85vo1co8g8io18f5hedv</string>
+	<string>com.googleusercontent.apps.424242602269-2dvgffnml6onsf191he11njen8ib15dg</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDbnMD1J8GWUHi6Nnpn6BOTbL8ZeqVCGcc</string>
+	<string>AIzaSyCYY7B5wETC9J0wEO_1vn7qQ-vWreYjBYw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>445455344762</string>
+	<string>424242602269</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>uk.co.dancetrix</string>
 	<key>PROJECT_ID</key>
-	<string>red-octane-116310</string>
+	<string>dance-trix</string>
 	<key>STORAGE_BUCKET</key>
-	<string>red-octane-116310.appspot.com</string>
+	<string>dance-trix.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<true/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:445455344762:ios:753e3a1982fcce94</string>
+	<string>1:424242602269:ios:753e3a1982fcce94</string>
 	<key>DATABASE_URL</key>
-	<string>https://red-octane-116310.firebaseio.com</string>
+	<string>https://dance-trix.firebaseio.com</string>
 </dict>
 </plist>

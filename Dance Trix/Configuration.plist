@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>email_address_payment_from</key>
-	<string>Dance Trix Payments &lt;payments@danpalmer101.io&gt;</string>
+	<string>Dance Trix Payments &lt;payments@dancetrix.co.uk&gt;</string>
 	<key>email_address_booking_from</key>
-	<string>Dance Trix Bookings &lt;bookings@danpalmer101.io&gt;</string>
+	<string>Dance Trix Bookings &lt;bookings@dancetrix.co.uk&gt;</string>
 	<key>email_address_uniform_from</key>
-	<string>Dance Trix Uniforms &lt;uniforms@danpalmer101.io&gt;</string>
+	<string>Dance Trix Uniforms &lt;uniforms@dancetrix.co.uk&gt;</string>
 	<key>email_address_to</key>
 	<string>d.palmer101@googlemail.com</string>
 	<key>dancetrix_uniform_catalog</key>
@@ -15,7 +15,7 @@
 	<key>dancetrix_website</key>
 	<string>http://www.dancetrix.co.uk</string>
 	<key>mailgun_domain</key>
-	<string>danpalmer101.io</string>
+	<string>mg.dancetrix.co.uk</string>
 	<key>mailgun_api_key</key>
 	<string>key-2e89955da550daaac2207a3b48d1c338</string>
 </dict>

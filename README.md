@@ -10,7 +10,7 @@ Mailgun is the email provider the app uses to send emails to you when bookings, 
    1. Go to http://www.mailgun.com, select _"Sign Up"_ and enter the company details
    1. On the second page, skip the _"Get More By Adding A Credit Card"_ step
    1. On the third page, ignore the _"Try Sending An Email From Your Sandbox Server Now"_ step, but select _"Add a domain"_
-   1. On the fourth page, enter `dancetrix.co.uk` as the Domain Name
+   1. On the fourth page, enter `mg.dancetrix.co.uk` as the Domain Name
    1. On the fifth page, ignore the _"Now Follow These Steps To Verify Your Domain"_ step and select _"Continue to Domain Overview"_
 1. Add an _"Authorized recipient"_, this is the email address you want emails to be sent to when booking/order/payment is made:
    1. Go to: https://app.mailgun.com/app/account/authorized
@@ -21,7 +21,7 @@ Mailgun is the email provider the app uses to send emails to you when bookings, 
    1. Go to: https://app.mailgun.com/app/dashboard
    1. In the bottom right of the page there is a section call "API Keys", select the eye symbol next to "Secret API Key" and make a copy of the value in the box - this will be needed later. For example:
 
-```key-0123456789abcdef0123456789abcdef```
+   ```key-0123456789abcdef0123456789abcdef```
 
 ### Google Firebase Account
 
@@ -38,7 +38,20 @@ _The following steps assume you have a Google account, if not, you will need to 
 1. Enable Storage in Firebase:
    1. Select _"Storage"_ in the left-hand menu
    1. Select _"Get Started"_ and then _"Got It"_
-   1. Upload all the files `Dance Trix > Resources > Mock Data` to this page - these files will be edited later in **Managing the app**
+   1. Go to "Rules" and enter the following:
+   
+      ```
+      service firebase.storage {
+      match /b/{bucket}/o {
+      match /{allPaths=**} {
+      allow read, write;
+      }
+      }
+      }
+      ```
+
+   1. Select "Publish" for the changes to take effect, and go back to the "Files" tab
+   1. Upload all the files from `Dance Trix > Resources > Mock Data` to this page - these files will be edited later in **Managing the app**
 1. Enable Remote Config in Firebase:
    1. Select _"Remote Config"_ in the left-hand menu
    1. Enter the following parameters:
@@ -51,7 +64,7 @@ _The following steps assume you have a Google account, if not, you will need to 
    | email_address_to | _enter the same email address from step 2.3 in Mailgun set-up_ |
    | dancetrix_uniform_catalog | http://dancetrix.co.uk/wp-content/uploads/2016/05/Dance-Trix-Catalogue.pdf |
    | dancetrix_website | http://www.dancetrix.co.uk |
-   | mailgun_domain | dancetrix.co.uk |
+   | mailgun_domain | mg.dancetrix.co.uk |
    | mailgun_api_key | _enter the "Secret API Key" from step 3.2 in Mailgun set-up_  |
    
 1. Download the config file:
