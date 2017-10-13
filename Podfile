@@ -16,6 +16,8 @@ target 'Dance Trix' do
   pod 'Firebase/Storage'
   pod 'GRMustache.swift', :inhibit_warnings => true
   pod 'SwiftMailgun'
+  pod 'Fabric'
+  pod 'Crashlytics'
   
   target 'Dance Trix Tests' do
     inherit! :search_paths

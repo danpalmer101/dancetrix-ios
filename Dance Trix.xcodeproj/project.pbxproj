@@ -518,6 +518,7 @@
 				A688283D1F794C4100D82322 /* Set Build Number */,
 				9F556218C19EB29526B44CBA /* [CP] Embed Pods Frameworks */,
 				81F52B3CDFD8095970FF2D32 /* [CP] Copy Pods Resources */,
+				A6BA91DA1F90B2F200AB4E19 /* Fabric Initialization */,
 			);
 			buildRules = (
 			);
@@ -750,6 +751,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "$SRCROOT/Scripts/set_build_number.sh\n\nif [ -d \"$SRCROOT/.git\" ]; then\n  cp $SRCROOT/Scripts/prepare-commit-msg $SRCROOT/.git/hooks/prepare-commit-msg\nfi";
+		};
+		A6BA91DA1F90B2F200AB4E19 /* Fabric Initialization */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Fabric Initialization";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 1afcdbced5cafaf41c2ad59315996759c75d98d1 8c6f51ce36809b5bba45c2d6c91ce56278d68889750e8a5dd2b9c6f781e585f0";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1004,6 +1019,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = "Dance Trix/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1020,6 +1036,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = "Dance Trix/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

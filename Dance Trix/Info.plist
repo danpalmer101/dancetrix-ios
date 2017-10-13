@@ -18,6 +18,20 @@
 	<string>SET_BY_SCRIPT</string>
 	<key>CFBundleVersion</key>
 	<string>SET_BY_SCRIPT</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>1afcdbced5cafaf41c2ad59315996759c75d98d1</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>

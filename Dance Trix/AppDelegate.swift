@@ -10,6 +10,8 @@ import UIKit
 import SwiftyBeaver
 import Firebase
 import ReachabilitySwift
+import Fabric
+import Crashlytics
 
 let log = SwiftyBeaver.self
 
@@ -24,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         enableLogging()
         
         enableReachabilityCheck()
+        
+        enableFabric()
         
         enableFirebase()
         
@@ -58,6 +62,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             log.warning("Unable to start Reachability notifier")
         }
+    }
+    
+    func enableFabric() {
+        Fabric.with([Crashlytics.self])
     }
     
     func enableFirebase() {
