@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyBeaver
 import Firebase
-import ReachabilitySwift
+import Reachability
 import Fabric
 import Crashlytics
 
