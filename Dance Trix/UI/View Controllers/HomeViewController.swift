@@ -10,6 +10,42 @@ import UIKit
 
 class HomeViewController: AnalyticsUIViewController {
     
+    @IBOutlet
+    var stackView: UIStackView!
+    
+    @IBOutlet
+    var bookClassView: UIView!
+    @IBOutlet
+    var calendarView: UIView!
+    @IBOutlet
+    var uniformView: UIView!
+    @IBOutlet
+    var paymentView: UIView!
+    @IBOutlet
+    var aboutView: UIView!
+    
+    // MARK: - View lifecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if (!Configuration.bookClassEnabled()) {
+            self.stackView.removeArrangedSubview(self.bookClassView)
+        }
+        if (!Configuration.calendarEnabled()) {
+            self.stackView.removeArrangedSubview(self.calendarView)
+        }
+        if (!Configuration.uniformEnabled()) {
+            self.stackView.removeArrangedSubview(self.uniformView)
+        }
+        if (!Configuration.paymentEnabled()) {
+            self.stackView.removeArrangedSubview(self.paymentView)
+        }
+        if (!Configuration.aboutEnabled()) {
+            self.stackView.removeArrangedSubview(self.aboutView)
+        }
+    }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

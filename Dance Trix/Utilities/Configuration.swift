@@ -61,7 +61,33 @@ class Configuration {
         return getRemoteConfig("dancetrix_uniform_catalog")
     }
     
+    // Remove config - Feature
+    
+    static func bookClassEnabled() -> Bool {
+        return isTrue(getRemoteConfig("feature_book"))
+    }
+    
+    static func calendarEnabled() -> Bool {
+        return isTrue(getRemoteConfig("feature_calendar"))
+    }
+    
+    static func paymentEnabled() -> Bool {
+        return isTrue(getRemoteConfig("feature_payment"))
+    }
+    
+    static func uniformEnabled() -> Bool {
+        return isTrue(getRemoteConfig("feature_uniform"))
+    }
+    
+    static func aboutEnabled() -> Bool {
+        return isTrue(getRemoteConfig("feature_about"))
+    }
+    
     // Tools
+    
+    private static func isTrue(_ string: String) -> Bool {
+        return ["yes", "true", "1"].contains(string.lowercased())
+    }
     
     private static func checkCommandLine(_ arg : String) -> Bool {
         return CommandLine.arguments.contains(arg)

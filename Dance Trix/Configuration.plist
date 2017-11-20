@@ -18,5 +18,15 @@
 	<string>mg.dancetrix.co.uk</string>
 	<key>mailgun_api_key</key>
 	<string>key-2e89955da550daaac2207a3b48d1c338</string>
+	<key>feature_book</key>
+	<string>true</string>
+	<key>feature_calendar</key>
+	<string>true</string>
+	<key>feature_payment</key>
+	<string>true</string>
+	<key>feature_uniform</key>
+	<string>true</string>
+	<key>feature_about</key>
+	<string>true</string>
 </dict>
 </plist>
