@@ -29,20 +29,36 @@ class HomeViewController: AnalyticsUIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if (!Configuration.bookClassEnabled()) {
-            self.stackView.removeArrangedSubview(self.bookClassView)
+        self.hideMenuOptions()
+        
+        // Listen for updates to remote config in case the update is slow during app start up
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(hideMenuOptions),
+                                               name: .remoteConfigUpdated,
+                                               object: nil)
+    }
+    
+    @objc private func hideMenuOptions() {
+        self.stackView.removeArrangedSubview(self.bookClassView)
+        self.stackView.removeArrangedSubview(self.calendarView)
+        self.stackView.removeArrangedSubview(self.uniformView)
+        self.stackView.removeArrangedSubview(self.paymentView)
+        self.stackView.removeArrangedSubview(self.aboutView)
+        
+        if (Configuration.bookClassEnabled()) {
+            self.stackView.addArrangedSubview(self.bookClassView)
         }
-        if (!Configuration.calendarEnabled()) {
-            self.stackView.removeArrangedSubview(self.calendarView)
+        if (Configuration.calendarEnabled()) {
+            self.stackView.addArrangedSubview(self.calendarView)
         }
-        if (!Configuration.uniformEnabled()) {
-            self.stackView.removeArrangedSubview(self.uniformView)
+        if (Configuration.uniformEnabled()) {
+            self.stackView.addArrangedSubview(self.uniformView)
         }
-        if (!Configuration.paymentEnabled()) {
-            self.stackView.removeArrangedSubview(self.paymentView)
+        if (Configuration.paymentEnabled()) {
+            self.stackView.addArrangedSubview(self.paymentView)
         }
-        if (!Configuration.aboutEnabled()) {
-            self.stackView.removeArrangedSubview(self.aboutView)
+        if (Configuration.aboutEnabled()) {
+            self.stackView.addArrangedSubview(self.aboutView)
         }
     }
     

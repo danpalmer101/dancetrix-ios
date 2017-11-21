@@ -12,6 +12,7 @@
 		A600265F1F7AACF000DDC90F /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A600265E1F7AACF000DDC90F /* TextField.swift */; };
 		A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */; };
 		A60026631F7BB4D200DDC90F /* prepare-commit-msg in Resources */ = {isa = PBXBuildFile; fileRef = A60026621F7BB4D200DDC90F /* prepare-commit-msg */; };
+		A608AD4B1FC4322300FE614C /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608AD4A1FC4322300FE614C /* NotificationName.swift */; };
 		A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A627D0761F79A185009097C1 /* ReadOnlyTextView.swift */; };
 		A627D0791F79A733009097C1 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A627D0781F79A733009097C1 /* BackgroundView.swift */; };
 		A62CA2051F86772A0087D3D0 /* AnalyticsUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62CA2041F86772A0087D3D0 /* AnalyticsUIViewController.swift */; };
@@ -114,6 +115,7 @@
 		A600265E1F7AACF000DDC90F /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBookingViewController.swift; sourceTree = "<group>"; };
 		A60026621F7BB4D200DDC90F /* prepare-commit-msg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "prepare-commit-msg"; sourceTree = "<group>"; };
+		A608AD4A1FC4322300FE614C /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		A62529291F8BC9FD001E277D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A627D0761F79A185009097C1 /* ReadOnlyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadOnlyTextView.swift; sourceTree = "<group>"; };
 		A627D0781F79A733009097C1 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				A68828131F75AB6200D82322 /* ClassMenuParser.swift */,
 				A69ED4971F82DE270005B845 /* ClassDatesParser.swift */,
 				A66EF1921F86678900B8EDFE /* CsvParser.swift */,
+				A608AD4A1FC4322300FE614C /* NotificationName.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 				A688281A1F7706D200D82322 /* TintImageView.swift in Sources */,
 				A69ED4BB1F83FDC60005B845 /* EmailBookingService.swift in Sources */,
 				A632F78A1F7505E100F9FD8A /* ClassesViewController.swift in Sources */,
+				A608AD4B1FC4322300FE614C /* NotificationName.swift in Sources */,
 				A600265F1F7AACF000DDC90F /* TextField.swift in Sources */,
 				A68828141F75AB6200D82322 /* ClassMenuParser.swift in Sources */,
 				A68828341F78410B00D82322 /* DateInterval_Text.swift in Sources */,

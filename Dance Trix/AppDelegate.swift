@@ -71,6 +71,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func enableFirebase() {
         FirebaseApp.configure()
         RemoteConfig.remoteConfig().setDefaults(fromPlist: "Configuration")
+        
+        RemoteConfig.remoteConfig().fetch { (status, error) in
+            RemoteConfig.remoteConfig().activateFetched()
+            
+            NotificationCenter.default.post(
+                name: .remoteConfigUpdated,
+                object: nil)
+        }
     }
     
     func enablePreferences() {
