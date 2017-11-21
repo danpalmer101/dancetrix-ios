@@ -25,17 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         enableLogging()
-        
         enableReachabilityCheck()
-        
         enableFabric()
-        
         enableFirebase()
-        
+        enableRemoteConfig()
         enableNotificationsOnApplication(application)
-        
         enablePreferences()
-        
         applyBranding()
         
         return true
@@ -73,9 +68,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func enableFirebase() {
         FirebaseApp.configure()
+    }
+    
+    func enableRemoteConfig() {
         RemoteConfig.remoteConfig().setDefaults(fromPlist: "Configuration")
-        
-        RemoteConfig.remoteConfig().fetch { (status, error) in
+        RemoteConfig.remoteConfig().fetch(withExpirationDuration: 60) { (status, error) in
             RemoteConfig.remoteConfig().activateFetched()
             
             NotificationCenter.default.post(
