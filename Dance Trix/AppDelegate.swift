@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyBeaver
 import Firebase
+import UserNotifications
 import Reachability
 import Fabric
 import Crashlytics
@@ -16,7 +17,7 @@ import Crashlytics
 let log = SwiftyBeaver.self
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
 
     var window: UIWindow?
     let reachability = Reachability()!
@@ -30,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         enableFabric()
         
         enableFirebase()
+        
+        enableNotificationsOnApplication(application)
         
         enablePreferences()
         
@@ -81,6 +84,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    func enableNotificationsOnApplication(_ application : UIApplication) {
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+            
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        Messaging.messaging().delegate = self
+        Messaging.messaging().shouldEstablishDirectChannel = true
+        
+        application.registerForRemoteNotifications()
+    }
+    
     func enablePreferences() {
         if (Configuration.isPreferenceCleaningEnabled()) {
             Preferences.cleanAll()
@@ -89,6 +113,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applyBranding() {
         Theme.applyGlobal(window: window)
+    }
+    
+    // Handling notifications
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        log.warning("Unable to register for remote notifications: \(error.localizedDescription)")
+    }
+    
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+        log.debug("Refreshed FCM registration token: \(fcmToken)")
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        // Title
+        var title = notification.request.content.title
+        if (title.isEmpty) {
+            title = "Notification"
+        }
+        
+        // Text
+        let text = notification.request.content.body
+        if (text.isEmpty) {
+            log.warning("Empty notification sent, not displaying anything")
+            return
+        }
+        
+        // Type
+        var type : NotificationType;
+        switch (notification.request.content.userInfo["type"] as? String ?? "success") {
+        case "success": type = .success ; break ;
+        case "warning": type = .warning ; break ;
+        case "info": type = .info ; break ;
+        case "error": type = .error ; break ;
+        default: type = .success
+        }
+        
+        Notification.show(title: title, subtitle: text, type: type)
+        
+        completionHandler([])
     }
     
 }

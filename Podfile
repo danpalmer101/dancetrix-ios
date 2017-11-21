@@ -14,6 +14,7 @@ target 'Dance Trix' do
   pod 'Firebase/Core'
   pod 'Firebase/RemoteConfig'
   pod 'Firebase/Storage'
+  pod 'Firebase/Messaging'
   pod 'GRMustache.swift', :inhibit_warnings => true
   pod 'SwiftMailgun'
   pod 'Fabric'

@@ -116,6 +116,7 @@
 		A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBookingViewController.swift; sourceTree = "<group>"; };
 		A60026621F7BB4D200DDC90F /* prepare-commit-msg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "prepare-commit-msg"; sourceTree = "<group>"; };
 		A608AD4A1FC4322300FE614C /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		A608AD4C1FC45EBD00FE614C /* Dance Trix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Dance Trix.entitlements"; sourceTree = "<group>"; };
 		A62529291F8BC9FD001E277D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A627D0761F79A185009097C1 /* ReadOnlyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadOnlyTextView.swift; sourceTree = "<group>"; };
 		A627D0781F79A733009097C1 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
@@ -392,6 +393,7 @@
 		A6BA0F5A1F74E20C00FAF47E /* Dance Trix */ = {
 			isa = PBXGroup;
 			children = (
+				A608AD4C1FC45EBD00FE614C /* Dance Trix.entitlements */,
 				A6BA0F6D1F74F24600FAF47E /* Domain */,
 				A69ED4931F82D1540005B845 /* Utilities */,
 				A697F8641F7C326500195246 /* Services */,
@@ -550,6 +552,11 @@
 					A6BA0F571F74E20C00FAF47E = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1022,6 +1029,7 @@
 			baseConfigurationReference = 939F18AC94B46B075CEA7EE3 /* Pods-Dance Trix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Dance Trix/Dance Trix.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RVU65B9MFV;
@@ -1040,6 +1048,7 @@
 			baseConfigurationReference = 42F763BA46788E7A70E0443A /* Pods-Dance Trix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Dance Trix/Dance Trix.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RVU65B9MFV;
