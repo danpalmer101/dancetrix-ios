@@ -79,6 +79,14 @@ The dates file has 4 columns:
 
 The description files are a text file which just contain plain text describing the class. You can enter anything you like here, and it can be any length.
 
+### Hiding features
+
+Each menu item on the home page can be hidden.
+
+Go to the Remote Config section in Firebase and you will see a number of parameters like `feature_xxxx`. Setting these to `no` turns off the feature in the app and hides it from users.
+
+Note that it can take up to 12 hours for the changes to appear in the app as the app does not check the remote config every time it opens.
+
 ### Other changes
 
 If you need to change the email address that emails go to, you will need to add a new "Authorized Recipient" in Mailgun, and then update the Remote Config in Firebase (the `email_payment_to` parameter).
@@ -91,3 +99,21 @@ The app uses 2 pages from the dancetrix.co.uk website:
 1. The uniform catalog PDF file
 
 If the address of either if these changes, then they should be updated in Remote Config in Firebase (`dancetrix_website` and `dancetrix_uniform_catalog` properties)
+
+### Sending Notifications
+
+In order to send a push notification to the app, you can use the Notifications section in Google Firebase.
+
+1. In the Notifications section of the Firebase console, select "New message".
+1. Enter the message text
+1. Select "User Segment" as the Target
+1. Select the iOS app as the app in the row under "Target user if"
+1. (optional) Under the "Advanced" options, you can set a title for the message
+1. (optional) Under the "Advanced" options, you can a set a `type` under Custom Data, valid values are `success`, `info`, `warning`,  `error`. This just determines the color of the notification bar that appears in the app if the user has the app open when the notification is sent
+1. Select "Send Message"
+
+If the user has the app open at the time you send the message, it will appear at the top of the screen, under the navigation bar.
+
+If the user does not have the app open at the time you send the message, it will be displayed as a normal iOS notification.
+
+Once you have sent a message, you can send the same message again in the future by selecting the "Duplicate" option from the options menu next to the message on the Notifications screen, then clicking "Send Message" again.
