@@ -9,7 +9,7 @@ target 'Dance Trix' do
   pod 'ReachabilitySwift'
   pod 'JTAppleCalendar', '~> 7.0'
   pod 'RMessage', '~> 2.1.5'
-  pod 'SwiftyBeaver', '~> 1.4.2'
+  pod 'SwiftyBeaver', '~> 1.4.2', :inhibit_warnings => true
   pod 'Eureka', '~> 4.0.0', :inhibit_warnings => true
   pod 'Firebase/Core'
   pod 'Firebase/RemoteConfig'
