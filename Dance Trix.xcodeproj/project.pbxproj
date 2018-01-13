@@ -760,7 +760,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$SRCROOT/Scripts/set_build_number.sh\n\nif [ -d \"$SRCROOT/.git\" ]; then\n  cp $SRCROOT/Scripts/prepare-commit-msg $SRCROOT/.git/hooks/prepare-commit-msg\nfi";
+			shellScript = "$SRCROOT/Scripts/set_build_number.sh\n\nif [ -d \"$SRCROOT/.git\" ]; then\n  mkdir -p $SRCROOT/.git/hooks\n  cp $SRCROOT/Scripts/prepare-commit-msg $SRCROOT/.git/hooks/prepare-commit-msg\nfi";
 		};
 		A6BA91DA1F90B2F200AB4E19 /* Fabric Initialization */ = {
 			isa = PBXShellScriptBuildPhase;
