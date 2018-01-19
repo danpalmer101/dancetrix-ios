@@ -94,4 +94,11 @@ class FirebaseStorageClassService : ClassServiceType {
         }
     }
     
+    func getImportantDates(successHandler: @escaping ([(String, DateInterval)]) -> Void,
+                           errorHandler: @escaping (Error) -> Void) {
+        // TODO
+        
+        successHandler([("Test", DateInterval())])
+    }
+    
 }

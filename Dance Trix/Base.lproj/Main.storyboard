@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FVs-w7-UF7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FVs-w7-UF7">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XnR-vk-ipu">
-                                <rect key="frame" x="0.0" y="89" width="375" height="450"/>
+                                <rect key="frame" x="0.0" y="89" width="375" height="540"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ZY-cC-vzG">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -29,7 +29,7 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Book a class"/>
+                                                <state key="normal" title="Sign up for classes"/>
                                                 <connections>
                                                     <segue destination="BuF-jW-Oad" kind="show" identifier="Bookings" id="9Io-RD-CBk"/>
                                                 </connections>
@@ -44,8 +44,31 @@
                                             <constraint firstAttribute="height" constant="90" id="IAM-bG-PoX"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGb-u5-SAR">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XnV-7x-6it" userLabel="Important Dates View">
                                         <rect key="frame" x="0.0" y="90" width="375" height="90"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKo-wt-Z5V">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Important dates"/>
+                                                <connections>
+                                                    <segue destination="n8Q-Oi-2Md" kind="show" identifier="ImportantDates" id="M1V-QM-ztg"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="Rxz-hJ-rzD" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                                <rect key="frame" x="304" y="32" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="fqf-gS-XbQ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGb-u5-SAR">
+                                        <rect key="frame" x="0.0" y="180" width="375" height="90"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TiO-tZ-ojp">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -68,7 +91,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P97-L9-nHw">
-                                        <rect key="frame" x="0.0" y="180" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="270" width="375" height="90"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmp-WU-apa">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -91,7 +114,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soV-ag-NkU">
-                                        <rect key="frame" x="0.0" y="270" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="360" width="375" height="90"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHo-7S-ZKC">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -114,7 +137,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihY-oA-ufe">
-                                        <rect key="frame" x="0.0" y="360" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="450" width="375" height="90"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sv-gf-DnJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -178,6 +201,7 @@
                         <outlet property="aboutView" destination="ihY-oA-ufe" id="COQ-DP-MtA"/>
                         <outlet property="bookClassView" destination="5ZY-cC-vzG" id="3qd-N1-OIb"/>
                         <outlet property="calendarView" destination="xGb-u5-SAR" id="2TY-P6-BXS"/>
+                        <outlet property="importantDatesView" destination="XnV-7x-6it" id="OYO-Hf-IiI"/>
                         <outlet property="paymentView" destination="soV-ag-NkU" id="NWL-qU-YDl"/>
                         <outlet property="stackView" destination="XnR-vk-ipu" id="SQg-FG-FHn"/>
                         <outlet property="uniformView" destination="P97-L9-nHw" id="DsK-op-r8s"/>
@@ -187,14 +211,14 @@
             </objects>
             <point key="canvasLocation" x="-50.399999999999999" y="-1971.4285714285716"/>
         </scene>
-        <!--Book a class-->
+        <!--Sign up for classes-->
         <scene sceneID="Cxa-S2-ibL">
             <objects>
                 <tableViewController id="BuF-jW-Oad" customClass="ClassesViewController" customModule="Dance_Trix" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="4Kv-mY-PPK">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" estimatedRowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="4Kv-mY-PPK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassNode" id="U1V-iG-IaV">
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
@@ -236,14 +260,73 @@
                             <outlet property="delegate" destination="BuF-jW-Oad" id="nuu-p5-LlS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Book a class" id="wgP-8I-UfF"/>
+                    <navigationItem key="navigationItem" title="Sign up for classes" id="wgP-8I-UfF"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Select Class [%@]"/>
                     </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylz-bJ-Oxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1550" y="-1041"/>
+            <point key="canvasLocation" x="-2276" y="-1041"/>
+        </scene>
+        <!--Important dates-->
+        <scene sceneID="p8i-co-iWO">
+            <objects>
+                <viewController id="n8Q-Oi-2Md" customClass="ImportantDatesViewController" customModule="Dance_Trix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XPi-DH-xoT" customClass="BackgroundView" customModule="Dance_Trix" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R6w-BP-bAa">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ImportantDate" textLabel="UMd-e1-C1Q" detailTextLabel="py9-21-YoQ" style="IBUITableViewCellStyleValue1" id="Ppw-VV-o3I" customClass="TintSelectTableViewCell" customModule="Dance_Trix" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ppw-VV-o3I" id="hh9-8c-FWa">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UMd-e1-C1Q">
+                                                    <rect key="frame" x="15" y="20" width="33.333333333333336" height="20.333333333333332"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="py9-21-YoQ">
+                                                    <rect key="frame" x="316" y="20" width="44" height="20.333333333333332"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="n8Q-Oi-2Md" id="bjN-n6-DVr"/>
+                                    <outlet property="delegate" destination="n8Q-Oi-2Md" id="v43-4Q-UI2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="uwm-61-CqZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Important dates" id="fFN-7E-eSE"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Important dates"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="tableView" destination="R6w-BP-bAa" id="4EO-Ci-b5Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="edh-Zv-p2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1551.2" y="-1041.1330049261085"/>
         </scene>
         <!--Ib Calendar Data Source-->
         <scene sceneID="ef1-Sg-IBi">
@@ -253,10 +336,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SXj-uY-bMC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SXj-uY-bMC">
                                 <rect key="frame" x="0.0" y="396" width="375" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassCalendarEntry" textLabel="2pk-ul-eSe" detailTextLabel="xFI-q5-QLq" style="IBUITableViewCellStyleValue1" id="JOa-hg-Don">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -448,7 +531,7 @@
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content"> by calling either one of us on the numbers on the contact page (please note that there is a 3% transaction fee for this).
+                                        <string key="content"> by calling either one of us on the numbers on the contact page.
 
 4. You can pay before the class is attended or goods are received in </string>
                                         <attributes>
@@ -570,7 +653,7 @@ Once you have completed the transaction, please let us know with the button belo
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ddn-Co-noj">
                                 <rect key="frame" x="0.0" y="254" width="375" height="466"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ClassDate" id="Pc8-C8-mGK" customClass="TintSelectTableViewCell" customModule="Dance_Trix" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
@@ -602,7 +685,7 @@ Once you have completed the transaction, please let us know with the button belo
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="AYN-rK-5Sr">
-                                <rect key="frame" x="169.5" y="746" width="37" height="37"/>
+                                <rect key="frame" x="169" y="746" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </activityIndicatorView>
                         </subviews>
@@ -634,7 +717,7 @@ Once you have completed the transaction, please let us know with the button belo
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmW-M1-eKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1550" y="-319"/>
+            <point key="canvasLocation" x="-2276" y="-319"/>
         </scene>
         <!--Book a class-->
         <scene sceneID="brJ-s6-Ssp">
@@ -657,7 +740,7 @@ Once you have completed the transaction, please let us know with the button belo
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKf-UJ-2cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ihh-tw-aJT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1550" y="414"/>
+            <point key="canvasLocation" x="-2276" y="407"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pz5-0q-OFX">
@@ -677,7 +760,7 @@ Once you have completed the transaction, please let us know with the button belo
             </objects>
             <point key="canvasLocation" x="-1550" y="-1971"/>
         </scene>
-        <!--Order Uniforms-->
+        <!--Order uniforms-->
         <scene sceneID="zRD-PD-fR1">
             <objects>
                 <viewController id="xJI-t5-IHB" customClass="WebViewController" customModule="Dance_Trix" customModuleProvider="target" sceneMemberID="viewController">
@@ -708,7 +791,7 @@ Once you have completed the transaction, please let us know with the button belo
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Lco-td-ngW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Order Uniforms" id="nGU-Lk-9wx"/>
+                    <navigationItem key="navigationItem" title="Order uniforms" id="nGU-Lk-9wx"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Uniform Order Catalog"/>
                     </userDefinedRuntimeAttributes>

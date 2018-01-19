@@ -16,6 +16,8 @@ class HomeViewController: AnalyticsUIViewController {
     @IBOutlet
     var bookClassView: UIView!
     @IBOutlet
+    var importantDatesView: UIView!
+    @IBOutlet
     var calendarView: UIView!
     @IBOutlet
     var uniformView: UIView!
@@ -40,6 +42,7 @@ class HomeViewController: AnalyticsUIViewController {
     
     @objc private func hideMenuOptions() {
         self.stackView.removeArrangedSubview(self.bookClassView)
+        self.stackView.removeArrangedSubview(self.importantDatesView)
         self.stackView.removeArrangedSubview(self.calendarView)
         self.stackView.removeArrangedSubview(self.uniformView)
         self.stackView.removeArrangedSubview(self.paymentView)
@@ -47,6 +50,9 @@ class HomeViewController: AnalyticsUIViewController {
         
         if (Configuration.bookClassEnabled()) {
             self.stackView.addArrangedSubview(self.bookClassView)
+        }
+        if (Configuration.importantDatesEnabled()) {
+            self.stackView.addArrangedSubview(self.importantDatesView)
         }
         if (Configuration.calendarEnabled()) {
             self.stackView.addArrangedSubview(self.calendarView)

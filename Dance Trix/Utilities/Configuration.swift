@@ -67,6 +67,10 @@ class Configuration {
         return isTrue(getRemoteConfig("feature_book"))
     }
     
+    static func importantDatesEnabled() -> Bool {
+        return isTrue(getRemoteConfig("feature_important_dates"))
+    }
+    
     static func calendarEnabled() -> Bool {
         return isTrue(getRemoteConfig("feature_calendar"))
     }

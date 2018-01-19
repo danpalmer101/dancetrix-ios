@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		261C9039DA2C9CDD6CD0E02F /* Pods_Dance_Trix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */; };
 		28690BA29C22982BBF91A486 /* Pods_Dance_Trix_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAFC10EAB243549E5EAA1C6 /* Pods_Dance_Trix_Tests.framework */; };
+		A2698F052012A5B7005DF277 /* ImportantDatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2698F042012A5B7005DF277 /* ImportantDatesViewController.swift */; };
 		A600265F1F7AACF000DDC90F /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A600265E1F7AACF000DDC90F /* TextField.swift */; };
 		A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */; };
 		A60026631F7BB4D200DDC90F /* prepare-commit-msg in Resources */ = {isa = PBXBuildFile; fileRef = A60026621F7BB4D200DDC90F /* prepare-commit-msg */; };
@@ -112,6 +113,7 @@
 		42F763BA46788E7A70E0443A /* Pods-Dance Trix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix/Pods-Dance Trix.release.xcconfig"; sourceTree = "<group>"; };
 		7EAFC10EAB243549E5EAA1C6 /* Pods_Dance_Trix_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		939F18AC94B46B075CEA7EE3 /* Pods-Dance Trix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix/Pods-Dance Trix.debug.xcconfig"; sourceTree = "<group>"; };
+		A2698F042012A5B7005DF277 /* ImportantDatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantDatesViewController.swift; sourceTree = "<group>"; };
 		A600265E1F7AACF000DDC90F /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBookingViewController.swift; sourceTree = "<group>"; };
 		A60026621F7BB4D200DDC90F /* prepare-commit-msg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "prepare-commit-msg"; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				A6D23AD81F814B4400229DEC /* UniformOrderViewController.swift */,
 				A6BD4F2D1F803C8800D261D1 /* PaymentFormViewController.swift */,
 				A6BD4F281F7EE9BD00D261D1 /* WebViewController.swift */,
+				A2698F042012A5B7005DF277 /* ImportantDatesViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -838,6 +841,7 @@
 				A69ED4A61F82E5BD0005B845 /* FirebaseStorageClassService.swift in Sources */,
 				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,
 				A66EF18B1F863CFB00B8EDFE /* UniformGroup.swift in Sources */,
+				A2698F052012A5B7005DF277 /* ImportantDatesViewController.swift in Sources */,
 				A69ED4AA1F83BD6E0005B845 /* MockEmailService.swift in Sources */,
 				A6BD4F271F7E9AB600D261D1 /* Notification.swift in Sources */,
 				A688281C1F77094600D82322 /* TitleNavigationItem.swift in Sources */,

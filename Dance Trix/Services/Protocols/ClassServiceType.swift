@@ -20,4 +20,7 @@ protocol ClassServiceType {
     func getClassDescription(_ classDetails: Class,
                              successHandler: @escaping (String) -> Void,
                              errorHandler: @escaping (Error) -> Void)
+    
+    func getImportantDates(successHandler: @escaping ([(String, DateInterval)]) -> Void,
+                           errorHandler: @escaping (Error) -> Void)
 }
