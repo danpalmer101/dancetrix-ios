@@ -24,6 +24,7 @@ class EmailBookingService : BookingServiceType {
             to: Configuration.toEmailAddress(),
             templateVariables: [
                 "class": classDetails.name,
+                "classMenu": classDetails.path,
                 "dates": dates.map({ d -> Date in d.start }),
                 "name": name,
                 "email": email

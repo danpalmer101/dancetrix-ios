@@ -64,7 +64,7 @@ class ClassMenuParser : CsvParser {
     private static func parseFormat1(csvRow: [String]) -> ClassMenu? {
         // Create a single branch ClassMenu tree
         let name = trim(csvRow[1])
-        let menuPath = csvRow[2].components(separatedBy: "|").map { (s: String) -> String in return trim(s) }
+        var menuPath = csvRow[2].components(separatedBy: "|").map { (s: String) -> String in return trim(s) }
         let datesLocation = trim(csvRow[3])
         let descriptionLocation = trim(csvRow[4])
         let allowIndividualBookings = ["yes", "true", "1"].contains(trim(csvRow[5]).lowercased())
@@ -76,7 +76,7 @@ class ClassMenuParser : CsvParser {
                                  descriptionLocation: descriptionLocation,
                                  allowIndividualBookings: allowIndividualBookings)
         
-        var classMenu = ClassMenu(name: name,
+        var classMenu = ClassMenu(name: menuPath.popLast()!,
                                   classDetails: classDetails!)
         
         // Keep embedding class level in a parent
