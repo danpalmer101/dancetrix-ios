@@ -12,7 +12,8 @@ import Firebase
 
 class CalendarViewController : AnalyticsUIViewController, JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource, UITableViewDelegate, UITableViewDataSource {
     
-    private var dates = [Date : [(classDetails: Class, date: DateInterval)]]()
+    private var classDates = [Date : [(classDetails: Class, date: DateInterval)]]()
+    private var importantDates = [Date : [(String, DateInterval)]]()
     
     private var datesErrorDisplayed = false
     
@@ -29,6 +30,7 @@ class CalendarViewController : AnalyticsUIViewController, JTAppleCalendarViewDel
         self.updateTitle()
         
         self.loadClassDates()
+        self.loadImportantDates()
     }
     
     private func loadClassDates() {
@@ -118,16 +120,63 @@ class CalendarViewController : AnalyticsUIViewController, JTAppleCalendarViewDel
         // Append this class/date tuple to the map, with the key as the start of day
         let startOfDay = Calendar.current.startOfDay(for: classDate.date.start)
         
-        var existingDate = self.dates[startOfDay]
+        var existingDate = self.classDates[startOfDay]
         if (existingDate == nil) {
-            self.dates[startOfDay] = [classDate]
+            self.classDates[startOfDay] = [classDate]
         } else {
             existingDate!.append((classDate.classDetails, classDate.date))
-            self.dates[startOfDay] = existingDate?.sorted(by: {
+            self.classDates[startOfDay] = existingDate?.sorted(by: {
                 (a: (_: Class, date: DateInterval), b: (_: Class, date: DateInterval)) -> Bool in
                     return a.date.start < b.date.start
                 })
         }
+    }
+    
+    private func loadImportantDates() {
+        ServiceLocator.classService.getImportantDates(
+            successHandler: { (dates: [(String, DateInterval)]) in
+                DispatchQueue.main.async {
+                    // Add each date to the map
+                    dates.forEach({
+                        (date: (String, DateInterval)) in
+                            // Append this class/date tuple to the map, with the key as the start of day
+                            let startOfDay = Calendar.current.startOfDay(for: date.1.start)
+                            
+                            var existingDate = self.importantDates[startOfDay]
+                            if (existingDate == nil) {
+                                self.importantDates[startOfDay] = [date]
+                            } else {
+                                existingDate!.append(date)
+                                self.importantDates[startOfDay] = existingDate?.sorted(by: {
+                                    (a: (_: String, date: DateInterval), b: (_: String, date: DateInterval)) -> Bool in
+                                    return a.date.start < b.date.start
+                                })
+                            }
+                    })
+                    
+                    // Reload the calendar with the new date
+                    // (and ensure current selected dates remain selected after reload)
+                    let selectedDates = self.calendarView.selectedDates
+                    self.calendarView.reloadData(
+                        withanchor: self.calendarView.selectedDates.first,
+                        completionHandler: {
+                            self.tableView.reloadData()
+                            self.calendarView.selectDates(selectedDates)
+                    }
+                    )
+                }
+            },
+            errorHandler: { (error: Error) in
+                switch error {
+                case ClassesError.noImportantDates:
+                    // No message to user if no dates found
+                    log.warning("No important dates found")
+                    break
+                default:
+                    log.error(["An unexpected error occurred loading important dates", error])
+                }
+            }
+        )
     }
     
     // MARK: - JTAppleCalendarViewDelegate implementation
@@ -162,8 +211,9 @@ class CalendarViewController : AnalyticsUIViewController, JTAppleCalendarViewDel
         // Date
         calendarCell.dayLabel.text = String(Calendar.current.component(.day, from: date))
         
-        // Data indicator
-        calendarCell.indicator.isHidden = self.dates[date] == nil
+        // Data indicators
+        calendarCell.classIndicator.isHidden = self.classDates[date] == nil
+        calendarCell.importantIndicator.isHidden = self.importantDates[date] == nil
         
         return calendarCell
     }
@@ -200,23 +250,45 @@ class CalendarViewController : AnalyticsUIViewController, JTAppleCalendarViewDel
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selectedDate()?.count ?? 0
+        return (selectedImportantDates()?.count ?? 0) + (selectedClassDates()?.count ?? 0)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassCalendarEntry", for: indexPath)
+        let allSelectedImportantDates = selectedImportantDates()
         
-        let selected = selectedDate()![indexPath.row]
+        var cell : UITableViewCell
         
-        cell.textLabel?.text = selected.classDetails.name
-        cell.detailTextLabel?.text = selected.date.asTimeOnlyText()
+        // First indexes will be important dates, last indexes will be classes
+        if (indexPath.row < allSelectedImportantDates?.count ?? 0) {
+            cell = tableView.dequeueReusableCell(withIdentifier: "ImportantCalendarEntry", for: indexPath)
+            
+            let selectedImportantDate = allSelectedImportantDates![indexPath.row]
+            
+            cell.textLabel?.textColor = Theme.colorTint
+            cell.textLabel?.text = selectedImportantDate.desc
+            cell.detailTextLabel?.text = selectedImportantDate.date.asTimeOnlyText()
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "ClassCalendarEntry", for: indexPath)
+            
+            let selectedClassDate = selectedClassDates()![indexPath.row - (allSelectedImportantDates?.count ?? 0)]
         
+            cell.textLabel?.textColor = Theme.colorForeground
+            cell.textLabel?.text = selectedClassDate.classDetails.name
+            cell.detailTextLabel?.text = selectedClassDate.date.asTimeOnlyText()
+        }
         return cell
     }
     
-    private func selectedDate() -> [(classDetails: Class, date: DateInterval)]? {
+    private func selectedClassDates() -> [(classDetails: Class, date: DateInterval)]? {
         if let selectedDate = self.calendarView.selectedDates.first {
-            return self.dates[Calendar.current.startOfDay(for: selectedDate)]
+            return self.classDates[Calendar.current.startOfDay(for: selectedDate)]
+        } else {
+            return nil
+        }
+    }
+    private func selectedImportantDates() -> [(desc: String, date: DateInterval)]? {
+        if let selectedDate = self.calendarView.selectedDates.first {
+            return self.importantDates[Calendar.current.startOfDay(for: selectedDate)]
         } else {
             return nil
         }

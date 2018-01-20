@@ -13,6 +13,7 @@ class MockClassService: ClassServiceType {
     var classMenuCache: ClassMenu?
     var datesCache = [Class : [DateInterval]]()
     var descCache = [Class : String]()
+    var importantDatesCache: [(String, DateInterval)]?
     
     func getClassMenu(successHandler: @escaping (ClassMenu) -> Void,
                       errorHandler: @escaping (Error) -> Void) {
@@ -111,9 +112,32 @@ class MockClassService: ClassServiceType {
     
     func getImportantDates(successHandler: @escaping ([(String, DateInterval)]) -> Void,
                            errorHandler: @escaping (Error) -> Void) {
-        // TODO
-        
-        successHandler([("Test", DateInterval())])
+        DispatchQueue.global().async {
+            log.info("Mock important date retrieval")
+            
+            var dates = self.importantDatesCache
+            
+            if (dates == nil) {
+                sleep(1)
+                
+                log.debug("    Loading important dates")
+                
+                if let path = Bundle.main.path(forResource: "dates_important", ofType: "csv") {
+                    let csvString = try! String(contentsOfFile: path)
+                    dates = ImportantDatesParser.parse(csvString: csvString)
+                }
+                
+                self.importantDatesCache = dates
+            }
+            
+            if (dates == nil) {
+                log.warning("...Unable to load mock important dates")
+                errorHandler(ClassesError.noImportantDates)
+            } else {
+                log.info("...mock important dates retrieved")
+                successHandler(dates!)
+            }
+        }
     }
     
 }

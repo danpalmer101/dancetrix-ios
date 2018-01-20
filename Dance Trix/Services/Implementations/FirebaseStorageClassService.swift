@@ -96,9 +96,32 @@ class FirebaseStorageClassService : ClassServiceType {
     
     func getImportantDates(successHandler: @escaping ([(String, DateInterval)]) -> Void,
                            errorHandler: @escaping (Error) -> Void) {
-        // TODO
+        let csvName = "dates_important.csv"
+        let importantDatesCsv = Storage.storage().reference().child(csvName)
         
-        successHandler([("Test", DateInterval())])
+        log.info("Retrieving important dates")
+        
+        log.debug("    Downloading CSV from Firebase storage: \(importantDatesCsv)")
+        
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        importantDatesCsv.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                log.warning(["    An error occurred downloading the CSV file: \(importantDatesCsv)", error])
+                errorHandler(error)
+            } else {
+                log.debug("    Downloaded CSV from Firebase storage: \(importantDatesCsv)")
+                
+                let csvString = String(data: data!, encoding: String.Encoding.utf8)
+                
+                log.debug("    Parsing CSV: \(importantDatesCsv)")
+                let dates = ImportantDatesParser.parse(csvString: csvString!)
+                log.debug("    Parsed CSV: \(importantDatesCsv)")
+                
+                log.info("...retrieved important dates")
+                
+                successHandler(dates)
+            }
+        }
     }
     
 }

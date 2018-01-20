@@ -12,4 +12,5 @@ enum ClassesError: Error {
     case noClasses
     case noClassDates(classDetails: Class)
     case noClassDescription(classDetails: Class)
+    case noImportantDates
 }

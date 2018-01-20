@@ -11,15 +11,23 @@ import Foundation
 extension DateInterval {
     
     func asText() -> String {
-        return "\(asDateOnlyText()) (\(asTimeOnlyText()))"
+        if (duration > 0) {
+            return "\(asDateOnlyText()) (\(asTimeOnlyText()!))"
+        } else {
+            return asDateOnlyText()
+        }
     }
     
     func asDateOnlyText() -> String {
         return "\(dateText(date: start))"
     }
     
-    func asTimeOnlyText() -> String {
-        return "\(timeText(date: start)) to \(timeText(date: end))"
+    func asTimeOnlyText() -> String? {
+        if (duration > 0) {
+            return "\(timeText(date: start)) to \(timeText(date: end))"
+        } else {
+            return nil
+        }
     }
     
     private func dateText(date: Date) -> String {

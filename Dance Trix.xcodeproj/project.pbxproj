@@ -10,6 +10,8 @@
 		261C9039DA2C9CDD6CD0E02F /* Pods_Dance_Trix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */; };
 		28690BA29C22982BBF91A486 /* Pods_Dance_Trix_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAFC10EAB243549E5EAA1C6 /* Pods_Dance_Trix_Tests.framework */; };
 		A2698F052012A5B7005DF277 /* ImportantDatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2698F042012A5B7005DF277 /* ImportantDatesViewController.swift */; };
+		A2F11A362013C08D00B1A14D /* dates_important.csv in Resources */ = {isa = PBXBuildFile; fileRef = A2F11A352013C08D00B1A14D /* dates_important.csv */; };
+		A2F11A382013C18200B1A14D /* ImportantDatesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F11A372013C18200B1A14D /* ImportantDatesParser.swift */; };
 		A600265F1F7AACF000DDC90F /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A600265E1F7AACF000DDC90F /* TextField.swift */; };
 		A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */; };
 		A60026631F7BB4D200DDC90F /* prepare-commit-msg in Resources */ = {isa = PBXBuildFile; fileRef = A60026621F7BB4D200DDC90F /* prepare-commit-msg */; };
@@ -114,6 +116,8 @@
 		7EAFC10EAB243549E5EAA1C6 /* Pods_Dance_Trix_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		939F18AC94B46B075CEA7EE3 /* Pods-Dance Trix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix/Pods-Dance Trix.debug.xcconfig"; sourceTree = "<group>"; };
 		A2698F042012A5B7005DF277 /* ImportantDatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantDatesViewController.swift; sourceTree = "<group>"; };
+		A2F11A352013C08D00B1A14D /* dates_important.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dates_important.csv; sourceTree = "<group>"; };
+		A2F11A372013C18200B1A14D /* ImportantDatesParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantDatesParser.swift; sourceTree = "<group>"; };
 		A600265E1F7AACF000DDC90F /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBookingViewController.swift; sourceTree = "<group>"; };
 		A60026621F7BB4D200DDC90F /* prepare-commit-msg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "prepare-commit-msg"; sourceTree = "<group>"; };
@@ -326,6 +330,7 @@
 				A66EF1901F86647F00B8EDFE /* Preferences.swift */,
 				A68828131F75AB6200D82322 /* ClassMenuParser.swift */,
 				A69ED4971F82DE270005B845 /* ClassDatesParser.swift */,
+				A2F11A372013C18200B1A14D /* ImportantDatesParser.swift */,
 				A66EF1921F86678900B8EDFE /* CsvParser.swift */,
 				A608AD4A1FC4322300FE614C /* NotificationName.swift */,
 			);
@@ -343,6 +348,7 @@
 				A69ED4A11F82E3D00005B845 /* dates_summer_half_term_1_2018.csv */,
 				A69ED4A31F82E4020005B845 /* dates_summer_half_term_2_2018.csv */,
 				A69ED4CC1F8534810005B845 /* description_lorem_ipsum.txt */,
+				A2F11A352013C08D00B1A14D /* dates_important.csv */,
 			);
 			path = "Mock Data";
 			sourceTree = "<group>";
@@ -602,6 +608,7 @@
 				A6BA0F661F74E20C00FAF47E /* LaunchScreen.storyboard in Resources */,
 				A69ED4A01F82E3910005B845 /* dates_spring_half_term_2_2018.csv in Resources */,
 				A69ED4C11F83FF330005B845 /* class_booking_body_html.mustache in Resources */,
+				A2F11A362013C08D00B1A14D /* dates_important.csv in Resources */,
 				A69ED4CD1F8534810005B845 /* description_lorem_ipsum.txt in Resources */,
 				A69ED4C51F8528AD0005B845 /* uniform_order_subject.mustache in Resources */,
 				A6BA0F631F74E20C00FAF47E /* Assets.xcassets in Resources */,
@@ -802,6 +809,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A697F8711F7CF0AB00195246 /* CalendarViewController.swift in Sources */,
+				A2F11A382013C18200B1A14D /* ImportantDatesParser.swift in Sources */,
 				A6BD4F291F7EE9BD00D261D1 /* WebViewController.swift in Sources */,
 				A697F86E1F7C3D0E00195246 /* BookingError.swift in Sources */,
 				A66EF18D1F863D4300B8EDFE /* UniformItem.swift in Sources */,

@@ -40,7 +40,7 @@ class ImportantDatesViewController: AnalyticsUIViewController, UITableViewDelega
         
         cell.textLabel?.text = date?.0
         cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
-        cell.detailTextLabel?.text = selected ? date?.1.asTimeOnlyText() : date?.1.asDateOnlyText()
+        cell.detailTextLabel?.text = selected && date?.1.duration ?? 0 > 0 ? date?.1.asTimeOnlyText() : date?.1.asDateOnlyText()
         cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 15)
         cell.detailTextLabel?.textColor = Theme.colorTint
         cell.tag = indexPath.row
