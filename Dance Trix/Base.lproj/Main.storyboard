@@ -482,12 +482,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zLK-aR-EKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Twf-Ov-ZF5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-50" y="-319"/>
+            <point key="canvasLocation" x="734" y="-319"/>
         </scene>
         <!--Make a payment-->
         <scene sceneID="4mN-Vz-Jwe">
             <objects>
-                <viewController id="Syn-4R-O6g" customClass="AnalyticsUIViewController" customModule="Dance_Trix" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Syn-4R-O6g" customClass="PaymentDetailsViewController" customModule="Dance_Trix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IGU-WD-Lqy" customClass="BackgroundView" customModule="Dance_Trix" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -601,7 +601,7 @@ Once you have completed the transaction, please let us know with the button belo
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZ8-o2-ep4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="706" y="-1041"/>
+            <point key="canvasLocation" x="-50" y="-319"/>
         </scene>
         <!--Payment details-->
         <scene sceneID="6Ew-Bz-4pr">
@@ -624,7 +624,7 @@ Once you have completed the transaction, please let us know with the button belo
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIt-7o-Gzk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="nhq-bo-cF1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="706" y="-318"/>
+            <point key="canvasLocation" x="-50" y="403"/>
         </scene>
         <!--About us-->
         <scene sceneID="zXS-qh-vBO">
@@ -765,6 +765,7 @@ Once you have completed the transaction, please let us know with the button belo
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="ihh-tw-aJT" kind="unwind" identifier="unwindToHomeViewController" unwindAction="unwindToHomeViewControllerWithSegue:" id="rae-4b-SSE"/>
+                        <segue destination="Syn-4R-O6g" kind="show" identifier="MakePayment" id="h7u-xr-Sky"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKf-UJ-2cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -831,7 +832,7 @@ Once you have completed the transaction, please let us know with the button belo
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiF-4r-C86" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-50" y="-1041"/>
+            <point key="canvasLocation" x="734" y="-1041"/>
         </scene>
     </scenes>
     <resources>
@@ -839,4 +840,7 @@ Once you have completed the transaction, please let us know with the button belo
         <image name="Tick" width="33" height="33"/>
         <image name="Tint" width="1" height="1"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="h7u-xr-Sky"/>
+    </inferredMetricsTieBreakers>
 </document>

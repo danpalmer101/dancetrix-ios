@@ -129,7 +129,7 @@ class SubmitBookingViewController: SubmitFormViewController {
                         self.submittingIndicator.stopAnimating()
                         self.submitButton.setTitle(submitTitle, for: .normal)
                         
-                        self.performSegue(withIdentifier: "unwindToHomeViewController", sender: sender)
+                        self.performSegue(withIdentifier: "MakePayment", sender: sender)
                     }
                 },
                 errorHandler: { (error: Error) in

@@ -12,6 +12,7 @@
 		A2698F052012A5B7005DF277 /* ImportantDatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2698F042012A5B7005DF277 /* ImportantDatesViewController.swift */; };
 		A2F11A362013C08D00B1A14D /* dates_important.csv in Resources */ = {isa = PBXBuildFile; fileRef = A2F11A352013C08D00B1A14D /* dates_important.csv */; };
 		A2F11A382013C18200B1A14D /* ImportantDatesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F11A372013C18200B1A14D /* ImportantDatesParser.swift */; };
+		A2F11A3A201401EB00B1A14D /* PaymentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F11A39201401EB00B1A14D /* PaymentDetailsViewController.swift */; };
 		A600265F1F7AACF000DDC90F /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A600265E1F7AACF000DDC90F /* TextField.swift */; };
 		A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */; };
 		A60026631F7BB4D200DDC90F /* prepare-commit-msg in Resources */ = {isa = PBXBuildFile; fileRef = A60026621F7BB4D200DDC90F /* prepare-commit-msg */; };
@@ -118,6 +119,7 @@
 		A2698F042012A5B7005DF277 /* ImportantDatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantDatesViewController.swift; sourceTree = "<group>"; };
 		A2F11A352013C08D00B1A14D /* dates_important.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dates_important.csv; sourceTree = "<group>"; };
 		A2F11A372013C18200B1A14D /* ImportantDatesParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantDatesParser.swift; sourceTree = "<group>"; };
+		A2F11A39201401EB00B1A14D /* PaymentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsViewController.swift; sourceTree = "<group>"; };
 		A600265E1F7AACF000DDC90F /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A60026601F7B985300DDC90F /* SubmitBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBookingViewController.swift; sourceTree = "<group>"; };
 		A60026621F7BB4D200DDC90F /* prepare-commit-msg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "prepare-commit-msg"; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				A6BD4F2D1F803C8800D261D1 /* PaymentFormViewController.swift */,
 				A6BD4F281F7EE9BD00D261D1 /* WebViewController.swift */,
 				A2698F042012A5B7005DF277 /* ImportantDatesViewController.swift */,
+				A2F11A39201401EB00B1A14D /* PaymentDetailsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -833,6 +836,7 @@
 				A600265F1F7AACF000DDC90F /* TextField.swift in Sources */,
 				A68828141F75AB6200D82322 /* ClassMenuParser.swift in Sources */,
 				A68828341F78410B00D82322 /* DateInterval_Text.swift in Sources */,
+				A2F11A3A201401EB00B1A14D /* PaymentDetailsViewController.swift in Sources */,
 				A66EF1911F86647F00B8EDFE /* Preferences.swift in Sources */,
 				A697F8661F7C32BF00195246 /* MockClassService.swift in Sources */,
 				A69ED4C31F84D55B0005B845 /* EmailError.swift in Sources */,
