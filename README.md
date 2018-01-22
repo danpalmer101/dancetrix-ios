@@ -40,6 +40,12 @@ In _"Remote Config"_, enter the following parameters:
    | dancetrix_website | http://www.dancetrix.co.uk |
    | mailgun_domain | mg.dancetrix.co.uk |
    | mailgun_api_key | _enter the "Secret API Key" from step 3.2 in Mailgun set-up_  |
+   | feature_book | yes |
+   | feature_important_dates | yes |
+   | feature_calendar | yes |
+   | feature_payment | yes |
+   | feature_uniform | yes |
+   | feature_about | yes |
    
 The Firebase config file _"GoogleServices-Info.plist"_ included in the app is downloaded from the Firebase console in _"Project Settings"_.
 
@@ -78,6 +84,12 @@ The dates file has 4 columns:
 1. **Duration**: The duration of the class in minutes, e.g. 60
 
 The description files are a text file which just contain plain text describing the class. You can enter anything you like here, and it can be any length.
+
+### Setting up important dates
+
+The important dates displayed in the app are in the `dates_important.csv` file uploaded to the _"Storage"_ section of Firebase.
+
+// TODO
 
 ### Hiding features
 
