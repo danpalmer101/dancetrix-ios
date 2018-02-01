@@ -18,155 +18,166 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XnR-vk-ipu">
-                                <rect key="frame" x="0.0" y="89" width="375" height="540"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2p4-Rc-kDs">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ZY-cC-vzG">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XnR-vk-ipu">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="540"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jk-yD-vd8">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ZY-cC-vzG">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Sign up for classes"/>
-                                                <connections>
-                                                    <segue destination="BuF-jW-Oad" kind="show" identifier="Bookings" id="9Io-RD-CBk"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="bPx-0D-rTa" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
-                                                <rect key="frame" x="304" y="32" width="25" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                            </imageView>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jk-yD-vd8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="Sign up for classes"/>
+                                                        <connections>
+                                                            <segue destination="BuF-jW-Oad" kind="show" identifier="Bookings" id="9Io-RD-CBk"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="bPx-0D-rTa" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                                        <rect key="frame" x="304" y="32" width="25" height="25"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="90" id="IAM-bG-PoX"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XnV-7x-6it" userLabel="Important Dates View">
+                                                <rect key="frame" x="0.0" y="90" width="375" height="90"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKo-wt-Z5V">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="Important dates"/>
+                                                        <connections>
+                                                            <segue destination="n8Q-Oi-2Md" kind="show" identifier="ImportantDates" id="M1V-QM-ztg"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="Rxz-hJ-rzD" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                                        <rect key="frame" x="304" y="32" width="25" height="25"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="90" id="fqf-gS-XbQ"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGb-u5-SAR">
+                                                <rect key="frame" x="0.0" y="180" width="375" height="90"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TiO-tZ-ojp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="View our calendar"/>
+                                                        <connections>
+                                                            <segue destination="WvM-Tx-H4v" kind="show" identifier="ViewCalendar" id="rYN-d4-QLh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="ATT-VL-tQv" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                                        <rect key="frame" x="304" y="32" width="25" height="25"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="90" id="2wC-l3-5XE"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P97-L9-nHw">
+                                                <rect key="frame" x="0.0" y="270" width="375" height="90"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmp-WU-apa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="Order uniforms"/>
+                                                        <connections>
+                                                            <segue destination="xJI-t5-IHB" kind="show" identifier="OrderUniforms" id="aga-YX-2pn"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="Q8P-6O-zqS" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                                        <rect key="frame" x="304" y="32" width="25" height="25"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="90" id="kCl-VW-S9Z"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soV-ag-NkU">
+                                                <rect key="frame" x="0.0" y="360" width="375" height="90"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHo-7S-ZKC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="Make a payment"/>
+                                                        <connections>
+                                                            <segue destination="Syn-4R-O6g" kind="show" identifier="MakePayment" id="lnq-xV-MM9"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="RX1-KG-7Uh" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                                        <rect key="frame" x="304" y="32" width="25" height="25"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="90" id="W9R-tu-ccV"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihY-oA-ufe">
+                                                <rect key="frame" x="0.0" y="450" width="375" height="90"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sv-gf-DnJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="About us"/>
+                                                        <connections>
+                                                            <segue destination="A79-jF-C7R" kind="show" identifier="AboutUs" id="2n1-gS-dWn"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="iwV-tf-R2F" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                                        <rect key="frame" x="304" y="32" width="25" height="25"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="90" id="Qc5-ph-9Bs"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="90" id="IAM-bG-PoX"/>
+                                            <constraint firstItem="5ZY-cC-vzG" firstAttribute="width" secondItem="XnR-vk-ipu" secondAttribute="width" id="gzQ-MR-ujE"/>
                                         </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XnV-7x-6it" userLabel="Important Dates View">
-                                        <rect key="frame" x="0.0" y="90" width="375" height="90"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKo-wt-Z5V">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Important dates"/>
-                                                <connections>
-                                                    <segue destination="n8Q-Oi-2Md" kind="show" identifier="ImportantDates" id="M1V-QM-ztg"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="Rxz-hJ-rzD" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
-                                                <rect key="frame" x="304" y="32" width="25" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="90" id="fqf-gS-XbQ"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGb-u5-SAR">
-                                        <rect key="frame" x="0.0" y="180" width="375" height="90"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TiO-tZ-ojp">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="View our calendar"/>
-                                                <connections>
-                                                    <segue destination="WvM-Tx-H4v" kind="show" identifier="ViewCalendar" id="rYN-d4-QLh"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="ATT-VL-tQv" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
-                                                <rect key="frame" x="304" y="32" width="25" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="90" id="2wC-l3-5XE"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P97-L9-nHw">
-                                        <rect key="frame" x="0.0" y="270" width="375" height="90"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmp-WU-apa">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Order uniforms"/>
-                                                <connections>
-                                                    <segue destination="xJI-t5-IHB" kind="show" identifier="OrderUniforms" id="aga-YX-2pn"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="Q8P-6O-zqS" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
-                                                <rect key="frame" x="304" y="32" width="25" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="90" id="kCl-VW-S9Z"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soV-ag-NkU">
-                                        <rect key="frame" x="0.0" y="360" width="375" height="90"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHo-7S-ZKC">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Make a payment"/>
-                                                <connections>
-                                                    <segue destination="Syn-4R-O6g" kind="show" identifier="MakePayment" id="lnq-xV-MM9"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="RX1-KG-7Uh" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
-                                                <rect key="frame" x="304" y="32" width="25" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="90" id="W9R-tu-ccV"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihY-oA-ufe">
-                                        <rect key="frame" x="0.0" y="450" width="375" height="90"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sv-gf-DnJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="About us"/>
-                                                <connections>
-                                                    <segue destination="A79-jF-C7R" kind="show" identifier="AboutUs" id="2n1-gS-dWn"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="iwV-tf-R2F" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
-                                                <rect key="frame" x="304" y="32" width="25" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="90" id="Qc5-ph-9Bs"/>
-                                        </constraints>
-                                    </view>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="5ZY-cC-vzG" firstAttribute="width" secondItem="XnR-vk-ipu" secondAttribute="width" id="gzQ-MR-ujE"/>
+                                    <constraint firstAttribute="trailing" secondItem="XnR-vk-ipu" secondAttribute="trailing" id="Bi0-63-rSy"/>
+                                    <constraint firstAttribute="bottom" secondItem="XnR-vk-ipu" secondAttribute="bottom" id="FMJ-gj-B02"/>
+                                    <constraint firstItem="XnR-vk-ipu" firstAttribute="top" secondItem="2p4-Rc-kDs" secondAttribute="top" id="QA8-a4-vnZ"/>
+                                    <constraint firstItem="XnR-vk-ipu" firstAttribute="width" secondItem="2p4-Rc-kDs" secondAttribute="width" id="XkH-gg-1hM"/>
+                                    <constraint firstItem="XnR-vk-ipu" firstAttribute="leading" secondItem="2p4-Rc-kDs" secondAttribute="leading" id="xif-wP-RGP"/>
                                 </constraints>
-                            </stackView>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" shadowImage="Tint" translatesAutoresizingMaskIntoConstraints="NO" id="FEg-dl-NIM">
-                                <rect key="frame" x="0.0" y="763" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </scrollView>
+                            <tabBar contentMode="scaleToFill" shadowImage="Tint" translatesAutoresizingMaskIntoConstraints="NO" id="FEg-dl-NIM">
+                                <rect key="frame" x="0.0" y="729" width="375" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items/>
                             </tabBar>
@@ -186,10 +197,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ST2-eM-d2Z" firstAttribute="trailing" secondItem="XnR-vk-ipu" secondAttribute="trailing" id="3YI-YF-O8G"/>
-                            <constraint firstItem="XnR-vk-ipu" firstAttribute="top" secondItem="ST2-eM-d2Z" secondAttribute="top" constant="1" id="8fH-wc-0Ek"/>
-                            <constraint firstItem="XnR-vk-ipu" firstAttribute="width" secondItem="ST2-eM-d2Z" secondAttribute="width" id="fXF-n2-7hs"/>
-                            <constraint firstItem="XnR-vk-ipu" firstAttribute="leading" secondItem="ST2-eM-d2Z" secondAttribute="leading" id="uyB-I5-ODI"/>
+                            <constraint firstItem="FEg-dl-NIM" firstAttribute="leading" secondItem="ST2-eM-d2Z" secondAttribute="leading" id="IVf-rG-Kuk"/>
+                            <constraint firstItem="2p4-Rc-kDs" firstAttribute="trailing" secondItem="ST2-eM-d2Z" secondAttribute="trailing" id="N6h-cH-mI0"/>
+                            <constraint firstItem="FEg-dl-NIM" firstAttribute="top" secondItem="2p4-Rc-kDs" secondAttribute="bottom" id="a9P-4m-5IE"/>
+                            <constraint firstAttribute="bottom" secondItem="FEg-dl-NIM" secondAttribute="bottom" id="atF-ba-Y9X"/>
+                            <constraint firstItem="2p4-Rc-kDs" firstAttribute="leading" secondItem="ST2-eM-d2Z" secondAttribute="leading" id="c1Z-XD-gYp"/>
+                            <constraint firstItem="2p4-Rc-kDs" firstAttribute="top" secondItem="ST2-eM-d2Z" secondAttribute="top" id="diK-RJ-OV0"/>
+                            <constraint firstItem="FEg-dl-NIM" firstAttribute="trailing" secondItem="ST2-eM-d2Z" secondAttribute="trailing" id="lWx-2f-NPc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ST2-eM-d2Z"/>
                     </view>
