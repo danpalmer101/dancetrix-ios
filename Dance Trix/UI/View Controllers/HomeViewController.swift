@@ -14,6 +14,8 @@ class HomeViewController: AnalyticsUIViewController {
     var stackView: UIStackView!
     
     @IBOutlet
+    var registrationView: UIView!
+    @IBOutlet
     var bookClassView: UIView!
     @IBOutlet
     var importantDatesView: UIView!
@@ -41,6 +43,7 @@ class HomeViewController: AnalyticsUIViewController {
     }
     
     @objc private func hideMenuOptions() {
+        self.stackView.removeArrangedSubview(self.registrationView)
         self.stackView.removeArrangedSubview(self.bookClassView)
         self.stackView.removeArrangedSubview(self.importantDatesView)
         self.stackView.removeArrangedSubview(self.calendarView)
@@ -48,6 +51,9 @@ class HomeViewController: AnalyticsUIViewController {
         self.stackView.removeArrangedSubview(self.paymentView)
         self.stackView.removeArrangedSubview(self.aboutView)
         
+        if (Configuration.registrationEnabled()) {
+            self.stackView.addArrangedSubview(self.registrationView)
+        }
         if (Configuration.bookClassEnabled()) {
             self.stackView.addArrangedSubview(self.bookClassView)
         }

@@ -63,6 +63,10 @@ class Configuration {
     
     // Remove config - Feature
     
+    static func registrationEnabled() -> Bool {
+        return isTrue(getRemoteConfig("feature_registration"))
+    }
+    
     static func bookClassEnabled() -> Bool {
         return isTrue(getRemoteConfig("feature_book"))
     }

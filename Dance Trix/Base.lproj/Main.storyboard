@@ -22,10 +22,33 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XnR-vk-ipu">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="540"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="630"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ZY-cC-vzG">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJS-tM-8Df">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ef7-5o-ypY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="Register a dancer"/>
+                                                        <connections>
+                                                            <segue destination="wsr-Sz-2iX" kind="show" id="EOq-cS-MYZ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="KdO-yr-rE0" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                                        <rect key="frame" x="304" y="32" width="25" height="25"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="90" id="Gyt-iM-Iuf"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ZY-cC-vzG">
+                                                <rect key="frame" x="0.0" y="90" width="375" height="90"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jk-yD-vd8">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -48,7 +71,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XnV-7x-6it" userLabel="Important Dates View">
-                                                <rect key="frame" x="0.0" y="90" width="375" height="90"/>
+                                                <rect key="frame" x="0.0" y="180" width="375" height="90"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKo-wt-Z5V">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -71,7 +94,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGb-u5-SAR">
-                                                <rect key="frame" x="0.0" y="180" width="375" height="90"/>
+                                                <rect key="frame" x="0.0" y="270" width="375" height="90"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TiO-tZ-ojp">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -94,7 +117,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P97-L9-nHw">
-                                                <rect key="frame" x="0.0" y="270" width="375" height="90"/>
+                                                <rect key="frame" x="0.0" y="360" width="375" height="90"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmp-WU-apa">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -117,7 +140,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soV-ag-NkU">
-                                                <rect key="frame" x="0.0" y="360" width="375" height="90"/>
+                                                <rect key="frame" x="0.0" y="450" width="375" height="90"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHo-7S-ZKC">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -140,7 +163,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihY-oA-ufe">
-                                                <rect key="frame" x="0.0" y="450" width="375" height="90"/>
+                                                <rect key="frame" x="0.0" y="540" width="375" height="90"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sv-gf-DnJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -163,9 +186,6 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="5ZY-cC-vzG" firstAttribute="width" secondItem="XnR-vk-ipu" secondAttribute="width" id="gzQ-MR-ujE"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -217,6 +237,7 @@
                         <outlet property="calendarView" destination="xGb-u5-SAR" id="2TY-P6-BXS"/>
                         <outlet property="importantDatesView" destination="XnV-7x-6it" id="OYO-Hf-IiI"/>
                         <outlet property="paymentView" destination="soV-ag-NkU" id="NWL-qU-YDl"/>
+                        <outlet property="registrationView" destination="eJS-tM-8Df" id="Uao-2r-HIq"/>
                         <outlet property="stackView" destination="XnR-vk-ipu" id="SQg-FG-FHn"/>
                         <outlet property="uniformView" destination="P97-L9-nHw" id="DsK-op-r8s"/>
                     </connections>
@@ -224,6 +245,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeL-6w-nr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-50.399999999999999" y="-1971.4285714285716"/>
+        </scene>
+        <!--Register a dancer-->
+        <scene sceneID="LPB-lt-nyE">
+            <objects>
+                <viewController id="wsr-Sz-2iX" customClass="AnalyticsUIViewController" customModule="Dance_Trix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x9D-8k-hkJ" customClass="BackgroundView" customModule="Dance_Trix" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3sA-CL-uIE">
+                                <rect key="frame" x="0.0" y="88" width="375" height="180"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YwS-vC-FYZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smX-7a-H7n">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Adult"/>
+                                                <connections>
+                                                    <segue destination="BuO-sX-83X" kind="show" id="osv-0F-0PU"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="vyS-NC-YUo" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                                <rect key="frame" x="304" y="32" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="xkq-uM-4RC"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaI-Z6-nbd">
+                                        <rect key="frame" x="0.0" y="90" width="375" height="90"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAy-lb-kd0">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <inset key="titleEdgeInsets" minX="37" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Child"/>
+                                                <connections>
+                                                    <segue destination="KIB-2P-Qqc" kind="show" id="ekV-V7-dvm"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chevron Right" translatesAutoresizingMaskIntoConstraints="NO" id="88Q-rp-PvX" customClass="TintImageView" customModule="Dance_Trix" customModuleProvider="target">
+                                                <rect key="frame" x="304" y="32" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="h91-Kp-uNq"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3sA-CL-uIE" firstAttribute="width" secondItem="ZX6-cH-2ae" secondAttribute="width" id="FXN-ko-ser"/>
+                            <constraint firstItem="3sA-CL-uIE" firstAttribute="top" secondItem="ZX6-cH-2ae" secondAttribute="top" id="JNn-Fn-f3K"/>
+                            <constraint firstItem="3sA-CL-uIE" firstAttribute="leading" secondItem="ZX6-cH-2ae" secondAttribute="leading" id="LZF-Hd-xzS"/>
+                            <constraint firstItem="3sA-CL-uIE" firstAttribute="trailing" secondItem="ZX6-cH-2ae" secondAttribute="trailing" id="pQF-1h-ICG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZX6-cH-2ae"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Register a dancer" id="Eoa-BS-QOR"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Registration"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UKG-tu-EAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3922" y="-1041"/>
         </scene>
         <!--Sign up for classes-->
         <scene sceneID="Cxa-S2-ibL">
@@ -803,7 +902,7 @@ Once you have completed the transaction, please let us know with the button belo
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lok-kM-4HD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1550" y="-1971"/>
+            <point key="canvasLocation" x="-50" y="-2890"/>
         </scene>
         <!--Order uniforms-->
         <scene sceneID="zRD-PD-fR1">
@@ -847,6 +946,44 @@ Once you have completed the transaction, please let us know with the button belo
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiF-4r-C86" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="734" y="-1041"/>
+        </scene>
+        <!--Register adult-->
+        <scene sceneID="EkP-Kv-yjc">
+            <objects>
+                <viewController id="BuO-sX-83X" customClass="RegisterAdultViewController" customModule="Dance_Trix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t1j-BL-6u9" customClass="BackgroundView" customModule="Dance_Trix" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="XkH-gt-CLJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Register adult" id="cpY-lg-mUn"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Registration - Adult"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nYr-Pv-sGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4518" y="-319"/>
+        </scene>
+        <!--Register child-->
+        <scene sceneID="ElI-qt-xYL">
+            <objects>
+                <viewController id="KIB-2P-Qqc" customClass="RegisterChildViewController" customModule="Dance_Trix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E1v-vD-bpk" customClass="BackgroundView" customModule="Dance_Trix" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="vq7-mj-5cH"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Register child" id="gIz-bc-TY8"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Registration - Adult"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o1A-Sm-DVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3279" y="-319"/>
         </scene>
     </scenes>
     <resources>

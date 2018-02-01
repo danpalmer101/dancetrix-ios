@@ -99,6 +99,8 @@
 		A6D23AED1F8253EE00229DEC /* PaymentServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AEC1F8253EE00229DEC /* PaymentServiceType.swift */; };
 		A6D23AEF1F82540B00229DEC /* UniformServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AEE1F82540B00229DEC /* UniformServiceType.swift */; };
 		A6D23AF11F82544800229DEC /* MockBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AF01F82544800229DEC /* MockBookingService.swift */; };
+		BAC078B72023CAC500CC9C6D /* RegisterAdultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */; };
+		BAC078B92023CCAE00CC9C6D /* RegisterChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +209,8 @@
 		A6D23AEE1F82540B00229DEC /* UniformServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformServiceType.swift; sourceTree = "<group>"; };
 		A6D23AF01F82544800229DEC /* MockBookingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBookingService.swift; sourceTree = "<group>"; };
 		B7A5DCFF387C88D76065DD0C /* Pods-Dance Trix Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests.release.xcconfig"; sourceTree = "<group>"; };
+		BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAdultViewController.swift; sourceTree = "<group>"; };
+		BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterChildViewController.swift; sourceTree = "<group>"; };
 		D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -284,6 +288,8 @@
 				A6BD4F281F7EE9BD00D261D1 /* WebViewController.swift */,
 				A2698F042012A5B7005DF277 /* ImportantDatesViewController.swift */,
 				A2F11A39201401EB00B1A14D /* PaymentDetailsViewController.swift */,
+				BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */,
+				BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -839,6 +845,7 @@
 				A2F11A3A201401EB00B1A14D /* PaymentDetailsViewController.swift in Sources */,
 				A66EF1911F86647F00B8EDFE /* Preferences.swift in Sources */,
 				A697F8661F7C32BF00195246 /* MockClassService.swift in Sources */,
+				BAC078B72023CAC500CC9C6D /* RegisterAdultViewController.swift in Sources */,
 				A69ED4C31F84D55B0005B845 /* EmailError.swift in Sources */,
 				A68828321F783DC300D82322 /* ClassDatesViewController.swift in Sources */,
 				A697F86C1F7C3AD200195246 /* ClassesError.swift in Sources */,
@@ -854,6 +861,7 @@
 				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,
 				A66EF18B1F863CFB00B8EDFE /* UniformGroup.swift in Sources */,
 				A2698F052012A5B7005DF277 /* ImportantDatesViewController.swift in Sources */,
+				BAC078B92023CCAE00CC9C6D /* RegisterChildViewController.swift in Sources */,
 				A69ED4AA1F83BD6E0005B845 /* MockEmailService.swift in Sources */,
 				A6BD4F271F7E9AB600D261D1 /* Notification.swift in Sources */,
 				A688281C1F77094600D82322 /* TitleNavigationItem.swift in Sources */,
