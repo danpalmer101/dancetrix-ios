@@ -58,6 +58,9 @@ class Theme {
         UITextField.appearance().textColor = Theme.colorForeground
         UILabel.appearance().textColor = Theme.colorForeground
         
+        // Date
+        UIDatePicker.appearance().tintColor = Theme.colorForeground
+        
         // Eureka Forms
         TextRow.defaultCellSetup = { cell, row in
             cell.textField?.textColor = Theme.colorForeground
@@ -71,8 +74,18 @@ class Theme {
             cell.textView?.textColor = Theme.colorForeground
             cell.textLabel?.textColor = Theme.colorForeground
             cell.tintColor = Theme.colorTint
+            cell.detailTextLabel?.textColor = Theme.colorForeground
         }
         TextAreaRow.defaultCellUpdate = TextAreaRow.defaultCellSetup
+        
+        LabelRow.defaultCellSetup = { cell, row in
+            cell.textLabel?.textColor = Theme.colorForeground
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
+            cell.tintColor = Theme.colorTint
+            cell.detailTextLabel?.textColor = Theme.colorForeground
+        }
+        LabelRow.defaultCellUpdate = LabelRow.defaultCellSetup
         
         EmailRow.defaultCellSetup = { cell, row in
             cell.textField?.textColor = Theme.colorForeground
@@ -81,6 +94,14 @@ class Theme {
             row.placeholderColor = Theme.colorForegroundMid
         }
         EmailRow.defaultCellUpdate = EmailRow.defaultCellSetup
+        
+        PhoneRow.defaultCellSetup = { cell, row in
+            cell.textField?.textColor = Theme.colorForeground
+            cell.textLabel?.textColor = Theme.colorForeground
+            cell.tintColor = Theme.colorTint
+            row.placeholderColor = Theme.colorForegroundMid
+        }
+        PhoneRow.defaultCellUpdate = PhoneRow.defaultCellSetup
         
         DecimalRow.defaultCellSetup = { cell, row in
             cell.textField?.textColor = Theme.colorForeground
