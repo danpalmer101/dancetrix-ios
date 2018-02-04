@@ -18,6 +18,7 @@ class RegisterChildViewController: SubmitFormViewController {
         super.viewDidLoad()
         
         self.submitButton.setTitle("Next", for: .normal)
+        self.submitButton.addTarget(self, action: #selector(nextStep), for: .touchUpInside)
         
         self.form
             +++ Section("Student details")
@@ -156,13 +157,49 @@ class RegisterChildViewController: SubmitFormViewController {
     // MARK: - Actions
     
     private func checkCompleteForm() {
-        // TODO check form values
+        let nameRow = self.form.rowBy(tag: "name") as! TextRow
+        let studentNameRow = self.form.rowBy(tag: "student_name") as! TextRow
+        let emailRow = self.form.rowBy(tag: "email") as! EmailRow
+        let dateJoinedRow = self.form.rowBy(tag: "date_joined") as! DateRow
+        let dateOfBirthRow = self.form.rowBy(tag: "date_of_birth") as! DateRow
+        let phoneRow = self.form.rowBy(tag: "phone") as! PhoneRow
+        let addressRow = self.form.rowBy(tag: "address") as! TextAreaRow
+        let contactRow = self.form.rowBy(tag: "contact") as! PushRow<String>
         
-        self.submitButton.isEnabled = false
+        self.submitButton.isEnabled =
+            nameRow.value != nil && nameRow.isValid
+            && studentNameRow.value != nil && studentNameRow.isValid
+            && emailRow.value != nil && emailRow.isValid
+            && dateJoinedRow.value != nil && dateJoinedRow.isValid
+            && dateOfBirthRow.value != nil && dateOfBirthRow.isValid
+            && phoneRow.value != nil && phoneRow.isValid
+            && addressRow.value != nil && addressRow.isValid
+            && contactRow.value != nil && contactRow.isValid
     }
 
-    @objc private func next(sender: Any?) {
-        // Go to signature
+    @objc private func nextStep(sender: Any?) {
+        let name = (self.form.rowBy(tag: "name") as! TextRow).value!
+        let studentName = (self.form.rowBy(tag: "student_name") as! TextRow).value!
+        let email = (self.form.rowBy(tag: "email") as! EmailRow).value!
+        
+        // Store name/student/email as preferences for next time
+        Preferences.store(key: Preferences.KEY_NAME, value: name)
+        Preferences.store(key: Preferences.KEY_STUDENT_NAME, value: studentName)
+        Preferences.store(key: Preferences.KEY_EMAIL, value: email)
+        
+        let dateJoined = (self.form.rowBy(tag: "date_joined") as! DateRow).value!
+        let dateOfBirth = (self.form.rowBy(tag: "date_of_birth") as! DateRow).value!
+        let phone = (self.form.rowBy(tag: "phone") as! PhoneRow).value!
+        let address = (self.form.rowBy(tag: "address") as! TextAreaRow).value!
+        let medical = (self.form.rowBy(tag: "medical") as! TextAreaRow).value
+        let experience = (self.form.rowBy(tag: "experience") as! TextAreaRow).value
+        let hearAbout = (self.form.rowBy(tag: "hear_about") as! TextAreaRow).value
+        let contact = (self.form.rowBy(tag: "contact") as! PushRow<String>).value!
+        
+        // TODO collect data
+        
+        // Go to photo consent
+        self.performSegue(withIdentifier: "PhotoConsent", sender: sender)
     }
     
 }

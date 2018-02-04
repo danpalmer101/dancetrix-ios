@@ -862,6 +862,108 @@ Once you have completed the transaction, please let us know with the button belo
             </objects>
             <point key="canvasLocation" x="-2276" y="-319"/>
         </scene>
+        <!--Photos / Videos-->
+        <scene sceneID="jUm-Xo-ZMp">
+            <objects>
+                <viewController title="Photos / Videos" id="SFI-E2-7Td" customClass="PhotoConsentViewController" customModule="Dance_Trix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O2j-rd-1B2" customClass="BackgroundView" customModule="Dance_Trix" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fkW-ms-73K">
+                                <rect key="frame" x="16" y="88" width="343" height="426"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">From time to time, we take photos / videos of children attending Dance Trix classes and events and your child may feature in these, as a current or previous Dance Trix student. These may be used on our Facebook Page, Twitter, website and other promotional material. We will not include children’s full names with these.
+
+You may withdraw consent at </string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="any time for future photographs / videos">
+                                        <attributes>
+                                            <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=". However, retrospective withdrawal of consent for material already used is only possible for removal of ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="individual">
+                                        <attributes>
+                                            <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> photos / videos from our Facebook page, Twitter and website. We regret that this may not be possible from other promotional material or group photos / videos. In exceptional circumstances, where retrospective withdrawal of consent is necessary, we will endeavour to remove as many photos / videos as possible. However, in order to do so from material where your child features in a group, this may involve adaption to make children non-identifiable rather than removal.</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="W43-hc-74s" customClass="SubmitButton" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="16" y="698" width="343" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                <state key="normal">
+                                    <string key="title">I do not consent to the use of photos / videos of my child in line with the above and am happy for them to feature in photos or videos but would like them to be non-identifiable within these.</string>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RJO-9Q-Yof" customClass="SubmitButton" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="16" y="610" width="343" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                <state key="normal">
+                                    <string key="title">I do not consent to the use of photos / videos of my child in line with the above and do not want them to feature in any photos or videos taken.</string>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="d1G-ej-TCt" customClass="SubmitButton" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="16" y="522" width="343" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                <state key="normal" title="I consent to the use of photos / videos of my child in line with the above."/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="1nc-sw-lQC"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Photo Consent"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L03-vf-khj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3279.1999999999998" y="402.70935960591135"/>
+        </scene>
         <!--Book a class-->
         <scene sceneID="brJ-s6-Ssp">
             <objects>
@@ -980,6 +1082,9 @@ Once you have completed the transaction, please let us know with the button belo
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Registration - Adult"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="SFI-E2-7Td" kind="show" identifier="PhotoConsent" id="tUk-DF-vVE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o1A-Sm-DVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

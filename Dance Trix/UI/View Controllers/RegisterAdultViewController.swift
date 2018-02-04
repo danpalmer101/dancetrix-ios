@@ -18,6 +18,7 @@ class RegisterAdultViewController: SubmitFormViewController {
         super.viewDidLoad()
         
         self.submitButton.setTitle("Next", for: .normal)
+        self.submitButton.addTarget(self, action: #selector(nextStep), for: .touchUpInside)
         
         self.form
             +++ Section("Your details")
@@ -136,13 +137,23 @@ class RegisterAdultViewController: SubmitFormViewController {
             && emergencyPhoneRow.value != nil && emergencyPhoneRow.isValid
     }
 
-    @objc private func next(sender: Any?) {
+    @objc private func nextStep(sender: Any?) {
         let studentName = (self.form.rowBy(tag: "student_name") as! TextRow).value!
         let email = (self.form.rowBy(tag: "email") as! EmailRow).value!
         
         // Store student/email as preferences for next time
         Preferences.store(key: Preferences.KEY_STUDENT_NAME, value: studentName)
         Preferences.store(key: Preferences.KEY_EMAIL, value: email)
+        
+        let dateOfBirth = (self.form.rowBy(tag: "date_of_birth") as! DateRow).value!
+        let phone = (self.form.rowBy(tag: "phone") as! PhoneRow).value!
+        let address = (self.form.rowBy(tag: "address") as! TextAreaRow).value!
+        let emergencyName = (self.form.rowBy(tag: "emergency_name") as! TextRow).value!
+        let emergencyPhone = (self.form.rowBy(tag: "emergency_phone") as! PhoneRow).value!
+        let medical = (self.form.rowBy(tag: "medical") as! TextAreaRow).value
+        let experience = (self.form.rowBy(tag: "experience") as! TextAreaRow).value
+        
+        // TODO collect data
         
         // Go to signature
     }

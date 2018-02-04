@@ -99,6 +99,7 @@
 		A6D23AED1F8253EE00229DEC /* PaymentServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AEC1F8253EE00229DEC /* PaymentServiceType.swift */; };
 		A6D23AEF1F82540B00229DEC /* UniformServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AEE1F82540B00229DEC /* UniformServiceType.swift */; };
 		A6D23AF11F82544800229DEC /* MockBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AF01F82544800229DEC /* MockBookingService.swift */; };
+		BA099ED52027B33100989ACE /* PhotoConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA099ED42027B33100989ACE /* PhotoConsentViewController.swift */; };
 		BAC078B72023CAC500CC9C6D /* RegisterAdultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */; };
 		BAC078B92023CCAE00CC9C6D /* RegisterChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */; };
 /* End PBXBuildFile section */
@@ -209,6 +210,7 @@
 		A6D23AEE1F82540B00229DEC /* UniformServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformServiceType.swift; sourceTree = "<group>"; };
 		A6D23AF01F82544800229DEC /* MockBookingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBookingService.swift; sourceTree = "<group>"; };
 		B7A5DCFF387C88D76065DD0C /* Pods-Dance Trix Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests.release.xcconfig"; sourceTree = "<group>"; };
+		BA099ED42027B33100989ACE /* PhotoConsentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoConsentViewController.swift; sourceTree = "<group>"; };
 		BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAdultViewController.swift; sourceTree = "<group>"; };
 		BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterChildViewController.swift; sourceTree = "<group>"; };
 		D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,6 +292,7 @@
 				A2F11A39201401EB00B1A14D /* PaymentDetailsViewController.swift */,
 				BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */,
 				BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */,
+				BA099ED42027B33100989ACE /* PhotoConsentViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -817,6 +820,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA099ED52027B33100989ACE /* PhotoConsentViewController.swift in Sources */,
 				A697F8711F7CF0AB00195246 /* CalendarViewController.swift in Sources */,
 				A2F11A382013C18200B1A14D /* ImportantDatesParser.swift in Sources */,
 				A6BD4F291F7EE9BD00D261D1 /* WebViewController.swift in Sources */,
