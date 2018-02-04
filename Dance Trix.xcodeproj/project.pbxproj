@@ -100,6 +100,8 @@
 		A6D23AEF1F82540B00229DEC /* UniformServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AEE1F82540B00229DEC /* UniformServiceType.swift */; };
 		A6D23AF11F82544800229DEC /* MockBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D23AF01F82544800229DEC /* MockBookingService.swift */; };
 		BA099ED52027B33100989ACE /* PhotoConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA099ED42027B33100989ACE /* PhotoConsentViewController.swift */; };
+		BA099ED72027C4D700989ACE /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA099ED62027C4D700989ACE /* Registration.swift */; };
+		BA099ED92027C73700989ACE /* SignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA099ED82027C73700989ACE /* SignatureViewController.swift */; };
 		BAC078B72023CAC500CC9C6D /* RegisterAdultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */; };
 		BAC078B92023CCAE00CC9C6D /* RegisterChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */; };
 /* End PBXBuildFile section */
@@ -211,6 +213,8 @@
 		A6D23AF01F82544800229DEC /* MockBookingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBookingService.swift; sourceTree = "<group>"; };
 		B7A5DCFF387C88D76065DD0C /* Pods-Dance Trix Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BA099ED42027B33100989ACE /* PhotoConsentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoConsentViewController.swift; sourceTree = "<group>"; };
+		BA099ED62027C4D700989ACE /* Registration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
+		BA099ED82027C73700989ACE /* SignatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureViewController.swift; sourceTree = "<group>"; };
 		BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAdultViewController.swift; sourceTree = "<group>"; };
 		BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterChildViewController.swift; sourceTree = "<group>"; };
 		D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +297,7 @@
 				BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */,
 				BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */,
 				BA099ED42027B33100989ACE /* PhotoConsentViewController.swift */,
+				BA099ED82027C73700989ACE /* SignatureViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -435,6 +440,7 @@
 			children = (
 				A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */,
 				A6BA0F721F74FEB800FAF47E /* Class.swift */,
+				BA099ED62027C4D700989ACE /* Registration.swift */,
 				A68828331F78410B00D82322 /* DateInterval_Text.swift */,
 				A66EF18A1F863CFB00B8EDFE /* UniformGroup.swift */,
 				A66EF18C1F863D4300B8EDFE /* UniformItem.swift */,
@@ -865,10 +871,12 @@
 				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,
 				A66EF18B1F863CFB00B8EDFE /* UniformGroup.swift in Sources */,
 				A2698F052012A5B7005DF277 /* ImportantDatesViewController.swift in Sources */,
+				BA099ED92027C73700989ACE /* SignatureViewController.swift in Sources */,
 				BAC078B92023CCAE00CC9C6D /* RegisterChildViewController.swift in Sources */,
 				A69ED4AA1F83BD6E0005B845 /* MockEmailService.swift in Sources */,
 				A6BD4F271F7E9AB600D261D1 /* Notification.swift in Sources */,
 				A688281C1F77094600D82322 /* TitleNavigationItem.swift in Sources */,
+				BA099ED72027C4D700989ACE /* Registration.swift in Sources */,
 				A6D23ADD1F82504500229DEC /* MockUniformService.swift in Sources */,
 				A697F8681F7C38C600195246 /* ServiceLocator.swift in Sources */,
 				A69ED4C91F852A5C0005B845 /* EmailUniformService.swift in Sources */,

@@ -12,6 +12,8 @@ import Firebase
 
 class RegisterAdultViewController: SubmitFormViewController {
     
+    let registration = RegistrationAdult()
+    
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
@@ -145,17 +147,25 @@ class RegisterAdultViewController: SubmitFormViewController {
         Preferences.store(key: Preferences.KEY_STUDENT_NAME, value: studentName)
         Preferences.store(key: Preferences.KEY_EMAIL, value: email)
         
-        let dateOfBirth = (self.form.rowBy(tag: "date_of_birth") as! DateRow).value!
-        let phone = (self.form.rowBy(tag: "phone") as! PhoneRow).value!
-        let address = (self.form.rowBy(tag: "address") as! TextAreaRow).value!
-        let emergencyName = (self.form.rowBy(tag: "emergency_name") as! TextRow).value!
-        let emergencyPhone = (self.form.rowBy(tag: "emergency_phone") as! PhoneRow).value!
-        let medical = (self.form.rowBy(tag: "medical") as! TextAreaRow).value
-        let experience = (self.form.rowBy(tag: "experience") as! TextAreaRow).value
-        
-        // TODO collect data
+        registration.studentName = studentName
+        registration.email = email
+        registration.dateOfBirth = (self.form.rowBy(tag: "date_of_birth") as! DateRow).value!
+        registration.phone = (self.form.rowBy(tag: "phone") as! PhoneRow).value!
+        registration.address = (self.form.rowBy(tag: "address") as! TextAreaRow).value!
+        registration.emergencyName = (self.form.rowBy(tag: "emergency_name") as! TextRow).value!
+        registration.emergencyPhone = (self.form.rowBy(tag: "emergency_phone") as! PhoneRow).value!
+        registration.medical = (self.form.rowBy(tag: "medical") as! TextAreaRow).value
+        registration.experience = (self.form.rowBy(tag: "experience") as! TextAreaRow).value
         
         // Go to signature
+        self.performSegue(withIdentifier: "Signature", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "Signature") {
+            let signatureViewController = (segue.destination as! SignatureViewController)
+            signatureViewController.registrationAdult = registration
+        }
     }
     
 }

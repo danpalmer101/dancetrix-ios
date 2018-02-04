@@ -12,6 +12,8 @@ import Firebase
 
 class RegisterChildViewController: SubmitFormViewController {
     
+    let registration = RegistrationChild()
+    
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
@@ -187,19 +189,27 @@ class RegisterChildViewController: SubmitFormViewController {
         Preferences.store(key: Preferences.KEY_STUDENT_NAME, value: studentName)
         Preferences.store(key: Preferences.KEY_EMAIL, value: email)
         
-        let dateJoined = (self.form.rowBy(tag: "date_joined") as! DateRow).value!
-        let dateOfBirth = (self.form.rowBy(tag: "date_of_birth") as! DateRow).value!
-        let phone = (self.form.rowBy(tag: "phone") as! PhoneRow).value!
-        let address = (self.form.rowBy(tag: "address") as! TextAreaRow).value!
-        let medical = (self.form.rowBy(tag: "medical") as! TextAreaRow).value
-        let experience = (self.form.rowBy(tag: "experience") as! TextAreaRow).value
-        let hearAbout = (self.form.rowBy(tag: "hear_about") as! TextAreaRow).value
-        let contact = (self.form.rowBy(tag: "contact") as! PushRow<String>).value!
-        
-        // TODO collect data
+        registration.name = name
+        registration.studentName = studentName
+        registration.email = email
+        registration.dateJoined = (self.form.rowBy(tag: "date_joined") as! DateRow).value!
+        registration.dateOfBirth = (self.form.rowBy(tag: "date_of_birth") as! DateRow).value!
+        registration.phone = (self.form.rowBy(tag: "phone") as! PhoneRow).value!
+        registration.address = (self.form.rowBy(tag: "address") as! TextAreaRow).value!
+        registration.medical = (self.form.rowBy(tag: "medical") as! TextAreaRow).value
+        registration.experience = (self.form.rowBy(tag: "experience") as! TextAreaRow).value
+        registration.hearAbout = (self.form.rowBy(tag: "hear_about") as! TextAreaRow).value
+        registration.contact = (self.form.rowBy(tag: "contact") as! PushRow<String>).value!
         
         // Go to photo consent
         self.performSegue(withIdentifier: "PhotoConsent", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "PhotoConsent") {
+            let photoConsentViewController = (segue.destination as! PhotoConsentViewController)
+            photoConsentViewController.registration = registration
+        }
     }
     
 }

@@ -9,9 +9,18 @@
 import UIKit
 
 class PhotoConsentViewController: AnalyticsUIViewController {
+    
+    var registration: RegistrationChild?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "Signature") {
+            let signatureViewController = (segue.destination as! SignatureViewController)
+            signatureViewController.registrationChild = registration
+        }
     }
 
 }
