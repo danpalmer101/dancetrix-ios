@@ -102,6 +102,7 @@
 		BA099ED52027B33100989ACE /* PhotoConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA099ED42027B33100989ACE /* PhotoConsentViewController.swift */; };
 		BA099ED72027C4D700989ACE /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA099ED62027C4D700989ACE /* Registration.swift */; };
 		BA099ED92027C73700989ACE /* SignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA099ED82027C73700989ACE /* SignatureViewController.swift */; };
+		BA675572202D05EE00C47BA1 /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA675571202D05EE00C47BA1 /* SignatureView.swift */; };
 		BAC078B72023CAC500CC9C6D /* RegisterAdultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */; };
 		BAC078B92023CCAE00CC9C6D /* RegisterChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */; };
 /* End PBXBuildFile section */
@@ -215,6 +216,7 @@
 		BA099ED42027B33100989ACE /* PhotoConsentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoConsentViewController.swift; sourceTree = "<group>"; };
 		BA099ED62027C4D700989ACE /* Registration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		BA099ED82027C73700989ACE /* SignatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureViewController.swift; sourceTree = "<group>"; };
+		BA675571202D05EE00C47BA1 /* SignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
 		BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAdultViewController.swift; sourceTree = "<group>"; };
 		BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterChildViewController.swift; sourceTree = "<group>"; };
 		D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,6 +309,7 @@
 			children = (
 				A68828171F76FC7000D82322 /* LinkButton.swift */,
 				A68828371F78467900D82322 /* SubmitButton.swift */,
+				BA675571202D05EE00C47BA1 /* SignatureView.swift */,
 				A68828191F7706D200D82322 /* TintImageView.swift */,
 				A688281B1F77094600D82322 /* TitleNavigationItem.swift */,
 				A68828351F78445200D82322 /* TintSelectTableViewCell.swift */,
@@ -863,6 +866,7 @@
 				A6BD4F2E1F803C8800D261D1 /* PaymentFormViewController.swift in Sources */,
 				A6D23AF11F82544800229DEC /* MockBookingService.swift in Sources */,
 				A66EF1931F86678900B8EDFE /* CsvParser.swift in Sources */,
+				BA675572202D05EE00C47BA1 /* SignatureView.swift in Sources */,
 				A627D0791F79A733009097C1 /* BackgroundView.swift in Sources */,
 				A62CA2051F86772A0087D3D0 /* AnalyticsUIViewController.swift in Sources */,
 				A6D23AE91F82537D00229DEC /* BookingServiceType.swift in Sources */,

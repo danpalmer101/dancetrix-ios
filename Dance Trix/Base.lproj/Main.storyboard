@@ -935,6 +935,9 @@ You may withdraw consent at </string>
                                 <state key="normal">
                                     <string key="title">I do not consent to the use of photos / videos of my child in line with the above and am happy for them to feature in photos or videos but would like them to be non-identifiable within these.</string>
                                 </state>
+                                <connections>
+                                    <segue destination="Rba-CL-PT3" kind="show" identifier="Signature" id="4Cg-1N-9PA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RJO-9Q-Yof" customClass="SubmitButton" customModule="Dance_Trix" customModuleProvider="target">
                                 <rect key="frame" x="16" y="610" width="343" height="80"/>
@@ -944,6 +947,9 @@ You may withdraw consent at </string>
                                 <state key="normal">
                                     <string key="title">I do not consent to the use of photos / videos of my child in line with the above and do not want them to feature in any photos or videos taken.</string>
                                 </state>
+                                <connections>
+                                    <segue destination="Rba-CL-PT3" kind="show" identifier="Signature" id="lJi-uG-aLI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="d1G-ej-TCt" customClass="SubmitButton" customModule="Dance_Trix" customModuleProvider="target">
                                 <rect key="frame" x="16" y="522" width="343" height="80"/>
@@ -951,6 +957,9 @@ You may withdraw consent at </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                 <state key="normal" title="I consent to the use of photos / videos of my child in line with the above."/>
+                                <connections>
+                                    <segue destination="Rba-CL-PT3" kind="show" identifier="Signature" id="1Lp-JH-7RR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1063,6 +1072,9 @@ You may withdraw consent at </string>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Registration - Adult"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="xZI-ba-74e" kind="show" identifier="Signature" id="qnp-3j-jqW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYr-Pv-sGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1090,6 +1102,130 @@ You may withdraw consent at </string>
             </objects>
             <point key="canvasLocation" x="-3279" y="-319"/>
         </scene>
+        <!--Signature-->
+        <scene sceneID="Hui-Gp-QqK">
+            <objects>
+                <viewController id="Rba-CL-PT3" customClass="SignatureViewController" customModule="Dance_Trix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9wP-ia-siJ" customClass="BackgroundView" customModule="Dance_Trix" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQ1-Jl-GA5">
+                                <rect key="frame" x="16" y="88" width="343" height="454"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <mutableString key="content">Please sign in the box below to confirm that:
+
+a) You have completed this form with the most up to date information about your child and all necessary details required for Katie and Leanne in an emergency
+
+b) The information you have entered on this form is valid for the duration of your child's time as a student at Dance Trix and it is your responsibility to inform Katie or Leanne in writing (email or a new form) of any changes
+
+c) You understand that Dance Trix is a dance school run by Katie Rix and Leanne Curry (nee Tattoo) who are both Associate qualified with the Professional Teachers of Dance
+
+d) You agree to all terms and conditions in this form</mutableString>
+                                        <attributes>
+                                            <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5J-SA-eL9" customClass="SignatureView" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="16" y="550" width="343" height="165"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngH-9K-1Az" customClass="SubmitButton" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="16" y="723" width="343" height="55"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Register"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="uQj-Xg-S2S">
+                                <rect key="frame" x="16" y="550" width="343" height="165"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="TtK-m9-dPn"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Signature" id="GDA-1f-ch8"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Signature"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7y-HF-Kv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3279.1999999999998" y="1177.8325123152711"/>
+        </scene>
+        <!--Signature-->
+        <scene sceneID="wsd-jZ-rgq">
+            <objects>
+                <viewController id="xZI-ba-74e" customClass="SignatureViewController" customModule="Dance_Trix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tfb-ua-IsW" customClass="BackgroundView" customModule="Dance_Trix" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSZ-Pa-EMQ">
+                                <rect key="frame" x="16" y="88" width="343" height="454"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Please sign in the box below to confirm that:
+
+a) You have completed this form with the most up to date information and all necessary details required for Katie or Leanne, in an emergency.
+
+b) You agree that it is your responsibility to inform Katie Rix or Leanne Curry if any of this information changes.</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jld-AG-380" customClass="SignatureView" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="16" y="550" width="343" height="165"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fh7-Jp-4AO" customClass="SubmitButton" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="16" y="723" width="343" height="55"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Register"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="Ih3-ko-Czf">
+                                <rect key="frame" x="16" y="550" width="343" height="165"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="9v7-X1-Lb5"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Signature" id="WzG-jZ-jVJ"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Signature"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uTg-Zt-Yuf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4519.1999999999998" y="1177.8325123152711"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Chevron Right" width="33" height="33"/>
@@ -1097,6 +1233,7 @@ You may withdraw consent at </string>
         <image name="Tint" width="1" height="1"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="lJi-uG-aLI"/>
         <segue reference="h7u-xr-Sky"/>
     </inferredMetricsTieBreakers>
 </document>
