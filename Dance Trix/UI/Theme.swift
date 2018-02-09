@@ -48,7 +48,6 @@ class Theme {
         // Buttons
         LinkButton.appearance().tintColor = Theme.colorTint
         SubmitButton.appearance().backgroundColor = Theme.colorTint
-        AlternativeButton.appearance().backgroundColor = Theme.colorBackground
         
         // Images
         TintImageView.appearance().tintColor = Theme.colorTint

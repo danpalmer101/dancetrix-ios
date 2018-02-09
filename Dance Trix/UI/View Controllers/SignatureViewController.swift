@@ -39,6 +39,7 @@ class SignatureViewController: AnalyticsUIViewController, SwiftSignatureViewDele
     
     @IBAction func clear() {
         self.signatureView?.clear()
+        self.registerButton?.isEnabled = false
     }
 
 }
