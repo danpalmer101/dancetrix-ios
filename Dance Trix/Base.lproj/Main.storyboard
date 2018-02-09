@@ -201,29 +201,37 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items/>
                             </tabBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gu5-VG-RVf" customClass="LinkButton" customModule="Dance_Trix" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="763" width="376" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gu5-VG-RVf" customClass="LinkButton" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="729" width="375" height="83"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="visit dancetrix.co.uk"/>
                                 <connections>
                                     <action selector="visitWebsite" destination="SCD-zr-XIn" eventType="touchUpInside" id="Vsk-wc-cTX"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tint" translatesAutoresizingMaskIntoConstraints="NO" id="IEf-Fa-JEs">
-                                <rect key="frame" x="0.0" y="762" width="375" height="1"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tint" translatesAutoresizingMaskIntoConstraints="NO" id="IEf-Fa-JEs">
+                                <rect key="frame" x="0.0" y="729" width="375" height="1"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gu5-VG-RVf" firstAttribute="bottom" secondItem="FEg-dl-NIM" secondAttribute="bottom" id="6kN-u6-N9z"/>
+                            <constraint firstItem="IEf-Fa-JEs" firstAttribute="top" secondItem="FEg-dl-NIM" secondAttribute="top" id="BKT-Rv-GIK"/>
+                            <constraint firstItem="IEf-Fa-JEs" firstAttribute="leading" secondItem="FEg-dl-NIM" secondAttribute="leading" id="BVp-0d-xPw"/>
                             <constraint firstItem="FEg-dl-NIM" firstAttribute="leading" secondItem="ST2-eM-d2Z" secondAttribute="leading" id="IVf-rG-Kuk"/>
                             <constraint firstItem="2p4-Rc-kDs" firstAttribute="trailing" secondItem="ST2-eM-d2Z" secondAttribute="trailing" id="N6h-cH-mI0"/>
+                            <constraint firstItem="gu5-VG-RVf" firstAttribute="leading" secondItem="FEg-dl-NIM" secondAttribute="leading" id="Pfd-eS-aFV"/>
+                            <constraint firstItem="IEf-Fa-JEs" firstAttribute="width" secondItem="FEg-dl-NIM" secondAttribute="width" id="QDb-FS-qbU"/>
+                            <constraint firstItem="gu5-VG-RVf" firstAttribute="top" secondItem="FEg-dl-NIM" secondAttribute="top" id="XJp-hy-7gj"/>
                             <constraint firstItem="FEg-dl-NIM" firstAttribute="top" secondItem="2p4-Rc-kDs" secondAttribute="bottom" id="a9P-4m-5IE"/>
                             <constraint firstAttribute="bottom" secondItem="FEg-dl-NIM" secondAttribute="bottom" id="atF-ba-Y9X"/>
                             <constraint firstItem="2p4-Rc-kDs" firstAttribute="leading" secondItem="ST2-eM-d2Z" secondAttribute="leading" id="c1Z-XD-gYp"/>
                             <constraint firstItem="2p4-Rc-kDs" firstAttribute="top" secondItem="ST2-eM-d2Z" secondAttribute="top" id="diK-RJ-OV0"/>
+                            <constraint firstItem="gu5-VG-RVf" firstAttribute="height" secondItem="FEg-dl-NIM" secondAttribute="height" id="fRd-Gf-2BE"/>
+                            <constraint firstItem="gu5-VG-RVf" firstAttribute="width" secondItem="FEg-dl-NIM" secondAttribute="width" id="fpE-he-14S"/>
+                            <constraint firstItem="gu5-VG-RVf" firstAttribute="trailing" secondItem="FEg-dl-NIM" secondAttribute="trailing" id="hiW-A0-ZVp"/>
                             <constraint firstItem="FEg-dl-NIM" firstAttribute="trailing" secondItem="ST2-eM-d2Z" secondAttribute="trailing" id="lWx-2f-NPc"/>
+                            <constraint firstItem="IEf-Fa-JEs" firstAttribute="trailing" secondItem="FEg-dl-NIM" secondAttribute="trailing" id="yuy-BP-9yx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ST2-eM-d2Z"/>
                     </view>
@@ -1270,6 +1278,6 @@ b) You agree that it is your responsibility to inform Katie Rix or Leanne Curry 
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="lJi-uG-aLI"/>
-        <segue reference="h7u-xr-Sky"/>
+        <segue reference="lnq-xV-MM9"/>
     </inferredMetricsTieBreakers>
 </document>
