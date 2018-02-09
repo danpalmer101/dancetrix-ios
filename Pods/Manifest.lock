@@ -64,6 +64,7 @@ PODS:
   - SwiftMailgun (1.0.1):
     - Alamofire
     - ObjectMapper
+  - SwiftSignatureView (2.0.0)
   - SwiftyBeaver (1.4.2)
 
 DEPENDENCIES:
@@ -79,6 +80,7 @@ DEPENDENCIES:
   - ReachabilitySwift
   - RMessage (~> 2.1.5)
   - SwiftMailgun
+  - SwiftSignatureView
   - SwiftyBeaver (~> 1.4.2)
 
 SPEC CHECKSUMS:
@@ -105,8 +107,9 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   RMessage: 31d44bd26a8f353f987d2e7194f3e9ffb203cbf2
   SwiftMailgun: 311a28057e0ced2dbcfbc8320e4aa282511877d2
+  SwiftSignatureView: aacf6b4fb9108d79b76af1d3f23a50ff50a0a98f
   SwiftyBeaver: 91057725648ee4980308f1650af077d04b3654a0
 
-PODFILE CHECKSUM: 5d6d813241054256b3f60b89fa6a90c6e75bcc7d
+PODFILE CHECKSUM: 47c747097bf47d68b461ff61cebee60f794e6953
 
 COCOAPODS: 1.4.0

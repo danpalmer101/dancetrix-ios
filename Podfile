@@ -19,6 +19,7 @@ target 'Dance Trix' do
   pod 'SwiftMailgun'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'SwiftSignatureView'
   
   target 'Dance Trix Tests' do
     inherit! :search_paths

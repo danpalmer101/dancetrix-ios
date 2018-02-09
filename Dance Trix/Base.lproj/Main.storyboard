@@ -1139,12 +1139,26 @@ d) You agree to all terms and conditions in this form</mutableString>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5J-SA-eL9" customClass="SignatureView" customModule="Dance_Trix" customModuleProvider="target">
                                 <rect key="frame" x="16" y="550" width="343" height="165"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngH-9K-1Az" customClass="SubmitButton" customModule="Dance_Trix" customModuleProvider="target">
-                                <rect key="frame" x="16" y="723" width="343" height="55"/>
+                                <rect key="frame" x="84" y="723" width="275" height="55"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Register"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhC-2P-rmo" customClass="AlternativeButton" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="16" y="723" width="60" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clear" destination="Rba-CL-PT3" eventType="touchUpInside" id="yO5-E8-vGj"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="uQj-Xg-S2S">
                                 <rect key="frame" x="16" y="550" width="343" height="165"/>
@@ -1161,6 +1175,10 @@ d) You agree to all terms and conditions in this form</mutableString>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Signature"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="registerButton" destination="ngH-9K-1Az" id="qbH-ca-LeD"/>
+                        <outlet property="signatureView" destination="v5J-SA-eL9" id="TEc-wV-ON1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7y-HF-Kv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1196,16 +1214,6 @@ b) You agree that it is your responsibility to inform Katie Rix or Leanne Curry 
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jld-AG-380" customClass="SignatureView" customModule="Dance_Trix" customModuleProvider="target">
-                                <rect key="frame" x="16" y="550" width="343" height="165"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fh7-Jp-4AO" customClass="SubmitButton" customModule="Dance_Trix" customModuleProvider="target">
-                                <rect key="frame" x="16" y="723" width="343" height="55"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Register"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="Ih3-ko-Czf">
                                 <rect key="frame" x="16" y="550" width="343" height="165"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -1213,6 +1221,30 @@ b) You agree that it is your responsibility to inform Katie Rix or Leanne Curry 
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jld-AG-380" customClass="SignatureView" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="16" y="550" width="343" height="165"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fh7-Jp-4AO" customClass="SubmitButton" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="84" y="723" width="275" height="55"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Register"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6d8-gG-tlX" customClass="AlternativeButton" customModule="Dance_Trix" customModuleProvider="target">
+                                <rect key="frame" x="16" y="723" width="60" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clear" destination="xZI-ba-74e" eventType="touchUpInside" id="qTh-hA-dNf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="9v7-X1-Lb5"/>
@@ -1221,6 +1253,10 @@ b) You agree that it is your responsibility to inform Katie Rix or Leanne Curry 
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="screenName" value="Signature"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="registerButton" destination="Fh7-Jp-4AO" id="zbP-Am-cFn"/>
+                        <outlet property="signatureView" destination="Jld-AG-380" id="0mv-gn-ubi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTg-Zt-Yuf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

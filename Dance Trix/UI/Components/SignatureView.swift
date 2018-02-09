@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwiftSignatureView
 
-class SignatureView: UIView {
+class SignatureView: SwiftSignatureView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

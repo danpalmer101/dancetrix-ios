@@ -102,6 +102,7 @@
 		BA099ED52027B33100989ACE /* PhotoConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA099ED42027B33100989ACE /* PhotoConsentViewController.swift */; };
 		BA099ED72027C4D700989ACE /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA099ED62027C4D700989ACE /* Registration.swift */; };
 		BA099ED92027C73700989ACE /* SignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA099ED82027C73700989ACE /* SignatureViewController.swift */; };
+		BA34CF98202DA23400ECF925 /* AlternativeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34CF97202DA23400ECF925 /* AlternativeButton.swift */; };
 		BA675572202D05EE00C47BA1 /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA675571202D05EE00C47BA1 /* SignatureView.swift */; };
 		BAC078B72023CAC500CC9C6D /* RegisterAdultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */; };
 		BAC078B92023CCAE00CC9C6D /* RegisterChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */; };
@@ -216,6 +217,8 @@
 		BA099ED42027B33100989ACE /* PhotoConsentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoConsentViewController.swift; sourceTree = "<group>"; };
 		BA099ED62027C4D700989ACE /* Registration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		BA099ED82027C73700989ACE /* SignatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureViewController.swift; sourceTree = "<group>"; };
+		BA34CF95202D0ECA00ECF925 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		BA34CF97202DA23400ECF925 /* AlternativeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlternativeButton.swift; sourceTree = "<group>"; };
 		BA675571202D05EE00C47BA1 /* SignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
 		BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAdultViewController.swift; sourceTree = "<group>"; };
 		BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterChildViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +248,7 @@
 		A08054D158965EBACC42A8E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA34CF95202D0ECA00ECF925 /* OpenGLES.framework */,
 				D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */,
 				7EAFC10EAB243549E5EAA1C6 /* Pods_Dance_Trix_Tests.framework */,
 			);
@@ -308,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				A68828171F76FC7000D82322 /* LinkButton.swift */,
+				BA34CF97202DA23400ECF925 /* AlternativeButton.swift */,
 				A68828371F78467900D82322 /* SubmitButton.swift */,
 				BA675571202D05EE00C47BA1 /* SignatureView.swift */,
 				A68828191F7706D200D82322 /* TintImageView.swift */,
@@ -738,6 +743,7 @@
 				"${BUILT_PRODUCTS_DIR}/RMessage/RMessage.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMailgun/SwiftMailgun.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSignatureView/SwiftSignatureView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -756,6 +762,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMessage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMailgun.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSignatureView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -874,6 +881,7 @@
 				A69ED4A61F82E5BD0005B845 /* FirebaseStorageClassService.swift in Sources */,
 				A6BA0F711F74FE4C00FAF47E /* ClassMenu.swift in Sources */,
 				A66EF18B1F863CFB00B8EDFE /* UniformGroup.swift in Sources */,
+				BA34CF98202DA23400ECF925 /* AlternativeButton.swift in Sources */,
 				A2698F052012A5B7005DF277 /* ImportantDatesViewController.swift in Sources */,
 				BA099ED92027C73700989ACE /* SignatureViewController.swift in Sources */,
 				BAC078B92023CCAE00CC9C6D /* RegisterChildViewController.swift in Sources */,
