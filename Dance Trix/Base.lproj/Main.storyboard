@@ -1124,7 +1124,7 @@ You may withdraw consent at </string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <mutableString key="content">Please sign in the box below to confirm that:
+                                        <string key="content">Please sign in the box below to confirm that:
 
 a) You have completed this form with the most up to date information about your child and all necessary details required for Katie and Leanne in an emergency
 
@@ -1132,7 +1132,7 @@ b) The information you have entered on this form is valid for the duration of yo
 
 c) You understand that Dance Trix is a dance school run by Katie Rix and Leanne Curry (nee Tattoo) who are both Associate qualified with the Professional Teachers of Dance
 
-d) You agree to all terms and conditions in this form</mutableString>
+d) You agree to all terms and conditions in this form</string>
                                         <attributes>
                                             <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
@@ -1158,6 +1158,9 @@ d) You agree to all terms and conditions in this form</mutableString>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="registerWithSender:" destination="Rba-CL-PT3" eventType="touchUpInside" id="bxy-9I-w07"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhC-2P-rmo">
                                 <rect key="frame" x="16" y="723" width="60" height="55"/>
@@ -1186,9 +1189,11 @@ d) You agree to all terms and conditions in this form</mutableString>
                     <connections>
                         <outlet property="registerButton" destination="ngH-9K-1Az" id="qbH-ca-LeD"/>
                         <outlet property="signatureView" destination="v5J-SA-eL9" id="TEc-wV-ON1"/>
+                        <segue destination="Ocn-Vo-CpS" kind="unwind" identifier="unwindToHomeViewController" unwindAction="unwindToHomeViewControllerWithSegue:" id="L58-FP-DzB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7y-HF-Kv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ocn-Vo-CpS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-3279.1999999999998" y="1177.8325123152711"/>
         </scene>
@@ -1243,6 +1248,9 @@ b) You agree that it is your responsibility to inform Katie Rix or Leanne Curry 
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="registerWithSender:" destination="xZI-ba-74e" eventType="touchUpInside" id="QQ9-UK-WWN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6d8-gG-tlX">
                                 <rect key="frame" x="16" y="723" width="60" height="55"/>
@@ -1264,9 +1272,11 @@ b) You agree that it is your responsibility to inform Katie Rix or Leanne Curry 
                     <connections>
                         <outlet property="registerButton" destination="Fh7-Jp-4AO" id="zbP-Am-cFn"/>
                         <outlet property="signatureView" destination="Jld-AG-380" id="0mv-gn-ubi"/>
+                        <segue destination="ST0-tJ-kse" kind="unwind" identifier="unwindToHomeViewController" unwindAction="unwindToHomeViewControllerWithSegue:" id="lqe-LT-oz9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTg-Zt-Yuf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ST0-tJ-kse" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-4519.1999999999998" y="1177.8325123152711"/>
         </scene>

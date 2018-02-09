@@ -12,7 +12,7 @@ import SwiftSignatureView
 class SignatureViewController: AnalyticsUIViewController, SwiftSignatureViewDelegate {
     
     @IBOutlet var signatureView : SignatureView?
-    @IBOutlet var registerButton : UIButton?
+    @IBOutlet var registerButton : SubmitButton?
     
     var registrationAdult: RegistrationAdult?
     var registrationChild: RegistrationChild?
@@ -27,6 +27,8 @@ class SignatureViewController: AnalyticsUIViewController, SwiftSignatureViewDele
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.registerButton!.overlayActivityIndicator()
     }
     
     func swiftSignatureViewDidTapInside(_ view: SwiftSignatureView) {
@@ -40,6 +42,31 @@ class SignatureViewController: AnalyticsUIViewController, SwiftSignatureViewDele
     @IBAction func clear() {
         self.signatureView?.clear()
         self.registerButton?.isEnabled = false
+    }
+    
+    @IBAction func register(sender: Any?) {
+        let registerTitle = self.registerButton!.title(for: .normal)
+        
+        self.registerButton!.setTitle("", for: .normal)
+        self.registerButton!.activityIndicator?.startAnimating()
+        self.registerButton!.isEnabled = false
+        
+        DispatchQueue.global().async {
+            // TODO
+            
+            Notification.show(
+                title: "Success",
+                subtitle: "Thankyou for registering!",
+                type: NotificationType.success)
+            
+            DispatchQueue.main.async {
+                self.registerButton!.isEnabled = true
+                self.registerButton!.activityIndicator?.stopAnimating()
+                self.registerButton!.setTitle(registerTitle, for: .normal)
+                
+                self.performSegue(withIdentifier: "unwindToHomeViewController", sender: sender)
+            }
+        }
     }
 
 }

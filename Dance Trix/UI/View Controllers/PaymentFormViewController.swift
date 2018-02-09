@@ -207,7 +207,7 @@ class PaymentFormViewController: SubmitFormViewController {
         let submitTitle = self.submitButton.title(for: .normal)
         
         self.submitButton.setTitle("", for: .normal)
-        self.submittingIndicator.startAnimating()
+        self.submitButton.activityIndicator?.startAnimating()
         self.submitButton.isEnabled = false
         
         DispatchQueue.global().async {
@@ -228,7 +228,7 @@ class PaymentFormViewController: SubmitFormViewController {
                     
                     DispatchQueue.main.async {
                         self.submitButton.isEnabled = true
-                        self.submittingIndicator.stopAnimating()
+                        self.submitButton.activityIndicator?.stopAnimating()
                         self.submitButton.setTitle(submitTitle, for: .normal)
                         
                         self.performSegue(withIdentifier: "unwindToHomeViewController", sender: sender)
@@ -244,7 +244,7 @@ class PaymentFormViewController: SubmitFormViewController {
                     
                     DispatchQueue.main.async {
                         self.submitButton.isEnabled = true
-                        self.submittingIndicator.stopAnimating()
+                        self.submitButton.activityIndicator?.stopAnimating()
                         self.submitButton.setTitle(submitTitle, for: .normal)
                     }
             })
