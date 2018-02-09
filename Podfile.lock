@@ -1,9 +1,9 @@
 PODS:
   - Alamofire (4.5.1)
-  - Crashlytics (3.9.0):
-    - Fabric (~> 1.7.0)
+  - Crashlytics (3.10.0):
+    - Fabric (~> 1.7.3)
   - Eureka (4.0.1)
-  - Fabric (1.7.0)
+  - Fabric (1.7.3)
   - Firebase/Core (4.3.0):
     - FirebaseAnalytics (= 4.0.4)
     - FirebaseCore (= 4.0.8)
@@ -68,7 +68,7 @@ PODS:
   - SwiftyBeaver (1.4.2)
 
 DEPENDENCIES:
-  - Crashlytics
+  - Crashlytics (~> 3.10.0)
   - Eureka (~> 4.0.0)
   - Fabric
   - Firebase/Core
@@ -85,9 +85,9 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  Crashlytics: 64aad5dd97249dd3ff94b979fea140144590cdd3
+  Crashlytics: a989ef242b66605577a425733797f810bd2725eb
   Eureka: c8bd5cc07143b6f66268c208d28a246c99b41955
-  Fabric: e6be012366472553807dada21243c5ab8d904151
+  Fabric: bb495bb9a7a7677c6d03a1f8b83d95bc49b47e41
   Firebase: 83283761a1ef6dc9846e03d08059f51421afbd65
   FirebaseAnalytics: 722b53c7b32bfc7806b06e0093a2f5180d4f2c5a
   FirebaseCore: 69b1a5ac5f857ba6d5fd9d5fe794f4786dd5e579
