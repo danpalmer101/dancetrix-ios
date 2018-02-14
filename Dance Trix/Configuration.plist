@@ -4,6 +4,8 @@
 <dict>
 	<key>email_address_payment_from</key>
 	<string>Dance Trix Payments &lt;payments@dancetrix.co.uk&gt;</string>
+	<key>email_address_registration_from</key>
+	<string>Dance Trix Registrations &lt;registrations@dancetrix.co.uk&gt;</string>
 	<key>email_address_booking_from</key>
 	<string>Dance Trix Bookings &lt;bookings@dancetrix.co.uk&gt;</string>
 	<key>email_address_uniform_from</key>
@@ -27,6 +29,10 @@
 	<key>feature_uniform</key>
 	<string>true</string>
 	<key>feature_about</key>
+	<string>true</string>
+	<key>feature_important_dates</key>
+	<string>true</string>
+	<key>feature_registration</key>
 	<string>true</string>
 </dict>
 </plist>

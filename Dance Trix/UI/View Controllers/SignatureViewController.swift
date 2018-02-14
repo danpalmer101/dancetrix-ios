@@ -52,19 +52,48 @@ class SignatureViewController: AnalyticsUIViewController, SwiftSignatureViewDele
         self.registerButton!.isEnabled = false
         
         DispatchQueue.global().async {
-            // TODO
-            
-            Notification.show(
-                title: "Success",
-                subtitle: "Thankyou for registering!",
-                type: NotificationType.success)
-            
-            DispatchQueue.main.async {
-                self.registerButton!.isEnabled = true
-                self.registerButton!.activityIndicator?.stopAnimating()
-                self.registerButton!.setTitle(registerTitle, for: .normal)
+            let successHandler = {
+                Notification.show(
+                    title: "Success",
+                    subtitle: "Thankyou for registering!",
+                    type: NotificationType.success)
                 
-                self.performSegue(withIdentifier: "unwindToHomeViewController", sender: sender)
+                DispatchQueue.main.async {
+                    self.registerButton!.isEnabled = true
+                    self.registerButton!.activityIndicator?.stopAnimating()
+                    self.registerButton!.setTitle(registerTitle, for: .normal)
+                    
+                    self.performSegue(withIdentifier: "unwindToHomeViewController", sender: sender)
+                }
+            }
+            
+            let errorHandler = { (error : Error) in
+                log.error(["An unexpected error occurred submitting order", error])
+                
+                Notification.show(
+                    title: "Error",
+                    subtitle: "An unexpected error submitting your registration, please try again later.",
+                    type: NotificationType.error)
+                
+                DispatchQueue.main.async {
+                    self.registerButton!.isEnabled = true
+                    self.registerButton!.activityIndicator?.stopAnimating()
+                    self.registerButton!.setTitle(registerTitle, for: .normal)
+                }
+            }
+            
+            if (self.registrationAdult != nil) {
+                ServiceLocator.registrationService.registerAdult(
+                    registration: self.registrationAdult!,
+                    successHandler: successHandler,
+                    errorHandler: errorHandler)
+            }
+            
+            if (self.registrationChild != nil) {
+                ServiceLocator.registrationService.registerChild(
+                    registration: self.registrationChild!,
+                    successHandler: successHandler,
+                    errorHandler: errorHandler)
             }
         }
     }

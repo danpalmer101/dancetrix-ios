@@ -27,6 +27,10 @@ class Configuration {
     
     // Remote config - Emails
     
+    static func fromRegistrationEmailAddress() -> String {
+        return getRemoteConfig("email_address_registration_from")
+    }
+    
     static func fromPaymentEmailAddress() -> String {
         return getRemoteConfig("email_address_payment_from")
     }

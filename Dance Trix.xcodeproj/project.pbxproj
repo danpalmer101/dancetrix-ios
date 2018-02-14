@@ -102,6 +102,9 @@
 		BA099ED52027B33100989ACE /* PhotoConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA099ED42027B33100989ACE /* PhotoConsentViewController.swift */; };
 		BA099ED72027C4D700989ACE /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA099ED62027C4D700989ACE /* Registration.swift */; };
 		BA099ED92027C73700989ACE /* SignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA099ED82027C73700989ACE /* SignatureViewController.swift */; };
+		BA34CF9A2034857500ECF925 /* RegistrationServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34CF992034857500ECF925 /* RegistrationServiceType.swift */; };
+		BA34CF9C2034872800ECF925 /* MockRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34CF9B2034872800ECF925 /* MockRegistrationService.swift */; };
+		BA34CF9E203488F800ECF925 /* EmailRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34CF9D203488F800ECF925 /* EmailRegistrationService.swift */; };
 		BA675572202D05EE00C47BA1 /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA675571202D05EE00C47BA1 /* SignatureView.swift */; };
 		BAC078B72023CAC500CC9C6D /* RegisterAdultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */; };
 		BAC078B92023CCAE00CC9C6D /* RegisterChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */; };
@@ -217,6 +220,9 @@
 		BA099ED62027C4D700989ACE /* Registration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		BA099ED82027C73700989ACE /* SignatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureViewController.swift; sourceTree = "<group>"; };
 		BA34CF95202D0ECA00ECF925 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		BA34CF992034857500ECF925 /* RegistrationServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationServiceType.swift; sourceTree = "<group>"; };
+		BA34CF9B2034872800ECF925 /* MockRegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRegistrationService.swift; sourceTree = "<group>"; };
+		BA34CF9D203488F800ECF925 /* EmailRegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationService.swift; sourceTree = "<group>"; };
 		BA675571202D05EE00C47BA1 /* SignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
 		BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAdultViewController.swift; sourceTree = "<group>"; };
 		BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterChildViewController.swift; sourceTree = "<group>"; };
@@ -464,6 +470,7 @@
 		A6D23AE21F82530100229DEC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				BA34CF992034857500ECF925 /* RegistrationServiceType.swift */,
 				A6D23AE81F82537D00229DEC /* BookingServiceType.swift */,
 				A6D23AEA1F8253DC00229DEC /* ClassServiceType.swift */,
 				A6D23AEC1F8253EE00229DEC /* PaymentServiceType.swift */,
@@ -476,6 +483,7 @@
 		A6D23AE31F82530600229DEC /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				BA34CF9B2034872800ECF925 /* MockRegistrationService.swift */,
 				A6D23AF01F82544800229DEC /* MockBookingService.swift */,
 				A697F8651F7C32BF00195246 /* MockClassService.swift */,
 				A6D23AD61F813B5700229DEC /* MockPaymentService.swift */,
@@ -490,6 +498,7 @@
 			children = (
 				A69ED4A51F82E5BD0005B845 /* FirebaseStorageClassService.swift */,
 				A69ED4AB1F83BDCB0005B845 /* MailgunEmailService.swift */,
+				BA34CF9D203488F800ECF925 /* EmailRegistrationService.swift */,
 				A69ED4BA1F83FDC60005B845 /* EmailBookingService.swift */,
 				A69ED4B61F83E79F0005B845 /* EmailPaymentService.swift */,
 				A69ED4C81F852A5C0005B845 /* EmailUniformService.swift */,
@@ -869,8 +878,10 @@
 				A68828121F756F0600D82322 /* Theme.swift in Sources */,
 				A6BD4F2E1F803C8800D261D1 /* PaymentFormViewController.swift in Sources */,
 				A6D23AF11F82544800229DEC /* MockBookingService.swift in Sources */,
+				BA34CF9C2034872800ECF925 /* MockRegistrationService.swift in Sources */,
 				A66EF1931F86678900B8EDFE /* CsvParser.swift in Sources */,
 				BA675572202D05EE00C47BA1 /* SignatureView.swift in Sources */,
+				BA34CF9A2034857500ECF925 /* RegistrationServiceType.swift in Sources */,
 				A627D0791F79A733009097C1 /* BackgroundView.swift in Sources */,
 				A62CA2051F86772A0087D3D0 /* AnalyticsUIViewController.swift in Sources */,
 				A6D23AE91F82537D00229DEC /* BookingServiceType.swift in Sources */,
@@ -888,6 +899,7 @@
 				A6D23ADD1F82504500229DEC /* MockUniformService.swift in Sources */,
 				A697F8681F7C38C600195246 /* ServiceLocator.swift in Sources */,
 				A69ED4C91F852A5C0005B845 /* EmailUniformService.swift in Sources */,
+				BA34CF9E203488F800ECF925 /* EmailRegistrationService.swift in Sources */,
 				A68828381F78467900D82322 /* SubmitButton.swift in Sources */,
 				A6D23ADF1F8252D600229DEC /* OrderError.swift in Sources */,
 				A69ED4981F82DE270005B845 /* ClassDatesParser.swift in Sources */,

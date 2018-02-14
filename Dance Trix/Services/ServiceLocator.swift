@@ -14,6 +14,7 @@ class ServiceLocator {
     static let mock = Configuration.isMockServicesEnabled()
     static let mockEmail = Configuration.isMockEmailEnabled()
     
+    static let registrationService: RegistrationServiceType = mock ? MockRegistrationService() : EmailRegistrationService()
     static let classService: ClassServiceType = mock ? MockClassService() : FirebaseStorageClassService()
     static let bookingService: BookingServiceType = mock ? MockBookingService() : EmailBookingService()
     static let paymentService: PaymentServiceType = mock ? MockPaymentService() : EmailPaymentService()
