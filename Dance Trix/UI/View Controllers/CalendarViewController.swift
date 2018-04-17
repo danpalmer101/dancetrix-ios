@@ -239,6 +239,10 @@ class CalendarViewController : AnalyticsUIViewController, JTAppleCalendarViewDel
         self.updateTitle()
     }
     
+    func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
+        
+    }
+    
     // MARK: - JTAppleCalendarViewDataSource implementation
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
