@@ -58,7 +58,7 @@ class UniformParser : CsvParser {
         
         let sizes: [String]
             
-        if (trim(csvRow[4]).isEmpty) {
+        if (csvRow.count < 5 || trim(csvRow[4]).isEmpty) {
             sizes = []
         } else {
             sizes = csvRow[4].components(separatedBy: "|").map { (s: String) -> String in return trim(s) }
