@@ -1,0 +1,34 @@
+Format,Section,ID,Name,Sizes
+V1,Children's clothes,child_turquoise_skirted_leotard,Turquoise skirted leotard,3 - 4 years (Size 0)|5 - 6 years (Size 1)|7 - 8 years (Size 1b)|9 - 10 years (Size 2)|11 - 13 years (Size 3a)|Adult Small (Size 3)|Adult Medium (Size 4)
+V1,Children's clothes,child_turquoise_high_neck_leotard,Turquoise high neck leotard,3 - 4 years (Size 0)|5 - 6 years (Size 1)|7 - 8 years (Size 1b)|9 - 10 years (Size 2)|11 - 13 years (Size 3a)|Adult Small (Size 3)|Adult Medium (Size 4)
+V1,Children's clothes,child_black_high_neck_leotard,Black high neck leotard,3 - 4 years (Size 0)|5 - 6 years (Size 1)|7 - 8 years (Size 1b)|9 - 10 years (Size 2)|11 - 13 years (Size 3a)|Adult Small (Size 3)|Adult Medium (Size 4)
+V1,Children's clothes,child_turquoise_leggings,Turquoise leggings,3 - 4 years (Size 0)|5 - 6 years (Size 1)|7 - 8 years (Size 1b)|9 - 10 years (Size 2)|11 - 13 years (Size 3a)|Adult Small (Size 3)|Adult Medium (Size 4)
+V1,Children's clothes,child_pink_ballet_tights,Pink ballet tights,3 - 4 years (Size 0)|5 - 6 years (Size 1)|7 - 8 years (Size 1b)|9 - 10 years (Size 2)|11 - 13 years (Size 3a)|Adult Small (Size 3)|Adult Medium (Size 4)
+V1,Children's clothes,child_black_jazz_tights,Black jazz tights,3 - 4 years (Size 0)|5 - 6 years (Size 1)|7 - 8 years (Size 1b)|9 - 10 years (Size 2)|11 - 13 years (Size 3a)|Adult Small (Size 3)|Adult Medium (Size 4)
+V1,Children's clothes,child_turquoise_skirt,Turquoise skirt,3 - 4 years (Size 0)|5 - 6 years (Size 1)|7 - 8 years (Size 1b)|9 - 10 years (Size 2)|11 - 13 years (Size 3a)|Adult Small (Size 3)|Adult Medium (Size 4)
+V1,Children's clothes,child_black_chiffon_ballet_skirt,Black chiffon ballet skirt,3 - 4 years (Size 0)|5 - 6 years (Size 1)|7 - 8 years (Size 1b)|9 - 10 years (Size 2)|11 - 13 years (Size 3a)|Adult Small (Size 3)|Adult Medium (Size 4)
+V1,Children's clothes,child_black_cardigan,Black embroidered cardigan,3 - 4 years (Size 0)|5 - 6 years (Size 1)|7 - 8 years (Size 1b)|9 - 10 years (Size 2)|11 - 13 years (Size 3a)|Adult Small (Size 3)|Adult Medium (Size 4)
+V1,Children's clothes,child_dance_trix_branded_hoodie,Black logo hoodie,3 - 4 years (Size 0)|5 - 6 years (Size 1)|7 - 8 years (Size 1b)|9 - 10 years (Size 2)|11 - 13 years (Size 3a)|Adult Small (Size 3)|Adult Medium (Size 4)
+V1,Children's clothes,child_dance_trix_branded_tshirt,Black logo t-shirt,3 - 4 years (Size 0)|5 - 6 years (Size 1)|7 - 8 years (Size 1b)|9 - 10 years (Size 2)|11 - 13 years (Size 3a)|Adult Small (Size 3)|Adult Medium (Size 4)
+V1,Children's shoes,child_shoes_tap_white,White tap shoes,5|6|7|8|9|9.5|10|10.5
+V1,Children's shoes,child_shoes_tap_black,Black tap shoes,5|6|7|8|9|9.5|10|10.5
+V1,Children's shoes,child_pink_ballet_shoes,Pink ballet shoes,5|6|7|8|9|9.5|10|10.5
+V1,Children's shoes,child_black_ballet_shoes,Black ballet shoes,5|6|7|8|9|9.5|10|10.5
+V1,Adult clothes,adult_dance_trix_hoodie,Black logo hoodie,8 (Small)|10 (Medium)| 12 (Medium)|14 (Large)|16 (Large)|18 (Extra Large)
+V1,Adult clothes,adult_dance_trix_fitted_tee,Black fitted logo tee,8 (Small)|10 (Medium)| 12 (Medium)|14 (Large)|16 (Large)|18 (Extra Large)
+V1,Adult clothes,adult_dance_trix_baggy_tee,Black baggy logo tee,8 (Small)|10 (Medium)| 12 (Medium)|14 (Large)|16 (Large)|18 (Extra Large)
+V1,Adult clothes,adult_dance_trix_longline_tee,Black longline logo tee,8 (Small)|10 (Medium)| 12 (Medium)|14 (Large)|16 (Large)|18 (Extra Large)
+V1,Adult clothes,adult_dance_trix_dress,Black logo dress,8 (Small)|10 (Medium)| 12 (Medium)|14 (Large)|16 (Large)|18 (Extra Large)
+V1,Adult clothes,adult_dance_trix_skirt,Black logo skirt,8 (Small)|10 (Medium)| 12 (Medium)|14 (Large)|16 (Large)|18 (Extra Large)
+V1,Adult clothes,adult_dance_trix_leggings,Black logo leggings,8 (Small)|10 (Medium)| 12 (Medium)|14 (Large)|16 (Large)|18 (Extra Large)
+V1,Adult clothes,adult_dance_trix_turqoise_swing_vest,Turquiose logo swing vest,8 (Small)|10 (Medium)| 12 (Medium)|14 (Large)|16 (Large)|18 (Extra Large)
+V1,Adult clothes,adult_dance_trix_black_swing_vest,Black logo swing vest,8 (Small)|10 (Medium)| 12 (Medium)|14 (Large)|16 (Large)|18 (Extra Large)
+V1,Adult shoes,adult_shoes_ballet,Ballet shoes,4|4.5|5|5.5|6|6.5|7|7.5|8
+V1,Adult shoes,adult_shoes_jazz,Black jazz shoes,4|4.5|5|5.5|6|6.5|7|7.5|8
+V1,Adult shoes,adult_shoes_open_tap,Black low heel open tap shoes,4|4.5|5|5.5|6|6.5|7|7.5|8
+V1,Adult shoes,adult_shoes_closed_tap,Black low heel closed in tap shoes,4|4.5|5|5.5|6|6.5|7|7.5|8
+V1,Adult shoes,adult_shoes_oxford_tap,Black oxford (high) heel tap shoes,4|4.5|5|5.5|6|6.5|7|7.5|8
+V1,Other items,pink_ballet_socks,Pink ballet socks,6 - 8.5|9 - 12|12.5 - 3
+V1,Other items,dance_trix_kit_bag,Black logo kit bag,
+V1,Other items,child_ballet_purse,Child's ballet purse,
+V1,Other items,exam_headband,Exam headband,

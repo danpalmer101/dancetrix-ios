@@ -10,7 +10,8 @@ import Foundation
 
 protocol UniformServiceType {
     
-    func getUniformOrderItems() -> [UniformGroup];
+    func getUniformOrderItems(successHandler: @escaping ([UniformGroup]) -> Void,
+                              errorHandler: @escaping (Error) -> Void)
     
     func orderUniform(name: String,
                       studentName: String,

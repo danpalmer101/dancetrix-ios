@@ -9,4 +9,5 @@
 import Foundation
 
 enum OrderError: Error {
+    case noUniforms
 }

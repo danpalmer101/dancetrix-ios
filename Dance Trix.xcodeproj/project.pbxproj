@@ -30,7 +30,7 @@
 		A66EF18F1F8655A000B8EDFE /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = A66EF18E1F8655A000B8EDFE /* Configuration.plist */; };
 		A66EF1911F86647F00B8EDFE /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF1901F86647F00B8EDFE /* Preferences.swift */; };
 		A66EF1931F86678900B8EDFE /* CsvParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EF1921F86678900B8EDFE /* CsvParser.swift */; };
-		A68828081F7560C600D82322 /* UniformGroupTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828071F7560C600D82322 /* UniformGroupTest.swift */; };
+		A68828081F7560C600D82322 /* UniformParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828071F7560C600D82322 /* UniformParserTest.swift */; };
 		A688280F1F75626300D82322 /* ClassMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F701F74FE4C00FAF47E /* ClassMenu.swift */; };
 		A68828101F75627F00D82322 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0F721F74FEB800FAF47E /* Class.swift */; };
 		A68828121F756F0600D82322 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68828111F756F0600D82322 /* Theme.swift */; };
@@ -108,6 +108,9 @@
 		BA675572202D05EE00C47BA1 /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA675571202D05EE00C47BA1 /* SignatureView.swift */; };
 		BAC078B72023CAC500CC9C6D /* RegisterAdultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */; };
 		BAC078B92023CCAE00CC9C6D /* RegisterChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */; };
+		BAE7E77B213A95DA00AFCC06 /* uniforms.csv in Resources */ = {isa = PBXBuildFile; fileRef = BAE7E77A213A95DA00AFCC06 /* uniforms.csv */; };
+		BAE7E77D213A977300AFCC06 /* UniformParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7E77C213A977300AFCC06 /* UniformParser.swift */; };
+		BAE7E77E213A9AC600AFCC06 /* UniformParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7E77C213A977300AFCC06 /* UniformParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,7 +148,7 @@
 		A66EF1901F86647F00B8EDFE /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		A66EF1921F86678900B8EDFE /* CsvParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvParser.swift; sourceTree = "<group>"; };
 		A68828051F7560C600D82322 /* Dance Trix Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dance Trix Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A68828071F7560C600D82322 /* UniformGroupTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformGroupTest.swift; sourceTree = "<group>"; };
+		A68828071F7560C600D82322 /* UniformParserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformParserTest.swift; sourceTree = "<group>"; };
 		A68828091F7560C600D82322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A68828111F756F0600D82322 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A68828131F75AB6200D82322 /* ClassMenuParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMenuParser.swift; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 		BA675571202D05EE00C47BA1 /* SignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
 		BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAdultViewController.swift; sourceTree = "<group>"; };
 		BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterChildViewController.swift; sourceTree = "<group>"; };
+		BAE7E77A213A95DA00AFCC06 /* uniforms.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uniforms.csv; sourceTree = "<group>"; };
+		BAE7E77C213A977300AFCC06 /* UniformParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformParser.swift; sourceTree = "<group>"; };
 		D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -262,7 +267,7 @@
 		A68828061F7560C600D82322 /* Dance Trix Tests */ = {
 			isa = PBXGroup;
 			children = (
-				A68828071F7560C600D82322 /* UniformGroupTest.swift */,
+				A68828071F7560C600D82322 /* UniformParserTest.swift */,
 				A68828091F7560C600D82322 /* Info.plist */,
 			);
 			path = "Dance Trix Tests";
@@ -359,6 +364,7 @@
 				A68828131F75AB6200D82322 /* ClassMenuParser.swift */,
 				A69ED4971F82DE270005B845 /* ClassDatesParser.swift */,
 				A2F11A372013C18200B1A14D /* ImportantDatesParser.swift */,
+				BAE7E77C213A977300AFCC06 /* UniformParser.swift */,
 				A66EF1921F86678900B8EDFE /* CsvParser.swift */,
 				A608AD4A1FC4322300FE614C /* NotificationName.swift */,
 			);
@@ -369,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				A69ED4951F82DAB80005B845 /* classes.csv */,
+				BAE7E77A213A95DA00AFCC06 /* uniforms.csv */,
 				A69ED4991F82DEFE0005B845 /* dates_adults.csv */,
 				A69ED49B1F82E2270005B845 /* dates_autumn_half_term_2_2017.csv */,
 				A69ED49D1F82E3490005B845 /* dates_spring_half_term_1_2018.csv */,
@@ -651,6 +658,7 @@
 				A69ED49E1F82E3490005B845 /* dates_spring_half_term_1_2018.csv in Resources */,
 				A69ED4C71F8528D40005B845 /* uniform_order_body_plain.mustache in Resources */,
 				A6BA0F611F74E20C00FAF47E /* Main.storyboard in Resources */,
+				BAE7E77B213A95DA00AFCC06 /* uniforms.csv in Resources */,
 				A69ED49A1F82DEFE0005B845 /* dates_adults.csv in Resources */,
 				A69ED4CB1F852C140005B845 /* uniform_order_body_html.mustache in Resources */,
 				A60026631F7BB4D200DDC90F /* prepare-commit-msg in Resources */,
@@ -830,9 +838,10 @@
 				A68828151F75ADD100D82322 /* ClassMenuParser.swift in Sources */,
 				A68828101F75627F00D82322 /* Class.swift in Sources */,
 				A688280F1F75626300D82322 /* ClassMenu.swift in Sources */,
+				BAE7E77E213A9AC600AFCC06 /* UniformParser.swift in Sources */,
 				A62CA2091F8683950087D3D0 /* CsvParser.swift in Sources */,
 				A62CA2071F86830A0087D3D0 /* UniformItem.swift in Sources */,
-				A68828081F7560C600D82322 /* UniformGroupTest.swift in Sources */,
+				A68828081F7560C600D82322 /* UniformParserTest.swift in Sources */,
 				A62CA2081F8683920087D3D0 /* ClassDatesParser.swift in Sources */,
 				A62CA2061F8683070087D3D0 /* UniformGroup.swift in Sources */,
 			);
@@ -906,6 +915,7 @@
 				A69ED4B71F83E79F0005B845 /* EmailPaymentService.swift in Sources */,
 				A6D23AD91F814B4400229DEC /* UniformOrderViewController.swift in Sources */,
 				A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */,
+				BAE7E77D213A977300AFCC06 /* UniformParser.swift in Sources */,
 				A6D23AEB1F8253DC00229DEC /* ClassServiceType.swift in Sources */,
 				A68828181F76FC7000D82322 /* LinkButton.swift in Sources */,
 			);

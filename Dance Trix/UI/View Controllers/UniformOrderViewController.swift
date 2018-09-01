@@ -17,58 +17,86 @@ class UniformOrderViewController: SubmitFormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.orderItems = ServiceLocator.uniformService.getUniformOrderItems()
+        self.submitButton.addTarget(self, action: #selector(self.submitOrder), for: .touchUpInside)
         
+        self.submitButton.setTitle("", for: .normal)
+        self.submitButton.isEnabled = false
+        self.submitButton.activityIndicator?.startAnimating()
+        
+        ServiceLocator.uniformService.getUniformOrderItems(
+            successHandler: { (orderItems) in
+                self.orderItems = orderItems
+                
+                DispatchQueue.main.async {
+                    self.buildForm()
+                    
+                    self.submitButton.setTitle("Submit order", for: .normal)
+                    self.submitButton.isEnabled = true
+                    self.submitButton.activityIndicator?.stopAnimating()
+                }
+        }) { (error) in
+            log.error(["An unexpected error occurred loading uniforms", error])
+            
+            Notification.show(
+                title: "Error",
+                subtitle: "An unexpected error occurred loading uniforms, please try again later.",
+                type: NotificationType.error)
+        }
+    }
+    
+    private func buildForm() {
         let selectableRowCellUpdate: ((_ cell: BaseCell, _ row: BaseRow) -> Void) = { cell, row in
             cell.textLabel?.textColor = Theme.colorForeground
             cell.tintColor = Theme.colorTint
         }
         
+        self.form.removeAll()
+        
         self.form
             +++ Section("Your details")
             <<< TextRow("name") { row in
-                    row.title = "Your name"
-                    row.placeholder = "Enter your name"
-                    row.add(rule: RuleRequired())
-                    if let name = Preferences.get(key: "name") {
-                        row.value = name as? String
-                    }
+                row.title = "Your name"
+                row.placeholder = "Enter your name"
+                row.add(rule: RuleRequired())
+                if let name = Preferences.get(key: "name") {
+                    row.value = name as? String
+                }
                 }.cellUpdate { cell, row in
                     if !row.isValid {
                         cell.textLabel?.textColor = Theme.colorError
                         cell.textField?.textColor = Theme.colorError
                     }
                     self.checkCompleteForm()
-                }
+            }
             <<< TextRow("student_name") { row in
-                    row.title = "Student's name"
-                    row.placeholder = "Enter the student's name"
-                    row.add(rule: RuleRequired())
-                    if let studentName = Preferences.get(key: "student_name") {
-                        row.value = studentName as? String
-                    }
+                row.title = "Student's name"
+                row.placeholder = "Enter the student's name"
+                row.add(rule: RuleRequired())
+                if let studentName = Preferences.get(key: "student_name") {
+                    row.value = studentName as? String
+                }
                 }.cellUpdate { cell, row in
                     if !row.isValid {
                         cell.textLabel?.textColor = Theme.colorError
                         cell.textField?.textColor = Theme.colorError
                     }
                     self.checkCompleteForm()
-                }
+            }
             <<< EmailRow("email") { row in
-                    row.title = "Email address"
-                    row.add(rule: RuleRequired())
-                    row.add(rule: RuleEmail())
-                    row.placeholder = "Enter your email address"
-                    if let email = Preferences.get(key: "email") {
-                        row.value = email as? String
-                    }
+                row.title = "Email address"
+                row.add(rule: RuleRequired())
+                row.add(rule: RuleEmail())
+                row.placeholder = "Enter your email address"
+                if let email = Preferences.get(key: "email") {
+                    row.value = email as? String
+                }
                 }.cellUpdate { cell, row in
                     if !row.isValid {
                         cell.textLabel?.textColor = Theme.colorError
                         cell.textField?.textColor = Theme.colorError
                     }
                     self.checkCompleteForm()
-                }
+        }
         
         // For each uniform section, build the form section and add to the form
         self.orderItems.forEach { uniformGroup in
@@ -80,13 +108,13 @@ class UniformOrderViewController: SubmitFormViewController {
                 
                 if (uniformItem.sizes.count == 0) {
                     baseRow = CheckRow(uniformItem.key) { row in
-                            row.title = uniformItem.name
-                        }
+                        row.title = uniformItem.name
+                    }
                 } else {
                     baseRow = PushRow<String>(uniformItem.key) { row in
-                            row.title = uniformItem.name
-                            row.selectorTitle = "Select size"
-                            row.options = uniformItem.sizes
+                        row.title = uniformItem.name
+                        row.selectorTitle = "Select size"
+                        row.options = uniformItem.sizes
                         }.onPresent({ (_, presentingVC) -> () in
                             presentingVC.selectableRowCellUpdate = selectableRowCellUpdate
                         })
@@ -101,32 +129,32 @@ class UniformOrderViewController: SubmitFormViewController {
         self.form
             +++ Section("Your payment")
             <<< PushRow<String>("order_package") { row in
-                    row.title = "Package"
-                    row.selectorTitle = "Select your package"
-                    row.options = [
-                        "Bronze",
-                        "Bronze Plus",
-                        "Silver",
-                        "Silver Plus",
-                        "Gold",
-                        "Gold Plus"
-                    ]
+                row.title = "Package"
+                row.selectorTitle = "Select your package"
+                row.options = [
+                    "Bronze",
+                    "Bronze Plus",
+                    "Silver",
+                    "Silver Plus",
+                    "Gold",
+                    "Gold Plus"
+                ]
                 }.onPresent({ (_, presentingVC) -> () in
                     presentingVC.selectableRowCellUpdate = selectableRowCellUpdate
                 })
             <<< SwitchRow("payment_made") { row in
-                    row.title = "Payment made"
-                }
+                row.title = "Payment made"
+            }
             <<< PushRow<String>("payment_method") { row in
-                    row.title = "Payment method"
-                    row.selectorTitle = "Select a method"
-                    row.options = [
-                        "Bank transfer",
-                        "PayPal",
-                        "Credit/Debit card",
-                        "Cheque"
-                    ]
-                    row.add(rule: RuleRequired())
+                row.title = "Payment method"
+                row.selectorTitle = "Select a method"
+                row.options = [
+                    "Bank transfer",
+                    "PayPal",
+                    "Credit/Debit card",
+                    "Cheque"
+                ]
+                row.add(rule: RuleRequired())
                 }.cellUpdate { cell, row in
                     if !row.isValid {
                         cell.textLabel?.textColor = Theme.colorError
@@ -137,18 +165,30 @@ class UniformOrderViewController: SubmitFormViewController {
                 })
             +++ Section("Anything else we should know?")
             <<< TextAreaRow("additional")
-        
-        self.submitButton.setTitle("Submit order", for: .normal)
-        self.submitButton.addTarget(self, action: #selector(submitOrder), for: .touchUpInside)
     }
     
     // MARK: - Actions
     
     private func checkCompleteForm() {
-        let nameRow = self.form.rowBy(tag: "name") as! TextRow
-        let studentRow = self.form.rowBy(tag: "student_name") as! TextRow
-        let emailRow = self.form.rowBy(tag: "email") as! EmailRow
-        let paymentMethodRow = self.form.rowBy(tag: "payment_method") as! PushRow<String>
+        guard let nameRow = self.form.rowBy(tag: "name") as? TextRow else {
+            self.submitButton.isEnabled = false
+            return
+        }
+        
+        guard let studentRow = self.form.rowBy(tag: "student_name") as? TextRow else {
+            self.submitButton.isEnabled = false
+            return
+        }
+        
+        guard let emailRow = self.form.rowBy(tag: "email") as? EmailRow else {
+            self.submitButton.isEnabled = false
+            return
+        }
+        
+        guard let paymentMethodRow = self.form.rowBy(tag: "payment_method") as? PushRow<String> else {
+            self.submitButton.isEnabled = false
+            return
+        }
         
         self.submitButton.isEnabled =
             nameRow.value != nil && nameRow.isValid
