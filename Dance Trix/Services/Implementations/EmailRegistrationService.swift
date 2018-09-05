@@ -59,7 +59,8 @@ class EmailRegistrationService : RegistrationServiceType {
                 "medical": registration.medical,
                 "name": registration.name,
                 "phone": registration.phone,
-                "studentName": registration.studentName
+                "studentName": registration.studentName,
+                "photoConsent": registration.consent
             ],
             successHandler: {
                 log.info("...child registration complete")

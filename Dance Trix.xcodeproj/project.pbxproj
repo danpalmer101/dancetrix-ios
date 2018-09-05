@@ -106,6 +106,12 @@
 		BA34CF9C2034872800ECF925 /* MockRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34CF9B2034872800ECF925 /* MockRegistrationService.swift */; };
 		BA34CF9E203488F800ECF925 /* EmailRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34CF9D203488F800ECF925 /* EmailRegistrationService.swift */; };
 		BA675572202D05EE00C47BA1 /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA675571202D05EE00C47BA1 /* SignatureView.swift */; };
+		BA9ED53021407CA70042F0BF /* registration_adult_subject.mustache in Resources */ = {isa = PBXBuildFile; fileRef = BA9ED52F21407CA70042F0BF /* registration_adult_subject.mustache */; };
+		BA9ED53221407CE80042F0BF /* registration_adult_body_plain.mustache in Resources */ = {isa = PBXBuildFile; fileRef = BA9ED53121407CE80042F0BF /* registration_adult_body_plain.mustache */; };
+		BA9ED53421407DAD0042F0BF /* registration_adult_body_html.mustache in Resources */ = {isa = PBXBuildFile; fileRef = BA9ED53321407DAD0042F0BF /* registration_adult_body_html.mustache */; };
+		BA9ED53821407E730042F0BF /* registration_child_body_plain.mustache in Resources */ = {isa = PBXBuildFile; fileRef = BA9ED53521407E730042F0BF /* registration_child_body_plain.mustache */; };
+		BA9ED53921407E730042F0BF /* registration_child_subject.mustache in Resources */ = {isa = PBXBuildFile; fileRef = BA9ED53621407E730042F0BF /* registration_child_subject.mustache */; };
+		BA9ED53A21407E730042F0BF /* registration_child_body_html.mustache in Resources */ = {isa = PBXBuildFile; fileRef = BA9ED53721407E730042F0BF /* registration_child_body_html.mustache */; };
 		BAC078B72023CAC500CC9C6D /* RegisterAdultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */; };
 		BAC078B92023CCAE00CC9C6D /* RegisterChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */; };
 		BAE7E77B213A95DA00AFCC06 /* uniforms.csv in Resources */ = {isa = PBXBuildFile; fileRef = BAE7E77A213A95DA00AFCC06 /* uniforms.csv */; };
@@ -227,6 +233,12 @@
 		BA34CF9B2034872800ECF925 /* MockRegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRegistrationService.swift; sourceTree = "<group>"; };
 		BA34CF9D203488F800ECF925 /* EmailRegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationService.swift; sourceTree = "<group>"; };
 		BA675571202D05EE00C47BA1 /* SignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
+		BA9ED52F21407CA70042F0BF /* registration_adult_subject.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = registration_adult_subject.mustache; sourceTree = "<group>"; };
+		BA9ED53121407CE80042F0BF /* registration_adult_body_plain.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = registration_adult_body_plain.mustache; sourceTree = "<group>"; };
+		BA9ED53321407DAD0042F0BF /* registration_adult_body_html.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = registration_adult_body_html.mustache; sourceTree = "<group>"; };
+		BA9ED53521407E730042F0BF /* registration_child_body_plain.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = registration_child_body_plain.mustache; sourceTree = "<group>"; };
+		BA9ED53621407E730042F0BF /* registration_child_subject.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = registration_child_subject.mustache; sourceTree = "<group>"; };
+		BA9ED53721407E730042F0BF /* registration_child_body_html.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = registration_child_body_html.mustache; sourceTree = "<group>"; };
 		BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAdultViewController.swift; sourceTree = "<group>"; };
 		BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterChildViewController.swift; sourceTree = "<group>"; };
 		BAE7E77A213A95DA00AFCC06 /* uniforms.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uniforms.csv; sourceTree = "<group>"; };
@@ -408,6 +420,12 @@
 				A69ED4C41F8528AD0005B845 /* uniform_order_subject.mustache */,
 				A69ED4C61F8528D40005B845 /* uniform_order_body_plain.mustache */,
 				A69ED4CA1F852C140005B845 /* uniform_order_body_html.mustache */,
+				BA9ED52F21407CA70042F0BF /* registration_adult_subject.mustache */,
+				BA9ED53121407CE80042F0BF /* registration_adult_body_plain.mustache */,
+				BA9ED53321407DAD0042F0BF /* registration_adult_body_html.mustache */,
+				BA9ED53621407E730042F0BF /* registration_child_subject.mustache */,
+				BA9ED53521407E730042F0BF /* registration_child_body_plain.mustache */,
+				BA9ED53721407E730042F0BF /* registration_child_body_html.mustache */,
 			);
 			path = Emails;
 			sourceTree = "<group>";
@@ -645,8 +663,13 @@
 				A69ED4A41F82E4020005B845 /* dates_summer_half_term_2_2018.csv in Resources */,
 				A69ED4B11F83C06A0005B845 /* payment_notify_subject.mustache in Resources */,
 				A6BA0F661F74E20C00FAF47E /* LaunchScreen.storyboard in Resources */,
+				BA9ED53921407E730042F0BF /* registration_child_subject.mustache in Resources */,
 				A69ED4A01F82E3910005B845 /* dates_spring_half_term_2_2018.csv in Resources */,
 				A69ED4C11F83FF330005B845 /* class_booking_body_html.mustache in Resources */,
+				BA9ED53821407E730042F0BF /* registration_child_body_plain.mustache in Resources */,
+				BA9ED53021407CA70042F0BF /* registration_adult_subject.mustache in Resources */,
+				BA9ED53421407DAD0042F0BF /* registration_adult_body_html.mustache in Resources */,
+				BA9ED53A21407E730042F0BF /* registration_child_body_html.mustache in Resources */,
 				A2F11A362013C08D00B1A14D /* dates_important.csv in Resources */,
 				A69ED4CD1F8534810005B845 /* description_lorem_ipsum.txt in Resources */,
 				A69ED4C51F8528AD0005B845 /* uniform_order_subject.mustache in Resources */,
@@ -664,6 +687,7 @@
 				A60026631F7BB4D200DDC90F /* prepare-commit-msg in Resources */,
 				A66EF18F1F8655A000B8EDFE /* Configuration.plist in Resources */,
 				A69ED4BD1F83FE6A0005B845 /* class_booking_subject.mustache in Resources */,
+				BA9ED53221407CE80042F0BF /* registration_adult_body_plain.mustache in Resources */,
 				A69ED4921F829C710005B845 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

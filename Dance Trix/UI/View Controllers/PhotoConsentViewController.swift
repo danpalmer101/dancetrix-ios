@@ -22,5 +22,20 @@ class PhotoConsentViewController: AnalyticsUIViewController {
             signatureViewController.registrationChild = registration
         }
     }
+    
+    @IBAction
+    func consentYes(sender: UIButton?) {
+        registration?.consent = "Yes"
+    }
 
+    @IBAction
+    func consentNo(sender: UIButton?) {
+        registration?.consent = "No"
+    }
+    
+    @IBAction
+    func consentUnidentified(sender: UIButton?) {
+        registration?.consent = "Yes, non-identifiable"
+    }
+    
 }

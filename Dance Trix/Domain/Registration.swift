@@ -19,6 +19,7 @@ class RegistrationAdult {
     var emergencyPhone: String?
     var medical: String?
     var experience: String?
+    var signature: UIImage?
     
 }
 
@@ -35,5 +36,7 @@ class RegistrationChild {
     var experience: String?
     var hearAbout: String?
     var contact: String?
+    var consent: String?
+    var signature: UIImage?
     
 }
