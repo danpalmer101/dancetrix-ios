@@ -39,9 +39,6 @@ class EmailUniformService: UniformServiceType {
                 successHandler(uniforms)
             }
         }
-        
-        MockUniformService().getUniformOrderItems(successHandler: successHandler,
-                                                  errorHandler: errorHandler)
     }
     
     func orderUniform(name: String,
