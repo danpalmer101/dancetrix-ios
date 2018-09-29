@@ -47,21 +47,15 @@ import FirebaseStorage
         do {
             let down = Down.init(markdownString: text)
             
-            let stylesheet = "* {font-family: Helvetica; font-size: 14pt; color: white } code, pre { font-family: Menlo }"
+            let stylesheet = "* {font-family: Helvetica; font-size: 1.1em; color: white } code, pre { font-family: Menlo }"
             
             let mdString = NSMutableAttributedString(
                 attributedString: try down.toAttributedString(
                     DownOptions.smart,
                     stylesheet: stylesheet))
-            /*
-            if let color = self.textColor {
-                mdString.addAttribute(
-                    NSAttributedStringKey.foregroundColor,
-                    value: color,
-                    range: NSMakeRange(0, mdString.length))
-            }
-            */
+
             log.debug(mdString.string)
+            
             self.attributedText = mdString
         } catch {
             log.error("Invalid markdown string", text, error.localizedDescription)
