@@ -14,6 +14,7 @@ import FirebaseStorage
     
     @IBInspectable var markdownFirebaseStorageReference: String? {
         didSet {
+            #if !TARGET_INTERFACE_BUILDER
             guard let ref = markdownFirebaseStorageReference else {
                 return
             }
@@ -38,6 +39,7 @@ import FirebaseStorage
                     log.info("...Retrieved markdown")
                 }
             }
+            #endif
         }
     }
     

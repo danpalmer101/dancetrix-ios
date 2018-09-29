@@ -15,7 +15,7 @@ class ClassDatesViewController: AnalyticsUIViewController, UITableViewDelegate, 
     private var dates: [DateInterval]?
 
     @IBOutlet
-    var descriptionView: UITextView!
+    var descriptionView: MarkdownView!
     @IBOutlet
     var tableView: UITableView!
     @IBOutlet
@@ -32,6 +32,8 @@ class ClassDatesViewController: AnalyticsUIViewController, UITableViewDelegate, 
         
         self.tableView.allowsSelection = self.classDetails.allowIndividualBookings
         self.selectAllButton.isHidden = !self.tableView.allowsSelection
+        self.descriptionView.textContainerInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        
         
         self.loadDates()
         
@@ -139,7 +141,7 @@ class ClassDatesViewController: AnalyticsUIViewController, UITableViewDelegate, 
                 self.classDetails,
                 successHandler: { (description: String) in
                     DispatchQueue.main.async {
-                        self.descriptionView.text = "\n" + description
+                        self.descriptionView.setMarkdownText(description)
                     }
                 },
                 errorHandler: { (error: Error) in
