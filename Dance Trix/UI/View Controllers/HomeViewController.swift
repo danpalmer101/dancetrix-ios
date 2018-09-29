@@ -51,9 +51,9 @@ class HomeViewController: AnalyticsUIViewController {
         self.stackView.removeArrangedSubview(self.paymentView)
         self.stackView.removeArrangedSubview(self.aboutView)
         
-        if (Configuration.registrationEnabled()) {
+        //if (Configuration.registrationEnabled()) {
             self.stackView.addArrangedSubview(self.registrationView)
-        }
+        //}
         if (Configuration.bookClassEnabled()) {
             self.stackView.addArrangedSubview(self.bookClassView)
         }
