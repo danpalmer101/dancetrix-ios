@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyBeaver
 import Firebase
+import FirebaseMessaging
 import UserNotifications
 import Reachability
 import Fabric
