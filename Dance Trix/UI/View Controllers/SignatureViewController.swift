@@ -51,6 +51,9 @@ class SignatureViewController: AnalyticsUIViewController, SwiftSignatureViewDele
         self.registerButton!.activityIndicator?.startAnimating()
         self.registerButton!.isEnabled = false
         
+        self.registrationAdult?.signature = self.signatureView?.signature
+        self.registrationChild?.signature = self.signatureView?.signature
+        
         DispatchQueue.global().async {
             let successHandler = {
                 Notification.show(

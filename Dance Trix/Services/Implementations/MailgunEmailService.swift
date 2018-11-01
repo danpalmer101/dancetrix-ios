@@ -46,11 +46,15 @@ class MailgunEmailService : EmailServiceType {
         email.from = from
         email.to = to
         
+        log.debug("Sending email to \(to) from \(from)")
+        
         do {
             let template = try Template(named: String(format: bodyPlainFileNameFormat, templateName))
             registerFormatters(template: template)
             let rendering = try template.render(templateVariables)
             email.text = trim(rendering)!
+            
+            log.debug("Plain:\n\(email.text!)")
         } catch {
             log.warning("Unable to render plain file content for \(templateName)")
             log.warning([error])
@@ -61,6 +65,8 @@ class MailgunEmailService : EmailServiceType {
             registerFormatters(template: template)
             let rendering = try template.render(templateVariables)
             email.html = trim(rendering)!
+            
+            log.debug("HTML:\n\(email.html!)")
         } catch {
             log.warning("Unable to render HTML file content for \(templateName)")
             log.warning([error])
@@ -70,6 +76,8 @@ class MailgunEmailService : EmailServiceType {
             let template = try Template(named: String(format: subjectFileNameFormat, templateName))
             registerFormatters(template: template)
             email.subject = try template.render(templateVariables)
+            
+            log.debug("Subject:\n\(email.subject!)")
         } catch {
             log.warning("Unable to render subject file content for \(templateName)")
             log.warning([error])

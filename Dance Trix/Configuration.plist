@@ -11,7 +11,7 @@
 	<key>email_address_uniform_from</key>
 	<string>Dance Trix Uniforms &lt;uniforms@dancetrix.co.uk&gt;</string>
 	<key>email_address_to</key>
-	<string>d.palmer101@googlemail.com</string>
+	<string>dancetrix@yahoo.co.uk</string>
 	<key>dancetrix_uniform_catalog</key>
 	<string>http://dancetrix.co.uk/wp-content/uploads/2016/05/Dance-Trix-Catalogue.pdf</string>
 	<key>dancetrix_website</key>
@@ -19,7 +19,7 @@
 	<key>mailgun_domain</key>
 	<string>mg.dancetrix.co.uk</string>
 	<key>mailgun_api_key</key>
-	<string>key-2e89955da550daaac2207a3b48d1c338</string>
+	<string>XXXX</string>
 	<key>feature_book</key>
 	<string>true</string>
 	<key>feature_calendar</key>

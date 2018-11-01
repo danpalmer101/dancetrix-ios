@@ -21,6 +21,10 @@ class Configuration {
         return checkCommandLine("-DTMockEmailEnabled")
     }
     
+    static func localEmailOverride() -> String? {
+        return getEnvironmentVariable("LOCAL_TO_EMAIL")
+    }
+    
     static func isPreferenceCleaningEnabled() -> Bool {
         return checkCommandLine("-DTPreferencesClean")
     }
@@ -44,7 +48,11 @@ class Configuration {
     }
     
     static func toEmailAddress() -> String {
-        return getRemoteConfig("email_address_to")
+        if let value = localEmailOverride() {
+            return value
+        } else {
+            return getRemoteConfig("email_address_to")
+        }
     }
     
     static func mailgunApiKey() -> String {
@@ -103,6 +111,10 @@ class Configuration {
     
     private static func checkCommandLine(_ arg : String) -> Bool {
         return CommandLine.arguments.contains(arg)
+    }
+    
+    private static func getEnvironmentVariable(_ arg : String) -> String? {
+        return ProcessInfo.processInfo.environment[arg]
     }
     
     private static func getRemoteConfig(_ key : String) -> String {
