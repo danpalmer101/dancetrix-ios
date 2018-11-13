@@ -20,23 +20,25 @@ class EmailUniformService: UniformServiceType {
         
         log.debug("    Downloading CSV from Firebase storage: \(csvName)")
         
-        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-        classesMenuCsv.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            if let error = error {
-                log.warning(["...failed to retrieve uniforms", error])
-                errorHandler(error)
-            } else {
-                log.debug("    Downloaded CSV from Firebase storage:\(csvName)")
-                
-                let csvString = String(data: data!, encoding: String.Encoding.utf8)
-                
-                log.debug("    Parsing CSV: \(csvName)")
-                let uniforms = UniformParser.parse(csvString: csvString!)
-                log.debug("    Parsed CSV: \(csvName)")
-                
-                log.info("...Retrieved uniforms")
-                
-                successHandler(uniforms)
+        DispatchQueue.main.async {
+            // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+            classesMenuCsv.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                if let error = error {
+                    log.warning(["...failed to retrieve uniforms", error])
+                    errorHandler(error)
+                } else {
+                    log.debug("    Downloaded CSV from Firebase storage:\(csvName)")
+                    
+                    let csvString = String(data: data!, encoding: String.Encoding.utf8)
+                    
+                    log.debug("    Parsing CSV: \(csvName)")
+                    let uniforms = UniformParser.parse(csvString: csvString!)
+                    log.debug("    Parsed CSV: \(csvName)")
+                    
+                    log.info("...Retrieved uniforms")
+                    
+                    successHandler(uniforms)
+                }
             }
         }
     }

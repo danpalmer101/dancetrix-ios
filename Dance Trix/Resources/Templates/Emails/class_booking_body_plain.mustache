@@ -4,7 +4,7 @@
 Class Details: {{classMenu}}
 
 Dates:
-{{#dates}} * {{dateTimeFormat(.)}}
-{{/dates}}
+{{# each(dates) }} * {{dateTimeFormat(.)}}
+{{/}}
 
 Email: {{email}}
