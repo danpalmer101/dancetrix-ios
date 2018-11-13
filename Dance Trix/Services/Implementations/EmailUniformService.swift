@@ -26,18 +26,22 @@ class EmailUniformService: UniformServiceType {
                 if let error = error {
                     log.warning(["...failed to retrieve uniforms", error])
                     errorHandler(error)
-                } else {
+                } else if let data = data {
                     log.debug("    Downloaded CSV from Firebase storage:\(csvName)")
                     
-                    let csvString = String(data: data!, encoding: String.Encoding.utf8)
-                    
-                    log.debug("    Parsing CSV: \(csvName)")
-                    let uniforms = UniformParser.parse(csvString: csvString!)
-                    log.debug("    Parsed CSV: \(csvName)")
-                    
-                    log.info("...Retrieved uniforms")
-                    
-                    successHandler(uniforms)
+                    if let csvString = data.asString() {
+                        log.debug("    Parsing CSV: \(csvName)")
+                        let uniforms = UniformParser.parse(csvString: csvString)
+                        log.debug("    Parsed CSV: \(csvName)")
+                        
+                        log.info("...Retrieved uniforms")
+                        
+                        successHandler(uniforms)
+                    } else {
+                        errorHandler(OrderError.noUniforms)
+                    }
+                } else {
+                    errorHandler(OrderError.noUniforms)
                 }
             }
         }

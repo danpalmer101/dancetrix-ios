@@ -29,10 +29,10 @@ import FirebaseStorage
             firebaseRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
                 if let error = error {
                     log.warning(["...failed to retrieve markdown", error])
-                } else {
+                } else if let data = data {
                     log.debug("    Downloaded CSV from Firebase storage:\(ref)")
                     
-                    if let markdown = String(data: data!, encoding: String.Encoding.utf8) {
+                    if let markdown = data.asString() {
                         self.setMarkdownText(markdown)
                     }
                     

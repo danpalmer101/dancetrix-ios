@@ -106,6 +106,7 @@
 		BA34CF9C2034872800ECF925 /* MockRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34CF9B2034872800ECF925 /* MockRegistrationService.swift */; };
 		BA34CF9E203488F800ECF925 /* EmailRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA34CF9D203488F800ECF925 /* EmailRegistrationService.swift */; };
 		BA519402215FBD0D0057B530 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA519401215FBD0D0057B530 /* MarkdownView.swift */; };
+		BA5354AF219B5D8A001EA7E6 /* Data+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5354AE219B5D8A001EA7E6 /* Data+String.swift */; };
 		BA675572202D05EE00C47BA1 /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA675571202D05EE00C47BA1 /* SignatureView.swift */; };
 		BA9ED53021407CA70042F0BF /* registration_adult_subject.mustache in Resources */ = {isa = PBXBuildFile; fileRef = BA9ED52F21407CA70042F0BF /* registration_adult_subject.mustache */; };
 		BA9ED53221407CE80042F0BF /* registration_adult_body_plain.mustache in Resources */ = {isa = PBXBuildFile; fileRef = BA9ED53121407CE80042F0BF /* registration_adult_body_plain.mustache */; };
@@ -234,6 +235,7 @@
 		BA34CF9B2034872800ECF925 /* MockRegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRegistrationService.swift; sourceTree = "<group>"; };
 		BA34CF9D203488F800ECF925 /* EmailRegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationService.swift; sourceTree = "<group>"; };
 		BA519401215FBD0D0057B530 /* MarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownView.swift; sourceTree = "<group>"; };
+		BA5354AE219B5D8A001EA7E6 /* Data+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+String.swift"; sourceTree = "<group>"; };
 		BA675571202D05EE00C47BA1 /* SignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
 		BA9ED52F21407CA70042F0BF /* registration_adult_subject.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = registration_adult_subject.mustache; sourceTree = "<group>"; };
 		BA9ED53121407CE80042F0BF /* registration_adult_body_plain.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = registration_adult_body_plain.mustache; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				BAE7E77C213A977300AFCC06 /* UniformParser.swift */,
 				A66EF1921F86678900B8EDFE /* CsvParser.swift */,
 				A608AD4A1FC4322300FE614C /* NotificationName.swift */,
+				BA5354AE219B5D8A001EA7E6 /* Data+String.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -901,6 +904,7 @@
 				A6BA0F5C1F74E20C00FAF47E /* AppDelegate.swift in Sources */,
 				BAE7E77D213A977300AFCC06 /* UniformParser.swift in Sources */,
 				A6D23AEB1F8253DC00229DEC /* ClassServiceType.swift in Sources */,
+				BA5354AF219B5D8A001EA7E6 /* Data+String.swift in Sources */,
 				A68828181F76FC7000D82322 /* LinkButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

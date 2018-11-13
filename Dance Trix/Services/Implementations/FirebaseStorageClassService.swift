@@ -25,18 +25,22 @@ class FirebaseStorageClassService : ClassServiceType {
                 if let error = error {
                     log.warning(["...failed to retrieve class menu", error])
                     errorHandler(error)
-                } else {
+                } else if let data = data {
                     log.debug("    Downloaded CSV from Firebase storage:\(csvName)")
                     
-                    let csvString = String(data: data!, encoding: String.Encoding.utf8)
+                    if let csvString = data.asString() {
+                        log.debug("    Parsing CSV: \(csvName)")
+                        let classMenu = ClassMenuParser.parse(csvString: csvString)
+                        log.debug("    Parsed CSV: \(csvName)")
                     
-                    log.debug("    Parsing CSV: \(csvName)")
-                    let classMenu = ClassMenuParser.parse(csvString: csvString!)
-                    log.debug("    Parsed CSV: \(csvName)")
+                        log.info("...Retrieved class menu")
                     
-                    log.info("...Retrieved class menu")
-                    
-                    successHandler(classMenu)
+                        successHandler(classMenu)
+                    } else {
+                        errorHandler(ClassesError.noClasses)
+                    }
+                } else {
+                    errorHandler(ClassesError.noClasses)
                 }
             }
         }
@@ -60,7 +64,7 @@ class FirebaseStorageClassService : ClassServiceType {
                 } else if let data = data {
                     log.debug("    Downloaded CSV from Firebase storage: \(classDetails.datesLocation)")
                     
-                    if let csvString = self.dataToString(data: data) {
+                    if let csvString = data.asString() {
                         log.debug("    Parsing CSV: \(classDetails.datesLocation)")
                         let dates = ClassDatesParser.parse(csvString: csvString)
                         log.debug("    Parsed CSV: \(classDetails.datesLocation)")
@@ -96,7 +100,7 @@ class FirebaseStorageClassService : ClassServiceType {
                 } else if let data = data {
                     log.debug("    Downloaded text from Firebase storage: \(classDetails.descriptionLocation)")
                     
-                    if let descriptionText = self.dataToString(data: data) {
+                    if let descriptionText = data.asString() {
                         successHandler(descriptionText)
                     } else {
                         errorHandler(ClassesError.noClassDescription(classDetails: classDetails))
@@ -126,7 +130,7 @@ class FirebaseStorageClassService : ClassServiceType {
                 } else if let data = data {
                     log.debug("    Downloaded CSV from Firebase storage: \(importantDatesCsv)")
                     
-                    if let csvString = self.dataToString(data: data) {
+                    if let csvString = data.asString() {
                         log.debug("    Parsing CSV: \(importantDatesCsv)")
                         let dates = ImportantDatesParser.parse(csvString: csvString)
                         log.debug("    Parsed CSV: \(importantDatesCsv)")
@@ -141,16 +145,6 @@ class FirebaseStorageClassService : ClassServiceType {
                     errorHandler(ClassesError.noImportantDates)
                 }
             }
-        }
-    }
-    
-    private func dataToString(data: Data) -> String? {
-        if let utf8String = String(data: data, encoding: String.Encoding.utf8) {
-            return utf8String
-        } else if let cp1252String = String(data: data, encoding: String.Encoding.windowsCP1252) {
-            return cp1252String
-        } else {
-            return nil
         }
     }
     
