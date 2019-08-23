@@ -38,9 +38,12 @@ class ClassDatesParser : CsvParser {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
         
-        let startDate = dateFormatter.date(from: date + " " + time)
+        guard let startDate = dateFormatter.date(from: date + " " + time),
+              let durationMinutes = Double(duration) else {
+            return nil
+        }
         
-        return DateInterval(start: startDate!, duration: Double(duration)! * 60)
+        return DateInterval(start: startDate, duration: durationMinutes * 60)
     }
 
 }
