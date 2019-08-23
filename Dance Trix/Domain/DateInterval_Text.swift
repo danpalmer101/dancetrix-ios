@@ -11,8 +11,8 @@ import Foundation
 extension DateInterval {
     
     func asText() -> String {
-        if (duration > 0) {
-            return "\(asDateOnlyText()) (\(asTimeOnlyText()!))"
+        if let time = asTimeOnlyText() {
+            return "\(asDateOnlyText()) (\(time))"
         } else {
             return asDateOnlyText()
         }
