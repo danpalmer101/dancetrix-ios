@@ -10,10 +10,6 @@ import UIKit
 
 class Class : Hashable, Equatable {
     
-    //MARK: Hashable
-    
-    var hashValue: Int
-    
     //MARK: Properties
     
     var id: String
@@ -37,14 +33,18 @@ class Class : Hashable, Equatable {
         self.datesLocation = datesLocation
         self.descriptionLocation = descriptionLocation
         self.allowIndividualBookings = allowIndividualBookings
-        
-        self.hashValue = id.hashValue
     }
     
     //MARK: Equatable
     
     static func ==(lhs: Class, rhs: Class) -> Bool {
         return lhs.id == rhs.id
+    }
+    
+    //MARK: Hashable
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
     
 }

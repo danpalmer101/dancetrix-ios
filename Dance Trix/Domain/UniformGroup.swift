@@ -10,10 +10,6 @@ import Foundation
 
 class UniformGroup : Hashable, Equatable {
     
-    //MARK: Hashable
-    
-    var hashValue: Int
-    
     //MARK: Properties
     
     var name : String
@@ -24,14 +20,18 @@ class UniformGroup : Hashable, Equatable {
     init(name: String, items: [UniformItem]) {
         self.name = name
         self.items = items
-        
-        self.hashValue = name.hashValue
     }
     
     //MARK: Equatable
     
     static func ==(lhs: UniformGroup, rhs: UniformGroup) -> Bool {
         return lhs.name == rhs.name
+    }
+    
+    //MARK: Hashable
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
     }
     
 }

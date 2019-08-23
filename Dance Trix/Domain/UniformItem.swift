@@ -10,10 +10,6 @@ import Foundation
 
 class UniformItem : Hashable, Equatable {
     
-    //MARK: Hashable
-    
-    var hashValue: Int
-    
     //MARK: Properties
     
     var key : String
@@ -26,8 +22,6 @@ class UniformItem : Hashable, Equatable {
         self.key = key
         self.name = name
         self.sizes = sizes
-        
-        self.hashValue = key.hashValue
     }
     
     convenience init(json: [String : Any?]) {
@@ -40,6 +34,12 @@ class UniformItem : Hashable, Equatable {
     
     static func ==(lhs: UniformItem, rhs: UniformItem) -> Bool {
         return lhs.key == rhs.key
+    }
+    
+    //MARK: Hashable
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(key)
     }
     
 }
