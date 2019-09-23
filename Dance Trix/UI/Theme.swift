@@ -32,7 +32,7 @@ class Theme {
         
         // Nav Bars
         UINavigationBar.appearance().barTintColor = Theme.colorBackground
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor:Theme.colorForeground]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:Theme.colorForeground]
         UITabBar.appearance().barTintColor = Theme.colorBackground
         
         // Tables

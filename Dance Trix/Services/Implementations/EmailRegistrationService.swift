@@ -97,7 +97,7 @@ class EmailRegistrationService : RegistrationServiceType {
         }
         
         guard let inverseImage = image.inverseImage(cgResult: true),
-              let data = UIImagePNGRepresentation(inverseImage) else {
+              let data = inverseImage.pngData() else {
             // Invalid image is a negative outcome
             errorHandler(nil)
             return

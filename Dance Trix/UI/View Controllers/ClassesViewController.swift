@@ -22,7 +22,7 @@ class ClassesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        self.loadingIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        self.loadingIndicator = UIActivityIndicatorView(style: .whiteLarge)
         self.loadingIndicator.hidesWhenStopped = true
         
         self.view.addSubview(self.loadingIndicator)

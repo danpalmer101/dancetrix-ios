@@ -22,7 +22,7 @@ class TextField: UITextField {
         super.layoutSubviews()
         
         if (self.placeholder != nil) {
-            var attributes = [NSAttributedStringKey: Any]();
+            var attributes = [NSAttributedString.Key: Any]();
             attributes[.foregroundColor] = Theme.colorForegroundDark
             self.attributedPlaceholder = NSAttributedString(string:self.placeholder!, attributes: attributes)
         }

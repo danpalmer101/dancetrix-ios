@@ -31,7 +31,7 @@ class SubmitButton: UIButton {
     }
     
     func overlayActivityIndicator() {
-        self.activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
+        self.activityIndicator = UIActivityIndicatorView.init(style: .whiteLarge)
         let width = self.activityIndicator!.frame.size.width
         let height = self.activityIndicator!.frame.size.height
         let buttonFrame = self.frame

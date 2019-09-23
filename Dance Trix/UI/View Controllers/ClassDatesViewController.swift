@@ -32,7 +32,7 @@ class ClassDatesViewController: AnalyticsUIViewController, UITableViewDelegate, 
         
         self.tableView.allowsSelection = self.classDetails.allowIndividualBookings
         self.selectAllButton.isHidden = !self.tableView.allowsSelection
-        self.descriptionView.textContainerInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        self.descriptionView.textContainerInset = UIEdgeInsets.init(top: 20, left: 0, bottom: 0, right: 0)
         
         
         self.loadDates()
@@ -145,7 +145,7 @@ class ClassDatesViewController: AnalyticsUIViewController, UITableViewDelegate, 
                     }
                 },
                 errorHandler: { (error: Error) in
-                    log.error(["An unexpected error occurred loading class description", self.classDetails, error])
+                    log.error(["An unexpected error occurred loading class description", self.classDetails!, error])
                 }
             )
         }
@@ -171,7 +171,7 @@ class ClassDatesViewController: AnalyticsUIViewController, UITableViewDelegate, 
                     errorHandler: { (error: Error) in
                         switch error {
                         case ClassesError.noClassDates:
-                            log.warning(["No class dates found", self.classDetails])
+                            log.warning(["No class dates found", self.classDetails!])
                             
                             Notification.show(
                                 title: "Sorry!",
@@ -180,7 +180,7 @@ class ClassDatesViewController: AnalyticsUIViewController, UITableViewDelegate, 
                             
                             break
                         default:
-                            log.error(["An unexpected error occurred loading class dates", self.classDetails])
+                            log.error(["An unexpected error occurred loading class dates", self.classDetails!])
                             
                             Notification.show(
                                 title: "Error",
