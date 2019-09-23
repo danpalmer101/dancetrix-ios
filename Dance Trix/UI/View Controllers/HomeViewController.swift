@@ -37,9 +37,15 @@ class HomeViewController: AnalyticsUIViewController {
         
         // Listen for updates to remote config in case the update is slow during app start up
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(hideMenuOptions),
+                                               selector: #selector(hideMenuOptionsAsync),
                                                name: .remoteConfigUpdated,
                                                object: nil)
+    }
+    
+    @objc private func hideMenuOptionsAsync() {
+        DispatchQueue.main.async {
+            self.hideMenuOptions()
+        }
     }
     
     @objc private func hideMenuOptions() {
