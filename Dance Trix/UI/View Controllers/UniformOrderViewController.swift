@@ -128,7 +128,7 @@ class UniformOrderViewController: SubmitFormViewController {
         
         self.form
             +++ Section("Your payment")
-            <<< PushRow<String>("order_package") { row in
+            /*<<< PushRow<String>("order_package") { row in
                 row.title = "Package"
                 row.selectorTitle = "Select your package"
                 row.options = [
@@ -141,7 +141,7 @@ class UniformOrderViewController: SubmitFormViewController {
                 ]
                 }.onPresent({ (_, presentingVC) -> () in
                     presentingVC.selectableRowCellUpdate = selectableRowCellUpdate
-                })
+                })*/
             <<< SwitchRow("payment_made") { row in
                 row.title = "Payment made"
             }
