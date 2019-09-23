@@ -35,7 +35,7 @@ class SignatureViewController: AnalyticsUIViewController, SwiftSignatureViewDele
         
     }
     
-    func swiftSignatureViewDidPanInside(_ view: SwiftSignatureView) {
+    func swiftSignatureViewDidPanInside(_ view: SwiftSignatureView, _ pan: UIPanGestureRecognizer) {
         self.registerButton?.isEnabled = true
     }
     

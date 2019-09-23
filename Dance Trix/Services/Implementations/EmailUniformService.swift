@@ -27,7 +27,7 @@ class EmailUniformService: UniformServiceType {
                     log.warning(["...failed to retrieve uniforms", error])
                     errorHandler(error)
                 } else if let data = data {
-                    log.debug("    Downloaded CSV from Firebase storage:\(csvName)")
+                    log.debug("    Downloaded CSV from Firebase storage: \(csvName)")
                     
                     if let csvString = data.asString() {
                         log.debug("    Parsing CSV: \(csvName)")

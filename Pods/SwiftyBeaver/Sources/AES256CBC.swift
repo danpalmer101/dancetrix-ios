@@ -33,7 +33,7 @@ final class AES256CBC {
     /// automatically generates and puts a random IV at first 16 chars
     /// the password must be exactly 32 chars long for AES-256
     class func encryptString(_ str: String, password: String) -> String? {
-        if !str.isEmpty && password.count == 32 {
+        if !str.isEmpty && password.length == 32 {
             let iv = randomText(16)
             let key = password
 
@@ -49,7 +49,7 @@ final class AES256CBC {
     /// returns optional decrypted string via AES-256CBC
     /// IV need to be at first 16 chars, password must be 32 chars long
     class func decryptString(_ str: String, password: String) -> String? {
-        if str.count > 16 && password.count == 32 {
+        if str.length > 16 && password.length == 32 {
             // get AES initialization vector from first 16 chars
             #if swift(>=4.0)
             let iv = String(str[..<str.index(str.startIndex, offsetBy: 16)])
@@ -123,8 +123,13 @@ final class AES256CBC {
         let keyData = key.data(using: String.Encoding.utf8)!
         let ivData = iv.data(using: String.Encoding.utf8)!
         let data = str.data(using: String.Encoding.utf8)!
+        #if swift(>=5)
+        let enc = try Data(AESCipher(key: keyData.bytes,
+                                            iv: ivData.bytes).encrypt(bytes: data.bytes))
+        #else
         let enc = try Data(bytes: AESCipher(key: keyData.bytes,
                                             iv: ivData.bytes).encrypt(bytes: data.bytes))
+        #endif
         // Swift 3.1.x has a bug with base64encoding under Linux, so we are using our own
         #if os(Linux)
             return Base64.encode([UInt8](enc))
@@ -138,8 +143,13 @@ final class AES256CBC {
         let keyData = key.data(using: String.Encoding.utf8)!
         let ivData = iv.data(using: String.Encoding.utf8)!
         let data = Data(base64Encoded: str)!
+        #if swift(>=5)
+        let dec = try Data(AESCipher(key: keyData.bytes,
+                                            iv: ivData.bytes).decrypt(bytes: data.bytes))
+        #else
         let dec = try Data(bytes: AESCipher(key: keyData.bytes,
                                             iv: ivData.bytes).decrypt(bytes: data.bytes))
+        #endif
         guard let decryptStr = String(data: dec, encoding: String.Encoding.utf8) else {
             throw NSError(domain: "Invalid utf8 data", code: 0, userInfo: nil)
         }
@@ -759,8 +769,13 @@ fileprivate func arrayOfBytes<T>(value: T, length: Int? = nil) -> Array<UInt8> {
         bytes[totalBytes - 1 - j] = (bytesPointer + j).pointee
     }
 
+    #if swift(>=4.1)
+    valuePointer.deinitialize(count: 1)
+    valuePointer.deallocate()
+    #else
     valuePointer.deinitialize()
     valuePointer.deallocate(capacity: 1)
+    #endif
 
     return bytes
 }

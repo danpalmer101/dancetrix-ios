@@ -30,7 +30,7 @@ import FirebaseStorage
                 if let error = error {
                     log.warning(["...failed to retrieve markdown", error])
                 } else if let data = data {
-                    log.debug("    Downloaded CSV from Firebase storage:\(ref)")
+                    log.debug("    Downloaded CSV from Firebase storage: \(ref)")
                     
                     if let markdown = data.asString() {
                         self.setMarkdownText(markdown)

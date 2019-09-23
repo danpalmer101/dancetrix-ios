@@ -9,7 +9,7 @@
 import UIKit
 import JTAppleCalendar
 
-class CalendarCell: JTAppleCell {
+class CalendarCell: JTACDayCell {
 
     @IBOutlet
     var dayLabel : UILabel!

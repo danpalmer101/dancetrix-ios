@@ -7,16 +7,16 @@ target 'Dance Trix' do
 
   # Pods for Dance Trix
   pod 'ReachabilitySwift'
-  pod 'JTAppleCalendar', '~> 7.1'
-  pod 'RMessage', '~> 2.1.5'
-  pod 'SwiftyBeaver', '~> 1.4.2', :inhibit_warnings => true
-  pod 'Eureka', '~> 4.1.0', :inhibit_warnings => true
+  pod 'JTAppleCalendar'
+  pod 'RMessage'
+  pod 'SwiftyBeaver'
+  pod 'Eureka'
   pod 'Firebase/Core'
   pod 'Firebase/RemoteConfig'
   pod 'Firebase/Storage'
   pod 'Firebase/Messaging'
   pod 'Firebase/Performance'
-  pod 'GRMustache.swift', :inhibit_warnings => true
+  pod 'GRMustache.swift'
   pod 'SwiftMailgun'
   pod 'Fabric'
   pod 'Crashlytics'

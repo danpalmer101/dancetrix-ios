@@ -244,7 +244,7 @@ public class SBPlatformDestination: BaseDestination {
                     toNSLog("Encrypting \(lines) log entries ...")
                     if let encryptedStr = encrypt(str) {
                         var msg = "Sending \(lines) encrypted log entries "
-                        msg += "(\(encryptedStr.count) chars) to server ..."
+                        msg += "(\(encryptedStr.length) chars) to server ..."
                         toNSLog(msg)
                         sendToServerAsync(encryptedStr) { ok, _ in
 
@@ -351,13 +351,13 @@ public class SBPlatformDestination: BaseDestination {
     func sendingPointsForLevel(_ level: SwiftyBeaver.Level) -> Int {
 
         switch level {
-        case SwiftyBeaver.Level.debug:
+        case .debug:
             return sendingPoints.debug
-        case SwiftyBeaver.Level.info:
+        case .info:
             return sendingPoints.info
-        case SwiftyBeaver.Level.warning:
+        case .warning:
             return sendingPoints.warning
-        case SwiftyBeaver.Level.error:
+        case .error:
             return sendingPoints.error
         default:
             return sendingPoints.verbose
@@ -415,7 +415,7 @@ public class SBPlatformDestination: BaseDestination {
             var dicts = [[String: Any]()] // array of dictionaries
             for lineJSON in linesArray {
                 lines += 1
-                if lineJSON.first == "{" && lineJSON.last == "}" {
+                if lineJSON.firstChar == "{" && lineJSON.lastChar == "}" {
                     // try to parse json string into dict
                     if let data = lineJSON.data(using: .utf8) {
                         do {

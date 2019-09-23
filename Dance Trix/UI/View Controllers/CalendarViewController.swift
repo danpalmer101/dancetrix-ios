@@ -10,7 +10,7 @@ import UIKit
 import JTAppleCalendar
 import Firebase
 
-class CalendarViewController : AnalyticsUIViewController, JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource, UITableViewDelegate, UITableViewDataSource {
+class CalendarViewController : AnalyticsUIViewController, JTACMonthViewDelegate, JTACMonthViewDataSource, UITableViewDelegate, UITableViewDataSource {
     
     private var classDates = [Date : [(classDetails: Class, date: DateInterval)]]()
     private var importantDates = [Date : [(String, DateInterval)]]()
@@ -18,7 +18,7 @@ class CalendarViewController : AnalyticsUIViewController, JTAppleCalendarViewDel
     private var datesErrorDisplayed = false
     
     @IBOutlet
-    var calendarView: JTAppleCalendarView!
+    var calendarView: JTACMonthView!
     @IBOutlet
     var tableView: UITableView!
     
@@ -80,7 +80,7 @@ class CalendarViewController : AnalyticsUIViewController, JTAppleCalendarViewDel
                         // (and ensure current selected dates remain selected after reload)
                         let selectedDates = self.calendarView.selectedDates
                         self.calendarView.reloadData(
-                            withanchor: self.calendarView.selectedDates.first,
+                            withAnchor: self.calendarView.selectedDates.first,
                             completionHandler: {
                                 self.tableView.reloadData()
                                 self.calendarView.selectDates(selectedDates)
@@ -158,7 +158,7 @@ class CalendarViewController : AnalyticsUIViewController, JTAppleCalendarViewDel
                     // (and ensure current selected dates remain selected after reload)
                     let selectedDates = self.calendarView.selectedDates
                     self.calendarView.reloadData(
-                        withanchor: self.calendarView.selectedDates.first,
+                        withAnchor: self.calendarView.selectedDates.first,
                         completionHandler: {
                             self.tableView.reloadData()
                             self.calendarView.selectDates(selectedDates)
@@ -181,7 +181,7 @@ class CalendarViewController : AnalyticsUIViewController, JTAppleCalendarViewDel
     
     // MARK: - JTAppleCalendarViewDelegate implementation
     
-    func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
+    func calendar(_ calendar: JTACMonthView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTACDayCell {
         let calendarCell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarCell
         
         // Default style
@@ -218,34 +218,34 @@ class CalendarViewController : AnalyticsUIViewController, JTAppleCalendarViewDel
         return calendarCell
     }
     
-    func calendar(_ calendar: JTAppleCalendarView, shouldSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) -> Bool {
+    func calendar(_ calendar: JTACMonthView, shouldSelectDate date: Date, cell: JTACDayCell?, cellState: CellState) -> Bool {
         // Allow selecting of today or future in current month
         return cellState.dateBelongsTo == .thisMonth && date >= Calendar.current.startOfDay(for: Date())
     }
     
-    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+    func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState) {
         cell?.layer.borderWidth = 1 // Show border
         
         self.tableView.reloadData()
     }
     
-    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+    func calendar(_ calendar: JTACMonthView, didDeselectDate date: Date, cell: JTACDayCell?, cellState: CellState) {
         cell?.layer.borderWidth = 0 // Hide border
         
         self.tableView.reloadData()
     }
     
-    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+    func calendar(_ calendar: JTACMonthView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         self.updateTitle()
     }
     
-    func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
+    func calendar(_ calendar: JTACMonthView, willDisplay cell: JTACDayCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         
     }
     
     // MARK: - JTAppleCalendarViewDataSource implementation
     
-    func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
+    func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
         return ConfigurationParameters(startDate: Date(),
                                        endDate: Date().addingTimeInterval(60 * 60 * 24 * 365), // 1 year
                                        firstDayOfWeek: .monday)

@@ -74,11 +74,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func enableRemoteConfig() {
         RemoteConfig.remoteConfig().setDefaults(fromPlist: "Configuration")
         RemoteConfig.remoteConfig().fetch(withExpirationDuration: 60) { (status, error) in
-            RemoteConfig.remoteConfig().activateFetched()
-            
-            NotificationCenter.default.post(
-                name: .remoteConfigUpdated,
-                object: nil)
+            RemoteConfig.remoteConfig().activate { error in
+                NotificationCenter.default.post(
+                    name: .remoteConfigUpdated,
+                    object: nil)
+            }
         }
     }
     

@@ -745,7 +745,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Dance Trix/Pods-Dance Trix-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Dance Trix/Pods-Dance Trix-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
@@ -788,7 +788,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dance Trix/Pods-Dance Trix-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dance Trix/Pods-Dance Trix-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A688283D1F794C4100D82322 /* Set Build Number */ = {

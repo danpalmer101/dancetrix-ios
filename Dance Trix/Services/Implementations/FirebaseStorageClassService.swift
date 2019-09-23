@@ -26,7 +26,7 @@ class FirebaseStorageClassService : ClassServiceType {
                     log.warning(["...failed to retrieve class menu", error])
                     errorHandler(error)
                 } else if let data = data {
-                    log.debug("    Downloaded CSV from Firebase storage:\(csvName)")
+                    log.debug("    Downloaded CSV from Firebase storage: \(csvName)")
                     
                     if let csvString = data.asString() {
                         log.debug("    Parsing CSV: \(csvName)")
