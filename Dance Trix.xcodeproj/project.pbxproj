@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		261C9039DA2C9CDD6CD0E02F /* Pods_Dance_Trix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */; };
-		28690BA29C22982BBF91A486 /* Pods_Dance_Trix_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAFC10EAB243549E5EAA1C6 /* Pods_Dance_Trix_Tests.framework */; };
+		5FD8FB820AF28E1C37D72C8C /* Pods_Dance_Trix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 400E9B27163C8EAD8A0D3A39 /* Pods_Dance_Trix.framework */; };
+		722157AD95306E9E434EFEC3 /* Pods_Dance_Trix_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D399B2B9CD4D2C36898D605 /* Pods_Dance_Trix_Tests.framework */; };
 		A2698F052012A5B7005DF277 /* ImportantDatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2698F042012A5B7005DF277 /* ImportantDatesViewController.swift */; };
 		A2F11A362013C08D00B1A14D /* dates_important.csv in Resources */ = {isa = PBXBuildFile; fileRef = A2F11A352013C08D00B1A14D /* dates_important.csv */; };
 		A2F11A382013C18200B1A14D /* ImportantDatesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F11A372013C18200B1A14D /* ImportantDatesParser.swift */; };
@@ -133,10 +133,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		024EE0214AAF4BA2CEFC5D30 /* Pods-Dance Trix Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		42F763BA46788E7A70E0443A /* Pods-Dance Trix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix/Pods-Dance Trix.release.xcconfig"; sourceTree = "<group>"; };
-		7EAFC10EAB243549E5EAA1C6 /* Pods_Dance_Trix_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		939F18AC94B46B075CEA7EE3 /* Pods-Dance Trix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix/Pods-Dance Trix.debug.xcconfig"; sourceTree = "<group>"; };
+		394564BB171A5D09C9D8FA96 /* Pods-Dance Trix Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix Tests.release.xcconfig"; path = "Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests.release.xcconfig"; sourceTree = "<group>"; };
+		3D3C5A25633886678810607B /* Pods-Dance Trix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix.debug.xcconfig"; path = "Target Support Files/Pods-Dance Trix/Pods-Dance Trix.debug.xcconfig"; sourceTree = "<group>"; };
+		400E9B27163C8EAD8A0D3A39 /* Pods_Dance_Trix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4126DD026F451C5DC8323B8C /* Pods-Dance Trix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix.release.xcconfig"; path = "Target Support Files/Pods-Dance Trix/Pods-Dance Trix.release.xcconfig"; sourceTree = "<group>"; };
+		6D61D92E5E17FE04D1B50611 /* Pods-Dance Trix Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix Tests.debug.xcconfig"; path = "Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D399B2B9CD4D2C36898D605 /* Pods_Dance_Trix_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2698F042012A5B7005DF277 /* ImportantDatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantDatesViewController.swift; sourceTree = "<group>"; };
 		A2F11A352013C08D00B1A14D /* dates_important.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dates_important.csv; sourceTree = "<group>"; };
 		A2F11A372013C18200B1A14D /* ImportantDatesParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantDatesParser.swift; sourceTree = "<group>"; };
@@ -227,7 +229,6 @@
 		A6D23AEC1F8253EE00229DEC /* PaymentServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentServiceType.swift; sourceTree = "<group>"; };
 		A6D23AEE1F82540B00229DEC /* UniformServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformServiceType.swift; sourceTree = "<group>"; };
 		A6D23AF01F82544800229DEC /* MockBookingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBookingService.swift; sourceTree = "<group>"; };
-		B7A5DCFF387C88D76065DD0C /* Pods-Dance Trix Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dance Trix Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dance Trix Tests/Pods-Dance Trix Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BA099ED42027B33100989ACE /* PhotoConsentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoConsentViewController.swift; sourceTree = "<group>"; };
 		BA099ED62027C4D700989ACE /* Registration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		BA099ED82027C73700989ACE /* SignatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureViewController.swift; sourceTree = "<group>"; };
@@ -249,7 +250,6 @@
 		BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterChildViewController.swift; sourceTree = "<group>"; };
 		BAE7E77A213A95DA00AFCC06 /* uniforms.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uniforms.csv; sourceTree = "<group>"; };
 		BAE7E77C213A977300AFCC06 /* UniformParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformParser.swift; sourceTree = "<group>"; };
-		D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dance_Trix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,7 +257,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28690BA29C22982BBF91A486 /* Pods_Dance_Trix_Tests.framework in Frameworks */,
+				722157AD95306E9E434EFEC3 /* Pods_Dance_Trix_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,19 +265,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				261C9039DA2C9CDD6CD0E02F /* Pods_Dance_Trix.framework in Frameworks */,
+				5FD8FB820AF28E1C37D72C8C /* Pods_Dance_Trix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4201C1A1FB32FC5B22587FDA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D3C5A25633886678810607B /* Pods-Dance Trix.debug.xcconfig */,
+				4126DD026F451C5DC8323B8C /* Pods-Dance Trix.release.xcconfig */,
+				6D61D92E5E17FE04D1B50611 /* Pods-Dance Trix Tests.debug.xcconfig */,
+				394564BB171A5D09C9D8FA96 /* Pods-Dance Trix Tests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A08054D158965EBACC42A8E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				BA34CF95202D0ECA00ECF925 /* OpenGLES.framework */,
-				D44E7DF404F88500D9FDE6D8 /* Pods_Dance_Trix.framework */,
-				7EAFC10EAB243549E5EAA1C6 /* Pods_Dance_Trix_Tests.framework */,
+				400E9B27163C8EAD8A0D3A39 /* Pods_Dance_Trix.framework */,
+				7D399B2B9CD4D2C36898D605 /* Pods_Dance_Trix_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -447,8 +459,8 @@
 				A6BA0F5A1F74E20C00FAF47E /* Dance Trix */,
 				A68828061F7560C600D82322 /* Dance Trix Tests */,
 				A6BA0F591F74E20C00FAF47E /* Products */,
-				FB2897419A9A66B57376CF5D /* Pods */,
 				A08054D158965EBACC42A8E7 /* Frameworks */,
+				4201C1A1FB32FC5B22587FDA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -552,17 +564,6 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
-		FB2897419A9A66B57376CF5D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				939F18AC94B46B075CEA7EE3 /* Pods-Dance Trix.debug.xcconfig */,
-				42F763BA46788E7A70E0443A /* Pods-Dance Trix.release.xcconfig */,
-				024EE0214AAF4BA2CEFC5D30 /* Pods-Dance Trix Tests.debug.xcconfig */,
-				B7A5DCFF387C88D76065DD0C /* Pods-Dance Trix Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -570,7 +571,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A688280E1F7560C600D82322 /* Build configuration list for PBXNativeTarget "Dance Trix Tests" */;
 			buildPhases = (
-				84D7E19E3CE475573D74824E /* [CP] Check Pods Manifest.lock */,
+				0CA77181DE2861C5CD36BA16 /* [CP] Check Pods Manifest.lock */,
 				A68828011F7560C600D82322 /* Sources */,
 				A68828021F7560C600D82322 /* Frameworks */,
 				A68828031F7560C600D82322 /* Resources */,
@@ -589,13 +590,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6BA0F6A1F74E20C00FAF47E /* Build configuration list for PBXNativeTarget "Dance Trix" */;
 			buildPhases = (
-				6673C4FCD9D06052D8F61655 /* [CP] Check Pods Manifest.lock */,
+				F771EF119C6AE6C22C743BC1 /* [CP] Check Pods Manifest.lock */,
 				A6BA0F541F74E20C00FAF47E /* Sources */,
 				A6BA0F551F74E20C00FAF47E /* Frameworks */,
 				A6BA0F561F74E20C00FAF47E /* Resources */,
 				A688283D1F794C4100D82322 /* Set Build Number */,
-				9F556218C19EB29526B44CBA /* [CP] Embed Pods Frameworks */,
 				A6BA91DA1F90B2F200AB4E19 /* Fabric Initialization */,
+				BF9F4CBC85B095C1D8A519A2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -703,92 +704,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6673C4FCD9D06052D8F61655 /* [CP] Check Pods Manifest.lock */ = {
+		0CA77181DE2861C5CD36BA16 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Dance Trix-checkManifestLockResult.txt",
+			outputFileListPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		84D7E19E3CE475573D74824E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Dance Trix Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9F556218C19EB29526B44CBA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dance Trix/Pods-Dance Trix-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
-				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
-				"${BUILT_PRODUCTS_DIR}/GRMustache.swift/Mustache.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
-				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/PPTopMostController/PPTopMostController.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/RMessage/RMessage.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftMailgun/SwiftMailgun.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSignatureView/SwiftSignatureView.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mustache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PPTopMostController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMessage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMailgun.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSignatureView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dance Trix/Pods-Dance Trix-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A688283D1F794C4100D82322 /* Set Build Number */ = {
@@ -818,6 +753,80 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 1afcdbced5cafaf41c2ad59315996759c75d98d1 8c6f51ce36809b5bba45c2d6c91ce56278d68889750e8a5dd2b9c6f781e585f0";
+		};
+		BF9F4CBC85B095C1D8A519A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dance Trix/Pods-Dance Trix-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/GRMustache.swift/Mustache.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PPTopMostController/PPTopMostController.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RMessage/RMessage.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMailgun/SwiftMailgun.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSignatureView/SwiftSignatureView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mustache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PPTopMostController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMessage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMailgun.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSignatureView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dance Trix/Pods-Dance Trix-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F771EF119C6AE6C22C743BC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dance Trix-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -947,7 +956,7 @@
 /* Begin XCBuildConfiguration section */
 		A688280C1F7560C600D82322 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 024EE0214AAF4BA2CEFC5D30 /* Pods-Dance Trix Tests.debug.xcconfig */;
+			baseConfigurationReference = 6D61D92E5E17FE04D1B50611 /* Pods-Dance Trix Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -963,7 +972,7 @@
 		};
 		A688280D1F7560C600D82322 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7A5DCFF387C88D76065DD0C /* Pods-Dance Trix Tests.release.xcconfig */;
+			baseConfigurationReference = 394564BB171A5D09C9D8FA96 /* Pods-Dance Trix Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1092,7 +1101,7 @@
 		};
 		A6BA0F6B1F74E20C00FAF47E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 939F18AC94B46B075CEA7EE3 /* Pods-Dance Trix.debug.xcconfig */;
+			baseConfigurationReference = 3D3C5A25633886678810607B /* Pods-Dance Trix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Dance Trix/Dance Trix.entitlements";
@@ -1104,6 +1113,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.dancetrix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1111,7 +1121,7 @@
 		};
 		A6BA0F6C1F74E20C00FAF47E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42F763BA46788E7A70E0443A /* Pods-Dance Trix.release.xcconfig */;
+			baseConfigurationReference = 4126DD026F451C5DC8323B8C /* Pods-Dance Trix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Dance Trix/Dance Trix.entitlements";
@@ -1123,6 +1133,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.dancetrix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
