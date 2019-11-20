@@ -233,7 +233,7 @@ class UniformOrderViewController: SubmitFormViewController {
         let name = (self.form.rowBy(tag: "name") as! TextRow).value!
         let studentName = (self.form.rowBy(tag: "student_name") as! TextRow).value!
         let email = (self.form.rowBy(tag: "email") as! EmailRow).value!
-        let orderPackage = (self.form.rowBy(tag: "order_package") as! PushRow<String>).value
+        let orderPackage = "" //(self.form.rowBy(tag: "order_package") as! PushRow<String>).value
         let paymentMade = (self.form.rowBy(tag: "payment_made") as! SwitchRow).value ?? false
         let paymentMethod = (self.form.rowBy(tag: "payment_method") as! PushRow<String>).value!
         let additionalInfo = (self.form.rowBy(tag: "additional") as! TextAreaRow).value
