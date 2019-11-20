@@ -162,18 +162,23 @@ class PaymentFormViewController: SubmitFormViewController {
     // MARK: - Actions
     
     private func checkCompleteForm() {
-        let date = (self.form.rowBy(tag: "date") as! DateRow)
-        let amount = (self.form.rowBy(tag: "amount") as! DecimalRow)
-        let name = (self.form.rowBy(tag: "name") as! TextRow)
-        let studentName = (self.form.rowBy(tag: "student_name") as! TextRow)
-        let email = (self.form.rowBy(tag: "email") as! EmailRow)
-        let method = (self.form.rowBy(tag: "method") as! PushRow<String>)
-        let reason = (self.form.rowBy(tag: "reason") as! PushRow<String>)
+        guard let date = (self.form.rowBy(tag: "date") as? DateRow),
+              let amount = (self.form.rowBy(tag: "amount") as? DecimalRow),
+              let name = (self.form.rowBy(tag: "name") as? TextRow),
+              let studentName = (self.form.rowBy(tag: "student_name") as? TextRow),
+              let email = (self.form.rowBy(tag: "email") as? EmailRow),
+              let method = (self.form.rowBy(tag: "method") as? PushRow<String>),
+              let reason = (self.form.rowBy(tag: "reason") as? PushRow<String>),
+              let additional = (self.form.rowBy(tag: "additional") as? TextAreaRow)
+        else {
+            self.submitButton.isEnabled = false
+            return
+        }
+        
         var otherReason: TextRow?
         if (reason.value == "Other") {
-            otherReason = (self.form.rowBy(tag: "other_reason") as! TextRow)
+            otherReason = (self.form.rowBy(tag: "other_reason") as? TextRow)
         }
-        let additional = (self.form.rowBy(tag: "additional") as! TextAreaRow)
         
         self.submitButton.isEnabled = date.value != nil && date.isValid
             && amount.value != nil && amount.isValid
