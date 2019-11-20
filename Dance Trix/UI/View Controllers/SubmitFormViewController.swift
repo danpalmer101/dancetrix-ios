@@ -27,6 +27,8 @@ class SubmitFormViewController: FormViewController {
         footerView.addSubview(self.submitButton)
         self.tableView.tableFooterView = footerView
         
+        self.tableView.separatorColor = .lightGray
+        
         self.submitButton.overlayActivityIndicator()
     }
     
