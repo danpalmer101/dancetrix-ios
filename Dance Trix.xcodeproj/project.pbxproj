@@ -115,6 +115,7 @@
 		BA9ED53821407E730042F0BF /* registration_child_body_plain.mustache in Resources */ = {isa = PBXBuildFile; fileRef = BA9ED53521407E730042F0BF /* registration_child_body_plain.mustache */; };
 		BA9ED53921407E730042F0BF /* registration_child_subject.mustache in Resources */ = {isa = PBXBuildFile; fileRef = BA9ED53621407E730042F0BF /* registration_child_subject.mustache */; };
 		BA9ED53A21407E730042F0BF /* registration_child_body_html.mustache in Resources */ = {isa = PBXBuildFile; fileRef = BA9ED53721407E730042F0BF /* registration_child_body_html.mustache */; };
+		BABD3A0024AFD4C200315E08 /* AnalyticsEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABD39FF24AFD4C200315E08 /* AnalyticsEvents.swift */; };
 		BAC078B72023CAC500CC9C6D /* RegisterAdultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */; };
 		BAC078B92023CCAE00CC9C6D /* RegisterChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */; };
 		BAE7E77B213A95DA00AFCC06 /* uniforms.csv in Resources */ = {isa = PBXBuildFile; fileRef = BAE7E77A213A95DA00AFCC06 /* uniforms.csv */; };
@@ -246,6 +247,7 @@
 		BA9ED53521407E730042F0BF /* registration_child_body_plain.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = registration_child_body_plain.mustache; sourceTree = "<group>"; };
 		BA9ED53621407E730042F0BF /* registration_child_subject.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = registration_child_subject.mustache; sourceTree = "<group>"; };
 		BA9ED53721407E730042F0BF /* registration_child_body_html.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = registration_child_body_html.mustache; sourceTree = "<group>"; };
+		BABD39FF24AFD4C200315E08 /* AnalyticsEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvents.swift; sourceTree = "<group>"; };
 		BAC078B62023CAC500CC9C6D /* RegisterAdultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAdultViewController.swift; sourceTree = "<group>"; };
 		BAC078B82023CCAE00CC9C6D /* RegisterChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterChildViewController.swift; sourceTree = "<group>"; };
 		BAE7E77A213A95DA00AFCC06 /* uniforms.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uniforms.csv; sourceTree = "<group>"; };
@@ -280,7 +282,6 @@
 				6D61D92E5E17FE04D1B50611 /* Pods-Dance Trix Tests.debug.xcconfig */,
 				394564BB171A5D09C9D8FA96 /* Pods-Dance Trix Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -400,6 +401,7 @@
 				A608AD4A1FC4322300FE614C /* NotificationName.swift */,
 				BA5354AE219B5D8A001EA7E6 /* Data+String.swift */,
 				BA5354B0219B5F54001EA7E6 /* UIImage+Utils.swift */,
+				BABD39FF24AFD4C200315E08 /* AnalyticsEvents.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -772,7 +774,8 @@
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PPTopMostController/PPTopMostController.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RMessage/RMessage.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMailgun/SwiftMailgun.framework",
@@ -793,7 +796,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PPTopMostController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMessage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMailgun.framework",
@@ -859,6 +863,7 @@
 				A66EF18D1F863D4300B8EDFE /* UniformItem.swift in Sources */,
 				A60026611F7B985300DDC90F /* SubmitBookingViewController.swift in Sources */,
 				A69ED4A81F83BC8C0005B845 /* EmailServiceType.swift in Sources */,
+				BABD3A0024AFD4C200315E08 /* AnalyticsEvents.swift in Sources */,
 				A627D0771F79A185009097C1 /* ReadOnlyTextView.swift in Sources */,
 				A69ED4D61F8542580005B845 /* Configuration.swift in Sources */,
 				A6D23AD71F813B5700229DEC /* MockPaymentService.swift in Sources */,

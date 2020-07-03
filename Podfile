@@ -6,6 +6,7 @@ target 'Dance Trix' do
   use_frameworks!
 
   # Pods for Dance Trix
+  pod 'Alamofire', '~> 4.9'
   pod 'ReachabilitySwift'
   pod 'JTAppleCalendar'
   pod 'RMessage'

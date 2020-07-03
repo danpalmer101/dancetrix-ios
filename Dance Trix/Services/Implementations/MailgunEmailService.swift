@@ -9,6 +9,7 @@
 import Foundation
 import Mustache
 import SwiftMailgun
+import Firebase
 
 class MailgunEmailService : EmailServiceType {
 
@@ -56,6 +57,10 @@ class MailgunEmailService : EmailServiceType {
             
             log.debug("Plain:\n\(email.text!)")
         } catch {
+            Analytics.logEvent(AnalyticsEvents.EMAIL_FAILED_TEMPLATE, parameters: [
+                "template": templateName
+            ])
+            
             log.warning("Unable to render plain file content for \(templateName)")
             log.warning([error])
         }
@@ -68,6 +73,10 @@ class MailgunEmailService : EmailServiceType {
             
             log.debug("HTML:\n\(email.html!)")
         } catch {
+            Analytics.logEvent(AnalyticsEvents.EMAIL_FAILED_TEMPLATE, parameters: [
+                "template": templateName
+            ])
+            
             log.warning("Unable to render HTML file content for \(templateName)")
             log.warning([error])
         }
@@ -79,6 +88,10 @@ class MailgunEmailService : EmailServiceType {
             
             log.debug("Subject:\n\(email.subject!)")
         } catch {
+            Analytics.logEvent(AnalyticsEvents.EMAIL_FAILED_TEMPLATE, parameters: [
+                "template": templateName
+            ])
+            
             log.warning("Unable to render subject file content for \(templateName)")
             log.warning([error])
         }
@@ -99,9 +112,15 @@ class MailgunEmailService : EmailServiceType {
             if (result.success) {
                 log.info("...email successfully sent")
                 
+                Analytics.logEvent(AnalyticsEvents.EMAIL_SENT, parameters: nil)
+                
                 successHandler()
             } else {
                 log.warning("...error sending email via Mailgun, message = \(result.message ?? "<null>")")
+                
+                Analytics.logEvent(AnalyticsEvents.EMAIL_FAILED_API, parameters: [
+                    "error": result.message ?? ""
+                ])
                 
                 errorHandler(EmailError.unableToSend(message: result.message))
             }

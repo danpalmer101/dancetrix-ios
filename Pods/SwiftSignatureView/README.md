@@ -9,6 +9,11 @@ SwiftSignatureView is a lightweight, fast and customizable option for capturing 
 
 ![Sample](http://i.imgur.com/dnXs4ND.png)
 
+## Version 2.2.3 | Swift 5.0
+
+- Signature now draws from the point of touch instead of the point from where the pan gesture was recognized.
+
+
 ## Version 2.2.2 | Swift 5.0
 
 - Modified the *swiftSignatureViewDidPanInside* delegate method to include the pan gesture recognizer in the callback. 
@@ -80,10 +85,11 @@ to clear the signature view.
 
 ## Installation
 
-SwiftSignatureView is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following lines to your Podfile:
+SwiftSignatureView is available through [CocoaPods](http://cocoapods.org) and Swift Package Manager.
 
 ### For Cocoapods >= 1.0 
+
+Add the following lines to your Podfile:
 
 ```ruby
 use_frameworks!
@@ -94,9 +100,21 @@ end
 
 ### For Cocoapods < 1.0
 
+Add the following lines to your Podfile:
+
 ```ruby
 use_frameworks!
 pod "SwiftSignatureView"
+```
+
+### For Swift Package Manager
+
+Add the following lines to your Package.swift file:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/alankarmisra/SwiftSignatureView.git", from: "2.2.2")
+]
 ```
 
 ## Author

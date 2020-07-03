@@ -20,7 +20,13 @@ static double const kRMessageExtraDisplayTimePerPixel = 0.04f;
 /** Contains the global design dictionary specified in the entire design RDesignFile */
 static NSMutableDictionary *globalDesignDictionary;
 
+static NSBundle *_classBundle;
+static NSBundle *_resourceBundle;
+
 @interface RMessageView () <UIGestureRecognizerDelegate>
+
+@property (nonatomic, strong, readonly) NSBundle *classBundle;
+@property (nonatomic, strong, readonly) NSBundle *resourceBundle;
 
 @property (nonatomic, weak) IBOutlet UIView *titleSubtitleContainerView;
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
@@ -89,8 +95,8 @@ static NSMutableDictionary *globalDesignDictionary;
 @property (nonatomic, assign) BOOL disableSpringAnimationPadding;
 
 /* The amount of vertical padding / height to add to RMessage's height so as to perform a spring animation without
-   visually showing an empty gap due to the spring animation overbounce. This value changes dynamically due to
-   iOS changing the overbounce dynamically according to view size. */
+ visually showing an empty gap due to the spring animation overbounce. This value changes dynamically due to
+ iOS changing the overbounce dynamically according to view size. */
 @property (nonatomic, assign) CGFloat springAnimationPadding;
 
 @property (nonatomic, assign) BOOL springAnimationPaddingCalculated;
@@ -101,24 +107,47 @@ static NSMutableDictionary *globalDesignDictionary;
 
 #pragma mark - Class Methods
 
+/// Framework / Class bundle.
++ (NSBundle *)classBundle
+{
+  if (_classBundle != nil) return _classBundle;
+
+  // Get the class / framework bundle (returns correctly regardless of whether use_frameworks! was used for cocoapods or not)
+  _classBundle = [NSBundle bundleForClass:[self class]];
+  return _classBundle;
+}
+
+/// Resources bundle for the framework / class bundle.
++ (NSBundle *)resourceBundle
+{
+  if (_resourceBundle != nil) return _resourceBundle;
+
+  // Get the URL to the resource bundle within the bundle of the class.
+  NSURL *resourceBundleURL = [[self class].classBundle URLForResource:@"RMessage" withExtension:@"bundle"];
+  if (!resourceBundleURL) return nil;
+
+  _resourceBundle = [NSBundle bundleWithURL:resourceBundleURL];
+  return _resourceBundle;
+}
+
 + (NSError *)setupGlobalDesignDictionary
 {
   if (!globalDesignDictionary) {
-    NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:RDesignFileName ofType:@"json"];
+    NSString *path = [[self class].resourceBundle pathForResource:RDesignFileName ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
-    NSAssert(data != nil, @"Could not read RMessage config file from main bundle with name %@.json", RDesignFileName);
+    NSAssert(data != nil, @"Could not read config file: %@.json from resource bundle.", RDesignFileName);
     if (!data) {
       NSString *configFileErrorMessage = [NSString stringWithFormat:@"There seems to be an error"
-                                                                    @"with the %@ configuration file",
-                                                                    RDesignFileName];
-      return [NSError errorWithDomain:[NSBundle bundleForClass:[self class]].bundleIdentifier
+                                          @"with the %@ configuration file",
+                                          RDesignFileName];
+      return [NSError errorWithDomain:[self class].classBundle.bundleIdentifier
                                  code:0
                              userInfo:@{ NSLocalizedDescriptionKey: configFileErrorMessage }];
     }
     globalDesignDictionary =
-      [NSMutableDictionary dictionaryWithDictionary: [NSJSONSerialization JSONObjectWithData:data
-                                        options:NSJSONReadingMutableContainers
-                                          error:nil]];
+    [NSMutableDictionary dictionaryWithDictionary: [NSJSONSerialization JSONObjectWithData:data
+                                                                                   options:NSJSONReadingMutableContainers
+                                                                                     error:nil]];
   }
   return nil;
 }
@@ -126,15 +155,17 @@ static NSMutableDictionary *globalDesignDictionary;
 + (void)addDesignsFromFileWithName:(NSString *)filename inBundle:(NSBundle *)bundle;
 {
   [[self class] setupGlobalDesignDictionary];
+
   NSString *path = [bundle pathForResource:filename ofType:@"json"];
+
   if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
     NSDictionary *newDesignStyle =
-      [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path]
-                                      options:NSJSONReadingMutableContainers
-                                        error:nil];
+    [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path]
+                                    options:NSJSONReadingMutableContainers
+                                      error:nil];
     [globalDesignDictionary addEntriesFromDictionary:newDesignStyle];
   } else {
-    NSAssert(NO, @"Error loading design file with name %@", filename);
+    NSAssert(NO, @"File with name %@ not found in given bundle", filename);
   }
 }
 
@@ -167,13 +198,32 @@ static NSMutableDictionary *globalDesignDictionary;
 
 #pragma mark - Get Image From Resource Bundle
 
-+ (UIImage *)bundledImageNamed:(NSString *)name
-{
-  NSString *imagePath = [[NSBundle bundleForClass:[self class]] pathForResource:name ofType:nil];
-  UIImage *image = [[UIImage alloc] initWithContentsOfFile:imagePath];
-  if (!image) {
-    image = [UIImage imageNamed:name];
+//+ (NSString *)frameworkBundledFilePathForFilename:(NSString *)filename
+//{
+//  return [[self class].frameworkBundle pathForResource:filename ofType:nil];
+//}
+
++ (NSString *)bundledFilePathForFilename:(NSString *)filename {
+  // Try the app bundle first when looking for the path.
+  NSString *filePath = [[NSBundle mainBundle] pathForResource:filename ofType:nil];
+
+  // If none found then try RMessage's resources bundle.
+  if (!filePath) {
+    filePath = [[self class].resourceBundle pathForResource:filename ofType:nil];
   }
+
+  return filePath;
+}
+
++ (UIImage *)bundledImageNamed:(NSString *)filename
+{
+  // So... Apparently iOS won't load images in xcassets unless they are part of the main app bundle which we can't guarantee
+  // since if RMessage is built for a framework it will not but if built statically it will. This is something
+  // dependent on how users of RMessage integrate it. Given that and RMessage's 2.x.x desire to maintain compatibility
+  // with iOS 7 we will need to forego the use of xcassets completely so that we can grab the images.
+
+  NSString *filePath = [[self class] bundledFilePathForFilename:filename];
+  UIImage *image = [[UIImage alloc] initWithContentsOfFile:filePath];
   return image;
 }
 
@@ -266,36 +316,38 @@ static NSMutableDictionary *globalDesignDictionary;
                       atPosition:(RMessagePosition)position
             canBeDismissedByUser:(BOOL)dismissingEnabled
 {
-  self = [[NSBundle bundleForClass:[self class]] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil].firstObject;
-  if (self) {
-    self.accessibilityIdentifier = @"RMessageView";
-    _delegate = delegate;
-    _title = title;
-    _subtitle = subtitle;
-    _iconImage = iconImage;
-    _duration = duration;
-    viewController ? _viewController = viewController : (_viewController = [[self class] defaultViewController]);
-    _messagePosition = position;
-    _callback = callback;
-    _messageType = messageType;
-    _customTypeName = customTypeName;
-    if ([buttonTitle length] > 0) {
-      _button = [UIButton buttonWithType:UIButtonTypeCustom];
-      _buttonTitle = buttonTitle;
-      _buttonCallback = buttonCallback;
-    }
-    _presentingCompletionCallback = presentingCompletionCallback;
-    _dismissCompletionCallback = dismissCompletionCallback;
-    _titleSubtitleLabelsSizeToFit = NO;
-    _dismissingEnabled = dismissingEnabled;
-    _springAnimationPadding = 5.f;
+  self = [[self class].resourceBundle loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil].firstObject;
 
-    NSError *designError = [self setupDesignDictionariesWithMessageType:_messageType customTypeName:customTypeName];
-    if (designError) return nil;
+  if (!self) return nil;
 
-    [self setupDesign];
-    [self setupGestureRecognizers];
+  self.accessibilityIdentifier = @"RMessageView";
+  _delegate = delegate;
+  _title = title;
+  _subtitle = subtitle;
+  _iconImage = iconImage;
+  _duration = duration;
+  viewController ? _viewController = viewController : (_viewController = [[self class] defaultViewController]);
+  _messagePosition = position;
+  _callback = callback;
+  _messageType = messageType;
+  _customTypeName = customTypeName;
+  if ([buttonTitle length] > 0) {
+    _button = [UIButton buttonWithType:UIButtonTypeCustom];
+    _buttonTitle = buttonTitle;
+    _buttonCallback = buttonCallback;
   }
+  _presentingCompletionCallback = presentingCompletionCallback;
+  _dismissCompletionCallback = dismissCompletionCallback;
+  _titleSubtitleLabelsSizeToFit = NO;
+  _dismissingEnabled = dismissingEnabled;
+  _springAnimationPadding = 5.f;
+
+  NSError *designError = [self setupDesignDictionariesWithMessageType:_messageType customTypeName:customTypeName];
+  if (designError) return nil;
+
+  [self setupDesign];
+  [self setupGestureRecognizers];
+
   return self;
 }
 
@@ -377,24 +429,24 @@ static NSMutableDictionary *globalDesignDictionary;
 - (void)updateCurrentIconIfNeeded
 {
   switch (self.messageType) {
-  case RMessageTypeNormal: {
-    self.iconImageView.image = _messageIcon;
-    break;
-  }
-  case RMessageTypeError: {
-    self.iconImageView.image = _errorIcon;
-    break;
-  }
-  case RMessageTypeSuccess: {
-    self.iconImageView.image = _successIcon;
-    break;
-  }
-  case RMessageTypeWarning: {
-    self.iconImageView.image = _warningIcon;
-    break;
-  }
-  default:
-    break;
+    case RMessageTypeNormal: {
+      self.iconImageView.image = _messageIcon;
+      break;
+    }
+    case RMessageTypeError: {
+      self.iconImageView.image = _errorIcon;
+      break;
+    }
+    case RMessageTypeSuccess: {
+      self.iconImageView.image = _successIcon;
+      break;
+    }
+    case RMessageTypeWarning: {
+      self.iconImageView.image = _warningIcon;
+      break;
+    }
+    default:
+      break;
   }
 }
 
@@ -403,45 +455,45 @@ static NSMutableDictionary *globalDesignDictionary;
   [[self class] setupGlobalDesignDictionary];
   NSString *messageTypeDesignString;
   switch (messageType) {
-  case RMessageTypeNormal:
-    messageTypeDesignString = @"normal";
-    break;
-  case RMessageTypeError:
-    messageTypeDesignString = @"error";
-    break;
-  case RMessageTypeSuccess:
-    messageTypeDesignString = @"success";
-    break;
-  case RMessageTypeWarning:
-    messageTypeDesignString = @"warning";
-    break;
-  case RMessageTypeCustom:
-    if (!customTypeName || [customTypeName isEqualToString:@""]) {
-      return
-        [NSError errorWithDomain:[NSBundle bundleForClass:[self class]].bundleIdentifier
+    case RMessageTypeNormal:
+      messageTypeDesignString = @"normal";
+      break;
+    case RMessageTypeError:
+      messageTypeDesignString = @"error";
+      break;
+    case RMessageTypeSuccess:
+      messageTypeDesignString = @"success";
+      break;
+    case RMessageTypeWarning:
+      messageTypeDesignString = @"warning";
+      break;
+    case RMessageTypeCustom:
+      if (!customTypeName || [customTypeName isEqualToString:@""]) {
+        return
+        [NSError errorWithDomain:[self class].classBundle.bundleIdentifier
                             code:0
                         userInfo:@{
                           NSLocalizedDescriptionKey: @"When specifying a type RMessageTypeCustom make sure to pass in "
-                                                     @"a valid argument for customTypeName parameter. This string "
-                                                     @"should match a Key in your custom design file."
+                          @"a valid argument for customTypeName parameter. This string "
+                          @"should match a Key in your custom design file."
                         }];
-    }
-    messageTypeDesignString = customTypeName;
-    break;
-  default:
-    break;
+      }
+      messageTypeDesignString = customTypeName;
+      break;
+    default:
+      break;
   }
 
   _designDictionary = globalDesignDictionary[messageTypeDesignString];
   if (!_designDictionary) {
     return
-      [NSError errorWithDomain:[NSBundle bundleForClass:[self class]].bundleIdentifier
-                          code:0
-                      userInfo:@{
-                        NSLocalizedDescriptionKey: @"When specifying a type RMessageTypeCustom make sure to pass in a "
-                                                   @"valid argument for customTypeName parameter. This string should "
-                                                   @"match a Key in your custom design file."
-                      }];
+    [NSError errorWithDomain:[self class].classBundle.bundleIdentifier
+                        code:0
+                    userInfo:@{
+                      NSLocalizedDescriptionKey: @"When specifying a type RMessageTypeCustom make sure to pass in a "
+                      @"valid argument for customTypeName parameter. This string should "
+                      @"match a Key in your custom design file."
+                    }];
   }
   return nil;
 }
@@ -491,11 +543,10 @@ static NSMutableDictionary *globalDesignDictionary;
                                                                            toItem:self.superview
                                                                         attribute:NSLayoutAttributeTrailing
                                                                        multiplier:1.f
-                                                                        constant:0.f];
+                                                                         constant:0.f];
   [[self class]
-    activateConstraints:@[centerXConstraint, leadingConstraint, trailingConstraint,
-                          self.titleSubtitleContainerViewLayoutGuideConstraint, self.topToVCLayoutConstraint]
-            inSuperview:self.superview];
+   activateConstraints:@[centerXConstraint, leadingConstraint, trailingConstraint, self.topToVCLayoutConstraint]
+   inSuperview:self.superview];
   if (self.shouldBlurBackground) {
     [self setupBlurBackground];
   }
@@ -505,11 +556,23 @@ static NSMutableDictionary *globalDesignDictionary;
   // Install a constraint that guarantees the title subtitle container view is properly spaced from the top layout guide
   // when animating from top or the bottom layout guide when animating from bottom
   if (self.messagePosition != RMessagePositionBottom) {
+    // BugFix: https://github.com/donileo/RMessage/issues/53
+    // Issue: UITableViewControllers in iOS versions below 11 offset the entire
+    // topLayoutGuide downward when the automaticallyAdjustsScrollViewInsets property
+    // is set (which it is by default). This causes the topLayoutGuide bottom which
+    // normally is located at the bottom of any top bars to now be offset
+    // (height of top bar) pts below the bottom of the bar. This is not expected
+    //  behavior (most likely a bug) and causes RMessage to improperly size itself.
+    NSLayoutAttribute layoutAttribute = NSLayoutAttributeBottom;
+    if (!@available(iOS 11.0, *) && self.viewController.automaticallyAdjustsScrollViewInsets &&
+        [self.viewController.view isKindOfClass:[UIScrollView class]]) {
+      layoutAttribute = NSLayoutAttributeTop;
+    }
     self.titleSubtitleContainerViewLayoutGuideConstraint = [NSLayoutConstraint constraintWithItem:self.titleSubtitleContainerView
                                                                                         attribute:NSLayoutAttributeTop
                                                                                         relatedBy:NSLayoutRelationEqual
                                                                                            toItem:self.viewController.topLayoutGuide
-                                                                                        attribute:NSLayoutAttributeBottom
+                                                                                        attribute:layoutAttribute
                                                                                        multiplier:1.f
                                                                                          constant:10.f];
 
@@ -522,7 +585,6 @@ static NSMutableDictionary *globalDesignDictionary;
                                                                                        multiplier:1.f
                                                                                          constant:-10.f];
   }
-  self.titleSubtitleContainerViewLayoutGuideConstraint.priority = 749;
 }
 - (void)setupBackgroundImageViewWithImage:(UIImage *)image
 {
@@ -557,14 +619,14 @@ static NSMutableDictionary *globalDesignDictionary;
                                                                     options:0
                                                                     metrics:nil
                                                                       views:@{
-                                                                              @"blurBackgroundView": blurView
-                                                                              }];
+                                                                        @"blurBackgroundView": blurView
+                                                                      }];
     NSArray *vConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[blurBackgroundView]-0-|"
                                                                     options:0
                                                                     metrics:nil
                                                                       views:@{
-                                                                              @"blurBackgroundView": blurView
-                                                                              }];
+                                                                        @"blurBackgroundView": blurView
+                                                                      }];
     [[self class] activateConstraints:hConstraints inSuperview:self];
     [[self class] activateConstraints:vConstraints inSuperview:self];
   }
@@ -675,7 +737,7 @@ static NSMutableDictionary *globalDesignDictionary;
   UIColor *backgroundColor;
   if (_designDictionary[@"backgroundColor"] && _designDictionary[@"backgroundColorAlpha"]) {
     backgroundColor = [[self class] colorForString:_designDictionary[@"backgroundColor"]
-                                     alpha:[_designDictionary[@"backgroundColorAlpha"] floatValue]];
+                                             alpha:[_designDictionary[@"backgroundColorAlpha"] floatValue]];
   } else if (_designDictionary[@"backgroundColor"]) {
     backgroundColor = [[self class] colorForString:_designDictionary[@"backgroundColor"]];
   }
@@ -688,13 +750,11 @@ static NSMutableDictionary *globalDesignDictionary;
   if ([_designDictionary[@"blurBackground"] floatValue] == 1) {
     _shouldBlurBackground = YES;
     /* As per apple docs when using UIVisualEffectView and blurring the superview of the blur view
-    must have an opacity of 1.f */
+     must have an opacity of 1.f */
     self.messageOpacity = 1.f;
   }
 
-  if (!_iconImage && ([_designDictionary[@"iconImage"] length] > 0)) {
-    _iconImage = [[self class] bundledImageNamed:_designDictionary[@"iconImage"]];
-  }
+  _iconImage = [[self class] bundledImageNamed:_designDictionary[@"iconImage"]];
 
   if (_iconImage) {
     _iconImageView = [[UIImageView alloc] initWithImage:_iconImage];
@@ -708,8 +768,8 @@ static NSMutableDictionary *globalDesignDictionary;
     [self setupIconImageView];
   }
 
-  UIImage *backgroundImage =
-    [[self class] bundledImageNamed:_designDictionary[@"backgroundImage"]];
+  UIImage *backgroundImage = [[self class] bundledImageNamed:_designDictionary[@"backgroundImage"]];
+
   if (backgroundImage) {
     backgroundImage = [backgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)
                                                       resizingMode:UIImageResizingModeStretch];
@@ -769,7 +829,7 @@ static NSMutableDictionary *globalDesignDictionary;
   }
 
   self.subtitleLabel.textAlignment =
-    [self textAlignmentForString:_designDictionary[@"subtitleTextAlignment"]];
+  [self textAlignmentForString:_designDictionary[@"subtitleTextAlignment"]];
 
   UIColor *subTitleTextColor = [[self class] colorForString:_designDictionary[@"subTitleTextColor"]];
   if (!subTitleTextColor) {
@@ -856,10 +916,13 @@ static NSMutableDictionary *globalDesignDictionary;
     _button.titleLabel.font = [UIFont boldSystemFontOfSize:buttonTitleFontSize];
   }
 
-  UIImage *buttonResizeableBackgroundImage = [[self class] bundledImageNamed:_designDictionary[@"buttonResizeableBackgroundImage"]];
+  UIImage *buttonResizeableBackgroundImage =
+  [[self class] bundledImageNamed:_designDictionary[@"buttonResizeableBackgroundImage"]];
+
   if (!buttonResizeableBackgroundImage) {
     buttonResizeableBackgroundImage = [[self class] bundledImageNamed:@"NotificationButtonBackground.png"];
   }
+
   if (buttonResizeableBackgroundImage) {
     UIImage *resizeableImage = [buttonResizeableBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0, 12.0, 15.0, 11.0)];
     [_button setBackgroundImage:resizeableImage forState:UIControlStateNormal];
@@ -926,19 +989,19 @@ static NSMutableDictionary *globalDesignDictionary;
                                                                        multiplier:1.f
                                                                          constant:-15.f];
   NSLayoutConstraint *buttonViewBottomSpacing = [NSLayoutConstraint constraintWithItem:_button
-                                                                      attribute:NSLayoutAttributeBottom
-                                                                      relatedBy:NSLayoutRelationLessThanOrEqual
-                                                                         toItem:self
-                                                                      attribute:NSLayoutAttributeBottom
-                                                                     multiplier:1.f
-                                                                       constant:-10.f];
+                                                                             attribute:NSLayoutAttributeBottom
+                                                                             relatedBy:NSLayoutRelationLessThanOrEqual
+                                                                                toItem:self
+                                                                             attribute:NSLayoutAttributeBottom
+                                                                            multiplier:1.f
+                                                                              constant:-10.f];
   NSLayoutConstraint *buttonViewTopSpacing = [NSLayoutConstraint constraintWithItem:_button
-                                                                      attribute:NSLayoutAttributeTop
-                                                                      relatedBy:NSLayoutRelationGreaterThanOrEqual
-                                                                         toItem:self
-                                                                      attribute:NSLayoutAttributeTop
-                                                                     multiplier:1.f
-                                                                       constant:10.f];
+                                                                          attribute:NSLayoutAttributeTop
+                                                                          relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                             toItem:self
+                                                                          attribute:NSLayoutAttributeTop
+                                                                         multiplier:1.f
+                                                                           constant:10.f];
   [self addSubview:_button];
   [[self class] activateConstraints:@[buttonViewCenterY, buttonViewLeading, buttonViewTrailingOptional, buttonViewTrailing, buttonViewBottomSpacing, buttonViewTopSpacing] inSuperview:self];
 }
@@ -976,12 +1039,12 @@ static NSMutableDictionary *globalDesignDictionary;
                                                                     multiplier:1.f
                                                                       constant:-15.f];
   NSLayoutConstraint *imgViewTop = [NSLayoutConstraint constraintWithItem:self.iconImageView
-                                                                   attribute:NSLayoutAttributeTop
-                                                                   relatedBy:NSLayoutRelationGreaterThanOrEqual
-                                                                      toItem:self
-                                                                   attribute:NSLayoutAttributeTop
-                                                                  multiplier:1.f
-                                                                    constant:10.f];
+                                                                attribute:NSLayoutAttributeTop
+                                                                relatedBy:NSLayoutRelationGreaterThanOrEqual
+                                                                   toItem:self
+                                                                attribute:NSLayoutAttributeTop
+                                                               multiplier:1.f
+                                                                 constant:10.f];
   NSLayoutConstraint *imgViewBottom = [NSLayoutConstraint constraintWithItem:self.iconImageView
                                                                    attribute:NSLayoutAttributeBottom
                                                                    relatedBy:NSLayoutRelationLessThanOrEqual
@@ -997,13 +1060,13 @@ static NSMutableDictionary *globalDesignDictionary;
 - (void)setupGestureRecognizers
 {
   UISwipeGestureRecognizer *gestureRecognizer =
-    [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipeMessageView:)];
+  [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipeMessageView:)];
   [gestureRecognizer
    setDirection:(self.messagePosition == RMessagePositionBottom) ? UISwipeGestureRecognizerDirectionDown : UISwipeGestureRecognizerDirectionUp];
   [self addGestureRecognizer:gestureRecognizer];
 
   UITapGestureRecognizer *tapRecognizer =
-    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapMessageView:)];
+  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapMessageView:)];
   [self addGestureRecognizer:tapRecognizer];
 }
 
@@ -1037,7 +1100,7 @@ static NSMutableDictionary *globalDesignDictionary;
 
   if (self.duration == RMessageDurationAutomatic) {
     self.duration =
-      kRMessageAnimationDuration + kRMessageDisplayTime + self.frame.size.height * kRMessageExtraDisplayTimePerPixel;
+    kRMessageAnimationDuration + kRMessageDisplayTime + self.frame.size.height * kRMessageExtraDisplayTimePerPixel;
   }
 
   if (self.duration != RMessageDurationEndless) {
@@ -1138,24 +1201,24 @@ static NSMutableDictionary *globalDesignDictionary;
                         options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionBeginFromCurrentState |
      UIViewAnimationOptionAllowUserInteraction
                      animations:^{
-                       [[self class] deActivateConstraint:self.topToVCLayoutConstraint inSuperview:self.superview];
-                       self.topToVCLayoutConstraint = self.topToVCFinalConstraint;
-                       [[self class] activateConstraint:self.topToVCLayoutConstraint inSuperview:self.superview];
-                       self.isPresenting = YES;
-                       if ([self.delegate respondsToSelector:@selector(messageViewIsPresenting:)]) {
-                         [self.delegate messageViewIsPresenting:self];
-                       }
-                       if (!self.shouldBlurBackground) self.alpha = self.messageOpacity;
-                       [self.superview layoutIfNeeded];
-                     }
+      [[self class] deActivateConstraint:self.topToVCLayoutConstraint inSuperview:self.superview];
+      self.topToVCLayoutConstraint = self.topToVCFinalConstraint;
+      [[self class] activateConstraints:@[self.topToVCLayoutConstraint, self.titleSubtitleContainerViewLayoutGuideConstraint] inSuperview:self.superview];
+      self.isPresenting = YES;
+      if ([self.delegate respondsToSelector:@selector(messageViewIsPresenting:)]) {
+        [self.delegate messageViewIsPresenting:self];
+      }
+      if (!self.shouldBlurBackground) self.alpha = self.messageOpacity;
+      [self.superview layoutIfNeeded];
+    }
                      completion:^(BOOL finished) {
-                       self.isPresenting = NO;
-                       self.messageIsFullyDisplayed = YES;
-                       if ([self.delegate respondsToSelector:@selector(messageViewDidPresent:)]) {
-                         [self.delegate messageViewDidPresent:self];
-                       }
-                       if (self.presentingCompletionCallback) self.presentingCompletionCallback();
-                     }];
+      self.isPresenting = NO;
+      self.messageIsFullyDisplayed = YES;
+      if ([self.delegate respondsToSelector:@selector(messageViewDidPresent:)]) {
+        [self.delegate messageViewDidPresent:self];
+      }
+      if (self.presentingCompletionCallback) self.presentingCompletionCallback();
+    }];
   });
 }
 
@@ -1174,20 +1237,20 @@ static NSMutableDictionary *globalDesignDictionary;
 
     [UIView animateWithDuration:kRMessageAnimationDuration
                      animations:^{
-                       if (!self.shouldBlurBackground) self.alpha = 0.f;
-                       [[self class] deActivateConstraint:self.topToVCLayoutConstraint inSuperview:self.superview];
-                       self.topToVCLayoutConstraint = self.topToVCStartingConstraint;
-                       [[self class] activateConstraint:self.topToVCLayoutConstraint inSuperview:self.superview];
-                       [self.superview layoutIfNeeded];
-                     }
+      if (!self.shouldBlurBackground) self.alpha = 0.f;
+      [[self class] deActivateConstraints:@[self.topToVCLayoutConstraint, self.titleSubtitleContainerViewLayoutGuideConstraint] inSuperview:self.superview];
+      self.topToVCLayoutConstraint = self.topToVCStartingConstraint;
+      [[self class] activateConstraint:self.topToVCLayoutConstraint inSuperview:self.superview];
+      [self.superview layoutIfNeeded];
+    }
                      completion:^(BOOL finished) {
-                       [self removeFromSuperview];
-                       if ([self.delegate respondsToSelector:@selector(messageViewDidDismiss:)]) {
-                         [self.delegate messageViewDidDismiss:self];
-                       }
-                       if (self.dismissCompletionCallback) self.dismissCompletionCallback();
-                       if (completionBlock) completionBlock();
-                     }];
+      [self removeFromSuperview];
+      if ([self.delegate respondsToSelector:@selector(messageViewDidDismiss:)]) {
+        [self.delegate messageViewDidDismiss:self];
+      }
+      if (self.dismissCompletionCallback) self.dismissCompletionCallback();
+      if (completionBlock) completionBlock();
+    }];
   });
 }
 

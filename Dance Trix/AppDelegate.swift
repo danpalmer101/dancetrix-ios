@@ -21,7 +21,7 @@ let log = SwiftyBeaver.self
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
 
     var window: UIWindow?
-    let reachability = Reachability()!
+    var reachability: Reachability?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -49,15 +49,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func enableReachabilityCheck() {
-        self.reachability.whenUnreachable = { _ in
-            Notification.show(title: "No internet connection",
-                              subtitle: "Some features may not be available. Tap to dismiss.",
-                              type: .warning,
-                              endless: true)
-        }
-        
         do {
-            try self.reachability.startNotifier()
+            try self.reachability = Reachability()
+        
+            self.reachability?.whenUnreachable = { _ in
+                Notification.show(title: "No internet connection",
+                                  subtitle: "Some features may not be available. Tap to dismiss.",
+                                  type: .warning,
+                                  endless: true)
+            }
+        
+            try self.reachability?.startNotifier()
         } catch {
             log.warning("Unable to start Reachability notifier")
         }
